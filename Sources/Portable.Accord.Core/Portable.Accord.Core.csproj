@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A60B1E41-53AB-4777-8B2C-4F2D91DD864F}</ProjectGuid>
+    <ProjectGuid>{5E441557-080B-4664-A8EB-4185DDFD668D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>System</RootNamespace>
-    <AssemblyName>Portability</AssemblyName>
+    <RootNamespace>Accord</RootNamespace>
+    <AssemblyName>Accord</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -36,17 +36,57 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Portability.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="Portability.snk" />
+    <ProjectReference Include="..\Portability\Portability.csproj">
+      <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
+      <Name>Portability</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Runtime\InteropServices\ComVisibleAttribute.cs" />
-    <Compile Include="ICloneable.cs" />
-    <Compile Include="SerializableAttribute.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Accord.snk" />
+    <None Include="Properties\VersionInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VersionInfo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Accord.Core\Exceptions\ConvergenceException.cs">
+      <Link>Exceptions\ConvergenceException.cs</Link>
+    </Compile>
+    <Compile Include="..\Accord.Core\Exceptions\DimensionMismatchException.cs">
+      <Link>Exceptions\DimensionMismatchException.cs</Link>
+    </Compile>
+    <Compile Include="..\Accord.Core\Exceptions\NonPositiveDefiniteMatrixException.cs">
+      <Link>Exceptions\NonPositiveDefiniteMatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\Accord.Core\Exceptions\NonSymmetricMatrixException.cs">
+      <Link>Exceptions\NonSymmetricMatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\Accord.Core\Exceptions\SingularMatrixException.cs">
+      <Link>Exceptions\SingularMatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\Accord.Core\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Accord.Core\Structures\ReadOnlyDictionary.cs">
+      <Link>Structures\ReadOnlyDictionary.cs</Link>
+    </Compile>
+    <Compile Include="Properties\VersionInfo.cs">
+      <DependentUpon>VersionInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\Accord.Core\Properties\CustomDictionary.xml">
+      <Link>Properties\CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
