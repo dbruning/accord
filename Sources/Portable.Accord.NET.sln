@@ -49,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portability", "Portability"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portability.Net", "Portability\_Net\Portability.Net.csproj", "{816E086D-DA84-4997-8BD9-448C92A1514F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Core", "Portable.Accord.Core\Portable.Accord.Core.csproj", "{5E441557-080B-4664-A8EB-4185DDFD668D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Core", "Accord.Core\Portable.Accord.Core.csproj", "{5E441557-080B-4664-A8EB-4185DDFD668D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

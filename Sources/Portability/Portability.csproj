@@ -43,6 +43,7 @@
     <None Include="Portability.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataColumnCollection.cs" />
     <Compile Include="Runtime\InteropServices\ComVisibleAttribute.cs" />
     <Compile Include="ICloneable.cs" />
     <Compile Include="SerializableAttribute.cs" />
