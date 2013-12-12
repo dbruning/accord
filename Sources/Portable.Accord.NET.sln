@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Core", "Acc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Math", "Accord.Math\Portable.Accord.Math.csproj", "{A2E3375E-421D-4A53-9298-26180C915C97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Statistics", "Accord.Statistics\Portable.Accord.Statistics.csproj", "{8DC51A9C-679F-433B-960E-DF18FD27D04F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -262,6 +264,15 @@ Global
 		{A2E3375E-421D-4A53-9298-26180C915C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2E3375E-421D-4A53-9298-26180C915C97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2E3375E-421D-4A53-9298-26180C915C97}.Release|x86.ActiveCfg = Release|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release 3.5|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release 3.5|Any CPU.Build.0 = Release|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release 3.5|x86.ActiveCfg = Release|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

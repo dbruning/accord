@@ -31,11 +31,13 @@ namespace System.Data
         public object this[string columnName]
         {
             get { return null; }
+            set { }
         }
 
         public object this[DataColumn columnName]
         {
             get { return null; }
+            set { }
         }
 
         #endregion

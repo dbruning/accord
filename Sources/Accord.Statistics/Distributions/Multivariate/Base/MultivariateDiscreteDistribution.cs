@@ -20,6 +20,8 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
+using System.Linq;
+
 namespace Accord.Statistics.Distributions.Multivariate
 {
     using System;
@@ -156,7 +158,7 @@ namespace Accord.Statistics.Distributions.Multivariate
         /// 
         double IDistribution.DistributionFunction(double[] x)
         {
-            return DistributionFunction(Array.ConvertAll<double, int>(x, Convert.ToInt32));
+            return DistributionFunction(x.Select(Convert.ToInt32).ToArray());
         }
 
         /// <summary>
@@ -181,7 +183,7 @@ namespace Accord.Statistics.Distributions.Multivariate
         ///   
         double IDistribution.ProbabilityFunction(double[] x)
         {
-            return ProbabilityMassFunction(Array.ConvertAll<double, int>(x, Convert.ToInt32));
+            return ProbabilityMassFunction(x.Select(Convert.ToInt32).ToArray());
         }
 
         /// <summary>
@@ -206,7 +208,7 @@ namespace Accord.Statistics.Distributions.Multivariate
         ///   
         double IDistribution.LogProbabilityFunction(double[] x)
         {
-            return LogProbabilityMassFunction(Array.ConvertAll<double, int>(x, Convert.ToInt32));
+            return LogProbabilityMassFunction(x.Select(Convert.ToInt32).ToArray());
         }
 
         /// <summary>
@@ -223,7 +225,7 @@ namespace Accord.Statistics.Distributions.Multivariate
         /// 
         double IDistribution.ComplementaryDistributionFunction(double[] x)
         {
-            return ComplementaryDistributionFunction(Array.ConvertAll<double, int>(x, Convert.ToInt32));
+            return ComplementaryDistributionFunction(x.Select(Convert.ToInt32).ToArray());
         }
 
         /// <summary>

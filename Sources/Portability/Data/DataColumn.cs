@@ -1,4 +1,11 @@
-﻿namespace System.Data
+﻿//
+// Portability Class Library
+//
+// Copyright © Cureos AB, 2013
+// info at cureos dot com
+//
+
+namespace System.Data
 {
     public class DataColumn
     {
