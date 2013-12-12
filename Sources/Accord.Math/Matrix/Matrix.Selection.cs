@@ -1468,10 +1468,14 @@ namespace Accord.Math
         /// 
         public static TValue[,] Sort<TKey, TValue>(TKey[] keys, TValue[,] values, IComparer<TKey> comparer)
         {
-            int[] indices = new int[keys.Length];
+            /*int[] indices = new int[keys.Length];
             for (int i = 0; i < keys.Length; i++) indices[i] = i;
-
-            Array.Sort<TKey, int>(keys, indices, comparer);
+            Array.Sort<TKey, int>(keys, indices, comparer);*/
+            var indices =
+                keys.Select((key, i) => new KeyValuePair<TKey, int>(key, i))
+                    .OrderBy(kv => kv.Key, comparer)
+                    .Select(kv => kv.Value)
+                    .ToArray();
 
             return values.Submatrix(0, values.GetLength(0) - 1, indices);
         }

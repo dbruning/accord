@@ -20,6 +20,8 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
+using System.Linq;
+
 namespace Accord.Math
 {
     using System;
@@ -550,7 +552,10 @@ namespace Accord.Math
             var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>(comparison));
+
+            /* Array.Sort(keys, values, new StableComparer<T>(comparison)); */
+            var sorted = keys.OrderBy(key => key, new StableComparer<T>(comparison));
+            var j = 0; foreach (var kv in sorted) { values[j++] = kv.Value; }
         }
 
         /// <summary>
@@ -560,10 +565,11 @@ namespace Accord.Math
         public static void StableSort<T>(this T[] values)
             where T : IComparable<T>
         {
-            var keys = new KeyValuePair<int, T>[values.Length];
+            /*var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>((a,b) => a.CompareTo(b)));
+            Array.Sort(keys, values, new StableComparer<T>((a,b) => a.CompareTo(b)));*/
+            StableSort(values, (a, b) => a.CompareTo(b));
         }
 
         /// <summary>
@@ -576,7 +582,10 @@ namespace Accord.Math
             var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
+
+            /* Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b))); */
+            var sorted = keys.OrderBy(key => key, new StableComparer<T>((a, b) => a.CompareTo(b)));
+            var j = 0; foreach (var kv in sorted) { values[j++] = kv.Value; }
 
             order = new int[values.Length];
             for (int i = 0; i < keys.Length; i++)

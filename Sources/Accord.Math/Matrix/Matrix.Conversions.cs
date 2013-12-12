@@ -20,6 +20,8 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
+using System.Linq;
+
 namespace Accord.Math
 {
     using System;
@@ -385,7 +387,8 @@ namespace Accord.Math
         /// 
         public static TOutput[] Convert<TInput, TOutput>(this TInput[] vector, Converter<TInput, TOutput> converter)
         {
-            return Array.ConvertAll(vector, converter);
+            /* return Array.ConvertAll(vector, converter); */
+            return vector.Select(item => converter(item)).ToArray();
         }
 
         /// <summary>
