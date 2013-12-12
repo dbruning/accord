@@ -109,6 +109,7 @@
     <Compile Include="Optimization\Constrained\LinearConstraintCollection.cs" />
     <Compile Include="Optimization\Unconstrained\Least Squares\GaussNewton.cs" />
     <Compile Include="Optimization\Unconstrained\Least Squares\LevenbergMarquardt.cs" />
+    <Compile Include="Optimization\Unconstrained\LineSearchFailedException.NoPcl.cs" />
     <Compile Include="Optimization\Unconstrained\ResilientBackpropagation.cs" />
     <Compile Include="Transforms\HartleyTransform.cs" />
     <Compile Include="Transforms\SineTransform.cs" />

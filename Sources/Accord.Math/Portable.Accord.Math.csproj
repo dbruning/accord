@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2E3375E-421D-4A53-9298-26180C915C97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Accord.Math</RootNamespace>
+    <AssemblyName>Accord.Math</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Accord.Math.cs" />
+    <Compile Include="Combinatorics.cs" />
+    <Compile Include="Comparers\ArrayComparer`1.cs" />
+    <Compile Include="Comparers\CustomComparer`1.cs" />
+    <Compile Include="Comparers\ElementComparer.cs" />
+    <Compile Include="Comparers\GeneralComparer.cs" />
+    <Compile Include="Comparers\StableComparer.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Convergence\AbsoluteConvergence.cs" />
+    <Compile Include="Convergence\Base\ISingleValueConvergence.cs" />
+    <Compile Include="Convergence\RelativeConvergence.cs" />
+    <Compile Include="Convergence\RelativeParameterConvergence.cs" />
+    <Compile Include="Decompositions\Base\ISolverArrayDecomposition.cs" />
+    <Compile Include="Decompositions\Base\ISolverMatrixDecomposition.cs" />
+    <Compile Include="Decompositions\CholeskyDecomposition.cs" />
+    <Compile Include="Decompositions\CholeskyDecompositionD.cs" />
+    <Compile Include="Decompositions\CholeskyDecompositionF.cs" />
+    <Compile Include="Decompositions\EigenValueDecomposition.cs" />
+    <Compile Include="Decompositions\EigenvalueDecompositionF.cs" />
+    <Compile Include="Decompositions\GeneralizedEigenvalueDecomposition.cs" />
+    <Compile Include="Decompositions\GramSchmidtOrthogonalization.cs" />
+    <Compile Include="Decompositions\JaggedCholeskyDecomposition.cs" />
+    <Compile Include="Decompositions\JaggedCholeskyDecompositionD.cs" />
+    <Compile Include="Decompositions\JaggedCholeskyDecompositionF.cs" />
+    <Compile Include="Decompositions\JaggedLuDecomposition.cs" />
+    <Compile Include="Decompositions\JaggedLuDecompositionD.cs" />
+    <Compile Include="Decompositions\JaggedLuDecompositionF.cs" />
+    <Compile Include="Decompositions\LuDecomposition.cs" />
+    <Compile Include="Decompositions\LuDecompositionD.cs" />
+    <Compile Include="Decompositions\LuDecompositionF.cs" />
+    <Compile Include="Decompositions\NonnegativeFactorization.cs" />
+    <Compile Include="Decompositions\QrDecomposition.cs" />
+    <Compile Include="Decompositions\QrDecompositionD.cs" />
+    <Compile Include="Decompositions\QrDecompositionF.cs" />
+    <Compile Include="Decompositions\SingularValueDecomposition.cs" />
+    <Compile Include="Decompositions\SingularValueDecompositionF.cs" />
+    <Compile Include="Differentiation\FiniteDifferences.cs" />
+    <Compile Include="Distance.cs" />
+    <Compile Include="Environments\OctaveEnvironment.cs" />
+    <Compile Include="Environments\REnvironment.cs" />
+    <Compile Include="Formats\Base\IMatrixFormatProvider.cs" />
+    <Compile Include="Formats\Base\MatrixFormatProviderBase.cs" />
+    <Compile Include="Formats\Base\MatrixFormatter.cs" />
+    <Compile Include="Formats\CSharpArrayFormatProvider.cs" />
+    <Compile Include="Formats\CSharpJaggedMatrixFormatProvider.cs" />
+    <Compile Include="Formats\CSharpMatrixFormatProvider.cs" />
+    <Compile Include="Formats\DefaultArrayFormatProvider.cs" />
+    <Compile Include="Formats\DefaultMatrixFormatProvider.cs" />
+    <Compile Include="Formats\OctaveArrayFormatProvider.cs" />
+    <Compile Include="Formats\OctaveMatrixFormatProvider.cs" />
+    <Compile Include="Functions\Bessel.cs" />
+    <Compile Include="Functions\Beta.cs" />
+    <Compile Include="Functions\Gabor.cs" />
+    <Compile Include="Functions\Gamma.cs" />
+    <Compile Include="Functions\Normal.cs" />
+    <Compile Include="Geometry\Circle.cs" />
+    <Compile Include="Geometry\ConvexHullDefects.cs" />
+    <Compile Include="Geometry\ConvexityDefect.cs" />
+    <Compile Include="Geometry\KCurvature.cs" />
+    <Compile Include="Geometry\Plane.cs" />
+    <Compile Include="Geometry\Point3.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Kinematics\DenavitHartenbergJoint.cs" />
+    <Compile Include="Kinematics\DenavitHartenbergMatrix.cs" />
+    <Compile Include="Kinematics\DenavitHartenbergModel.cs" />
+    <Compile Include="Kinematics\DenavitHartenbergNode.cs" />
+    <Compile Include="Kinematics\DenavitHartenbergParameter.cs" />
+    <Compile Include="Matrix\Matrix.Algebra.cs" />
+    <Compile Include="Matrix\Matrix.Common.cs" />
+    <Compile Include="Matrix\Matrix.Complex.cs" />
+    <Compile Include="Matrix\Matrix.Construction.cs" />
+    <Compile Include="Matrix\Matrix.Conversions.cs" />
+    <Compile Include="Matrix\Matrix.Elementwise.cs" />
+    <Compile Include="Matrix\Matrix.Linear.cs" />
+    <Compile Include="Matrix\Matrix.Parsing.cs" />
+    <Compile Include="Matrix\Matrix.Selection.cs" />
+    <Compile Include="Matrix\Matrix.Submatrix.cs" />
+    <Compile Include="Matrix\ReducedRowEchelonForm.cs" />
+    <Compile Include="Norm.cs" />
+    <Compile Include="Optimization\Base\IGradientOptimizationMethod.cs" />
+    <Compile Include="Optimization\Base\ILeastSquaresMethod.cs" />
+    <Compile Include="Optimization\Base\IOptimizationMethod.cs" />
+    <Compile Include="Optimization\BinarySearch.cs" />
+    <Compile Include="Optimization\BrentSearch.cs" />
+    <Compile Include="Optimization\Constrained\AugmentedLagrangianSolver.cs" />
+    <Compile Include="Optimization\Constrained\GoldfarbIdnaniQuadraticSolver.cs" />
+    <Compile Include="Optimization\Constrained\LinearConstraint.cs" />
+    <Compile Include="Optimization\Constrained\LinearConstraintCollection.cs" />
+    <Compile Include="Optimization\Constrained\NonlinearConstraint.cs" />
+    <Compile Include="Optimization\Constrained\QuadraticConstraint.cs" />
+    <Compile Include="Optimization\ExpressionParser.cs" />
+    <Compile Include="Optimization\IObjectiveFunction.cs" />
+    <Compile Include="Optimization\NonlinearObjectiveFunction.cs" />
+    <Compile Include="Optimization\QuadraticObjectiveFunction.cs" />
+    <Compile Include="Optimization\Unconstrained\BroydenFletcherGoldfarbShanno.cs" />
+    <Compile Include="Optimization\Unconstrained\ConjugateGradient.cs" />
+    <Compile Include="Optimization\Unconstrained\Least Squares\GaussNewton.cs" />
+    <Compile Include="Optimization\Unconstrained\Least Squares\LevenbergMarquardt.cs" />
+    <Compile Include="Optimization\Unconstrained\LineSearchFailedException.cs" />
+    <Compile Include="Optimization\Unconstrained\OptimizationProgressEventHandler.cs" />
+    <Compile Include="Optimization\Unconstrained\ResilientBackpropagation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Special.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="Transforms\CosineTransform.cs" />
+    <Compile Include="Transforms\HartleyTransform.cs" />
+    <Compile Include="Transforms\HilbertTransform.cs" />
+    <Compile Include="Transforms\SineTransform.cs" />
+    <Compile Include="Wavelets\Base\IWavelet.cs" />
+    <Compile Include="Wavelets\CDF97.cs" />
+    <Compile Include="Wavelets\Haar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
+      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
+      <Name>Portable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
+      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
+      <Name>Portable.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
+      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
+      <Name>Portable.Accord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Portability\Portability.csproj">
+      <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
+      <Name>Portability</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Accord.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
