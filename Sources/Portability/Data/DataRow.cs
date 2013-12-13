@@ -41,5 +41,11 @@ namespace System.Data
         }
 
         #endregion
+
+        #region PROPERTIES
+
+        public DataTable Table { get; private set; }
+        
+        #endregion
     }
 }

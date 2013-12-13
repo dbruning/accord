@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 
 // System
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
+[assembly: TypeForwardedTo(typeof(DBNull))]
 [assembly: TypeForwardedTo(typeof(ICloneable))]
 [assembly: TypeForwardedTo(typeof(NonSerializedAttribute))]
 [assembly: TypeForwardedTo(typeof(NotFiniteNumberException))]
@@ -37,6 +38,7 @@ using System.Threading.Tasks;
 [assembly: TypeForwardedTo(typeof(Trace))]
 
 // System.IO
+[assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileStream))]
 
 // System.Runtime.Serialization

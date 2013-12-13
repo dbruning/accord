@@ -11,6 +11,11 @@ namespace System.IO
     {
         #region CONSTRUCTORS
 
+        public FileStream(string path, FileMode mode)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

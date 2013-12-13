@@ -19,6 +19,8 @@ namespace System.Data
 
         public DataTable Table { get; private set; }
 
+        public Type DataType { get; set; }
+
         public string ColumnName { get; set; }
 
         public string Caption

@@ -52,7 +52,9 @@
     <Compile Include="Data\DataRow.cs" />
     <Compile Include="Data\DataRowCollection.cs" />
     <Compile Include="Data\DataTable.cs" />
+    <Compile Include="DBNull.cs" />
     <Compile Include="Diagnostics\Trace.cs" />
+    <Compile Include="IO\FileMode.cs" />
     <Compile Include="IO\FileStream.cs" />
     <Compile Include="NonSerializedAttribute.cs" />
     <Compile Include="ICloneable.cs" />

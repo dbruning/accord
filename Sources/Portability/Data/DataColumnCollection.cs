@@ -15,7 +15,7 @@ namespace System.Data
 
         public DataColumn this[string columnName]
         {
-            get { return null; }
+            get { throw new NotImplementedException(); }
         }
 
         #endregion
@@ -24,6 +24,12 @@ namespace System.Data
 
         public void Add(string columnName, Type type)
         {
+            throw new NotImplementedException();
+        }
+
+        public bool Contains(string value)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

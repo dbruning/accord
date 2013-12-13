@@ -20,5 +20,39 @@ namespace System.Data
         public CultureInfo Locale { get; set; }
 
         #endregion
+
+        #region METHODS
+
+        public DataTable Clone()
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable Copy()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ImportRow(DataRow row)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Compute(string p0, string empty)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataRow[] Select(string filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataRow[] Select(string expression, string orderBy)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
