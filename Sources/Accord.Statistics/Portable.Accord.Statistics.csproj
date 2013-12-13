@@ -44,7 +44,6 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="Accord.snk" />
     <None Include="Analysis\Accord.Statistics.Analysis.cd" />
-    <None Include="Distributions\Accord.Statistics.Distributions.cd" />
     <None Include="Kernels\Accord.Statistics.Kernels.cd" />
     <None Include="Models\Accord.Statistics.Models.cd">
       <SubType>Designer</SubType>

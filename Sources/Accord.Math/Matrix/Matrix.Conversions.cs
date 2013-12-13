@@ -20,12 +20,11 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-using System.Linq;
-
 namespace Accord.Math
 {
     using System;
     using System.Data;
+    using System.Linq;
     using System.Globalization;
 
     public static partial class Matrix
