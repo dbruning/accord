@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46E4F987-424B-4BFD-A78F-03AE578A1AAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Accord.Neuro</RootNamespace>
+    <AssemblyName>Accord.Neuro</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Content Include="Properties\CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Accord.Neuro.cs" />
+    <Compile Include="Activation Functions\BernoulliFunction.cs" />
+    <Compile Include="Activation Functions\GaussianFunction.cs" />
+    <Compile Include="Activation Functions\IStochasticFunction.cs" />
+    <Compile Include="Activation Functions\LinearFunction.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Initialization\GaussianWeights.cs" />
+    <Compile Include="Initialization\NguyenWidrow.cs" />
+    <Compile Include="Layers\StochasticLayer.cs" />
+    <Compile Include="Learning\ContrastiveDivergenceLearning.cs" />
+    <Compile Include="Learning\DeepBeliefNetworkLearning.cs" />
+    <Compile Include="Learning\DeepNeuralNetworkLearning.cs" />
+    <Compile Include="Learning\LevenbergMarquardtLearning.cs" />
+    <Compile Include="Learning\ParallelResilientBackPropagationLearning.cs" />
+    <Compile Include="Networks\DeepBeliefNetwork.cs" />
+    <Compile Include="Networks\RestrictedBoltzmannMachine.cs" />
+    <Compile Include="Neurons\StochasticNeuron.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visualization\ActivationMaximization.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Accord.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
+      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
+      <Name>Portable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
+      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
+      <Name>Portable.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Neuro\Portable.Neuro.csproj">
+      <Project>{e37ebfaf-5dc0-415c-9c1a-8a5a808a3ddf}</Project>
+      <Name>Portable.Neuro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
+      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
+      <Name>Portable.Accord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accord.Math\Portable.Accord.Math.csproj">
+      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
+      <Name>Portable.Accord.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accord.Statistics\Portable.Accord.Statistics.csproj">
+      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
+      <Name>Portable.Accord.Statistics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Portability\Portability.csproj">
+      <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
+      <Name>Portability</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

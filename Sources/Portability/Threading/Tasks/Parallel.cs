@@ -25,5 +25,12 @@ namespace System.Threading.Tasks
             for (var i = fromInclusive; i < toExclusive; ++i)
                 localFinally(body(i, null, localInit()));
         }
+
+        public static void For<TLocal>(int fromInclusive, int toExclusive, ParallelOptions parallelOptions,
+            Func<TLocal> localInit, Func<int, object, TLocal, TLocal> body, Action<TLocal> localFinally)
+        {
+            for (var i = fromInclusive; i < toExclusive; ++i)
+                localFinally(body(i, null, localInit()));
+        }
     }
 }

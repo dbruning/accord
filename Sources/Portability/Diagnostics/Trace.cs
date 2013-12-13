@@ -9,6 +9,8 @@ namespace System.Diagnostics
 {
     public static class Trace
     {
+        #region METHODS
+
         public static void WriteLine(string format, params object[] args)
         {
             Debug.WriteLine(format, args);
@@ -23,5 +25,12 @@ namespace System.Diagnostics
         {
             Debug.Assert(condition);
         }
+
+        public static void TraceInformation(string format, params object[] args)
+        {
+            Debug.WriteLine(format, args);
+        }
+        
+        #endregion
     }
 }
