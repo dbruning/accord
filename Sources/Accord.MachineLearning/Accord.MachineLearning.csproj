@@ -92,6 +92,7 @@
     <Compile Include="Boosting\Classifiers\Stump.cs" />
     <Compile Include="Clustering\BinarySplit.cs" />
     <Compile Include="Clustering\GaussianCluster.cs" />
+    <Compile Include="Clustering\KModes.cs" />
     <Compile Include="Clustering\MeanShiftCluster.cs" />
     <Compile Include="Clustering\KMeansCluster.cs" />
     <Compile Include="Clustering\IClusteringAlgorithm.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Clustering\MeanShift.cs" />
     <Compile Include="DecisionTrees\ComparisonKind.cs" />
     <Compile Include="DecisionTrees\DecisionBranchNodeCollection.cs" />
+    <Compile Include="DecisionTrees\DecisionTree.NoPcl.cs" />
     <Compile Include="DecisionTrees\Rules\Antecedent.cs" />
     <Compile Include="DecisionTrees\Rules\DecisionSet.cs" />
     <Compile Include="DecisionTrees\Rules\DecisionRule.cs" />

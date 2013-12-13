@@ -6,6 +6,7 @@
 //
 
 using System;
+using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -22,6 +23,9 @@ using System.Threading.Tasks;
 [assembly: TypeForwardedTo(typeof(NonSerializedAttribute))]
 [assembly: TypeForwardedTo(typeof(NotFiniteNumberException))]
 [assembly: TypeForwardedTo(typeof(SerializableAttribute))]
+
+// System.Collections.Concurrent
+[assembly: TypeForwardedTo(typeof(ConcurrentStack<>))]
 
 // System.ComponentModel
 [assembly: TypeForwardedTo(typeof(BrowsableAttribute))]
@@ -50,3 +54,4 @@ using System.Threading.Tasks;
 
 // System.Threading.Tasks
 [assembly: TypeForwardedTo(typeof(Parallel))]
+[assembly: TypeForwardedTo(typeof(ParallelOptions))]

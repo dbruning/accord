@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Math", "Acc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Statistics", "Accord.Statistics\Portable.Accord.Statistics.csproj", "{8DC51A9C-679F-433B-960E-DF18FD27D04F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.MachineLearning", "Accord.MachineLearning\Portable.Accord.MachineLearning.csproj", "{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +275,15 @@ Global
 		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8DC51A9C-679F-433B-960E-DF18FD27D04F}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Release 3.5|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Release 3.5|Any CPU.Build.0 = Release|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Release 3.5|x86.ActiveCfg = Release|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC7E81E-1E71-46BE-80B7-4DEDE5E51612}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

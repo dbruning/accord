@@ -14,6 +14,11 @@ namespace System.Threading.Tasks
             for (var i = fromInclusive; i < toExclusive; ++i) body(i);
         }
 
+        public static void For(int fromInclusive, int toExclusive, ParallelOptions parallelOptions, Action<int> body)
+        {
+            for (var i = fromInclusive; i < toExclusive; ++i) body(i);
+        }
+
         public static void For<TLocal>(int fromInclusive, int toExclusive, Func<TLocal> localInit,
             Func<int, object, TLocal, TLocal> body, Action<TLocal> localFinally)
         {

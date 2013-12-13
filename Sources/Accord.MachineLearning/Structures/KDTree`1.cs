@@ -525,7 +525,7 @@ namespace Accord.MachineLearning.Structures
             KDTreeNode<T> root = create(points, idx, values, 0, dimensions, 0, points.Length, comparer, ref leaves);
 
             // Restore the original ordering
-            Array.Sort(idx, points);
+            Arrays.Sort(idx, points);
 
             // Create and return the newly formed tree
             return root;
@@ -775,7 +775,7 @@ namespace Accord.MachineLearning.Structures
 
             // We will be doing sorting in place
             int axis = comparer.Index = depth % k;
-            Array.Sort(points, idx, start, length, comparer);
+            Arrays.Sort(points, idx, start, length, comparer);
 
             // Middle of the input section
             int half = start + length / 2;

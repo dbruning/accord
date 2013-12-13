@@ -47,7 +47,7 @@ namespace Accord.MachineLearning.DecisionTrees
     /// <seealso cref="Learning.C45Learning"/>
     ///
     [Serializable]
-    public class DecisionTree : IEnumerable<DecisionNode>
+    public partial class DecisionTree : IEnumerable<DecisionNode>
     {
         /// <summary>
         ///   Gets or sets the root node for this tree.
@@ -288,47 +288,6 @@ namespace Accord.MachineLearning.DecisionTrees
         {
             DecisionTreeExpressionCreator compiler = new DecisionTreeExpressionCreator(this);
             return compiler.Create();
-        }
-
-        /// <summary>
-        ///   Creates a .NET assembly (.dll) containing a static class of
-        ///   the given name implementing the decision tree. The class will
-        ///   contain a single static Compute method implementing the tree.
-        /// </summary>
-        /// 
-        /// <param name="assemblyName">The name of the assembly to generate.</param>
-        /// <param name="className">The name of the generated static class.</param>
-        /// 
-        public void ToAssembly(string assemblyName, string className)
-        {
-            ToAssembly(assemblyName, "Accord.MachineLearning.DecisionTrees.Custom", className);
-        }
-
-        /// <summary>
-        ///   Creates a .NET assembly (.dll) containing a static class of
-        ///   the given name implementing the decision tree. The class will
-        ///   contain a single static Compute method implementing the tree.
-        /// </summary>
-        /// 
-        /// <param name="assemblyName">The name of the assembly to generate.</param>
-        /// <param name="moduleName">The namespace which should contain the class.</param>
-        /// <param name="className">The name of the generated static class.</param>
-        /// 
-        public void ToAssembly(string assemblyName, string moduleName, string className)
-        {
-            AssemblyBuilder da = AppDomain.CurrentDomain.DefineDynamicAssembly(
-                new AssemblyName(assemblyName), AssemblyBuilderAccess.Save);
-
-            ModuleBuilder dm = da.DefineDynamicModule(moduleName, assemblyName);
-            TypeBuilder dt = dm.DefineType(className);
-            MethodBuilder method = dt.DefineMethod("Compute",
-                MethodAttributes.Public | MethodAttributes.Static);
-
-            // Compile the tree into a method
-            ToExpression().CompileToMethod(method);
-
-            dt.CreateType();
-            da.Save(assemblyName);
         }
 #endif
 

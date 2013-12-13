@@ -280,35 +280,4 @@ namespace Accord.MachineLearning
 
     }
 
-    /// <summary>
-    ///   k-Modes algorithm.
-    /// </summary>
-    /// 
-    /// <remarks>
-    /// <para>
-    ///   The k-Modes algorithm is a variant of the k-Means which instead of 
-    ///   locating means attempts to locate the modes of a set of points. As
-    ///   the algorithm does not require explicit numeric manipulation of the
-    ///   input points (such as addition and division to compute the means),
-    ///   the algorithm can be used with arbitrary (generic) data structures.</para>
-    /// <para>
-    ///   This is the specialized, non-generic version of the K-Models algorithm
-    ///   that is set to work on <see cref="T:System.Int32"/> arrays.</para>
-    /// </remarks>
-    /// 
-    /// <seealso cref="KModes{T}"/>
-    /// 
-    [Serializable]
-    public class KModes : KModes<int[]>
-    {
-
-        /// <summary>
-        ///   Initializes a new instance of K-Modes algorithm
-        /// </summary>
-        /// 
-        /// <param name="k">The number of clusters to divide input data.</param>    
-        /// 
-        public KModes(int k) : base(k, Accord.Math.Distance.Manhattan) { }
-    }
-
 }

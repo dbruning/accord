@@ -241,7 +241,7 @@ namespace Accord.MachineLearning.DecisionTrees.Learning
                     double[] v = inputs.GetColumn(i);
                     int[] o = (int[])outputs.Clone();
 
-                    Array.Sort(v, o);
+                    Arrays.Sort(v, o);
 
                     for (int j = 0; j < v.Length - 1; j++)
                     {

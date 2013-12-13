@@ -30,6 +30,12 @@ namespace Accord
             Array.Copy(ordered.Select(kv => kv.Value).ToArray(), items, ordered.Length);
         }
 
+        public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, int index, int length,
+            IComparer<TKey> comparer)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
