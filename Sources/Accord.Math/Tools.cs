@@ -24,7 +24,6 @@ namespace Accord.Math
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using Accord.Math.Comparers;
     using AForge;
 
@@ -548,17 +547,10 @@ namespace Accord.Math
         /// 
         public static void StableSort<T>(this T[] values, Comparison<T> comparison)
         {
-            /* var keys = new KeyValuePair<int, T>[values.Length];
+            var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>(comparison)); */
-
-            var ordered =
-                values.Select((value, i) => new KeyValuePair<int, T>(i, value))
-                    .OrderBy(kv => kv, new StableComparer<T>(comparison))
-                    .Select(kv => kv.Value)
-                    .ToArray();
-            Array.Copy(ordered, values, values.Length);
+            Arrays.Sort(keys, values, new StableComparer<T>(comparison));
         }
 
         /// <summary>
@@ -568,17 +560,10 @@ namespace Accord.Math
         public static void StableSort<T>(this T[] values)
             where T : IComparable<T>
         {
-            /*var keys = new KeyValuePair<int, T>[values.Length];
+            var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>((a,b) => a.CompareTo(b)));*/
-
-            var ordered =
-                values.Select((value, i) => new KeyValuePair<int, T>(i, value))
-                    .OrderBy(kv => kv, new StableComparer<T>((a, b) => a.CompareTo(b)))
-                    .Select(kv => kv.Value)
-                    .ToArray();
-            Array.Copy(ordered, values, values.Length);
+            Arrays.Sort(keys, values, new StableComparer<T>((a,b) => a.CompareTo(b)));
         }
 
         /// <summary>
@@ -588,17 +573,11 @@ namespace Accord.Math
         public static void StableSort<T>(this T[] values, out int[] order)
             where T : IComparable<T>
         {
-            /* var keys = new KeyValuePair<int, T>[values.Length];
+            var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
 
-            Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b))); */
-
-            var keys =
-                values.Select((value, i) => new KeyValuePair<int, T>(i, value))
-                    .OrderBy(kv => kv, new StableComparer<T>((a, b) => a.CompareTo(b)))
-                    .ToArray();
-            Array.Copy(keys.Select(key => key.Value).ToArray(), values, values.Length);
+            Arrays.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
 
             order = new int[values.Length];
             for (int i = 0; i < keys.Length; i++)

@@ -113,10 +113,11 @@ namespace Accord.Statistics.Formats
         /// <param name="path">The complete file path to be read.</param>
         /// <param name="sampleSize">The size of the feature vectors stored in the file.</param>
         /// 
-        public SparseSampleReader(string path, int sampleSize)
+        public SparseSampleReader(string path, int sampleSize) 
+            : this(new FileStream(path, FileMode.Open), sampleSize)
         {
-            this.reader = new StreamReader(path);
-            this.sampleSize = sampleSize;
+            /* this.reader = new StreamReader(path);
+            this.sampleSize = sampleSize; */
         }
 
         /// <summary>
@@ -155,9 +156,10 @@ namespace Accord.Statistics.Formats
         /// <param name="sampleSize">The size of the feature vectors stored in the file.</param>
         /// 
         public SparseSampleReader(String path, Encoding encoding, int sampleSize)
+            : this(new FileStream(path, FileMode.Open), encoding, sampleSize)
         {
-            this.reader = new StreamReader(path, encoding);
-            this.sampleSize = sampleSize;
+            /* this.reader = new StreamReader(path, encoding);
+            this.sampleSize = sampleSize; */
         }
 
         /// <summary>

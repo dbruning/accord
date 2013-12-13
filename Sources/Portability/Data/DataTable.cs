@@ -19,6 +19,8 @@ namespace System.Data
 
         public CultureInfo Locale { get; set; }
 
+        public DataView DefaultView { get; private set; }
+
         #endregion
 
         #region METHODS
@@ -34,6 +36,11 @@ namespace System.Data
         }
 
         public void ImportRow(DataRow row)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataRow NewRow()
         {
             throw new NotImplementedException();
         }

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Arrays.cs" />
     <Compile Include="DataSetExtensions.cs" />
     <Compile Include="Exceptions\ConvergenceException.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.cs" />

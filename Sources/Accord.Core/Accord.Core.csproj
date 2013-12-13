@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arrays.cs" />
     <Compile Include="Compatibility\CancellationToken.cs" />
     <Compile Include="Compatibility\ConcurrentStack.cs" />
     <Compile Include="Compatibility\Lazy.cs" />

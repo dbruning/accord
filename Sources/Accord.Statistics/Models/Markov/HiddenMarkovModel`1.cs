@@ -24,6 +24,7 @@ namespace Accord.Statistics.Models.Markov
 {
     using System;
     using System.IO;
+    using System.Linq;
     using System.Runtime.Serialization.Formatters.Binary;
     using Accord.Math;
     using Accord.Statistics.Distributions;
@@ -842,7 +843,7 @@ namespace Accord.Statistics.Models.Markov
 
             // Create the mixture distribution defining the model likelihood in
             // assuming the next observation belongs will belong to each state.
-            TMultivariate[] b = Array.ConvertAll(B, x => (TMultivariate)x);
+            TMultivariate[] b = B.Cast<TMultivariate>().ToArray();
             probabilities = new MultivariateMixture<TMultivariate>(weights[1].Exp(), b);
 
             return prediction;
@@ -868,7 +869,7 @@ namespace Accord.Statistics.Models.Markov
 
             // Create the mixture distribution defining the model likelihood in
             // assuming the next observation belongs will belong to each state.
-            TUnivariate[] b = Array.ConvertAll(B, x => (TUnivariate)x);
+            TUnivariate[] b = B.Cast<TUnivariate>().ToArray();
             probabilities = new Mixture<TUnivariate>(weights[1].Exp(), b);
 
             return prediction[0];

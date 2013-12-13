@@ -33,6 +33,7 @@ using System.Threading.Tasks;
 [assembly: TypeForwardedTo(typeof(DataRow))]
 [assembly: TypeForwardedTo(typeof(DataRowCollection))]
 [assembly: TypeForwardedTo(typeof(DataTable))]
+[assembly: TypeForwardedTo(typeof(DataView))]
 
 // System.Diagnostics
 [assembly: TypeForwardedTo(typeof(Trace))]

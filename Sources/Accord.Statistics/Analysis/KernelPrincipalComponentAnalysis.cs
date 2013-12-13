@@ -523,7 +523,7 @@ namespace Accord.Statistics.Analysis
                 }
 
                 // 2.2 Order them
-                Array.Sort(d2, inx);
+                Arrays.Sort(d2, inx);
 
                 // 2.3 Select nn neighbors
                 inx = inx.Submatrix(nn);

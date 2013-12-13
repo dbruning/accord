@@ -18,5 +18,10 @@ namespace System.Diagnostics
         {
             Debug.WriteLine(message);
         }
+
+        public static void Assert(bool condition)
+        {
+            Debug.Assert(condition);
+        }
     }
 }
