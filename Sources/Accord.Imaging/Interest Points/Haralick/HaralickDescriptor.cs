@@ -962,31 +962,13 @@ namespace Accord.Imaging
     /// <seealso cref="HaralickDescriptor"/>
     /// 
     [Serializable]
-    public class HaralickDescriptorDictionary : Dictionary<CooccurrenceDegree, HaralickDescriptor>
+    public partial class HaralickDescriptorDictionary : Dictionary<CooccurrenceDegree, HaralickDescriptor>
     {
         /// <summary>
         ///   Initializes a new instance of the <see cref="HaralickDescriptorDictionary"/> class.
         /// </summary>
         /// 
         public HaralickDescriptorDictionary()
-        {
-        }
-
-        /// <summary>
-        ///    Initializes a new instance of the <see cref="HaralickDescriptorDictionary"/>
-        ///    class with serialized data.
-        /// </summary>
-        /// 
-        /// <param name="info">A <see cref="System.Runtime.Serialization.SerializationInfo"/>
-        ///   object containing the information required to serialize this 
-        ///   <see cref="HaralickDescriptorDictionary"/>.</param>
-        /// <param name="context">A <see cref="System.Runtime.Serialization.StreamingContext"/>
-        ///    structure containing the source and destination of the serialized stream
-        ///    associated with this <see cref="HaralickDescriptorDictionary"/>.</param>
-        /// 
-        protected HaralickDescriptorDictionary(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
         {
         }
 

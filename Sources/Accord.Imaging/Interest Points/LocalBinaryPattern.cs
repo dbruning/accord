@@ -26,7 +26,8 @@ namespace Accord.Imaging
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
-    using Accord.Math;
+	using System.Linq;
+	using Accord.Math;
     using AForge.Imaging;
     using AForge.Imaging.Filters;
 
@@ -378,17 +379,17 @@ namespace Accord.Imaging
 
         List<FeatureDescriptor> IFeatureDetector<FeatureDescriptor, double[]>.ProcessImage(Bitmap image)
         {
-            return ProcessImage(image).ConvertAll(p => new FeatureDescriptor(p));
+            return ProcessImage(image).Select(p => new FeatureDescriptor(p)).ToList();
         }
 
         List<FeatureDescriptor> IFeatureDetector<FeatureDescriptor, double[]>.ProcessImage(BitmapData imageData)
         {
-            return ProcessImage(imageData).ConvertAll(p => new FeatureDescriptor(p));
+            return ProcessImage(imageData).Select(p => new FeatureDescriptor(p)).ToList();
         }
 
         List<FeatureDescriptor> IFeatureDetector<FeatureDescriptor, double[]>.ProcessImage(UnmanagedImage image)
         {
-            return ProcessImage(image).ConvertAll(p => new FeatureDescriptor(p));
+            return ProcessImage(image).Select(p => new FeatureDescriptor(p)).ToList();
         }
     }
 }

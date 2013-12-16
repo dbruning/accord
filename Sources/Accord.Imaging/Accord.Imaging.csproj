@@ -104,6 +104,7 @@
     <Compile Include="Filters\Kuwahara.cs" />
     <Compile Include="Interest Points\Base\IFeatureDescriptor.cs" />
     <Compile Include="Interest Points\FeatureDescriptor.cs" />
+    <Compile Include="Interest Points\Haralick\HaralickDescriptor.NoPcl.cs" />
     <Compile Include="UnsafeTools.cs" />
     <Compile Include="Filters\CompassConvolution.cs" />
     <Compile Include="Filters\Exponential.cs" />

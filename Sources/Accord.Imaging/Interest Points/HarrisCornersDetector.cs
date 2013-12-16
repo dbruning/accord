@@ -26,7 +26,8 @@ namespace Accord.Imaging
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
-    using Accord.Math;
+	using System.Linq;
+	using Accord.Math;
     using AForge;
     using AForge.Imaging;
     using AForge.Imaging.Filters;
@@ -258,7 +259,7 @@ namespace Accord.Imaging
         private void createGaussian()
         {
             double[] aforgeKernel = new AForge.Math.Gaussian(sigma).Kernel(size);
-            this.kernel = Array.ConvertAll<double, float>(aforgeKernel, Convert.ToSingle);
+            this.kernel = aforgeKernel.Select(Convert.ToSingle).ToArray();
         }
         #endregion
 
