@@ -39,19 +39,17 @@
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\Portability\Portability.csproj">
-      <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
-      <Name>Portability</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Accord.snk" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.System.csproj">
+      <Project>{12643378-5d79-42f4-a5ee-d98672a074d3}</Project>
+      <Name>Portable.System</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays.cs" />
     <Compile Include="DataSetExtensions.cs" />

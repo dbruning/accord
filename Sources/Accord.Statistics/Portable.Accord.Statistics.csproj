@@ -392,6 +392,10 @@
       <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
       <Name>Portable.Math</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.System.csproj">
+      <Project>{12643378-5d79-42f4-a5ee-d98672a074d3}</Project>
+      <Name>Portable.System</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
@@ -399,10 +403,6 @@
     <ProjectReference Include="..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Portability\Portability.csproj">
-      <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
-      <Name>Portability</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

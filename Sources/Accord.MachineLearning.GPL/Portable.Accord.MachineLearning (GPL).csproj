@@ -50,6 +50,10 @@
     <Compile Include="SequentialMinimalOptimizationRegression.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.System.csproj">
+      <Project>{12643378-5d79-42f4-a5ee-d98672a074d3}</Project>
+      <Name>Portable.System</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
@@ -65,10 +69,6 @@
     <ProjectReference Include="..\Accord.Statistics\Portable.Accord.Statistics.csproj">
       <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
       <Name>Portable.Accord.Statistics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Portability\Portability.csproj">
-      <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
-      <Name>Portability</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
