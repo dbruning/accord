@@ -215,7 +215,7 @@ namespace Accord.Vision.Detection
         /// 
         public static HaarCascade FromXml(string path)
         {
-            return FromXml(new StreamReader(path));
+            return FromXml(new StreamReader(File.OpenRead(path)));
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Accord.Vision.Detection
         /// 
         public static HaarCascade FromXml(TextReader stringReader)
         {
-            XmlTextReader xmlReader = new XmlTextReader(stringReader);
+            XmlReader xmlReader = XmlReader.Create(stringReader);
 
             // Gathers the base window size
             xmlReader.ReadToFollowing("size");
@@ -256,7 +256,7 @@ namespace Accord.Vision.Detection
         /// 
         public void ToCode(string path, string className)
         {
-            ToCode(new StreamWriter(path), className);
+            ToCode(new StreamWriter(File.OpenWrite(path)), className);
         }
 
         /// <summary>
