@@ -507,7 +507,7 @@ namespace Accord.Audio
                     {
                         if (stopEvents[i] != null)
                         {
-                            stopEvents[i].Close();
+                            stopEvents[i].Dispose();
                             stopEvents[i] = null;
                         }
                     }
