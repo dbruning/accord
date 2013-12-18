@@ -22,7 +22,10 @@
 
 namespace Accord
 {
+
+    using System;
     using System.Data;
+    using System.Linq;
 
     /// <summary>
     ///   Static class for DataSet-related extension methods.
@@ -50,11 +53,46 @@ namespace Accord
         ///   </code>
         /// </example>
         /// 
+        [CLSCompliant(false)]
         public static void Add(this DataColumnCollection collection, params string[] columnNames)
         {
             for (int i = 0; i < columnNames.Length; i++)
                 collection.Add(columnNames[i]);
         }
 
+        [CLSCompliant(false)]
+        public static DataRow[] GetRows(this DataTable table, string columnName, object columnValue)
+        {
+            return table.Rows.Where(row => row[columnName].Equals(columnValue)).ToArray();
+        }
+
+        [CLSCompliant(false)]
+        public static object GetMin(this DataTable table, string columnName)
+        {
+            return table.Rows.Select(row => row[columnName]).Min();
+        }
+
+        [CLSCompliant(false)]
+        public static object GetMax(this DataTable table, string columnName)
+        {
+            return table.Rows.Select(row => row[columnName]).Max();
+        }
+
+        [CLSCompliant(false)]
+        public static double GetAverage(this DataTable table, string columnName)
+        {
+            return table.Rows.Select(row => Convert.ToDouble(row[columnName])).Average();
+        }
+
+        [CLSCompliant(false)]
+        public static double GetStdev(this DataTable table, string columnName)
+        {
+            var n = table.Rows.Count;
+            if (n <= 1) return 0.0;
+
+            var k = table.Rows.Select(row => Math.Pow(Convert.ToDouble(row[columnName]), 2.0)).Sum();
+            var s = table.Rows.Select(row => Convert.ToDouble(row[columnName])).Sum();
+            return Math.Sqrt((k - s * s / n) / (n - 1.0));
+        }
     }
 }

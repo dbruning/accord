@@ -99,7 +99,7 @@ namespace Accord.Statistics.Filters
             List<DataRow>[] subsets = new List<DataRow>[classes.Length];
 
             for (int i = 0; i < subsets.Length; i++)
-                subsets[i] = new List<DataRow>(data.Select("[" + column + "] = " + classes[i]));
+                subsets[i] = new List<DataRow>(data.GetRows(column, classes[i]));
 
 
             if (subsets[0].Count > subsets[1].Count)

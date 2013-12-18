@@ -141,7 +141,7 @@ namespace Accord.Statistics.Filters
             // Get subsets with 0 and 1
             List<DataRow>[] subsets = new List<DataRow>[classes.Length];
             for (int i = 0; i < subsets.Length; i++)
-                subsets[i] = new List<DataRow>(data.Select("[" + column + "] = " + classes[i]));
+                subsets[i] = new List<DataRow>(data.GetRows(column, classes[i]));
 
             List<DataRow>[] groups = new List<DataRow>[groupCount];
             for (int i = 0; i < groups.Length; i++)

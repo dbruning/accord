@@ -166,8 +166,8 @@ namespace Accord.Statistics.Filters
                     string safeName = name
                         .Replace("]", @"\]");
 
-                    double sdev = (double)data.Compute("STDEV([" + safeName + "])", String.Empty);
-                    double mean = (double)data.Compute("AVG([" + safeName + "])", String.Empty);
+                    double sdev = data.GetStdev(safeName);
+                    double mean = data.GetAverage(safeName);
 
                     if (!Columns.Contains(name))
                         Columns.Add(new Options(name));

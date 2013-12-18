@@ -144,8 +144,8 @@ namespace Accord.Statistics.Filters
             if (column.DataType == typeof(Double) ||
                 column.DataType == typeof(Decimal))
             {
-                object objMax = data.Compute("MAX([" + name + "])", String.Empty);
-                object objMin = data.Compute("MIN([" + name + "])", String.Empty);
+                object objMax = data.GetMax(name);
+                object objMin = data.GetMin(name);
 
                 if (objMax != DBNull.Value)
                     max = (double)objMax;

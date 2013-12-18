@@ -71,7 +71,7 @@ namespace Accord.Statistics.Filters
                     FiltersSequence filters = option.Filters[label];
 
                     // Get data subset
-                    DataRow[] rows = data.Select("[" + option.ColumnName + "] = " + label);
+                    DataRow[] rows = data.GetRows(option.ColumnName, label);
 
                     DataTable branch = data.Clone();
                     foreach (DataRow row in rows)
