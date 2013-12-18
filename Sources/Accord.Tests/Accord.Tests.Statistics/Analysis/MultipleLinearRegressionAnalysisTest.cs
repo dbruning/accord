@@ -29,7 +29,6 @@ namespace Accord.Tests.Statistics
     using AForge;
     using Accord.Statistics.Models.Regression.Linear;
     using Accord.Math;
-    using Accord.Controls;
     using Accord.Statistics.Testing;
 
     [TestClass()]

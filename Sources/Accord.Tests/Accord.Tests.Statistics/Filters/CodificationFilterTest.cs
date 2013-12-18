@@ -22,14 +22,12 @@
 
 namespace Accord.Tests.Statistics
 {
-    using Accord.MachineLearning.Bayes;
     using Accord.MachineLearning.VectorMachines;
     using Accord.MachineLearning.VectorMachines.Learning;
     using Accord.Math;
     using Accord.Statistics.Filters;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Data;
-    using Accord.Controls;
 
     [TestClass()]
     public class CodificationFilterTest

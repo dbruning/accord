@@ -27,7 +27,6 @@ namespace Accord.Tests.Statistics
     using Accord.Math;
     using Accord;
     using System.Data;
-    using Accord.Controls;
 
     [TestClass()]
     public class CircularTest

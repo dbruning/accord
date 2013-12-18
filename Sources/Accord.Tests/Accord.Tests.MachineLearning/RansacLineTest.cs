@@ -24,18 +24,8 @@ namespace Accord.Tests.MachineLearning
 {
     using Accord.MachineLearning.Geometry;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
     using AForge.Math.Geometry;
-    using AForge;
-    using System.Drawing;
-    using Accord.Math;
-    using Accord.Imaging;
     using Point = AForge.Point;
-    using System.Collections.Generic;
-    using AForge.Imaging;
-    using Accord.Imaging.Filters;
-    using Accord.Controls.Imaging;
-    using Accord.Controls;
 
     [TestClass()]
     public class RansacLineTest
@@ -112,7 +102,7 @@ namespace Accord.Tests.MachineLearning
                 Assert.AreEqual(0.0, actual.Intercept, 1e-2);
             }
         }
-
+#if NET4
         [Ignore]
         [TestMethod]
         public void RansacLineConstructorTest2()
@@ -136,6 +126,6 @@ namespace Accord.Tests.MachineLearning
 
             Assert.Fail();
         }
-
+#endif
     }
 }

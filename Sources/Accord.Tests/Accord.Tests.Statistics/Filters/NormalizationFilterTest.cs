@@ -22,8 +22,6 @@
 
 namespace Accord.Tests.Statistics
 {
-    using Accord.Controls;
-    using Accord.Math;
     using Accord.Statistics.Filters;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Data;

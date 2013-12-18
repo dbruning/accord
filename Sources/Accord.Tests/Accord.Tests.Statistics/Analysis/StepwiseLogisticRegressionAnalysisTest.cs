@@ -26,8 +26,6 @@ namespace Accord.Tests.Statistics
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Accord.Math;
     using Accord.Statistics.Testing;
-    using System;
-    using Accord.Controls;
 
     [TestClass()]
     public class StepwiseLogisticRegressionAnalysisTest

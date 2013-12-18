@@ -33,7 +33,14 @@ namespace Accord
         public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, int index, int length,
             IComparer<TKey> comparer)
         {
-            throw new NotImplementedException();
+            var ordered =
+                keys.Take(index + length)
+                    .Skip(index)
+                    .Zip(items.Take(index + length).Skip(index), (k, v) => new KeyValuePair<TKey, TValue>(k, v))
+                    .OrderBy(kv => kv.Key, comparer)
+                    .ToList();
+            Array.Copy(ordered.Select(kv => kv.Key).ToArray(), 0, keys, index, length);
+            Array.Copy(ordered.Select(kv => kv.Value).ToArray(), 0, items, index, length);
         }
 
         #endregion

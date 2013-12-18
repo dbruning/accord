@@ -20,10 +20,8 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-using Accord.Controls;
 using Accord.Statistics.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Accord.Math;
 using Accord.Statistics;
 
 namespace Accord.Tests.Statistics

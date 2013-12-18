@@ -50,7 +50,7 @@ namespace Accord.Tests.MachineLearning
         }
 
 
-
+#if NET4
         [TestMethod()]
         public void KModesConstructorTest()
         {
@@ -106,7 +106,7 @@ namespace Accord.Tests.MachineLearning
             // the data must not have changed!
             Assert.IsTrue(orig.IsEqual(observations));
         }
-
+#endif
         
        
     }

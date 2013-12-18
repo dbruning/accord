@@ -26,8 +26,6 @@ namespace Accord.Tests.Statistics
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Data;
     using Accord;
-    using Accord.Math;
-    using Accord.Controls;
 
     [TestClass()]
     public class ProjectionFilterTest
