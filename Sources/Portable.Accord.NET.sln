@@ -39,6 +39,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Vision", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Audio", "Accord.Audio\Portable.Accord.Audio.csproj", "{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{B5B7BB6A-0E47-4476-AA2A-6EE370133211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Math", "Accord.Tests\Accord.Tests.Math\Accord.Tests.Math.csproj", "{F454DBD6-2AB9-461D-9624-2249B921B6E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.System", "..\..\aforge\Sources\System\_Net\Net.System.csproj", "{816E086D-DA84-4997-8BD9-448C92A1514F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +119,14 @@ Global
 		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F454DBD6-2AB9-461D-9624-2249B921B6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F454DBD6-2AB9-461D-9624-2249B921B6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F454DBD6-2AB9-461D-9624-2249B921B6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F454DBD6-2AB9-461D-9624-2249B921B6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816E086D-DA84-4997-8BD9-448C92A1514F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816E086D-DA84-4997-8BD9-448C92A1514F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816E086D-DA84-4997-8BD9-448C92A1514F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816E086D-DA84-4997-8BD9-448C92A1514F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +140,8 @@ Global
 		{995CFA14-7F81-457D-BEB4-52FB5712A3BB} = {1BB56547-C5CE-4CB3-B5A9-F73A0489DED3}
 		{0A22690C-9553-4B11-9835-8C0F0E2D44F1} = {1BB56547-C5CE-4CB3-B5A9-F73A0489DED3}
 		{830A6007-4064-4B66-BD7E-CEA1EE0F7C35} = {1BB56547-C5CE-4CB3-B5A9-F73A0489DED3}
+		{816E086D-DA84-4997-8BD9-448C92A1514F} = {1BB56547-C5CE-4CB3-B5A9-F73A0489DED3}
+		{F454DBD6-2AB9-461D-9624-2249B921B6E6} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Accord.NET.vsmdi
