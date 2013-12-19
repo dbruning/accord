@@ -4,16 +4,16 @@ Portable Accord.NET Framework
 =============================
 
 Copyright (c) 2009-2013 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013 Anders Gustafsson, Cureos AB. 
-Distributed under Lesser GNU Public License, LGPL, version 2.1.
+Distributed under the Lesser GNU Public License, LGPL, version 2.1.
 
 This project is a fork of César Souzas's original [Accord.NET Framework](https://github.com/accord-net/framework) project. 
 For general information and tutorials, see [here](http://accord-net.github.io).
 
 The repository currently provides:
 
-* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Statistics, MachineLearning, Neuro, Imaging, Vision), 
+* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Statistics, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision) 
 
-To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework]() must be readily available.
+To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
 *Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable
 Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in Windows Store, Windows Phone 8 or WPF applications.
 
