@@ -36,3 +36,20 @@ Building the libraries
 As a prerequisite, download the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) to a folder named *aforge*, which should be located alongside the *accord* main folder.
 
 Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder and build the entire solution or selected projects. Visual Studio 2012 Professional or higher is required.
+
+
+Ported Status
+-------------
+
+The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
+of the non-imaging assemblies.
+
+Results, December 20, 2013:
+
+* Accord.Test.Math, 350 unit tests, 5 failed
+* Accord.Test.Statistics, 858 tests, 13 failed
+* Accord.Test.MachineLearning, 120 tests, 25 failed
+* Accord.Test.MachineLearning.GPL, 1 test, 0 failed
+* Accord.Test.Neuro, 17 tests, 0 failed
+
+Apart from these apparent deficiencies, ellipse and line drawing for the Imaging assembly is also not yet implemented.
