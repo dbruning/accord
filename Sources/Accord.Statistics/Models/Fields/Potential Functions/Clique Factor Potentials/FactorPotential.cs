@@ -24,7 +24,6 @@ namespace Accord.Statistics.Models.Fields.Functions
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
     using Accord.Statistics.Models.Fields.Features;
 
     /// <summary>
@@ -34,7 +33,7 @@ namespace Accord.Statistics.Models.Fields.Functions
     /// <typeparam name="T">The type of the observations being modeled.</typeparam>
     /// 
     [Serializable]
-    public class FactorPotential<T> : IEnumerable<IFeature<T>>
+    public partial class FactorPotential<T> : IEnumerable<IFeature<T>>
     {
 
         /// <summary>
@@ -258,16 +257,6 @@ namespace Accord.Statistics.Models.Fields.Functions
 
 
         #region Backward compatibility
-
-        [OnDeserialized]
-        private void OnDeserializedMethod(StreamingContext context)
-        {
-#pragma warning disable 618,612
-            EdgeParameters = new ArraySegment<double>(Owner.Weights, EdgeParameterIndex, EdgeParameterCount);
-            StateParameters = new ArraySegment<double>(Owner.Weights, StateParameterIndex, StateParameterCount);
-            FactorParameters = new ArraySegment<double>(Owner.Weights, ParameterIndex, ParameterCount);
-#pragma warning restore 618,612
-        }
 
         [Obsolete]
         private int EdgeParameterIndex { get; set; }

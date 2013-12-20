@@ -89,6 +89,7 @@
     <Compile Include="Analysis\Base\IMultivariateRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IDiscriminantAnalysis.cs" />
+    <Compile Include="Analysis\Performance\ReceiverOperatingCharacteristic.NoPcl.cs" />
     <Compile Include="Analysis\Performance\WeightedConfusionMatrix.cs" />
     <Compile Include="Analysis\ProportionalHazardsAnalysis.cs" />
     <Compile Include="Analysis\MultipleLinearRegressionAnalysis.cs" />
@@ -252,6 +253,8 @@
     <Compile Include="Links\InverseSquaredLinkFunction.cs" />
     <Compile Include="Links\ProbitLinkFunction.cs" />
     <Compile Include="Models\Accord.Statistics.Models.cs" />
+    <Compile Include="Models\Fields\Potential Functions\Clique Factor Potentials\FactorPotential.NoPcl.cs" />
+    <Compile Include="Models\Markov\Base\BaseHiddenMarkovClassifier.NoPcl.cs" />
     <Compile Include="Models\Markov\Hybrid\IHybridMarkovModel.cs" />
     <Compile Include="Models\Markov\Hybrid\HybridMarkovClassifier.cs" />
     <Compile Include="Models\Markov\Hybrid\HybridMarkovModel.cs" />

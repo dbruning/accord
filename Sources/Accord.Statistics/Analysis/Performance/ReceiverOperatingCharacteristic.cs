@@ -26,7 +26,6 @@ namespace Accord.Statistics.Analysis
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.IO;
-    using System.Runtime.Serialization;
     using System.Runtime.Serialization.Formatters.Binary;
     using Accord.Math;
     using Accord.Statistics.Visualizations;
@@ -163,7 +162,7 @@ namespace Accord.Statistics.Analysis
     /// </example>
     /// 
     [Serializable]
-    public class ReceiverOperatingCharacteristic
+    public partial class ReceiverOperatingCharacteristic
     {
 
         private double area;     // the exact area computed using the trapezoidal rule
@@ -685,24 +684,6 @@ namespace Accord.Statistics.Analysis
         }
 
         #endregion
-
-
-
-
-        [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
-        {
-            min = dfalse;
-            max = dtrue;
-
-            calculatePlacements();
-        }
-
-        [OnDeserializing]
-        private void onDeserializing(StreamingContext context)
-        {
-            min = max = 0;
-        }
 
 
         /// <summary>

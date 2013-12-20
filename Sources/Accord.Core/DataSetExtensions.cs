@@ -57,7 +57,7 @@ namespace Accord
         public static void Add(this DataColumnCollection collection, params string[] columnNames)
         {
             for (int i = 0; i < columnNames.Length; i++)
-                collection.Add(columnNames[i]);
+                collection.Add(columnNames[i], typeof(object));
         }
 
         [CLSCompliant(false)]

@@ -24,7 +24,6 @@ namespace Accord.Statistics.Models.Markov
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
     using System.Threading.Tasks;
     using Accord.Math;
 
@@ -34,7 +33,7 @@ namespace Accord.Statistics.Models.Markov
     /// </summary>
     /// 
     [Serializable]
-    public abstract class BaseHiddenMarkovClassifier<TModel> : IEnumerable<TModel>
+    public abstract partial class BaseHiddenMarkovClassifier<TModel> : IEnumerable<TModel>
         where TModel : IHiddenMarkovModel
     {
 
@@ -342,15 +341,6 @@ namespace Accord.Statistics.Models.Markov
             return logLikelihood;
         }
 
-
-        [OnDeserializing]
-        private void setSerializationDefaults(StreamingContext sc)
-        {
-            // In case this was an older model which didn't include a
-            // configurable rejection threshold, initialize it with 1.
-
-            this.weight = 1;
-        }
 
         /// <summary>
         ///   Returns an enumerator that iterates through the models in the classifier.
