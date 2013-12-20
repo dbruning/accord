@@ -24,8 +24,6 @@ namespace Accord.MachineLearning.DecisionTrees
 {
     using Accord.Statistics.Filters;
     using System;
-    using System.Runtime.Serialization;
-    using System.Collections.Generic;
 
     /// <summary>
     ///   Decision Tree (DT) Node.
@@ -43,7 +41,7 @@ namespace Accord.MachineLearning.DecisionTrees
     /// <seealso cref="DecisionTree"/>
     /// 
     [Serializable]
-    public class DecisionNode
+    public partial class DecisionNode
     {
 
         [NonSerialized]
@@ -228,22 +226,5 @@ namespace Accord.MachineLearning.DecisionTrees
             return String.Format("{0} {1} {2}", name, op, value);
         }
 
-
-
-
-
-        [OnDeserialized]
-        private void OnDeserialized(StreamingContext context)
-        {
-            if (Branches != null)
-            {
-                Branches.Owner = this;
-
-                foreach (DecisionNode node in Branches)
-                {
-                    node.Parent = this;
-                }
-            }
-        }
     }
 }

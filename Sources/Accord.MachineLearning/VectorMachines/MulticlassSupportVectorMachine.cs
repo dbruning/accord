@@ -25,7 +25,6 @@ namespace Accord.MachineLearning.VectorMachines
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
     using System.Runtime.Serialization.Formatters.Binary;
     using System.Threading;
     using System.Threading.Tasks;
@@ -123,7 +122,7 @@ namespace Accord.MachineLearning.VectorMachines
     /// <seealso cref="Learning.MulticlassSupportVectorLearning"/>
     ///
     [Serializable]
-    public class MulticlassSupportVectorMachine : ISupportVectorMachine,
+    public partial class MulticlassSupportVectorMachine : ISupportVectorMachine,
         IEnumerable<KeyValuePair<Tuple<int, int>, KernelSupportVectorMachine>>, IDisposable
     {
 
@@ -1040,11 +1039,6 @@ namespace Accord.MachineLearning.VectorMachines
             }
         }
 
-        [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
-        {
-            initialize();
-        }
         #endregion
 
         #region IEnumerable members

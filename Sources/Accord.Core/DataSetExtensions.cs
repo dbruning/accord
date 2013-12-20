@@ -63,25 +63,25 @@ namespace Accord
         [CLSCompliant(false)]
         public static DataRow[] GetRows(this DataTable table, string columnName, object columnValue)
         {
-            return table.Rows.Where(row => row[columnName].Equals(columnValue)).ToArray();
+            return table.Rows.Cast<DataRow>().Where(row => row[columnName].Equals(columnValue)).ToArray();
         }
 
         [CLSCompliant(false)]
         public static object GetMin(this DataTable table, string columnName)
         {
-            return table.Rows.Select(row => row[columnName]).Min();
+            return table.Rows.Cast<DataRow>().Select(row => row[columnName]).Min();
         }
 
         [CLSCompliant(false)]
         public static object GetMax(this DataTable table, string columnName)
         {
-            return table.Rows.Select(row => row[columnName]).Max();
+            return table.Rows.Cast<DataRow>().Select(row => row[columnName]).Max();
         }
 
         [CLSCompliant(false)]
         public static double GetAverage(this DataTable table, string columnName)
         {
-            return table.Rows.Select(row => Convert.ToDouble(row[columnName])).Average();
+            return table.Rows.Cast<DataRow>().Select(row => Convert.ToDouble(row[columnName])).Average();
         }
 
         [CLSCompliant(false)]
@@ -90,8 +90,8 @@ namespace Accord
             var n = table.Rows.Count;
             if (n <= 1) return 0.0;
 
-            var k = table.Rows.Select(row => Math.Pow(Convert.ToDouble(row[columnName]), 2.0)).Sum();
-            var s = table.Rows.Select(row => Convert.ToDouble(row[columnName])).Sum();
+            var k = table.Rows.Cast<DataRow>().Select(row => Math.Pow(Convert.ToDouble(row[columnName]), 2.0)).Sum();
+            var s = table.Rows.Cast<DataRow>().Select(row => Convert.ToDouble(row[columnName])).Sum();
             return Math.Sqrt((k - s * s / n) / (n - 1.0));
         }
     }

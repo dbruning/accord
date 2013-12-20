@@ -25,9 +25,21 @@ namespace Accord.MachineLearning.DecisionTrees
     using System;
     using System.Reflection;
     using System.Reflection.Emit;
+    using System.Runtime.Serialization;
 
     public partial class DecisionTree
     {
+
+
+        [OnDeserialized]
+        private void OnDeserialized(StreamingContext context)
+        {
+            foreach (DecisionNode node in this)
+            {
+                node.Owner = this;
+            }
+        }
+
 #if !NET35
 
         /// <summary>

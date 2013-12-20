@@ -1,4 +1,4 @@
-﻿// Accord Statistics Library
+﻿// Accord Machine Learning Library
 // The Accord.NET Framework
 // http://accord-framework.net
 //
@@ -20,26 +20,23 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-namespace Accord.Statistics.Models.Fields.Functions
+namespace Accord.MachineLearning.VectorMachines
 {
-    using System;
     using System.Runtime.Serialization;
 
-    public partial class FactorPotential<T>
+
+    public partial class MultilabelSupportVectorMachine
     {
 
-        #region Backward compatibility
+        #region Loading & Saving
 
         [OnDeserialized]
-        private void OnDeserializedMethod(StreamingContext context)
+        private void onDeserialized(StreamingContext context)
         {
-#pragma warning disable 618,612
-            EdgeParameters = new ArraySegment<double>(Owner.Weights, EdgeParameterIndex, EdgeParameterCount);
-            StateParameters = new ArraySegment<double>(Owner.Weights, StateParameterIndex, StateParameterCount);
-            FactorParameters = new ArraySegment<double>(Owner.Weights, ParameterIndex, ParameterCount);
-#pragma warning restore 618,612
+            initialize();
         }
 
         #endregion
+
     }
 }

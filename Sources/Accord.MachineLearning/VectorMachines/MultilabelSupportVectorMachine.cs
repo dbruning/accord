@@ -30,7 +30,6 @@ namespace Accord.MachineLearning.VectorMachines
     using Accord.Statistics.Kernels;
     using System.Collections.Generic;
     using System.Threading;
-    using System.Runtime.Serialization;
 
 
     /// <summary>
@@ -111,7 +110,7 @@ namespace Accord.MachineLearning.VectorMachines
     /// <seealso cref="Learning.MultilabelSupportVectorLearning"/>
     ///
     [Serializable]
-    public class MultilabelSupportVectorMachine : ISupportVectorMachine,
+    public partial class MultilabelSupportVectorMachine : ISupportVectorMachine,
         IEnumerable<KernelSupportVectorMachine>, IDisposable
     {
 
@@ -496,11 +495,6 @@ namespace Accord.MachineLearning.VectorMachines
             return Load(new FileStream(path, FileMode.Open));
         }
 
-        [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
-        {
-            initialize();
-        }
         #endregion
 
         #region ISupportVectorMachine Members

@@ -99,6 +99,7 @@
     <Compile Include="Clustering\KModesCluster.cs" />
     <Compile Include="Clustering\MeanShift.cs" />
     <Compile Include="DecisionTrees\ComparisonKind.cs" />
+    <Compile Include="DecisionTrees\DecisionNode.NoPcl.cs" />
     <Compile Include="DecisionTrees\DecisionBranchNodeCollection.cs" />
     <Compile Include="DecisionTrees\DecisionTree.NoPcl.cs" />
     <Compile Include="DecisionTrees\Rules\Antecedent.cs" />
@@ -153,6 +154,8 @@
     <Compile Include="Structures\KDTreeNode.cs" />
     <Compile Include="Structures\KDTreeNodeCollection.cs" />
     <Compile Include="DecisionTrees\DecisionTreeTraversal.cs" />
+    <Compile Include="VectorMachines\MultilabelSupportVectorMachine.NoPcl.cs" />
+    <Compile Include="VectorMachines\MulticlassSupportVectorMachine.NoPcl.cs" />
     <Compile Include="VectorMachines\Learning\LeastSquaresLearning.cs" />
     <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\SupportVectorLearningHelper.cs" />

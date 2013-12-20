@@ -26,9 +26,6 @@ namespace Accord.MachineLearning.DecisionTrees
     using System.Collections.Generic;
     using System.IO;
     using System.Linq.Expressions;
-    using System.Reflection;
-    using System.Reflection.Emit;
-    using System.Runtime.Serialization;
     using System.Runtime.Serialization.Formatters.Binary;
 
     /// <summary>
@@ -194,17 +191,6 @@ namespace Accord.MachineLearning.DecisionTrees
             // Normal execution should not reach here.
             throw new InvalidOperationException("The tree is degenerated. This is often a sign that "
                 + "the tree is expecting discrete inputs, but it was given only real values.");
-        }
-
-
-
-        [OnDeserialized]
-        private void OnDeserialized(StreamingContext context)
-        {
-            foreach (DecisionNode node in this)
-            {
-                node.Owner = this;
-            }
         }
 
 
