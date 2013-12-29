@@ -52,6 +52,6 @@ Results, December 29, 2013:
 * Accord.Test.MachineLearning.GPL, 1 test, 0 failed
 * Accord.Test.Neuro, 17 tests, 0 failed
 
-2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and it is assumed that the failures are due to missing *OnDeserialized* methods in the tested classes.
+2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and it is assumed that these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library.
 
 Apart from the above unit test failures, ellipse and line drawing for the Imaging assembly is also not yet implemented.
