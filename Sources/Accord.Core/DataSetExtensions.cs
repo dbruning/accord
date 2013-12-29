@@ -60,13 +60,16 @@ namespace Accord
                 collection.Add(columnNames[i], typeof(string));
         }
 
-        [CLSCompliant(false)]
-        public static DataRow[] GetRows(this DataTable table, string columnName, object columnValue)
-        {
-            return table.Rows.Cast<DataRow>().Where(row => row[columnName].Equals(columnValue)).ToArray();
-        }
+	    [CLSCompliant(false)]
+	    public static DataRow[] GetRows<T>(this DataTable table, string columnName, T columnValue)
+	    {
+		    return
+			    table.Rows.Cast<DataRow>()
+				    .Where(row => columnValue.Equals(Convert.ChangeType(row[columnName], typeof (T))))
+				    .ToArray();
+	    }
 
-        [CLSCompliant(false)]
+	    [CLSCompliant(false)]
         public static object GetMin(this DataTable table, string columnName)
         {
             return table.Rows.Cast<DataRow>().Select(row => row[columnName]).Min();

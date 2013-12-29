@@ -47,9 +47,11 @@ of the non-imaging assemblies.
 Results, December 29, 2013:
 
 * Accord.Test.Math, 350 unit tests, 0 failed
-* Accord.Test.Statistics, 858 tests, 2 failed
-* Accord.Test.MachineLearning, 120 tests, 7 failed
+* Accord.Test.Statistics, 858 tests, 0 failed
+* Accord.Test.MachineLearning, 120 tests, 5 failed
 * Accord.Test.MachineLearning.GPL, 1 test, 0 failed
 * Accord.Test.Neuro, 17 tests, 0 failed
 
-Apart from these apparent deficiencies, ellipse and line drawing for the Imaging assembly is also not yet implemented.
+2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and it is assumed that the failures are due to missing *OnDeserialized* methods in the tested classes.
+
+Apart from the above unit test failures, ellipse and line drawing for the Imaging assembly is also not yet implemented.
