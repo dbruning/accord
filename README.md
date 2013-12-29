@@ -46,9 +46,9 @@ of the non-imaging assemblies.
 
 Results, December 29, 2013:
 
-* Accord.Test.Math, 350 unit tests, 1 failed
-* Accord.Test.Statistics, 858 tests, 3 failed
-* Accord.Test.MachineLearning, 120 tests, 9 failed
+* Accord.Test.Math, 350 unit tests, 0 failed
+* Accord.Test.Statistics, 858 tests, 2 failed
+* Accord.Test.MachineLearning, 120 tests, 7 failed
 * Accord.Test.MachineLearning.GPL, 1 test, 0 failed
 * Accord.Test.Neuro, 17 tests, 0 failed
 
