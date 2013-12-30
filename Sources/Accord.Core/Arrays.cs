@@ -34,9 +34,9 @@ namespace Accord
             IComparer<TKey> comparer)
         {
             var ordered =
-                keys.Take(index + length)
-                    .Skip(index)
-                    .Zip(items.Take(index + length).Skip(index), (k, v) => new KeyValuePair<TKey, TValue>(k, v))
+                keys.Skip(index)
+                    .Take(length)
+                    .Zip(items.Skip(index).Take(length), (k, v) => new KeyValuePair<TKey, TValue>(k, v))
                     .OrderBy(kv => kv.Key, comparer)
                     .ToList();
             Array.Copy(ordered.Select(kv => kv.Key).ToArray(), 0, keys, index, length);
