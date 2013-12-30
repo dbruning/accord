@@ -54,5 +54,3 @@ Results, December 30, 2013:
 
 2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and it is assumed that these failures are due to missing *OnDeserialized* methods in 
 the tested classes of the PCL *MachineLearning* library.
-
-Apart from the above unit test failures, ellipse and line drawing for the Imaging assembly is also not yet implemented.
