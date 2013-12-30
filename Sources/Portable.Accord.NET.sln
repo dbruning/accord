@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AForge.NET", "AForge.NET", "{1BB56547-C5CE-4CB3-B5A9-F73A0489DED3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Core", "..\..\aforge\Sources\Core\Portable.Core.csproj", "{D4354D92-07CF-4F27-BD68-69347CF5AA3F}"
@@ -52,9 +54,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.MachineLearning.GPL", "Accord.Tests\Accord.Tests.MachineLearning.GPL\Accord.Tests.MachineLearning.GPL.csproj", "{357A4733-F671-439C-9D40-85E3D6C6B23A}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Accord.NET.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -172,5 +171,8 @@ Global
 		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{357A4733-F671-439C-9D40-85E3D6C6B23A} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Accord.NET.vsmdi
 	EndGlobalSection
 EndGlobal

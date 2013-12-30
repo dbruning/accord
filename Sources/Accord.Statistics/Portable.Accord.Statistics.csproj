@@ -66,6 +66,10 @@
     <Compile Include="Analysis\Base\IMultivariateRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IProjectionAnalysis.cs" />
     <Compile Include="Analysis\Base\IRegressionAnalysis.cs" />
+    <Compile Include="Analysis\Contrast Functions\Exponential.cs" />
+    <Compile Include="Analysis\Contrast Functions\IContrastFunction.cs" />
+    <Compile Include="Analysis\Contrast Functions\Kurtosis.cs" />
+    <Compile Include="Analysis\Contrast Functions\Logcosh.cs" />
     <Compile Include="Analysis\DescriptiveAnalysis.cs" />
     <Compile Include="Analysis\IndependentComponentAnalysis.cs" />
     <Compile Include="Analysis\KernelDiscriminantAnalysis.cs" />
