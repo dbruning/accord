@@ -100,6 +100,7 @@
     <Compile Include="Distributions\Fitting\HiddenMarkovOptions.cs" />
     <Compile Include="Distributions\Fitting\HypergeometricOptions.cs" />
     <Compile Include="Distributions\Fitting\IndependentOptions.cs" />
+    <Compile Include="Distributions\Fitting\LogExpectationMaximization.cs" />
     <Compile Include="Distributions\Fitting\MixtureOptions.cs" />
     <Compile Include="Distributions\Fitting\MultivariateEmpiricalOptions.cs" />
     <Compile Include="Distributions\Fitting\NormalOptions.cs" />
