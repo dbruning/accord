@@ -45,9 +45,6 @@
     <None Include="Accord.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accord.Vision.cs" />
-    <Compile Include="Detection\Haar Cascade\Default\FaceHaarCascade.cs" />
-    <Compile Include="Detection\Haar Cascade\Default\NoseHaarCascade.cs" />
     <Compile Include="Detection\Haar Cascade\HaarCascade.cs" />
     <Compile Include="Detection\Haar Cascade\HaarCascadeStage.cs" />
     <Compile Include="Detection\Haar Cascade\HaarCascadeWriter.cs" />

@@ -39,7 +39,6 @@ namespace Accord.Vision.Detection
     using System.IO;
     using System.Xml;
     using System.Xml.Serialization;
-    using Accord.Vision.Detection.Cascades;
 
     /// <summary>
     ///   Cascade of Haar-like features' weak classification stages.
