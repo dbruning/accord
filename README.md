@@ -3,7 +3,7 @@
 Portable Accord.NET Framework
 =============================
 
-Copyright (c) 2009-2013 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013 Anders Gustafsson, Cureos AB. 
+Copyright (c) 2009-2014 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013-2104 Anders Gustafsson, Cureos AB. 
 Distributed under the Lesser GNU Public License, LGPL, version 2.1.
 
 This project is a fork of César Souzas's original [Accord.NET Framework](https://github.com/accord-net/framework) project. 
@@ -44,10 +44,10 @@ Ported Status
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
 of the non-imaging assemblies.
 
-Results, January 1, 2014:
+Results, January 12, 2014:
 
-* Accord.Test.Math, 361 unit tests, 0 failed
-* Accord.Test.Statistics, 861 tests, 0 failed
+* Accord.Test.Math, 365 unit tests, 0 failed
+* Accord.Test.Statistics, 866 tests, 0 failed
 * Accord.Test.MachineLearning, 120 tests, 4 failed
 * Accord.Test.MachineLearning.GPL, 1 test, 0 failed
 * Accord.Test.Neuro, 17 tests, 0 failed
@@ -56,4 +56,4 @@ Results, January 1, 2014:
 the tested classes of the PCL *MachineLearning* library.
 The other 2 failed tests are due to insufficient unit test formulations, see [Issue Report 84](https://code.google.com/p/accord/issues/detail?id=84).
 
-Thus, the Portable Accord class libraries are now working completely as expected.
+Thus, the Portable Accord class libraries now seem to be working completely as expected.
