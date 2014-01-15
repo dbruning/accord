@@ -86,7 +86,6 @@
     </Compile>
     <Compile Include="SignalTest.cs" />
     <Compile Include="ToolsTest.cs" />
-    <Compile Include="WaveFileAudioSourceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\License.txt" />

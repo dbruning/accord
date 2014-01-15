@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Audio", "Accor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Audio.Formats", "Accord.Audio.Formats\Portable.Accord.Audio.Formats.csproj", "{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SlimDX", "SlimDX", "{0858F46E-7974-439C-AB25-5E0E525A5096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.SlimDX", "SlimDX\Portable.SlimDX.csproj", "{5D982E5B-9FC7-42C4-A309-3BF5C4509D85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +173,10 @@ Global
 		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D982E5B-9FC7-42C4-A309-3BF5C4509D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D982E5B-9FC7-42C4-A309-3BF5C4509D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D982E5B-9FC7-42C4-A309-3BF5C4509D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D982E5B-9FC7-42C4-A309-3BF5C4509D85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,6 +198,7 @@ Global
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{357A4733-F671-439C-9D40-85E3D6C6B23A} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{19385AE1-57CA-4082-AD33-62480D02C1D9} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
+		{5D982E5B-9FC7-42C4-A309-3BF5C4509D85} = {0858F46E-7974-439C-AB25-5E0E525A5096}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Accord.NET.vsmdi

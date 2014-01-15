@@ -22,7 +22,6 @@
 
 namespace Accord.Tests.Audio
 {
-    using Accord.DirectSound;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Accord.Audio;
     using Accord.Audio.Formats;
