@@ -36,10 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
-      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
-      <Name>Portable.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
       <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
       <Name>Portable.Math</Name>

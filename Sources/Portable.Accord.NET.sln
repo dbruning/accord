@@ -53,6 +53,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Statistics", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.MachineLearning.GPL", "Accord.Tests\Accord.Tests.MachineLearning.GPL\Accord.Tests.MachineLearning.GPL.csproj", "{357A4733-F671-439C-9D40-85E3D6C6B23A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Audio", "Accord.Audio\Portable.Accord.Audio.csproj", "{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Audio", "Accord.Tests\Accord.Tests.Audio\Accord.Tests.Audio.csproj", "{19385AE1-57CA-4082-AD33-62480D02C1D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Audio.Formats", "Accord.Audio.Formats\Portable.Accord.Audio.Formats.csproj", "{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +157,18 @@ Global
 		{357A4733-F671-439C-9D40-85E3D6C6B23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{357A4733-F671-439C-9D40-85E3D6C6B23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{357A4733-F671-439C-9D40-85E3D6C6B23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A96FCCC6-D515-4E47-A7E6-B57C5C73D9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19385AE1-57CA-4082-AD33-62480D02C1D9}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{19385AE1-57CA-4082-AD33-62480D02C1D9}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{19385AE1-57CA-4082-AD33-62480D02C1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19385AE1-57CA-4082-AD33-62480D02C1D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4DC074-2AA2-43FA-9D3E-5A4C52AEBCF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +189,7 @@ Global
 		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{357A4733-F671-439C-9D40-85E3D6C6B23A} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
+		{19385AE1-57CA-4082-AD33-62480D02C1D9} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Accord.NET.vsmdi

@@ -256,7 +256,7 @@ namespace Accord.Audio.Formats
         /// 
         public void Close()
         {
-            waveStream.Close();
+            waveStream.Dispose();
         }
 
         /// <summary>

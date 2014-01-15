@@ -317,7 +317,7 @@ namespace Accord.Audio
         {
             if (signal.SampleFormat == SampleFormat.Format32BitIeeeFloat)
             {
-                float[] buffer = new float[signal.Samples];
+                byte[] buffer = new byte[signal.Samples * sizeof(float)];
                 Marshal.Copy(signal.Data, buffer, 0, buffer.Length);
 
                 float[,] data = new float[signal.Length, signal.Channels];

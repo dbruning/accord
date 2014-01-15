@@ -23,7 +23,6 @@
 namespace Accord.Audio
 {
     using System;
-    using System.Runtime.Serialization;
 
     /// <summary>
     ///   Unsupported sample format exception.
@@ -37,7 +36,7 @@ namespace Accord.Audio
     /// </remarks>
     /// 
     [Serializable]
-    public class UnsupportedSampleFormatException : ArgumentException
+    public partial class UnsupportedSampleFormatException : ArgumentException
     {
         /// <summary>
         ///   Initializes a new instance of the <see cref="UnsupportedSampleFormatException"/> class.
@@ -73,16 +72,6 @@ namespace Accord.Audio
         /// 
         public UnsupportedSampleFormatException(string message, Exception innerException) :
             base(message, innerException) { }
-
-        /// <summary>
-        ///   Initializes a new instance of the <see cref="UnsupportedSampleFormatException"/> class.
-        /// </summary>
-        /// 
-        /// <param name="info">The object that holds the serialized object data.</param>
-        /// <param name="context">The contextual information about the source or destination.</param>
-        /// 
-        protected UnsupportedSampleFormatException(SerializationInfo info, StreamingContext context)
-            : base(info, context) { }
 
     }
 }
