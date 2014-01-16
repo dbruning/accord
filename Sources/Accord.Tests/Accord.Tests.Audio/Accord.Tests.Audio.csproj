@@ -65,14 +65,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=8b1a7546e432f5dd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Visual Studio 2010\Projects\slimdx\build\x86\Release-4.0\SlimDX.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComplexSignalTest.cs" />
@@ -127,10 +124,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\aforge\Sources\Core\Portable.Core.csproj">
-      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
-      <Name>Portable.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\aforge\Sources\Math\Portable.Math.csproj">
       <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
       <Name>Portable.Math</Name>
@@ -146,10 +139,6 @@
     <ProjectReference Include="..\..\Accord.Audio\Portable.Accord.Audio.csproj">
       <Project>{a96fccc6-d515-4e47-a7e6-b57c5c73d9ec}</Project>
       <Name>Portable.Accord.Audio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Core\Portable.Accord.Core.csproj">
-      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
-      <Name>Portable.Accord.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
