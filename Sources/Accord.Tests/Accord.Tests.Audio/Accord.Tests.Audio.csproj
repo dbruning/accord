@@ -65,9 +65,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=8b1a7546e432f5dd, processorArchitecture=MSIL">
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=8b1a7546e432f5dd, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Visual Studio 2010\Projects\slimdx\build\x86\Release-4.0\SlimDX.dll</HintPath>
+      <HintPath>..\..\..\Externals\SlimDX\net40\x86\SlimDX.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
