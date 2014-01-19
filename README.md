@@ -44,8 +44,9 @@ Ported Status
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
 of the non-imaging assemblies.
 
-Results, January 12, 2014:
+Results, January 19, 2014:
 
+* Accord.Test.Audio, 10 unit tests, 0 failed
 * Accord.Test.Math, 365 unit tests, 0 failed
 * Accord.Test.Statistics, 866 tests, 0 failed
 * Accord.Test.MachineLearning, 120 tests, 4 failed
@@ -57,3 +58,5 @@ the tested classes of the PCL *MachineLearning* library.
 The other 2 failed tests are due to insufficient unit test formulations, see [Issue Report 84](https://code.google.com/p/accord/issues/detail?id=84).
 
 Thus, the Portable Accord class libraries now seem to be working completely as expected.
+
+Note! The *Audio* related libraries are currently only functional when using the PCL libraries in a .NET 4.5 project. Support on Windows Phone and Store is not yet implemented.

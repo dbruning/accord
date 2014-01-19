@@ -106,6 +106,7 @@
     <Compile Include="Geometry\Circle.cs" />
     <Compile Include="Geometry\ConvexHullDefects.cs" />
     <Compile Include="Geometry\ConvexityDefect.cs" />
+    <Compile Include="Geometry\DiscreteCurveEvolution.cs" />
     <Compile Include="Geometry\KCurvature.cs" />
     <Compile Include="Geometry\Plane.cs" />
     <Compile Include="Geometry\Point3.cs" />
