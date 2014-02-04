@@ -60,3 +60,21 @@ The other 2 failed tests are due to insufficient unit test formulations, see [Is
 Thus, the Portable Accord class libraries now seem to be working completely as expected.
 
 Note! The *Audio* related libraries are currently only functional when using the PCL libraries in a .NET 4.5 project. Support on Windows Phone and Store is not yet implemented.
+
+
+Notes on commercial use
+-----------------------
+
+The *Shim.System* and *Shim.System.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
+For those interested in using the Portable *Accord.NET* and *AForge.NET* libraries without having to adhere to GPL, please contact the copyright holder of the *Shim* assemblies at
+
+licenses@cureos.com
+
+for commercial licensing alternatives.
+
+Please also note that *AForge.NET Framework* (on which *Accord.NET Framework* is dependent) is licensed under LGPL version 3, and the copyright holder states the following on the *AForge.NET Framework* website:
+
+> Regarding collaboration, contribution, offers, partnering, custom work/consulting, none GPL/LGPL licensing, etc., please, contact using the next e-mail:
+aforge.net [at] gmail {dot} com
+
+The *Accord.NET Framework* is released under LGPL version 2.1, and further licensing details can be found [here](http://accord-framework.net/license.html).
