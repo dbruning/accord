@@ -32,32 +32,22 @@ namespace Accord.Statistics.Running
     ///   samples a priori, such as in the case of the direct <see cref="Tools.Mean(double[])"/>.
     /// </remarks>
     /// 
-    public interface IRunningStatistics : IRunning<double>
+    public interface IRunning<in TValue>
     {
 
         /// <summary>
-        ///   Gets the current mean of the gathered values.
+        ///   Registers the occurrence of a value.
         /// </summary>
         /// 
-        /// <value>The mean of the values.</value>
+        /// <param name="value">The value to be registered.</param>
         /// 
-        double Mean { get; }
+        void Push(TValue value);
 
         /// <summary>
-        ///   Gets the current variance of the gathered values.
+        ///   Clears all measures previously computed.
         /// </summary>
         /// 
-        /// <value>The variance of the values.</value>
-        /// 
-        double Variance { get; }
-
-        /// <summary>
-        ///   Gets the current standard deviation of the gathered values.
-        /// </summary>
-        /// 
-        /// <value>The standard deviation of the values.</value>
-        /// 
-        double StandardDeviation { get; }
+        void Clear();
 
     }
 }

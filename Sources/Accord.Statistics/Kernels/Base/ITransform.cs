@@ -20,44 +20,28 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-namespace Accord.Statistics.Running
+namespace Accord.Statistics.Kernels
 {
 
     /// <summary>
-    ///   Common interface for running statistics.
+    ///   Common interface for kernel functions that can explicitly 
+    ///   project input points into the kernel feature space.
     /// </summary>
-    /// <remarks>
-    ///   Running statistics are measures computed as data becomes available.
-    ///   When using running statistics, there is no need to know the number of
-    ///   samples a priori, such as in the case of the direct <see cref="Tools.Mean(double[])"/>.
-    /// </remarks>
     /// 
-    public interface IRunningStatistics : IRunning<double>
+    /// <seealso cref="IKernel"/>
+    ///
+    public interface ITransform
     {
-
         /// <summary>
-        ///   Gets the current mean of the gathered values.
+        ///   Projects an input point into feature space.
         /// </summary>
         /// 
-        /// <value>The mean of the values.</value>
+        /// <param name="input">The input point to be projected into feature space.</param>
         /// 
-        double Mean { get; }
-
-        /// <summary>
-        ///   Gets the current variance of the gathered values.
-        /// </summary>
+        /// <returns>
+        ///   The feature space representation of the given <paramref name="input"/> point.
+        /// </returns>
         /// 
-        /// <value>The variance of the values.</value>
-        /// 
-        double Variance { get; }
-
-        /// <summary>
-        ///   Gets the current standard deviation of the gathered values.
-        /// </summary>
-        /// 
-        /// <value>The standard deviation of the values.</value>
-        /// 
-        double StandardDeviation { get; }
-
+        double[] Transform(double[] input);
     }
 }

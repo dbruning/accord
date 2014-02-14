@@ -20,15 +20,23 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-namespace Accord.Statistics.Kernels
+namespace Accord.Statistics.Filters
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+    using System.Collections.ObjectModel;
+    using System.Data;
 
-    public interface IExpandable
+    /// <summary>
+    ///   Indicates that a filter supports automatic initialization.
+    /// </summary>
+    /// 
+    public interface IAutoConfigurableFilter : IFilter
     {
-        double[] Expand(double[] input);
+        /// <summary>
+        ///   Auto detects the filter options by analyzing a given <see cref="System.Data.DataTable"/>.
+        /// </summary> 
+        /// 
+        void Detect(DataTable data);
     }
+
 }
