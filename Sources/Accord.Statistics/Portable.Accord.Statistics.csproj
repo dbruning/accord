@@ -185,7 +185,10 @@
     <Compile Include="Kernels\Anova.cs" />
     <Compile Include="Kernels\Base\IDistance.cs" />
     <Compile Include="Kernels\Base\IEstimable.cs" />
+    <Compile Include="Kernels\Base\IExpandable.cs" />
     <Compile Include="Kernels\Base\IKernel.cs" />
+    <Compile Include="Kernels\Base\IReverseDistance.cs" />
+    <Compile Include="Kernels\Base\KernelBase.cs" />
     <Compile Include="Kernels\Bessel.cs" />
     <Compile Include="Kernels\BSpline.cs" />
     <Compile Include="Kernels\Cauchy.cs" />
@@ -202,6 +205,7 @@
     <Compile Include="Kernels\Linear.cs" />
     <Compile Include="Kernels\Log.cs" />
     <Compile Include="Kernels\Multiquadric.cs" />
+    <Compile Include="Kernels\Normalized`1.cs" />
     <Compile Include="Kernels\Polynomial.cs" />
     <Compile Include="Kernels\Power.cs" />
     <Compile Include="Kernels\Precomputed.cs" />
