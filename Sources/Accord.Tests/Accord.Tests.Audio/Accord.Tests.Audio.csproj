@@ -65,9 +65,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=8b1a7546e432f5dd, processorArchitecture=x86">
+    <Reference Include="SharpDX, Version=2.5.1.0, Culture=neutral, PublicKeyToken=73d1d8c3dc4ade44, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Externals\SlimDX\net40\x86\SlimDX.dll</HintPath>
+      <HintPath>..\..\..\Externals\SharpDX\net40\SharpDX.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -93,28 +93,6 @@
     <None Include="Resources\Grand Piano - Fazioli - major A middle.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Accord.Audio.Formats\Accord.Audio.Formats.csproj">
-      <Project>{EC70C2A7-2B49-40D3-AE82-4C2F6E1724AF}</Project>
-      <Name>Accord.Audio.Formats</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Audio\Accord.Audio.csproj">
-      <Project>{E7B65F08-82F1-438F-847A-2AAC2BEC9AC0}</Project>
-      <Name>Accord.Audio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Controls.Statistics\Accord.Controls.csproj">
-      <Project>{0AB27A20-925C-4556-9FA4-6E2C109E448E}</Project>
-      <Name>Accord.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.DirectSound\Accord.DirectSound.csproj">
-      <Project>{456DB2E8-745A-4F87-A2BD-C43CF8677770}</Project>
-      <Name>Accord.DirectSound</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

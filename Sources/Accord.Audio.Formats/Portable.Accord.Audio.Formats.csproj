@@ -71,10 +71,11 @@
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SlimDX\Portable.SlimDX.csproj">
-      <Project>{5d982e5b-9fc7-42c4-a309-3bf5c4509d85}</Project>
-      <Name>Portable.SlimDX</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX">
+      <HintPath>..\..\Externals\SharpDX\PCL\SharpDX.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
