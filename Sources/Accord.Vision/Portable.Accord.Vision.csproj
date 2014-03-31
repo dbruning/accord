@@ -45,6 +45,9 @@
     <None Include="Accord.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Detection\Haar Cascade\HaarCascade.cs" />
     <Compile Include="Detection\Haar Cascade\HaarCascadeStage.cs" />
     <Compile Include="Detection\Haar Cascade\HaarCascadeWriter.cs" />
@@ -108,6 +111,9 @@
       <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
       <Name>Portable.Accord.Statistics</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\CustomDictionary.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
