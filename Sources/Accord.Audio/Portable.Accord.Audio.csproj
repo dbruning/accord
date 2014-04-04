@@ -46,13 +46,9 @@
       <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
       <Name>Portable.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\System.Drawing\Portable.System.Drawing.csproj">
-      <Project>{995cfa14-7f81-457d-beb4-52fb5712a3bb}</Project>
-      <Name>Portable.System.Drawing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.System.csproj">
+    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.Shim.csproj">
       <Project>{a60b1e41-53ab-4777-8b2c-4f2d91dd864f}</Project>
-      <Name>Portable.System</Name>
+      <Name>Portable.Shim</Name>
     </ProjectReference>
     <ProjectReference Include="..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>

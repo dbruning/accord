@@ -170,9 +170,9 @@
       <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
       <Name>Portable.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\aforge\Sources\System\_Net\Net.System.csproj">
+    <ProjectReference Include="..\..\..\..\aforge\Sources\System\_Net\Net.Shim.csproj">
       <Project>{816e086d-da84-4997-8bd9-448c92a1514f}</Project>
-      <Name>Net.System</Name>
+      <Name>Net.Shim</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>

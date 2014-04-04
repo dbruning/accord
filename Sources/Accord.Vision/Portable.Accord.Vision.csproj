@@ -79,13 +79,13 @@
       <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
       <Name>Portable.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\System.Drawing\Portable.System.Drawing.csproj">
+    <ProjectReference Include="..\..\..\aforge\Sources\System.Drawing\Portable.Shim.Drawing.csproj">
       <Project>{995cfa14-7f81-457d-beb4-52fb5712a3bb}</Project>
-      <Name>Portable.System.Drawing</Name>
+      <Name>Portable.Shim.Drawing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.System.csproj">
-      <Project>{12643378-5d79-42f4-a5ee-d98672a074d3}</Project>
-      <Name>Portable.System</Name>
+    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.Shim.csproj">
+      <Project>{A60B1E41-53AB-4777-8B2C-4F2D91DD864F}</Project>
+      <Name>Portable.Shim</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\aforge\Sources\Vision\Portable.Vision.csproj">
       <Project>{830a6007-4064-4b66-bd7e-cea1ee0f7c35}</Project>

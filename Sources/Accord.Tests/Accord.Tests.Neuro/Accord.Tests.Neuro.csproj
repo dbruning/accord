@@ -119,9 +119,9 @@
       <Project>{e37ebfaf-5dc0-415c-9c1a-8a5a808a3ddf}</Project>
       <Name>Portable.Neuro</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\aforge\Sources\System\_Net\Net.System.csproj">
+    <ProjectReference Include="..\..\..\..\aforge\Sources\System\_Net\Net.Shim.csproj">
       <Project>{816e086d-da84-4997-8bd9-448c92a1514f}</Project>
-      <Name>Net.System</Name>
+      <Name>Net.Shim</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>

@@ -57,12 +57,6 @@
   <ItemGroup>
     <None Include="Accord.snk" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\aforge\Sources\System\_Net\Net.System.csproj">
-      <Project>{816e086d-da84-4997-8bd9-448c92a1514f}</Project>
-      <Name>Net.System</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

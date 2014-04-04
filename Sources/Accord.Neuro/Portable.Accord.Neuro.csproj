@@ -82,9 +82,9 @@
       <Project>{e37ebfaf-5dc0-415c-9c1a-8a5a808a3ddf}</Project>
       <Name>Portable.Neuro</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.System.csproj">
-      <Project>{12643378-5d79-42f4-a5ee-d98672a074d3}</Project>
-      <Name>Portable.System</Name>
+    <ProjectReference Include="..\..\..\aforge\Sources\System\Portable.Shim.csproj">
+      <Project>{A60B1E41-53AB-4777-8B2C-4F2D91DD864F}</Project>
+      <Name>Portable.Shim</Name>
     </ProjectReference>
     <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
