@@ -22,16 +22,16 @@
 
 namespace Accord
 {
-
-    using System;
     using System.Data;
-    using System.Linq;
+    using System;
+    using System.Reflection;
+    using System.ComponentModel;
 
     /// <summary>
-    ///   Static class for DataSet-related extension methods.
+    ///   Static class for utility extension methods.
     /// </summary>
     /// 
-    public static class DataSetExtensions
+    public static class Extensions
     {
 
         /// <summary>
@@ -53,49 +53,34 @@ namespace Accord
         ///   </code>
         /// </example>
         /// 
-        [CLSCompliant(false)]
         public static void Add(this DataColumnCollection collection, params string[] columnNames)
         {
             for (int i = 0; i < columnNames.Length; i++)
-                collection.Add(columnNames[i], typeof(string));
+                collection.Add(columnNames[i]);
         }
 
-	    [CLSCompliant(false)]
-	    public static DataRow[] GetRows<T>(this DataTable table, string columnName, T columnValue)
-	    {
-		    return
-			    table.Rows.Cast<DataRow>()
-				    .Where(row => columnValue.Equals(Convert.ChangeType(row[columnName], typeof (T))))
-				    .ToArray();
-	    }
-
-	    [CLSCompliant(false)]
-        public static object GetMin(this DataTable table, string columnName)
+        /// <summary>
+        ///   Gets a the value of a <see cref="DescriptionAttribute"/>
+        ///   associated with a particular enumeration value.
+        /// </summary>
+        /// 
+        /// <typeparam name="T">The enumeration type.</typeparam>
+        /// <param name="source">The enumeration value.</param>
+        /// 
+        /// <returns>The string value stored in the value's description attribute.</returns>
+        /// 
+        public static string GetDescription<T>(this T source)
         {
-            return table.Rows.Cast<DataRow>().Select(row => row[columnName]).Min();
+            FieldInfo fi = source.GetType().GetField(source.ToString());
+
+            DescriptionAttribute[] attributes = 
+                (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (attributes != null && attributes.Length > 0) 
+                return attributes[0].Description;
+
+            return source.ToString();
         }
 
-        [CLSCompliant(false)]
-        public static object GetMax(this DataTable table, string columnName)
-        {
-            return table.Rows.Cast<DataRow>().Select(row => row[columnName]).Max();
-        }
-
-        [CLSCompliant(false)]
-        public static double GetAverage(this DataTable table, string columnName)
-        {
-            return table.Rows.Cast<DataRow>().Select(row => Convert.ToDouble(row[columnName])).Average();
-        }
-
-        [CLSCompliant(false)]
-        public static double GetStdev(this DataTable table, string columnName)
-        {
-            var n = table.Rows.Count;
-            if (n <= 1) return 0.0;
-
-            var k = table.Rows.Cast<DataRow>().Select(row => Math.Pow(Convert.ToDouble(row[columnName]), 2.0)).Sum();
-            var s = table.Rows.Cast<DataRow>().Select(row => Convert.ToDouble(row[columnName])).Sum();
-            return Math.Sqrt((k - s * s / n) / (n - 1.0));
-        }
     }
 }

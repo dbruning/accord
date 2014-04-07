@@ -79,6 +79,7 @@
     <Compile Include="Compatibility\Tuple.cs" />
     <Compile Include="DataSetExtensions.cs" />
     <Compile Include="Exceptions\ConvergenceException.NoPcl.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Exceptions\ConvergenceException.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.NoPcl.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.cs" />
