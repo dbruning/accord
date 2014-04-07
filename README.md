@@ -17,17 +17,17 @@ To sufficiently build and use the class libraries in the *Portable Accord.NET Fr
 *Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable
 Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in Windows Store, Windows Phone 8 or WPF applications.
 
-The portable class libraries reference the portable *AForge.System* and/or *AForge.System.Drawing* assemblies. In applications however, the target specific (Windows Store, Windows Phone or WPF)
-*AForge.System* and *AForge.System.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
+The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the target specific (Windows Store, Windows Phone or WPF)
+*Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
  
-`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *AForge.System.Drawing* assemblies 
+`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *Shim.Drawing* assemblies 
 incorporates implicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
 
 All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the
 image processing.
 
-When using the WPF `AForge.System.Drawing` assembly, the real `System.Drawing` assembly from .NET Framework cannot be referenced for obvious reasons. If there is a need to reference 
-the real `System.Drawing` assembly, you are recommended to use the original *Accord.NET Framework* libraries and use WPF hosting controls to display image processing results instead.
+When using the WPF *Shim.Drawing* assembly, the real *System.Drawing* assembly from .NET Framework cannot be referenced for obvious reasons. If there is a need to reference 
+the real *System.Drawing* assembly, you are recommended to use the original *Accord.NET Framework* libraries and use WPF hosting controls to display image processing results instead.
 
 
 Building the libraries
@@ -44,7 +44,7 @@ Ported Status
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
 of the non-imaging assemblies.
 
-Results, February 14, 2014:
+Results, April 7, 2014:
 
 * Accord.Test.Audio, 10 unit tests, 0 failed
 * Accord.Test.Math, 366 unit tests, 0 failed
@@ -59,13 +59,11 @@ The other 2 failed tests are due to insufficient unit test formulations, see [Is
 
 Thus, the Portable Accord class libraries now seem to be working completely as expected.
 
-Note! The *Audio* related libraries are currently only functional when using the PCL libraries in a .NET 4.5 project. Support on Windows Phone and Store is not yet implemented.
-
 
 Notes on commercial use
 -----------------------
 
-The *Shim.System* and *Shim.System.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
+The *Shim* and *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
 For those interested in using the Portable *Accord.NET* and *AForge.NET* libraries without having to adhere to GPL, please contact the copyright holder of the *Shim* assemblies at
 
 licenses@cureos.com
