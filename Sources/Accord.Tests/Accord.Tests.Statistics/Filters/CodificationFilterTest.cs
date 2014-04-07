@@ -29,7 +29,6 @@ namespace Accord.Tests.Statistics
     using Accord.Statistics.Filters;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Accord.Statistics.Formats;
-    using Accord.Controls;
 
     [TestClass()]
     public class CodificationFilterTest

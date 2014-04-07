@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Shim", "..\..\aforge\So
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Shim.Drawing", "..\..\aforge\Sources\System.Drawing\Portable.Shim.Drawing.csproj", "{995CFA14-7F81-457D-BEB4-52FB5712A3BB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Accord.Tests.Math.Cpp", "Accord.Tests\Accord.Tests.Math.Cpp\Accord.Tests.Math.Cpp.vcxproj", "{161BD953-537D-4325-8A00-22475FC9088E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +171,10 @@ Global
 		{995CFA14-7F81-457D-BEB4-52FB5712A3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995CFA14-7F81-457D-BEB4-52FB5712A3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995CFA14-7F81-457D-BEB4-52FB5712A3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{161BD953-537D-4325-8A00-22475FC9088E}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{161BD953-537D-4325-8A00-22475FC9088E}.Debug|Any CPU.Build.0 = Debug|Win32
+		{161BD953-537D-4325-8A00-22475FC9088E}.Release|Any CPU.ActiveCfg = Release|Win32
+		{161BD953-537D-4325-8A00-22475FC9088E}.Release|Any CPU.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,6 +196,7 @@ Global
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{357A4733-F671-439C-9D40-85E3D6C6B23A} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{19385AE1-57CA-4082-AD33-62480D02C1D9} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
+		{161BD953-537D-4325-8A00-22475FC9088E} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Accord.NET.vsmdi

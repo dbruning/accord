@@ -85,13 +85,16 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\LibLBFGS;D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)LibLBFGS;$(ProjectDir)Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libf2c.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>sn -Ra "$(TargetPath)" "$(ProjectDir)Accord.snk"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -99,28 +102,31 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\LibLBFGS;D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)LibLBFGS;$(ProjectDir)Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libf2c.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>sn -Ra "$(TargetPath)" "$(ProjectDir)Accord.snk"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\LibLBFGS;D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)LibLBFGS;$(ProjectDir)Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libf2c.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>sn -Ra "$(TargetPath)" $(ProjectDir)Accord.snk</Command>
+      <Command>sn -Ra "$(TargetPath)" "$(ProjectDir)Accord.snk"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,15 +134,15 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\LibLBFGS;D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)LibLBFGS;$(ProjectDir)Lbfgsb3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libf2c.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Projects\Accord.NET\GitHub\framework\Sources\Accord.Tests\Accord.Tests.Math.Cpp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>sn -Ra "$(TargetPath)" Accord.snk</Command>
+      <Command>sn -Ra "$(TargetPath)" "$(ProjectDir)Accord.snk"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
