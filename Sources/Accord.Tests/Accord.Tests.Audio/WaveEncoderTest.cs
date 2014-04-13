@@ -58,6 +58,7 @@ namespace Accord.Tests.Audio
             // Channels:            2
             // Duration:            4.0   s
             // Bytes:             705.644 
+            // Bitrate:           1411kbps
 
             // sizeof(float) = 4
             // sizeof(int)   = 4
