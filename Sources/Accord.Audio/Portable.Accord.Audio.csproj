@@ -98,6 +98,7 @@
     <Compile Include="Windows\Extensions.cs" />
     <Compile Include="Windows\IWindow.cs" />
     <Compile Include="Windows\RaisedCosineWindow.cs" />
+    <Compile Include="Windows\RectangularWindow.cs" />
     <Compile Include="Windows\WindowBase.cs" />
   </ItemGroup>
   <ItemGroup>
