@@ -21,7 +21,7 @@ The portable class libraries reference the portable *Shim* and/or *Shim.Drawing*
 *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
  
 `WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *Shim.Drawing* assemblies 
-incorporates implicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
+incorporates explicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
 
 All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the
 image processing.
