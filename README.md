@@ -44,12 +44,12 @@ Ported Status
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
 of the non-imaging assemblies.
 
-Results, April 14, 2014:
+Results, April 28, 2014:
 
 * Accord.Test.Audio, 12 unit tests, 0 failed
 * Accord.Test.Math, 424 unit tests, 0 failed
-* Accord.Test.Statistics, 893 tests, 0 failed
-* Accord.Test.MachineLearning, 120 tests, 4 failed
+* Accord.Test.Statistics, 894 tests, 0 failed
+* Accord.Test.MachineLearning, 121 tests, 4 failed
 * Accord.Test.MachineLearning.GPL, 1 test, 0 failed
 * Accord.Test.Neuro, 20 tests, 0 failed
 
