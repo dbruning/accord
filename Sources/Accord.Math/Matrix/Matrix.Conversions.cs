@@ -24,7 +24,6 @@ namespace Accord.Math
 {
     using System;
     using System.Data;
-    using System.Linq;
     using System.Globalization;
     using System.Linq;
 
