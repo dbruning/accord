@@ -64,14 +64,6 @@
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge, Version=2.2.3.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Externals\AForge.NET\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Math, Version=2.2.3.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Externals\AForge.NET\AForge.Math.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -84,7 +76,6 @@
     <Compile Include="Analysis\ProportionalHazardsAnalysisTest.cs" />
     <Compile Include="Analysis\IndependentComponentAnalysisTest.cs" />
     <Compile Include="Analysis\DescriptiveAnalysisTest.cs" />
-    <Compile Include="Controls\DataGridBoxTest.cs" />
     <Compile Include="Filters\BranchingFilterTest.cs" />
     <Compile Include="Kernels\QuadraticTest.cs" />
     <Compile Include="Kernels\LinearTest.cs" />
@@ -266,12 +257,6 @@
     <Compile Include="Testing\TwoSamples\TwoSampleWilcoxonSignedRankTestTest.cs" />
     <Compile Include="Distributions\Univariate\Continuous\WilcoxonDistributionTest.cs" />
     <Compile Include="Analysis\WeightedConfusionMatrixTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Accord.Tests.Math\Accord.Tests.Math.csproj">
-      <Project>{F454DBD6-2AB9-461D-9624-2249B921B6E6}</Project>
-      <Name>Accord.Tests.Math</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

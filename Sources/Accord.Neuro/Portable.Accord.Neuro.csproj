@@ -46,7 +46,6 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Accord.Neuro.cs" />
     <Compile Include="Activation Functions\BernoulliFunction.cs" />
     <Compile Include="Activation Functions\GaussianFunction.cs" />
     <Compile Include="Activation Functions\IStochasticFunction.cs" />
