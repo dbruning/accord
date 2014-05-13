@@ -74,6 +74,8 @@
     <Compile Include="Decompositions\JaggedLuDecomposition.cs" />
     <Compile Include="Decompositions\JaggedLuDecompositionD.cs" />
     <Compile Include="Decompositions\JaggedLuDecompositionF.cs" />
+    <Compile Include="Decompositions\JaggedSingularValueDecomposition.cs" />
+    <Compile Include="Decompositions\JaggedSingularValueDecompositionF.cs" />
     <Compile Include="Decompositions\LuDecomposition.cs" />
     <Compile Include="Decompositions\LuDecompositionD.cs" />
     <Compile Include="Decompositions\LuDecompositionF.cs" />
