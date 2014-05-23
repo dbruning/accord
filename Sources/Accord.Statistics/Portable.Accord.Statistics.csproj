@@ -388,7 +388,10 @@
     <Compile Include="Testing\ZTest.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Visualizations\Histogram.cs" />
+    <Compile Include="Visualizations\HistogramBin.cs" />
+    <Compile Include="Visualizations\HistogramBinCollection.cs" />
     <Compile Include="Visualizations\Scatterplot.cs" />
+    <Compile Include="Visualizations\ScatterplotClassValueCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />
