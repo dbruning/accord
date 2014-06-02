@@ -27,6 +27,7 @@ namespace Accord.MachineLearning.DecisionTrees
     using System.IO;
     using System.Linq.Expressions;
     using System.Runtime.Serialization.Formatters.Binary;
+    using Accord.MachineLearning.DecisionTrees.Rules;
 
     /// <summary>
     ///   Decision tree.
@@ -199,7 +200,8 @@ namespace Accord.MachineLearning.DecisionTrees
         /// </summary>
         /// 
         /// <returns>
-        ///   An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+        ///   An <see cref="T:System.Collections.IEnumerator"/> object that can be 
+        ///   used to iterate through the collection.
         /// </returns>
         /// 
         public IEnumerator<DecisionNode> GetEnumerator()
@@ -261,6 +263,11 @@ namespace Accord.MachineLearning.DecisionTrees
             return new TreeTraversal(subtree, method);
         }
 
+
+        public DecisionSet ToRules()
+        {
+            return DecisionSet.FromDecisionTree(this);
+        }
 
 #if !NET35
         /// <summary>

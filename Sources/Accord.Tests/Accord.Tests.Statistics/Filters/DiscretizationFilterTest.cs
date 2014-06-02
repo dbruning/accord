@@ -24,7 +24,6 @@ namespace Accord.Tests.Statistics
 {
     using Accord.Statistics.Filters;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System.Data;
 
     [TestClass()]
     public class DiscretizationFilterTest
