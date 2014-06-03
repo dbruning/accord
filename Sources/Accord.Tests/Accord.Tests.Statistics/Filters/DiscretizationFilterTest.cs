@@ -22,6 +22,7 @@
 
 namespace Accord.Tests.Statistics
 {
+    using System.Data;
     using Accord.Statistics.Filters;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

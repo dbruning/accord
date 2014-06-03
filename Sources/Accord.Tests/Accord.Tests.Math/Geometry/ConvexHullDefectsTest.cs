@@ -30,7 +30,6 @@ namespace Accord.Tests.Math
     using Accord.Math.Geometry;
     using AForge.Math.Geometry;
     using Accord.Imaging.Filters;
-    using Accord.Controls;
 
     [TestClass()]
     public class ConvexHullDefectsTest
