@@ -86,6 +86,7 @@ namespace Accord.MachineLearning.DecisionTrees
         {
             if (outputClasses <= 0)
                 throw new ArgumentOutOfRangeException("outputClasses");
+
             if (attributes == null)
                 throw new ArgumentNullException("attributes");
 
