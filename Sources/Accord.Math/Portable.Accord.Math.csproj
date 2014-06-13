@@ -150,6 +150,7 @@
     <Compile Include="Optimization\QuadraticObjectiveFunction.cs" />
     <Compile Include="Optimization\Unconstrained\BoundedBroydenFletcherGoldfarbShanno.cs" />
     <Compile Include="Optimization\Unconstrained\BoundedBroydenFletcherGoldfarbShanno.FORTRAN.cs" />
+    <Compile Include="Optimization\Unconstrained\BoundedBroydenFletcherGoldfarbShannoInnerStatus.cs" />
     <Compile Include="Optimization\Unconstrained\BroydenFletcherGoldfarbShanno.cs" />
     <Compile Include="Optimization\Unconstrained\BroydenFletcherGoldfarbShanno.LIBLBFGS.cs" />
     <Compile Include="Optimization\Unconstrained\ConjugateGradient.cs" />
