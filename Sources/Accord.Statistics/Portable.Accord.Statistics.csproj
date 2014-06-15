@@ -127,6 +127,7 @@
     <Compile Include="Distributions\Univariate\Base\UnivariateContinuousDistribution.cs" />
     <Compile Include="Distributions\Univariate\Base\UnivariateDiscreteDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\BetaDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\BirnbaumSaundersDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\CauchyDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\ChiSquareDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\EmpiricalDistribution.cs" />
@@ -134,7 +135,9 @@
     <Compile Include="Distributions\Univariate\Continuous\ExponentialDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\FDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GammaDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\GeneralizedNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GompertzDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\GumbelDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\InverseGammaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\InverseGaussianDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\KolmogorovSmirnovDistribution.cs" />
@@ -145,8 +148,12 @@
     <Compile Include="Distributions\Univariate\Continuous\NoncentralTDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\NormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\ParetoDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\PowerLognormalDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\PowerNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\RayleighDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\TDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\TriangularDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\TukeyLambdaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\UniformContinuousDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\VonMisesDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\WeibullDistribution.cs" />
