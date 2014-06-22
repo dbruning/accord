@@ -112,6 +112,7 @@
     <Compile Include="Geometry\Plane.cs" />
     <Compile Include="Geometry\Point3.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Integration\InfiniteAdaptiveGaussKronrod.cs" />
     <Compile Include="Integration\MonteCarloIntegral.cs" />
     <Compile Include="Integration\NonAdaptiveGaussKronrod.cs" />
     <Compile Include="Integration\Romberg.cs" />

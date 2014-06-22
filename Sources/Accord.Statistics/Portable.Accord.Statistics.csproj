@@ -232,6 +232,7 @@
     <Compile Include="Kernels\SquaredSinc.cs" />
     <Compile Include="Kernels\Structures\KernelFunctionCache.cs" />
     <Compile Include="Kernels\SymmetricTriangle.cs" />
+    <Compile Include="Kernels\TaylorGaussian.cs" />
     <Compile Include="Kernels\Tensor.cs" />
     <Compile Include="Kernels\TStudent.cs" />
     <Compile Include="Kernels\Wave.cs" />
