@@ -113,10 +113,13 @@
     <Compile Include="Geometry\Point3.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Integration\InfiniteAdaptiveGaussKronrod.cs" />
-    <Compile Include="Integration\MonteCarloIntegral.cs" />
+    <Compile Include="Integration\MonteCarloIntegration.cs" />
     <Compile Include="Integration\NonAdaptiveGaussKronrod.cs" />
-    <Compile Include="Integration\Romberg.cs" />
-    <Compile Include="Integration\Trapezoidal.cs" />
+    <Compile Include="Integration\RombergMethod.cs" />
+    <Compile Include="Integration\TrapezoidalRule.cs" />
+    <Compile Include="Integration\Base\IMultidimensionalIntegration.cs" />
+    <Compile Include="Integration\Base\INumericalIntegration.cs" />
+    <Compile Include="Integration\Base\IUnidimensionalIntegration.cs" />
     <Compile Include="Kinematics\DenavitHartenbergJoint.cs" />
     <Compile Include="Kinematics\DenavitHartenbergMatrix.cs" />
     <Compile Include="Kinematics\DenavitHartenbergModel.cs" />

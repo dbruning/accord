@@ -135,13 +135,16 @@
     <Compile Include="Distributions\Univariate\Continuous\ExponentialDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\FDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GammaDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\GeneralContinuousDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GeneralizedNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GompertzDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GumbelDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\HyperbolicSecantDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\InverseGammaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\InverseGaussianDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\KolmogorovSmirnovDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\LaplaceDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\LogisticDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\LognormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\MannWhitneyDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\NakagamiDistribution.cs" />
@@ -161,6 +164,7 @@
     <Compile Include="Distributions\Univariate\Continuous\WrappedCauchyDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\BernoulliDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\BinomialDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Discrete\DegenerateDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\GeneralDiscreteDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\GeometricDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\HypergeometricDistribution.cs" />

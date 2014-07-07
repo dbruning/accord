@@ -61,7 +61,6 @@
     <Compile Include="Converters\ImageToArray.cs" />
     <Compile Include="Converters\ImageToMatrix.cs" />
     <Compile Include="Converters\MatrixToImage.cs" />
-    <Compile Include="CorrelationMatching.cs" />
     <Compile Include="Filters\Blend.cs" />
     <Compile Include="Filters\CombineChannel.cs" />
     <Compile Include="Filters\CompassConvolution.cs" />
@@ -107,11 +106,12 @@
     <Compile Include="Interest Points\HarrisCornersDetector.cs" />
     <Compile Include="Interest Points\HistogramsOfOrientedGradients.cs" />
     <Compile Include="Interest Points\LocalBinaryPattern.cs" />
+    <Compile Include="Interest Points\Matching\CorrelationMatching.cs" />
+    <Compile Include="Interest Points\Matching\KNearestNeighborMatching.cs" />
     <Compile Include="Interest Points\SURF\ResponseLayer.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturePoint.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturesDescriptor.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturesDetector.cs" />
-    <Compile Include="KNearestNeighborMatching.cs" />
     <Compile Include="MatrixH.cs" />
     <Compile Include="Moments\CentralMoments.cs" />
     <Compile Include="Moments\HuMoments.cs" />
