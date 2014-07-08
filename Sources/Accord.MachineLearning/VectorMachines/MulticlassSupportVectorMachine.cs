@@ -120,6 +120,10 @@ namespace Accord.MachineLearning.VectorMachines
     /// </example>
     ///
     /// <seealso cref="Learning.MulticlassSupportVectorLearning"/>
+    /// 
+    /// <seealso cref="SupportVectorMachine"/>
+    /// <seealso cref="KernelSupportVectorMachine"/>
+    /// <seealso cref="Learning.SequentialMinimalOptimization"/>
     ///
     [Serializable]
     public partial class MulticlassSupportVectorMachine : ISupportVectorMachine,
