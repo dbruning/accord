@@ -27,3 +27,5 @@ obj
 /Sources/Accord.Tests/Accord.Tests.Math.Cpp/Release
 /Sources/Release
 /Sources/*.opensdf
+
+/Sources/[Pp]ackages
