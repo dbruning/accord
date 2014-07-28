@@ -114,9 +114,8 @@ namespace Accord
             byte[] buffer = new byte[size];
             stream.Read(buffer, 0, buffer.Length);
 
-            T structure = new T();
             GCHandle handle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
-            Marshal.PtrToStructure(handle.AddrOfPinnedObject(), structure);
+            T structure = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
             handle.Free();
 
             return structure;

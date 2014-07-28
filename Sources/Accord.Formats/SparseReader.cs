@@ -122,7 +122,7 @@ namespace Accord.IO
         /// 
         public SparseReader(string path, int sampleSize)
         {
-            this.reader = new StreamReader(path);
+            this.reader = new StreamReader(File.OpenRead(path));
             this.sampleSize = sampleSize;
         }
 
@@ -163,7 +163,7 @@ namespace Accord.IO
         /// 
         public SparseReader(String path, Encoding encoding, int sampleSize)
         {
-            this.reader = new StreamReader(path, encoding);
+            this.reader = new StreamReader(File.OpenRead(path), encoding);
             this.sampleSize = sampleSize;
         }
 
