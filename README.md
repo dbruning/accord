@@ -11,7 +11,7 @@ For general information and tutorials, see [here](http://accord-net.github.io).
 
 The repository currently provides:
 
-* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Statistics, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision) 
+* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision) 
 
 To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
 *Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable
@@ -26,12 +26,18 @@ incorporates explicit cast operators between `WriteableBitmap` and `System.Drawi
 All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the
 image processing.
 
-When using the WPF *Shim.Drawing* assembly, the real *System.Drawing* assembly from .NET Framework cannot be referenced for obvious reasons. If there is a need to reference 
+When using the WPF *Shim.Drawing* assembly, the real *System.Drawing* assembly from .NET Framework cannot be referenced. If there is a need to reference 
 the real *System.Drawing* assembly, you are recommended to use the original *Accord.NET Framework* libraries and use WPF hosting controls to display image processing results instead.
 
 
 Building the libraries
 ----------------------
+
+The *Portable Accord* libraries make use of the following libraries from NuGet:
+
+* [Shim.NET](https://www.nuget.org/packages/shim)
+* [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression/)
+* [Microsoft BCL Build Components](https://www.nuget.org/packages/Microsoft.Bcl.Build/)
 
 As a prerequisite, download the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) to a folder named *aforge*, which should be located alongside the *accord* main folder.
 
@@ -44,20 +50,21 @@ Ported Status
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
 of the non-imaging assemblies.
 
-Results, April 28, 2014:
+Results, July 28, 2014:
 
-* Accord.Test.Audio, 12 unit tests, 0 failed
-* Accord.Test.Math, 424 unit tests, 0 failed
-* Accord.Test.Statistics, 894 tests, 0 failed
-* Accord.Test.MachineLearning, 121 tests, 4 failed
-* Accord.Test.MachineLearning.GPL, 1 test, 0 failed
-* Accord.Test.Neuro, 20 tests, 0 failed
+* Accord.Tests.Audio, 12 unit tests, all passed
+* Accord.Tests.IO, 8 unit tests, all passed
+* Accord.Tests.Math, 449 unit tests, 1 failed
+* Accord.Tests.Statistics, 942 tests, all passed
+* Accord.Tests.MachineLearning, 131 tests, 5 failed
+* Accord.Tests.MachineLearning.GPL, 1 test, all passed
+* Accord.Tests.Neuro, 20 tests, all passed
 
 2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in 
 the tested classes of the PCL *MachineLearning* library.
-The other 2 failed tests are due to insufficient unit test formulations, see [Issue Report 84](https://code.google.com/p/accord/issues/detail?id=84).
+2 failed *Accord.Tests.MachineLearning* tests are due to insufficient unit test formulations, see [Issue Report 84](https://code.google.com/p/accord/issues/detail?id=84).
 
-Thus, the Portable Accord class libraries now seem to be working completely as expected.
+Also see [this issue report](https://github.com/cureos/accord/issues/10).
 
 
 Notes on commercial use
