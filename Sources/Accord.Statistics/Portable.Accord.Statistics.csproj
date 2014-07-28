@@ -195,7 +195,6 @@
     <Compile Include="Filters\Randomization.cs" />
     <Compile Include="Filters\Selection.cs" />
     <Compile Include="Filters\Stratification.cs" />
-    <Compile Include="Formats\SparseSampleReader.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Kernels\Additive.cs" />
     <Compile Include="Kernels\Anova.cs" />

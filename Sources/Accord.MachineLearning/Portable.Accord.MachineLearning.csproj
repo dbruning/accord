@@ -48,7 +48,6 @@
     <None Include="DecisionTrees\Accord.MachineLearning.DecisionTrees.cd" />
     <None Include="packages.config" />
     <None Include="Structures\Accord.MachineLearning.Structures.cd" />
-    <None Include="VectorMachines\Accord.MachineLearning.VectorMachines.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
@@ -123,10 +122,12 @@
     <Compile Include="Structures\KDTree`1.cs" />
     <Compile Include="VectorMachines\ISupportVectorMachine.cs" />
     <Compile Include="VectorMachines\KernelSupportVectorMachine.cs" />
+    <Compile Include="VectorMachines\Learning\CoordinateDescentLinearLearning.cs" />
     <Compile Include="VectorMachines\Learning\ISupportVectorMachineLearning.cs" />
     <Compile Include="VectorMachines\Learning\LeastSquaresLearning.cs" />
     <Compile Include="VectorMachines\Learning\MulticlassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
+    <Compile Include="VectorMachines\Learning\NewtonMethodPrimalLearning.cs" />
     <Compile Include="VectorMachines\Learning\ProbabilisticOutputLearning.cs" />
     <Compile Include="VectorMachines\Learning\SequentialMinimalOptimization.cs" />
     <Compile Include="VectorMachines\Learning\SupportVectorLearningHelper.cs" />

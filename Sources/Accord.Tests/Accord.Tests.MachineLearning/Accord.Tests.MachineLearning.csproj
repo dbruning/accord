@@ -166,36 +166,6 @@
     <Compile Include="VectorMachines\SupportVectorMachineTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Accord.Controls.Imaging\Accord.Controls.Imaging.csproj">
-      <Project>{E1089999-EAED-4E55-AC47-B6A196DF84FC}</Project>
-      <Name>Accord.Controls.Imaging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Formats\Accord.IO.csproj">
-      <Project>{63184EBD-6B28-4066-AAEE-5B99431E31F4}</Project>
-      <Name>Accord.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Imaging\Accord.Imaging.csproj">
-      <Project>{4959A83D-F78F-439E-80A5-41583ECEAAC6}</Project>
-      <Name>Accord.Imaging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.MachineLearning\Accord.MachineLearning.csproj">
-      <Project>{7AB4BBCC-6222-423D-9FF9-BA9CB7C09199}</Project>
-      <Name>Accord.MachineLearning</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -252,6 +222,14 @@
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Accord.Formats\Net.Accord.ExcelReader.csproj">
+      <Project>{61c2bc7a-0141-4185-bb49-66afbe5bfe23}</Project>
+      <Name>Net.Accord.ExcelReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Accord.Formats\Portable.Accord.IO.csproj">
+      <Project>{8c4970de-ab6d-47de-b3d0-b1ef99e4ccc2}</Project>
+      <Name>Portable.Accord.IO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
       <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
       <Name>Portable.Accord.MachineLearning</Name>
@@ -259,10 +237,6 @@
     <ProjectReference Include="..\..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Statistics\Net.Accord.ExcelReader.csproj">
-      <Project>{61c2bc7a-0141-4185-bb49-66afbe5bfe23}</Project>
-      <Name>Net.Accord.ExcelReader</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Accord.Statistics\Portable.Accord.Statistics.csproj">
       <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>

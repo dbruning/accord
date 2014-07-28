@@ -2,18 +2,16 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6850287-E22B-4372-928E-A0DC2755EEF4}</ProjectGuid>
+    <ProjectGuid>{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Accord.MachineLearning.GPL</RootNamespace>
-    <AssemblyName>Accord.MachineLearning.GPL</AssemblyName>
+    <RootNamespace>Accord.Statistics</RootNamespace>
+    <AssemblyName>ExcelReader</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -25,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -41,44 +41,25 @@
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <Content Include="License %28GPL%29.txt" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="ExcelReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SequentialMinimalOptimizationRegression.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
-      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
-      <Name>Portable.Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
-      <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
-      <Name>Portable.Accord.MachineLearning</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Math\Portable.Accord.Math.csproj">
-      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
-      <Name>Portable.Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Statistics\Portable.Accord.Statistics.csproj">
-      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
-      <Name>Portable.Accord.Statistics</Name>
-    </ProjectReference>
+    <Content Include="Properties\CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Shim">
-      <HintPath>..\packages\shim.0.9.0-pre\lib\portable-net45+wp8+win8\Shim.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
