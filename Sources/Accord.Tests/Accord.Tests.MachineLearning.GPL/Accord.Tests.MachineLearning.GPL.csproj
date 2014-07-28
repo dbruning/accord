@@ -90,6 +90,13 @@
     <ProjectReference Include="..\..\Accord.MachineLearning.GPL\Portable.Accord.MachineLearning %28GPL%29.csproj">
       <Project>{f6850287-e22b-4372-928e-a0dc2755eef4}</Project>
       <Name>Portable.Accord.MachineLearning %28GPL%29</Name>
+    <ProjectReference Include="..\..\Accord.Core\Accord.Core.csproj">
+      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
+      <Name>Accord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Non LGPL\Accord.MachineLearning.GPL\Accord.MachineLearning %28GPL%29.csproj">
+      <Project>{6DD1A48C-D7A8-4B39-9C06-5A71FEEC70B9}</Project>
+      <Name>Accord.MachineLearning %28GPL%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
       <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>

@@ -28,7 +28,8 @@ namespace Accord.Tests.Statistics
     using Accord.Math;
     using Accord.Statistics.Filters;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Accord.Statistics.Formats;
+    using Accord.IO;
+    using Accord.Controls;
     using System;
 
     [TestClass()]
