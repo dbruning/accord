@@ -3,7 +3,7 @@
 Portable Accord.NET Framework
 =============================
 
-Copyright (c) 2009-2014 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013-2104 Anders Gustafsson, Cureos AB. 
+Copyright (c) 2009-2014 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013-2014 Anders Gustafsson, Cureos AB. 
 Distributed under the Lesser GNU Public License, LGPL, version 2.1.
 
 This project is a fork of César Souzas's original [Accord.NET Framework](https://github.com/accord-net/framework) project. 
@@ -11,7 +11,7 @@ For general information and tutorials, see [here](http://accord-net.github.io).
 
 The repository currently provides:
 
-* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision) 
+* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision, Audio) 
 
 To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
 *Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable
@@ -35,7 +35,7 @@ Building the libraries
 
 The *Portable Accord* libraries make use of the following libraries from NuGet:
 
-* [Shim.NET](https://www.nuget.org/packages/shim)
+* [CSShim](https://www.nuget.org/packages/shim)
 * [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression/)
 * [Microsoft BCL Build Components](https://www.nuget.org/packages/Microsoft.Bcl.Build/)
 
@@ -47,8 +47,7 @@ Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder
 Ported Status
 -------------
 
-The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting 
-of the non-imaging assemblies.
+The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
 Results, July 28, 2014:
 
