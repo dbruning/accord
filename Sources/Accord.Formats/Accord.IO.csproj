@@ -124,6 +124,13 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Mat\MatArrayFlags.cs" />
+    <Compile Include="Mat\MatArrayType.cs" />
+    <Compile Include="Mat\MatDataType.cs" />
+    <Compile Include="Mat\MatDataTag.cs" />
+    <Compile Include="Mat\MatHeader.cs" />
+    <Compile Include="MatNode.cs" />
+    <Compile Include="MatReader.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IdxReader.cs" />
     <Compile Include="ExcelReader.cs" />
@@ -136,8 +143,13 @@
       <Name>Accord.Core</Name>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\Accord.Math\Accord.Math.csproj">
+      <Project>{f718e9a8-db62-4785-8c49-4333a60d256a}</Project>
+      <Name>Accord.Math</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Accord.IO.cd" />
     <None Include="Accord.snk" />
   </ItemGroup>
   <ItemGroup>

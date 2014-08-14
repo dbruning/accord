@@ -22,9 +22,15 @@
 
 namespace Accord.Tests.MachineLearning
 {
+    using System.Collections.Generic;
+    using System.Drawing;
+    using Accord.Controls;
+    using Accord.Imaging.Filters;
     using Accord.MachineLearning.Geometry;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using AForge;
+    using AForge.Imaging;
     using AForge.Math.Geometry;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Point = AForge.Point;
 
     [TestClass()]

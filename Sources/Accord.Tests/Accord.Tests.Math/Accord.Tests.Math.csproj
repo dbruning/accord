@@ -112,6 +112,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\OwensTTest.cs" />
     <Compile Include="Integration\IntegralTest.cs" />
     <Compile Include="Convergence\AbsoluteConvergenceTest.cs" />
     <Compile Include="Comparers\ElementComparerTest.cs" />
@@ -191,6 +192,14 @@
     <ProjectReference Include="..\..\Non LGPL\Accord.Math.NonCommercial\Portable.Accord.Math %28Noncommercial%29.csproj">
       <Project>{c25123e2-a3d0-4229-8e3c-b2fd5a86e675}</Project>
       <Name>Portable.Accord.Math %28Noncommercial%29</Name>
+    <ProjectReference Include="..\..\Accord.Statistics\Accord.Statistics.csproj">
+      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
+      <Name>Accord.Statistics</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extras\Accord.Math.NonCommercial\Accord.Math %28Noncommercial%29.csproj">
+      <Project>{1A83AF16-1AC8-45E3-9E7E-FA7248C7CBCB}</Project>
+      <Name>Accord.Math %28Noncommercial%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\Accord.Tests.Math.Cpp\Accord.Tests.Math.Cpp.vcxproj">
       <Project>{161BD953-537D-4325-8A00-22475FC9088E}</Project>
