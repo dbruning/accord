@@ -58,6 +58,7 @@
     <Compile Include="Comparers\StableComparer.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Convergence\AbsoluteConvergence.cs" />
+    <Compile Include="Convergence\Base\IConvergence.cs" />
     <Compile Include="Convergence\Base\ISingleValueConvergence.cs" />
     <Compile Include="Convergence\RelativeConvergence.cs" />
     <Compile Include="Convergence\RelativeParameterConvergence.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="Decompositions\LuDecomposition.cs" />
     <Compile Include="Decompositions\LuDecompositionD.cs" />
     <Compile Include="Decompositions\LuDecompositionF.cs" />
-    <Compile Include="Decompositions\NonnegativeFactorization.cs" />
+    <Compile Include="Decompositions\NonnegativeMatrixFactorization.cs" />
     <Compile Include="Decompositions\QrDecomposition.cs" />
     <Compile Include="Decompositions\QrDecompositionD.cs" />
     <Compile Include="Decompositions\QrDecompositionF.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Functions\Gabor.cs" />
     <Compile Include="Functions\Gamma.cs" />
     <Compile Include="Functions\Normal.cs" />
+    <Compile Include="Functions\OwensT.cs" />
     <Compile Include="Geometry\Circle.cs" />
     <Compile Include="Geometry\ConvexHullDefects.cs" />
     <Compile Include="Geometry\ConvexityDefect.cs" />

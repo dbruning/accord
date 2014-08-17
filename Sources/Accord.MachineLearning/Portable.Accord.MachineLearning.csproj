@@ -58,9 +58,9 @@
     <Compile Include="Bayes\NaiveBayes`1.cs" />
     <Compile Include="Boosting\AdaBoost.cs" />
     <Compile Include="Boosting\Boost.cs" />
-    <Compile Include="Boosting\Classifiers\DecisionStump.cs" />
-    <Compile Include="Boosting\Classifiers\IWeakClassifier.cs" />
-    <Compile Include="Boosting\Classifiers\Weak.cs" />
+    <Compile Include="Boosting\Learners\DecisionStump.cs" />
+    <Compile Include="Boosting\Learners\IWeakClassifier.cs" />
+    <Compile Include="Boosting\Learners\Weak.cs" />
     <Compile Include="Clustering\BinarySplit.cs" />
     <Compile Include="Clustering\GaussianCluster.cs" />
     <Compile Include="Clustering\GaussianMixtureModel.cs" />
@@ -106,6 +106,7 @@
     <Compile Include="Performance\CrossValidation\CrossValidationResult`1.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidationStatistics.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidationValues.cs" />
+    <Compile Include="Performance\CrossValidation\CrossValidationValues`1.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidation`1.cs" />
     <Compile Include="Performance\SplitSet\SplitSetResult`1.cs" />
     <Compile Include="Performance\SplitSet\SplitSetStatistics`1.cs" />
