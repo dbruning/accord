@@ -218,7 +218,7 @@ namespace Accord.IO
 
             if (nameTag.IsSmallFormat)
             {
-                Name = new String((sbyte*)nameTag.SmallData_Value, 0, nameTag.SmallData_NumberOfBytes);
+                Name = NewString(nameTag.SmallData_Value, 0, nameTag.SmallData_NumberOfBytes);
             }
             else
             {
@@ -373,7 +373,7 @@ namespace Accord.IO
                     matType = contentsTag.SmallData_Type;
                     if (matType == MatDataType.miUTF8)
                     {
-                        value = new String((sbyte*)contentsTag.SmallData_Value,
+                        value = NewString(contentsTag.SmallData_Value,
                             0, contentsTag.SmallData_NumberOfBytes);
                     }
                     else
@@ -508,5 +508,14 @@ namespace Accord.IO
         }
 
 
+        private static unsafe string NewString(byte* value, int startIndex, int length)
+        {
+            var chars = new char[length];
+            for (var i = 0; i < length; ++i)
+            {
+                chars[i] = (char)(sbyte)value[startIndex + i];
+            }
+            return new string(chars);
+        }
     }
 }
