@@ -1,4 +1,4 @@
-![The Accord.NET Framework](http://accord-framework.net/docs/icons/logo.png)
+﻿![The Accord.NET Framework](http://accord-framework.net/docs/icons/logo.png)
 
 Portable Accord.NET Framework
 =============================
@@ -49,13 +49,13 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, July 28, 2014:
+Results, August 18, 2014:
 
 * Accord.Tests.Audio, 12 unit tests, all passed
-* Accord.Tests.IO, 8 unit tests, all passed
-* Accord.Tests.Math, 449 unit tests, 1 failed
-* Accord.Tests.Statistics, 942 tests, all passed
-* Accord.Tests.MachineLearning, 131 tests, 5 failed
+* Accord.Tests.IO, 20 unit tests, all passed
+* Accord.Tests.Math, 454 unit tests, all passed
+* Accord.Tests.Statistics, 950 tests, all passed
+* Accord.Tests.MachineLearning, 134 tests, 5 failed
 * Accord.Tests.MachineLearning.GPL, 1 test, all passed
 * Accord.Tests.Neuro, 20 tests, all passed
 
