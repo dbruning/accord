@@ -12,10 +12,10 @@ echo.
 :: Settings for complete and (libs-only) package creation
 :: ---------------------------------------------------------
 
-set version=2.13.0
+call ..\version.cmd
 set rar="C:\Program Files\WinRAR\rar"
-set fullname="Accord.NET Framework-%version%.rar" 
-set libsname="Accord.NET Framework-%version%-(libs only).rar"
+set fullname="Accord.NET-%version%-archive.rar" 
+set libsname="Accord.NET-%version%-libsonly.rar"
 set opts=a -m5 -s
 
 
@@ -40,11 +40,13 @@ mkdir ..\bin
 set output=..\bin\%fullname%
 del %output%
 
+%rar% %opts%    %output% "..\..\Contributors.txt"
 %rar% %opts%    %output% "..\..\Copyright.txt"
 %rar% %opts%    %output% "..\..\License.txt"
 %rar% %opts%    %output% "..\..\Release notes.txt"
 %rar% %opts%    %output% "..\..\Docs\*.chm"        -x*\.svn*
 %rar% %opts% -r %output% "..\..\Release\*"         -x*\.svn* -x*.lastcodeanalysissucceeded -x*.CodeAnalysisLog.xml -x*SlimDX.pdb
+%rar% %opts% -r %output% "..\..\Debug\*"           -x*\.svn* -x*.lastcodeanalysissucceeded -x*.CodeAnalysisLog.xml -x*SlimDX.pdb
 %rar% %opts% -r %output% "..\..\Sources\*"         -x*\.svn* -x*\obj  -x*\bin      -x*\TestResults -x*.sdf -x*.suo -x*.user -x*.shfbproj_* -x*.vsp -x*.pidb
 %rar% %opts% -r %output% "..\..\Samples\*"         -x*\.svn* -x*\obj  -x*\bin\x64\ -x*\bin\Debug   -x*\bin\Release -x*\bin\x86\Debug -x"*\bin\x86\Release 3.5" -x*.pdb -x*.user -x*.vsp -x*.pidb
 %rar% %opts% -r %output% "..\..\Externals\*"       -x*\.svn* -x*.pdb
@@ -62,6 +64,7 @@ timeout /T 5
 set output=..\bin\%libsname%
 del %output%
 
+%rar% %opts%    %output% "..\..\Contributors.txt"
 %rar% %opts%    %output% "..\..\Copyright.txt"
 %rar% %opts%    %output% "..\..\License.txt"
 %rar% %opts%    %output% "..\..\Release notes.txt"
