@@ -15,7 +15,7 @@ VersionInfoVersion={#VERSION}
 DefaultDirName={pf}\Accord.NET\Framework
 DefaultGroupName=Accord.NET\Framework
 AllowNoIcons=yes
-OutputBaseFilename=Accord.NET Framework-{#VERSION}
+OutputBaseFilename=Accord.NET-{#VERSION}-installer.exe
 OutputDir=..\bin
 
 Compression=lzma2/ultra64
@@ -56,6 +56,7 @@ end;
 Source: "..\..\Copyright.txt";       DestDir: "{app}";               Components: libs
 Source: "..\..\License.txt";         DestDir: "{app}";               Components: libs
 Source: "..\..\Release notes.txt";   DestDir: "{app}";               Components: libs
+Source: "..\..\Contributors.txt";    DestDir: "{app}";               Components: libs
 Source: "..\..\Docs\*.chm";          DestDir: "{app}\Docs";          Components: docs;     Flags: skipifsourcedoesntexist; Excludes: "*.~*"
 Source: "..\..\Sources\*";           DestDir: "{app}\Sources";       Components: sources;  Flags: recursesubdirs; Excludes: "*.~*,\TestResults,*\bin,*\obj,*.sdf,*.suo,*.user,*.vsp,*.shfbproj_*,*.pidb"
 Source: "..\..\Samples\*";           DestDir: "{app}\Samples";       Components: samples;  Flags: recursesubdirs; Excludes: "*.~*,*\obj,*\bin\x64\,*\bin\Debug,*\bin\Release,*\bin\x86\Debug,*\bin\x86\Release 3.5,*.pdb,*.user,*.pidb"

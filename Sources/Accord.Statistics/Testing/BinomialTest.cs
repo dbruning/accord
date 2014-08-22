@@ -23,8 +23,8 @@
 namespace Accord.Statistics.Testing
 {
     using System;
-    using Accord.Statistics.Distributions.Univariate;
     using Accord.Math;
+    using Accord.Statistics.Distributions.Univariate;
 
     /// <summary>
     ///   Binomial test.
@@ -81,6 +81,8 @@ namespace Accord.Statistics.Testing
     /// Console.WriteLine("Significant? " + test.Significant); // True.
     /// </code>
     /// </example>
+    /// 
+    /// <seealso cref="Accord.Statistics.Distributions.Univariate.BinomialDistribution"/>
     /// 
     [Serializable]
     public class BinomialTest : HypothesisTest<BinomialDistribution>

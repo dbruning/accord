@@ -31,8 +31,8 @@ namespace Accord.IO
     using System.Runtime.InteropServices;
 
     /// <summary>
-    ///   Node object for .MAT files. A node can contain a matrix object,
-    ///   a string, or another nodes.
+    ///   Node object contained in <see cref="MatReader">.MAT file</see>. 
+    ///   A node can contain a matrix object, a string, or another nodes.
     /// </summary>
     /// 
     public class MatNode : IEnumerable<MatNode>
@@ -218,7 +218,7 @@ namespace Accord.IO
 
             if (nameTag.IsSmallFormat)
             {
-                Name = NewString(nameTag.SmallData_Value, 0, nameTag.SmallData_NumberOfBytes);
+                Name = new String((sbyte*)nameTag.SmallData_Value, 0, nameTag.SmallData_NumberOfBytes);
             }
             else
             {
@@ -284,7 +284,7 @@ namespace Accord.IO
 
                 Array array = Array.CreateInstance(type, length);
                 Buffer.BlockCopy(rawData, 0, array, 0, rawData.Length);
-                value = Tuple.Create(ir, ic, array);
+                value = new MatSparse(ir, ic, array);
             }
             else if (flagsElement.Class == MatArrayType.mxCELL_CLASS)
             {
@@ -373,7 +373,7 @@ namespace Accord.IO
                     matType = contentsTag.SmallData_Type;
                     if (matType == MatDataType.miUTF8)
                     {
-                        value = NewString(contentsTag.SmallData_Value,
+                        value = new String((sbyte*)contentsTag.SmallData_Value,
                             0, contentsTag.SmallData_NumberOfBytes);
                     }
                     else
@@ -507,15 +507,5 @@ namespace Accord.IO
             return contents.Values.GetEnumerator();
         }
 
-
-        private static unsafe string NewString(byte* value, int startIndex, int length)
-        {
-            var chars = new char[length];
-            for (var i = 0; i < length; ++i)
-            {
-                chars[i] = (char)(sbyte)value[startIndex + i];
-            }
-            return new string(chars);
-        }
     }
 }
