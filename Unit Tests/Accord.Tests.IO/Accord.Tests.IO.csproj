@@ -112,23 +112,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-      <HintPath>c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
-    <Reference Include="AForge, Version=2.2.3.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Externals\AForge.NET\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Math, Version=2.2.3.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Externals\AForge.NET\AForge.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Neuro, Version=2.2.5.0, Culture=neutral, PublicKeyToken=2094f4ea39731d4f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Externals\AForge.NET\AForge.Neuro.dll</HintPath>
-    </Reference>
-    <Reference Include="Shim, Version=0.9.0.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\shim.0.9.0-pre\lib\net45\Shim.dll</HintPath>
+    <Reference Include="Shim">
+      <HintPath>..\..\Sources\packages\shim.0.9.2-pre4\lib\net45\Shim.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -137,11 +123,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml" />
-	<Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
   </ItemGroup>
-<!--
+  <!--
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release (3.5)|AnyCPU'">
   	<Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
     </Reference>
@@ -151,7 +137,7 @@
       <HintPath>c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
   </ItemGroup>
- --> 
+ -->
   <ItemGroup>
     <Compile Include="Formats\MatReaderTest.cs" />
     <Compile Include="Formats\IdxReaderTest.cs" />
@@ -163,41 +149,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Controls.Statistics\Accord.Controls.csproj">
-      <Project>{0AB27A20-925C-4556-9FA4-6E2C109E448E}</Project>
-      <Name>Accord.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Formats\Accord.IO.csproj">
-      <Project>{63184EBD-6B28-4066-AAEE-5B99431E31F4}</Project>
-      <Name>Accord.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Accord.MachineLearning.csproj">
-      <Project>{7AB4BBCC-6222-423D-9FF9-BA9CB7C09199}</Project>
-      <Name>Accord.MachineLearning</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Neuro\Accord.Neuro.csproj">
-      <Project>{179F3045-8757-4F4B-9508-F48327BA11E3}</Project>
-      <Name>Accord.Neuro</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Tests.Math\Accord.Tests.Math.csproj">
-      <Project>{F454DBD6-2AB9-461D-9624-2249B921B6E6}</Project>
-      <Name>Accord.Tests.Math</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -256,15 +207,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Accord.Formats\Net.Accord.ExcelReader.csproj">
+    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
+      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
+      <Name>Portable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
+      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
+      <Name>Portable.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Formats\Net.Accord.ExcelReader.csproj">
       <Project>{61c2bc7a-0141-4185-bb49-66afbe5bfe23}</Project>
       <Name>Net.Accord.ExcelReader</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Formats\Portable.Accord.IO.csproj">
+    <ProjectReference Include="..\..\Sources\Accord.Formats\Portable.Accord.IO.csproj">
       <Project>{8c4970de-ab6d-47de-b3d0-b1ef99e4ccc2}</Project>
       <Name>Portable.Accord.IO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Accord.Math\Portable.Accord.Math.csproj">
+    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
     </ProjectReference>
@@ -277,10 +236,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
-  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\Sources\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\Sources\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+    <Error Condition="!Exists('..\..\Sources\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\Sources\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
