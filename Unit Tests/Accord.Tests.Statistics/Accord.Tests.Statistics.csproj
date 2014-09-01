@@ -153,7 +153,6 @@
     <Compile Include="Kernels\QuadraticTest.cs" />
     <Compile Include="Kernels\LinearTest.cs" />
     <Compile Include="Models\Regression\NonlinearLeastSquaresTest.cs" />
-    <Compile Include="Models\Regression\NonlinearLestSquaresTest.cs" />
     <Compile Include="RunningMarkovClassifierTest.cs" />
     <Compile Include="Distributions\Multivariate\Continuous\MultivariateEmpiricalDistributionTest.cs" />
     <Compile Include="Distributions\Multivariate\Continuous\InverseWishartDistributionTest.cs" />

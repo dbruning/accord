@@ -152,5 +152,76 @@ namespace Accord.Tests.IO
                 Assert.AreEqual(4, samples[i].Length);
             }
         }
+
+        [TestMethod()]
+        public void GuessNumberOfDimensionsTest()
+        {
+            MemoryStream file = new MemoryStream(
+                Encoding.Default.GetBytes(Resources.iris_scale));
+
+            SparseReader reader = new SparseReader(file, Encoding.Default);
+
+            Assert.AreEqual(4, reader.Dimensions);
+
+            int[] labels = null;
+
+            string[] descriptions = null;
+
+            double[][] samples = reader.ReadToEnd(out labels, out descriptions);
+
+            Assert.AreEqual(150, samples.Length);
+
+            for (int i = 0; i < 150; i++)
+            {
+                Assert.IsTrue(labels[i] >= 0 && labels[i] <= 3);
+                Assert.IsTrue(descriptions[i] == String.Empty);
+                Assert.AreEqual(4, samples[i].Length);
+            }
+        }
+
+        [TestMethod()]
+        public void DimensionsTest()
+        {
+            MemoryStream file = new MemoryStream(
+                Encoding.Default.GetBytes(Resources.a9a1_train));
+
+            SparseReader reader = new SparseReader(file, Encoding.Default);
+
+            Assert.AreEqual(123, reader.Dimensions);
+
+            int[] labels = null;
+            string[] descriptions = null;
+
+            double[][] samples = reader.ReadToEnd(out labels, out descriptions);
+
+            Assert.AreEqual(26049, samples.Length);
+            for (int i = 0; i < labels.Length; i++)
+            {
+                Assert.IsTrue(labels[i] == -1 || labels[i] == 1);
+                Assert.IsTrue(descriptions[i] == String.Empty);
+                Assert.AreEqual(123, samples[i].Length);
+            }
+        }
+
+        [TestMethod()]
+        public void GuessDimensionsInMiddleRunTest()
+        {
+            MemoryStream file = new MemoryStream(
+                Encoding.Default.GetBytes(Resources.a9a1_train));
+
+            SparseReader reader = new SparseReader(file, Encoding.Default);
+
+            int[] labels = null;
+            string[] descriptions = null;
+            double[][] samples = reader.ReadToEnd(out labels, out descriptions);
+
+            Assert.AreEqual(26049, samples.Length);
+            for (int i = 0; i < labels.Length; i++)
+            {
+                Assert.IsTrue(labels[i] == -1 || labels[i] == 1);
+                Assert.IsTrue(descriptions[i] == String.Empty);
+                Assert.AreEqual(123, samples[i].Length);
+            }
+        }
     }
 }

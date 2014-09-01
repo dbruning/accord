@@ -138,10 +138,11 @@
   </ItemGroup>
  -->
   <ItemGroup>
-    <Compile Include="Formats\MatReaderTest.cs" />
-    <Compile Include="Formats\IdxReaderTest.cs" />
-    <Compile Include="Formats\ExcelReaderTest.cs" />
-    <Compile Include="Formats\SparseReaderTest.cs" />
+    <Compile Include="LibSvmModelTest.cs" />
+    <Compile Include="MatReaderTest.cs" />
+    <Compile Include="IdxReaderTest.cs" />
+    <Compile Include="ExcelReaderTest.cs" />
+    <Compile Include="SparseReaderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -178,6 +179,8 @@
   <ItemGroup>
     <None Include="Accord.snk" />
     <None Include="app.config" />
+    <None Include="Resources\liblinear\a9a.test" />
+    <None Include="Resources\liblinear\a9a.train" />
     <None Include="Resources\mat\A64.mat" />
     <None Include="Resources\mat\bigsparse.mat" />
     <None Include="Resources\mat\cell.mat" />
@@ -204,6 +207,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\liblinear\L1R_LR_a9a.txt" />
+    <Content Include="Resources\liblinear\L1R_LR_DUAL_a9a.txt" />
+    <Content Include="Resources\liblinear\L2R_LR_a9a.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
