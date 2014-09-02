@@ -247,23 +247,5 @@ namespace Accord.MachineLearning.DecisionTrees
 
             return height;
         }
-
-
-
-
-        [OnDeserialized]
-        private void OnDeserialized(StreamingContext context)
-        {
-            if (Branches != null)
-            {
-                Branches.Owner = this;
-
-                foreach (DecisionNode node in Branches)
-                {
-                    node.Parent = this;
-                }
-            }
-        }
-
     }
 }

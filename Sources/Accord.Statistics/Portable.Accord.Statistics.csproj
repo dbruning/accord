@@ -68,6 +68,7 @@
     <Compile Include="Analysis\Base\IMultivariateRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IProjectionAnalysis.cs" />
     <Compile Include="Analysis\Base\IRegressionAnalysis.cs" />
+    <Compile Include="Analysis\CircularDescriptiveAnalysis.cs" />
     <Compile Include="Analysis\Contrast Functions\Exponential.cs" />
     <Compile Include="Analysis\Contrast Functions\IContrastFunction.cs" />
     <Compile Include="Analysis\Contrast Functions\Kurtosis.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Distributions\Univariate\Continuous\GompertzDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GumbelDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\HyperbolicSecantDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\InverseChiSquareDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\InverseGammaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\InverseGaussianDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\KolmogorovSmirnovDistribution.cs" />
