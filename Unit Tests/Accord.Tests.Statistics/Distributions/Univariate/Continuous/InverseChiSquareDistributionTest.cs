@@ -29,7 +29,7 @@ namespace Accord.Tests.Statistics
     using Accord.Statistics.Testing;
 
     [TestClass()]
-    public class ChiSquareDistributionTest
+    public class InverseChiSquareDistributionTest
     {
 
 
@@ -51,35 +51,35 @@ namespace Accord.Tests.Statistics
         [TestMethod()]
         public void ConstructorTest()
         {
-            var chisq = new ChiSquareDistribution(degreesOfFreedom: 7);
+            var invchisq = new InverseChiSquareDistribution(degreesOfFreedom: 7);
 
-            double mean = chisq.Mean;     // 7
-            double median = chisq.Median; // 6.345811195595612
-            double var = chisq.Variance;  // 14
+            double mean = invchisq.Mean;     // 0.2
+            double median = invchisq.Median; // 6.345811068141737
+            double var = invchisq.Variance;  // 75
 
-            double cdf = chisq.DistributionFunction(x: 6.27); // 0.49139966433823956
-            double pdf = chisq.ProbabilityDensityFunction(x: 6.27); // 0.11388708001184455
-            double lpdf = chisq.LogProbabilityDensityFunction(x: 6.27); // -2.1725478476948092
+            double cdf = invchisq.DistributionFunction(x: 6.27); // 0.50860033566176044
+            double pdf = invchisq.ProbabilityDensityFunction(x: 6.27); // 0.0000063457380298844403
+            double lpdf = invchisq.LogProbabilityDensityFunction(x: 6.27); // -11.967727146795536
 
-            double ccdf = chisq.ComplementaryDistributionFunction(x: 6.27); // 0.50860033566176044
-            double icdf = chisq.InverseDistributionFunction(p: cdf); // 6.2700000000852318
+            double ccdf = invchisq.ComplementaryDistributionFunction(x: 6.27); // 0.49139966433823956
+            double icdf = invchisq.InverseDistributionFunction(p: cdf); // 6.2699998329362963
 
-            double hf = chisq.HazardFunction(x: 6.27); // 0.22392254197721179
-            double chf = chisq.CumulativeHazardFunction(x: 6.27); // 0.67609276602233315
+            double hf = invchisq.HazardFunction(x: 6.27); // 0.000012913598625327002
+            double chf = invchisq.CumulativeHazardFunction(x: 6.27); // 0.71049750196765715
 
-            string str = chisq.ToString(); // "χ²(x; df = 7)
+            string str = invchisq.ToString(); // "Inv-χ²(x; df = 7)"
 
-            Assert.AreEqual(7, mean);
-            Assert.AreEqual(6.345811195595612, median, 1e-6);
-            Assert.AreEqual(14, var);
-            Assert.AreEqual(0.67609276602233315, chf);
-            Assert.AreEqual(0.49139966433823956, cdf);
-            Assert.AreEqual(0.11388708001184455, pdf);
-            Assert.AreEqual(-2.1725478476948092, lpdf);
-            Assert.AreEqual(0.22392254197721179, hf);
-            Assert.AreEqual(0.50860033566176044, ccdf);
-            Assert.AreEqual(6.2700000000852318, icdf, 1e-6);
-            Assert.AreEqual("χ²(x; df = 7)", str);
+            Assert.AreEqual(0.2, mean);
+            Assert.AreEqual(6.345811068141737, median, 1e-6);
+            Assert.AreEqual(75, var);
+            Assert.AreEqual(0.71049750196765715, chf);
+            Assert.AreEqual(0.50860033566176044, cdf);
+            Assert.AreEqual(0.0000063457380298844403, pdf);
+            Assert.AreEqual(-11.967727146795536, lpdf);
+            Assert.AreEqual(0.000012913598625327002, hf);
+            Assert.AreEqual(0.49139966433823956, ccdf);
+            Assert.AreEqual(6.2699998329362963, icdf, 1e-6);
+            Assert.AreEqual("Inv-χ²(x; df = 7)", str);
         }
 
         [TestMethod()]
