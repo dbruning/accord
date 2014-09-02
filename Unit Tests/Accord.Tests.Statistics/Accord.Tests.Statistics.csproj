@@ -108,7 +108,7 @@
       <HintPath>..\..\..\Externals\AForge.NET\AForge.dll</HintPath>
     </Reference>
     <Reference Include="Shim">
-      <HintPath>..\..\Sources\packages\shim.0.9.2-pre6\lib\net45\Shim.dll</HintPath>
+      <HintPath>..\..\Sources\packages\shim.0.9.2-pre7\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
