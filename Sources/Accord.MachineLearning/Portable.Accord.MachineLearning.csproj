@@ -123,13 +123,17 @@
     <Compile Include="Structures\KDTree`1.cs" />
     <Compile Include="VectorMachines\ISupportVectorMachine.cs" />
     <Compile Include="VectorMachines\KernelSupportVectorMachine.cs" />
-    <Compile Include="VectorMachines\Learning\CoordinateDescentLinearLearning.cs" />
-    <Compile Include="VectorMachines\Learning\ISupportVectorMachineLearning.cs" />
+    <Compile Include="VectorMachines\Learning\Base\BaseSupportVectorLearning.cs" />
+    <Compile Include="VectorMachines\Learning\Base\ISupportVectorMachineLearning.cs" />
     <Compile Include="VectorMachines\Learning\LeastSquaresLearning.cs" />
+    <Compile Include="VectorMachines\Learning\LinearCoordinateDescent.cs" />
+    <Compile Include="VectorMachines\Learning\LinearNewtonMethod.cs" />
     <Compile Include="VectorMachines\Learning\MulticlassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
-    <Compile Include="VectorMachines\Learning\NewtonMethodPrimalLearning.cs" />
-    <Compile Include="VectorMachines\Learning\ProbabilisticOutputLearning.cs" />
+    <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticCoordinateDescent.cs" />
+    <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticDualCoordinateDescent.cs" />
+    <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticNewtonMethod.cs" />
+    <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticOutputCalibration.cs" />
     <Compile Include="VectorMachines\Learning\SequentialMinimalOptimization.cs" />
     <Compile Include="VectorMachines\Learning\SupportVectorLearningHelper.cs" />
     <Compile Include="VectorMachines\Learning\SupportVectorReduction.cs" />
@@ -164,7 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.0.9.2-pre5\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
+      <HintPath>..\packages\shim.0.9.2-pre6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

@@ -51,6 +51,7 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="LibSvmModel.cs" />
     <Compile Include="MatSparse.cs" />
     <Compile Include="Mat\MatArrayFlags.cs" />
     <Compile Include="Mat\MatArrayType.cs" />
@@ -69,8 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.0.9.2-pre5\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\shim.0.9.2-pre6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression">
       <HintPath>..\packages\Microsoft.Bcl.Compression.3.9.83\lib\portable-net45+win8+wp8+wpa81\System.IO.Compression.dll</HintPath>
@@ -81,9 +81,17 @@
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
+      <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
+      <Name>Portable.Accord.MachineLearning</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accord.Statistics\Portable.Accord.Statistics.csproj">
+      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
+      <Name>Portable.Accord.Statistics</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
