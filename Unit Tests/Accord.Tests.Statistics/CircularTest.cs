@@ -154,6 +154,24 @@ namespace Accord.Tests.Statistics
         }
 
         [TestMethod()]
+        public void SkewnessTest()
+        {
+            double expected = 1.4938580058598621703e-01;
+            double actual = Circular.Skewness(angles);
+
+            Assert.AreEqual(expected, actual, 1e-15);
+        }
+
+        [TestMethod()]
+        public void KurtosisTest()
+        {
+            double expected = 6.4794232277921437468e-01;
+            double actual = Circular.Kurtosis(angles);
+
+            Assert.AreEqual(expected, actual, 1e-15);
+        }
+
+        [TestMethod()]
         public void MedianTest()
         {
             double expected = 3.1378076599999993324e-01;
@@ -209,8 +227,8 @@ namespace Accord.Tests.Statistics
 
 
             Assert.AreEqual(0, mean);
-            Assert.AreEqual(1.0058013608769885, stdDev);
-            Assert.AreEqual(0.4971507281317768, var);
+            Assert.AreEqual(1.0058013608769885, stdDev, 1e-11);
+            Assert.AreEqual(0.4971507281317768, var, 1e-11);
             Assert.AreEqual(0, med);
             Assert.AreEqual(0, median);
             Assert.AreEqual(23, quartiles.Min, 1e-13);

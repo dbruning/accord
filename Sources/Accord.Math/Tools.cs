@@ -36,7 +36,13 @@ namespace Accord.Math
     {
 
         #region Framework-wide random number generator
+        
+#if NET45
+        private static ThreadLocal<Random> random = new ThreadLocal<Random>(create, true);
+#else
         private static ThreadLocal<Random> random = new ThreadLocal<Random>(create);
+#endif
+
         private static int? seed;
 
         private static Random create()
@@ -59,14 +65,16 @@ namespace Accord.Math
         /// 
         public static void SetupGenerator(int? seed)
         {
+            Tools.seed = seed;
+
 #if NET45
             lock (random)
             {
-                foreach (var r in random.Values)
-                    r.Value = new Random(seed);
+                for (int i = 0; i < random.Values.Count; i++)
+                    random.Values[i] = create();
             }
 #endif
-            Tools.seed = seed;
+            
             Tools.random.Value = create();
         }
         #endregion

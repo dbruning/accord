@@ -104,10 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrays.cs" />
+    <Compile Include="Collections\RedBlackTree`2.cs" />
+    <Compile Include="Collections\KeyValuePairComparer`2.cs" />
     <Compile Include="Compatibility\CancellationToken.cs" />
     <Compile Include="Compatibility\ConcurrentStack.cs" />
     <Compile Include="Compatibility\AggregateException.cs" />
+    <Compile Include="Compatibility\IReadOnlyCollection`1.cs" />
     <Compile Include="Compatibility\ISet.cs" />
     <Compile Include="Compatibility\Lazy.cs" />
     <Compile Include="Compatibility\Parallel.cs" />
@@ -115,25 +117,24 @@
     <Compile Include="Compatibility\SpinLock.cs" />
     <Compile Include="Compatibility\ThreadLocal.cs" />
     <Compile Include="Compatibility\Tuple.cs" />
-    <Compile Include="DataSetExtensions.cs" />
-    <Compile Include="Exceptions\ConvergenceException.NoPcl.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Exceptions\ConvergenceException.cs" />
-    <Compile Include="Exceptions\DimensionMismatchException.NoPcl.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.cs" />
-    <Compile Include="Exceptions\NonPositiveDefiniteMatrixException.NoPcl.cs" />
     <Compile Include="Exceptions\NonPositiveDefiniteMatrixException.cs" />
-    <Compile Include="Exceptions\NonSymmetricMatrixException.NoPcl.cs" />
     <Compile Include="Exceptions\NonSymmetricMatrixException.cs" />
-    <Compile Include="Exceptions\SingularMatrixException.NoPcl.cs" />
     <Compile Include="Exceptions\SingularMatrixException.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\VersionInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VersionInfo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Structures\ReadOnlyDictionary.cs" />
+    <Compile Include="Collections\ReadOnlyOrderedDictionary.cs" />
+    <Compile Include="Collections\ReadOnlyDictionary.cs" />
+    <Compile Include="Collections\RedBlackTreeDictionary`2.cs" />
+    <Compile Include="Collections\RedBlackTreeNode.cs" />
+    <Compile Include="Collections\RedBlackTree`1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />
