@@ -60,6 +60,7 @@
     <Compile Include="Convergence\AbsoluteConvergence.cs" />
     <Compile Include="Convergence\Base\IConvergence.cs" />
     <Compile Include="Convergence\Base\ISingleValueConvergence.cs" />
+    <Compile Include="Convergence\GeneralConvergence.cs" />
     <Compile Include="Convergence\RelativeConvergence.cs" />
     <Compile Include="Convergence\RelativeParameterConvergence.cs" />
     <Compile Include="Decompositions\Base\ISolverArrayDecomposition.cs" />
@@ -170,7 +171,9 @@
     <Compile Include="Optimization\Unconstrained\Least Squares\LevenbergMarquardt.cs" />
     <Compile Include="Optimization\Unconstrained\LineSearchFailedException.cs" />
     <Compile Include="Optimization\Unconstrained\OptimizationProgressEventHandler.cs" />
+    <Compile Include="Optimization\Unconstrained\NelderMead.cs" />
     <Compile Include="Optimization\Unconstrained\ResilientBackpropagation.cs" />
+    <Compile Include="Optimization\Unconstrained\Subplex.cs" />
     <Compile Include="Optimization\Unconstrained\TrustRegionNewtonMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Special.cs" />

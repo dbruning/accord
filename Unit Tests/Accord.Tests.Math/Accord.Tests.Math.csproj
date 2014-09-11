@@ -142,7 +142,6 @@
     <Compile Include="Optimization\BoundedBroydenFletcherGoldfarbShannoTest.cs" />
     <Compile Include="Optimization\SubplexTest.cs" />
     <Compile Include="Optimization\NelderMeadTest.cs" />
-    <Compile Include="Optimization\NonlinearConjugateGradientTest.cs" />
     <Compile Include="Optimization\Lbfgsb3\LbfgsbComparer.cs" />
     <Compile Include="Optimization\Lbfgsb3\LbfgsbComparisonTest.cs" />
     <Compile Include="Optimization\LibBFGS\LibBFGSComparisonTest.cs" />

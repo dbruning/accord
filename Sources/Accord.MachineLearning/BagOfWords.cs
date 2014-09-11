@@ -27,7 +27,7 @@ namespace Accord.MachineLearning
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
-#if NET45
+#if !NET40 && !NET35
     using System.Collections.ObjectModel;
 #else
     using Accord.Collections;
