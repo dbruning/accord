@@ -25,7 +25,6 @@ namespace Accord.MachineLearning
     using Accord.Math;
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
 
 #if !NET40 && !NET35
     using System.Collections.ObjectModel;
@@ -72,7 +71,7 @@ namespace Accord.MachineLearning
     /// </remarks>
     /// 
     [Serializable]
-    public class BagOfWords : IBagOfWords<string[]>
+    public partial class BagOfWords : IBagOfWords<string[]>
     {
 
         private Dictionary<string, int> stringToCode;
@@ -252,14 +251,6 @@ namespace Accord.MachineLearning
         double[] IBagOfWords<string[]>.GetFeatureVector(string[] value)
         {
             return GetFeatureVector(value).ToDouble();
-        }
-
-
-        [OnDeserialized]
-        private void OnDeserialized(StreamingContext context)
-        {
-            readOnlyStringToCode = new ReadOnlyDictionary<string, int>(stringToCode);
-            readOnlyCodeToString = new ReadOnlyDictionary<int, string>(codeToString);
         }
     }
 }
