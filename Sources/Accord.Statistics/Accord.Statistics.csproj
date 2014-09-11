@@ -126,6 +126,7 @@
     <Compile Include="Analysis\Accord.Statistics.Analysis.cs" />
     <Compile Include="Analysis\Base\IAnalysisComponent.cs" />
     <Compile Include="Analysis\Base\IAnalysis.cs" />
+    <Compile Include="Analysis\Base\IDescriptiveMeasures.cs" />
     <Compile Include="Analysis\Base\IProjectionAnalysis.cs" />
     <Compile Include="Analysis\Base\IMultivariateRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IRegressionAnalysis.cs" />
@@ -198,6 +199,8 @@
     <Compile Include="Distributions\Univariate\Continuous\HyperbolicSecantDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\LogisticDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GeneralContinuousDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\LevyDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\FoldedNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\SkewNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\TriangularDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GumbelDistribution.cs" />

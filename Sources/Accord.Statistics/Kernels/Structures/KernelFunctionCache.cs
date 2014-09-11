@@ -25,6 +25,7 @@ namespace Accord.Statistics.Kernels
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using Accord.Collections;
 
     /// <summary>
     ///   Value cache for kernel function evaluations.
@@ -401,14 +402,16 @@ namespace Accord.Statistics.Kernels
         /// 
         /// <returns>A copy of the data cache.</returns>
         /// 
-        public ReadOnlyDictionary<Tuple<int, int>, double> GetDataCache()
+        public IDictionary<Tuple<int, int>, double> GetDataCache()
         {
             var dict = new Dictionary<Tuple<int, int>, double>();
 
             foreach (var entry in data)
+            {
                 dict.Add(GetIndexFromKey(entry.Key), entry.Value);
+            }
 
-            return new ReadOnlyDictionary<Tuple<int, int>, double>(dict);
+            return dict;
         }
 
         /// <summary>
@@ -420,7 +423,7 @@ namespace Accord.Statistics.Kernels
         /// 
         /// <returns>The Least Recently Used list of kernel matrix elements.</returns>
         /// 
-        public ReadOnlyCollection<Tuple<int, int>> GetLeastRecentlyUsedList()
+        public IList<Tuple<int, int>> GetLeastRecentlyUsedList()
         {
             var list = new List<Tuple<int, int>>();
 
@@ -429,7 +432,7 @@ namespace Accord.Statistics.Kernels
                 list.Add(GetIndexFromKey(key));
             }
 
-            return new ReadOnlyCollection<Tuple<int, int>>(list);
+            return list;
         }
     }
 

@@ -152,5 +152,36 @@ namespace Accord.Tests.Math
         }
 
 
+        [TestMethod()]
+        public void InverseErfTest()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                double expected = i / 100.0;
+                double erf = Special.Erf(expected);
+                double actual = Special.Ierf(erf);
+
+                Assert.AreEqual(expected, actual, 1e-15);
+
+                Assert.IsFalse(double.IsNaN(expected));
+                Assert.IsFalse(double.IsNaN(actual));
+            }
+        }
+
+        [TestMethod()]
+        public void InverseErfcTest()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                double expected = i / 100.0;
+                double erfc = Special.Erfc(expected);
+                double actual = Special.Ierfc(erfc);
+
+                Assert.AreEqual(expected, actual, 1e-15);
+
+                Assert.IsFalse(double.IsNaN(expected));
+                Assert.IsFalse(double.IsNaN(actual));
+            }
+        }
     }
 }

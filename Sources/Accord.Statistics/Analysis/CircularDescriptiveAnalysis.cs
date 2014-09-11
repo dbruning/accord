@@ -22,10 +22,12 @@
 
 namespace Accord.Statistics.Analysis
 {
-    using System;
+    using Accord.Collections;
     using Accord.Math;
     using Accord.Statistics.Distributions.Univariate;
     using AForge;
+    using System;
+    using System.ComponentModel;
 
     /// <summary>
     ///   Descriptive statistics analysis for circular data.
@@ -55,6 +57,9 @@ namespace Accord.Statistics.Analysis
         private double[] standardErrors;
         private double[] variances;
         private double[] medians;
+        private double[] modes;
+        private double[] kurtosis;
+        private double[] skewness;
         private int[] distinct;
 
         private double[] angularMeans;
@@ -75,8 +80,11 @@ namespace Accord.Statistics.Analysis
 
         private double[,] sourceMatrix;
         private double[][] sourceArray;
+        private double[] sourceRow;
 
         private CircularDescriptiveMeasureCollection measuresCollection;
+
+        private bool useStrictRanges = true;
 
 
         /// <summary>
@@ -85,20 +93,37 @@ namespace Accord.Statistics.Analysis
         /// 
         /// <param name="data">The source data to perform analysis.</param>
         /// <param name="length">The length of each circular variable (i.e. 24 for hours).</param>
+        /// <param name="columnName">The names for the analyzed variable.</param>
+        /// <param name="inPlace">
+        ///   Whether the analysis should conserve memory by doing 
+        ///   operations over the original <paramref name="data"/> array.
+        /// </param>
         /// 
-        public CircularDescriptiveAnalysis(double[] data, double[] length)
+        public CircularDescriptiveAnalysis(double[] data, double length, String columnName, bool inPlace = false)
         {
             if (data == null)
                 throw new ArgumentNullException("data");
 
-            if (length == null)
-                throw new ArgumentNullException("length");
+            init(data, null, null, new[] { length }, new[] { columnName }, inPlace);
+        }
 
-            double[,] matrix = new double[data.Length, 1];
+        /// <summary>
+        ///   Constructs the Circular Descriptive Analysis.
+        /// </summary>
+        /// 
+        /// <param name="data">The source data to perform analysis.</param>
+        /// <param name="length">The length of each circular variable (i.e. 24 for hours).</param>
+        /// <param name="inPlace">
+        ///   Whether the analysis should conserve memory by doing 
+        ///   operations over the original <paramref name="data"/> array.
+        /// </param>
+        /// 
+        public CircularDescriptiveAnalysis(double[] data, double length, bool inPlace = false)
+        {
+            if (data == null)
+                throw new ArgumentNullException("data");
 
-            System.Buffer.BlockCopy(data, 0, matrix, 0, data.Length * sizeof(double));
-
-            init(matrix, null, length, null);
+            init(data, null, null, new[] { length }, null, inPlace);
         }
 
         /// <summary>
@@ -116,7 +141,7 @@ namespace Accord.Statistics.Analysis
             if (length == null)
                 throw new ArgumentNullException("length");
 
-            init(data, null, length, null);
+            init(null, data, null, length, null);
         }
 
         /// <summary>
@@ -138,7 +163,7 @@ namespace Accord.Statistics.Analysis
             if (columnNames == null)
                 throw new ArgumentNullException("columnNames");
 
-            init(data, null, length, columnNames);
+            init(null, data, null, length, columnNames);
         }
 
         /// <summary>
@@ -157,7 +182,7 @@ namespace Accord.Statistics.Analysis
             if (length == null)
                 throw new ArgumentNullException("length");
 
-            init(null, data, length, null);
+            init(null, null, data, length, null);
         }
 
         /// <summary>
@@ -180,15 +205,17 @@ namespace Accord.Statistics.Analysis
             if (columnNames == null)
                 throw new ArgumentNullException("columnNames");
 
-            init(null, data, length, columnNames);
+            init(null, null, data, length, columnNames);
         }
 
 
-        private void init(double[,] matrix, double[][] array, double[] length, string[] columnNames)
+        private void init(double[] row, double[,] matrix, double[][] array,
+            double[] length, string[] columnNames, bool inPlace = false)
         {
             this.columnNames = columnNames;
             this.sourceArray = array;
             this.sourceMatrix = matrix;
+            this.sourceRow = row;
             this.lengths = length;
 
             if (matrix != null)
@@ -200,15 +227,14 @@ namespace Accord.Statistics.Analysis
                     throw new DimensionMismatchException("length");
 
                 this.angles = new double[variables][];
-
                 for (int i = 0; i < angles.Length; i++)
                 {
                     angles[i] = new double[samples];
                     for (int j = 0; j < angles[i].Length; j++)
-                        angles[i][j] = Circular.Transform(matrix[j, i], length[i]);
+                        angles[i][j] = Circular.ToRadians(matrix[j, i], length[i]);
                 }
             }
-            else
+            else if (array != null)
             {
                 this.samples = array.Length;
                 this.variables = array[0].Length;
@@ -220,10 +246,22 @@ namespace Accord.Statistics.Analysis
                 for (int i = 0; i < angles.Length; i++)
                 {
                     angles[i] = new double[samples];
-                    angles[i] = new double[samples];
                     for (int j = 0; j < angles[i].Length; j++)
-                        angles[i][j] = Circular.Transform(array[j][i], length[i]);
+                        angles[i][j] = Circular.ToRadians(array[j][i], length[i]);
                 }
+            }
+            else
+            {
+                this.samples = sourceRow.Length;
+                this.variables = 1;
+                this.angles = new double[variables][];
+
+                if (lengths.Length != variables)
+                    throw new DimensionMismatchException("length");
+
+                angles[0] = inPlace ? sourceRow : new double[samples];
+                for (int j = 0; j < angles[0].Length; j++)
+                    angles[0][j] = Circular.ToRadians(sourceRow[j], length[0]);
             }
 
 
@@ -254,8 +292,11 @@ namespace Accord.Statistics.Analysis
             this.quartiles = Quartiles;
             this.innerFences = InnerFences;
             this.outerFences = OuterFences;
+            this.modes = Modes;
             this.cos = CosineSum;
             this.sin = SineSum;
+            this.skewness = Skewness;
+            this.kurtosis = Kurtosis;
             this.concentration = Concentration;
             this.deviances = Deviance;
             this.confidences = Confidence;
@@ -271,6 +312,7 @@ namespace Accord.Statistics.Analysis
             this.variances = null;
             this.standardErrors = null;
             this.distinct = null;
+            this.modes = null;
             this.deviances = null;
             this.confidences = null;
             this.quartiles = null;
@@ -278,11 +320,37 @@ namespace Accord.Statistics.Analysis
             this.outerFences = null;
             this.sin = null;
             this.cos = null;
+            this.skewness = null;
+            this.kurtosis = null;
             this.concentration = null;
             this.standardErrors = null;
         }
 
-        #region Properties
+
+        /// <summary>
+        ///   Gets or sets whether all reported statistics should respect the circular 
+        ///   interval. For example, setting this property to <c>false</c> would allow
+        ///   the <see cref="Confidence"/>, <see cref="Deviance"/>, <see cref="InnerFences"/>
+        ///   and <see cref="OuterFences"/> properties report minimum and maximum values 
+        ///   outside the variable's allowed circular range. Default is <c>true</c>.
+        /// </summary>
+        /// 
+        public bool UseStrictRanges
+        {
+            get { return useStrictRanges; }
+            set
+            {
+                if (useStrictRanges != value)
+                {
+                    useStrictRanges = value;
+                    innerFences = null;
+                    outerFences = null;
+                    deviances = null;
+                    confidences = null;
+                }
+            }
+        }
+
 
         /// <summary>
         ///   Gets the source matrix from which the analysis was run.
@@ -293,7 +361,17 @@ namespace Accord.Statistics.Analysis
             get
             {
                 if (this.sourceMatrix == null)
-                    sourceMatrix = sourceArray.ToMatrix();
+                {
+                    if (this.sourceArray == null)
+                    {
+                        sourceMatrix = sourceRow.ToMatrix(asColumnVector: true);
+                    }
+                    else
+                    {
+                        sourceMatrix = sourceArray.ToMatrix();
+                    }
+                }
+
                 return sourceMatrix;
             }
         }
@@ -307,7 +385,17 @@ namespace Accord.Statistics.Analysis
             get
             {
                 if (this.sourceArray == null)
-                    sourceArray = sourceMatrix.ToArray();
+                {
+                    if (this.sourceRow == null)
+                    {
+                        sourceArray = sourceMatrix.ToArray();
+                    }
+                    else
+                    {
+                        sourceArray = sourceRow.ToArray(asColumnVector: true);
+                    }
+                }
+
                 return sourceArray;
             }
         }
@@ -367,11 +455,32 @@ namespace Accord.Statistics.Analysis
                     for (int i = 0; i < means.Length; i++)
                     {
                         angularMeans[i] = Circular.Mean(samples, c[i], s[i]);
-                        means[i] = Circular.Revert(angularMeans[i], lengths[i]);
+                        means[i] = Circular.ToCircular(angularMeans[i], lengths[i]);
                     }
                 }
 
                 return means;
+            }
+        }
+
+        /// <summary>
+        ///   Gets a vector containing the Mode of each data column.
+        /// </summary>
+        /// 
+        public double[] Modes
+        {
+            get
+            {
+                if (modes == null)
+                {
+                    if (sourceMatrix != null)
+                        modes = Statistics.Tools.Mode(sourceMatrix);
+                    else if (sourceArray != null)
+                        modes = Statistics.Tools.Mode(sourceArray);
+                    else modes = new[] { Statistics.Tools.Mode(sourceRow) };
+                }
+
+                return modes;
             }
         }
 
@@ -518,7 +627,10 @@ namespace Accord.Statistics.Analysis
                 {
                     if (sourceMatrix != null)
                         distinct = Statistics.Tools.DistinctCount(sourceMatrix);
-                    else distinct = Statistics.Tools.DistinctCount(sourceArray);
+                    else if (sourceArray != null)
+                        distinct = Statistics.Tools.DistinctCount(sourceArray);
+                    else
+                        distinct = new[] { Statistics.Tools.DistinctCount(sourceRow) };
                 }
 
                 return distinct;
@@ -535,9 +647,9 @@ namespace Accord.Statistics.Analysis
             {
                 if (ranges == null)
                 {
-                    if (sourceMatrix != null)
-                        this.ranges = Matrix.Range(sourceMatrix, 0);
-                    else this.ranges = Matrix.Range(sourceArray, 0);
+                    this.ranges = new DoubleRange[variables];
+                    for (int i = 0; i < ranges.Length; i++)
+                        ranges[i] = new DoubleRange(0, lengths[i]);
                 }
 
                 return ranges;
@@ -560,9 +672,10 @@ namespace Accord.Statistics.Analysis
                     quartiles = new DoubleRange[variables];
                     for (int i = 0; i < variances.Length; i++)
                     {
-                        Circular.Quartiles(angles[i], out quartiles[i], angularMedians[i]);
-                        quartiles[i].Min = Circular.Revert(quartiles[i].Min, lengths[i]);
-                        quartiles[i].Max = Circular.Revert(quartiles[i].Max, lengths[i]);
+                        Circular.Quartiles(angles[i], out quartiles[i], angularMedians[i], wrap: useStrictRanges);
+
+                        quartiles[i].Min = Circular.ToCircular(quartiles[i].Min, lengths[i], useStrictRanges);
+                        quartiles[i].Max = Circular.ToCircular(quartiles[i].Max, lengths[i], useStrictRanges);
                     }
                 }
 
@@ -585,9 +698,13 @@ namespace Accord.Statistics.Analysis
                     innerFences = new DoubleRange[variables];
                     for (int i = 0; i < innerFences.Length; i++)
                     {
-                        double min = Tools.Mod(Q[i].Min - 1.5 * Q[i].Length, lengths[i]);
-                        double max = Tools.Mod(Q[i].Max + 1.5 * Q[i].Length, lengths[i]);
-                        innerFences[i] = new DoubleRange(min, max);
+                        innerFences[i] = Statistics.Tools.InnerFence(Q[i]);
+
+                        if (useStrictRanges)
+                        {
+                            innerFences[i].Min = Tools.Mod(innerFences[i].Min, lengths[i]);
+                            innerFences[i].Max = Tools.Mod(innerFences[i].Max, lengths[i]);
+                        }
                     }
                 }
 
@@ -610,9 +727,13 @@ namespace Accord.Statistics.Analysis
                     outerFences = new DoubleRange[variables];
                     for (int i = 0; i < outerFences.Length; i++)
                     {
-                        double min = Tools.Mod(Q[i].Min - 3 * Q[i].Length, lengths[i]);
-                        double max = Tools.Mod(Q[i].Max + 3 * Q[i].Length, lengths[i]);
-                        outerFences[i] = new DoubleRange(min, max);
+                        outerFences[i] = Statistics.Tools.OuterFence(Q[i]);
+
+                        if (useStrictRanges)
+                        {
+                            outerFences[i].Min = Tools.Mod(outerFences[i].Min, lengths[i]);
+                            outerFences[i].Max = Tools.Mod(outerFences[i].Max, lengths[i]);
+                        }
                     }
                 }
 
@@ -621,7 +742,9 @@ namespace Accord.Statistics.Analysis
         }
 
         /// <summary>
-        ///   Gets an array containing the sum of each data column.
+        ///   Gets an array containing the sum of each data column. If 
+        ///   the analysis has been computed in place, this will contain 
+        ///   the sum of the transformed angle values instead.
         /// </summary>
         /// 
         public double[] Sums
@@ -632,7 +755,9 @@ namespace Accord.Statistics.Analysis
                 {
                     if (sourceMatrix != null)
                         this.sums = Accord.Math.Matrix.Sum(sourceMatrix);
-                    else this.sums = Accord.Math.Matrix.Sum(sourceArray);
+                    else if (sourceArray != null)
+                        this.sums = Accord.Math.Matrix.Sum(sourceArray);
+                    else this.sums = new[] { Accord.Math.Matrix.Sum(sourceRow) };
                 }
 
                 return sums;
@@ -691,6 +816,50 @@ namespace Accord.Statistics.Analysis
         }
 
         /// <summary>
+        ///   Gets an array containing the skewness for of each data column.
+        /// </summary>
+        /// 
+        public double[] Skewness
+        {
+            get
+            {
+                if (skewness == null)
+                {
+                    skewness = new double[variables];
+                    for (int i = 0; i < skewness.Length; i++)
+                    {
+                        skewness[i] = Circular.Skewness(angles[i])
+                            * lengths[i] / (2 * Math.PI);
+                    }
+                }
+
+                return skewness;
+            }
+        }
+
+        /// <summary>
+        ///   Gets an array containing the kurtosis for of each data column.
+        /// </summary>
+        /// 
+        public double[] Kurtosis
+        {
+            get
+            {
+                if (kurtosis == null)
+                {
+                    kurtosis = new double[variables];
+                    for (int i = 0; i < kurtosis.Length; i++)
+                    {
+                        kurtosis[i] = Circular.Kurtosis(angles[i])
+                            * lengths[i] / (2 * Math.PI);
+                    }
+                }
+
+                return kurtosis;
+            }
+        }
+
+        /// <summary>
         ///   Gets the number of samples (or observations) in the data.
         /// </summary>
         /// 
@@ -717,7 +886,7 @@ namespace Accord.Statistics.Analysis
             get { return measuresCollection; }
         }
 
-        #endregion
+
 
 
 
@@ -740,7 +909,16 @@ namespace Accord.Statistics.Analysis
 
             t *= lengths[index] / (2 * Math.PI);
 
-            return new DoubleRange(Means[index] - t, Means[index] + t);
+            double min = Means[index] - t;
+            double max = Means[index] + t;
+
+            if (useStrictRanges)
+            {
+                min = Tools.Mod(min, lengths[index]);
+                max = Tools.Mod(max, lengths[index]);
+            }
+
+            return new DoubleRange(min, max);
         }
 
         /// <summary>
@@ -761,9 +939,16 @@ namespace Accord.Statistics.Analysis
             double z = NormalDistribution.Standard
                 .InverseDistributionFunction(0.5 + percent / 2.0);
 
-            return new DoubleRange(
-                Means[index] - z * StandardDeviations[index],
-                Means[index] + z * StandardDeviations[index]);
+            double min = Means[index] - z * StandardDeviations[index];
+            double max = Means[index] + z * StandardDeviations[index];
+
+            if (useStrictRanges)
+            {
+                min = Tools.Mod(min, lengths[index]);
+                max = Tools.Mod(max, lengths[index]);
+            }
+
+            return new DoubleRange(min, max);
         }
 
 
@@ -783,7 +968,7 @@ namespace Accord.Statistics.Analysis
             for (int i = 0; i < medians.Length; i++)
             {
                 angularMedians[i] = Circular.Median(angles[i]);
-                medians[i] = Circular.Revert(angularMedians[i], lengths[i]);
+                medians[i] = Circular.ToCircular(angularMedians[i], lengths[i]);
             }
         }
 
@@ -796,7 +981,7 @@ namespace Accord.Statistics.Analysis
     /// <seealso cref="CircularDescriptiveAnalysis"/>
     /// 
     [Serializable]
-    public class CircularDescriptiveMeasures
+    public class CircularDescriptiveMeasures : IDescriptiveMeasures
     {
 
         private CircularDescriptiveAnalysis analysis;
@@ -806,6 +991,17 @@ namespace Accord.Statistics.Analysis
         {
             this.analysis = analysis;
             this.index = index;
+        }
+
+        /// <summary>
+        ///   Gets the circular analysis 
+        ///   that originated this measure.
+        /// </summary>
+        /// 
+        [Browsable(false)]
+        public CircularDescriptiveAnalysis Analysis
+        {
+            get { return analysis; }
         }
 
         /// <summary>
@@ -860,6 +1056,15 @@ namespace Accord.Statistics.Analysis
         public double Median
         {
             get { return analysis.Medians[index]; }
+        }
+
+        /// <summary>
+        ///   Gets the variable's mode.
+        /// </summary>
+        /// 
+        public double Mode
+        {
+            get { return analysis.Modes[index]; }
         }
 
         /// <summary>
@@ -926,15 +1131,6 @@ namespace Accord.Statistics.Analysis
         }
 
         /// <summary>
-        ///   Gets the variable's circular length.
-        /// </summary>
-        /// 
-        public double CircularLength
-        {
-            get { return analysis.Lengths[index]; }
-        }
-
-        /// <summary>
         ///   Gets the number of distinct values for the variable.
         /// </summary>
         /// 
@@ -953,7 +1149,25 @@ namespace Accord.Statistics.Analysis
         }
 
         /// <summary>
-        ///   Gets the variable's observations.
+        ///   Gets the sum of cosines for the variable.
+        /// </summary>
+        /// 
+        public double CosineSum
+        {
+            get { return analysis.CosineSum[index]; }
+        }
+
+        /// <summary>
+        ///   Gets the sum of sines for the variable.
+        /// </summary>
+        /// 
+        public double SineSum
+        {
+            get { return analysis.SineSum[index]; }
+        }
+
+        /// <summary>
+        ///   Gets the transformed variable's observations.
         /// </summary>
         /// 
         public double[] Angles
@@ -961,6 +1175,89 @@ namespace Accord.Statistics.Analysis
             get { return analysis.Angles[index]; }
         }
 
+        /// <summary>
+        ///   Gets the variable's standard error of the mean.
+        /// </summary>
+        /// 
+        public double StandardError
+        {
+            get { return analysis.StandardErrors[index]; ; }
+        }
+
+        /// <summary>
+        ///   Gets the 95% confidence interval around the <see cref="Mean"/>.
+        /// </summary>
+        /// 
+        public DoubleRange Confidence
+        {
+            get { return analysis.Confidence[index]; }
+        }
+
+        /// <summary>
+        ///   Gets the 95% deviance interval around the <see cref="Mean"/>.
+        /// </summary>
+        /// 
+        public DoubleRange Deviance
+        {
+            get { return analysis.Deviance[index]; }
+        }
+
+        /// <summary>
+        ///   Gets the variable's observations.
+        /// </summary>
+        /// 
+        public double[] Samples
+        {
+            get { return analysis.Source.GetColumn(index); }
+        }
+
+        /// <summary>
+        ///   Gets the variable <see cref="Circular.Skewness">skewness</see>.
+        /// </summary>
+        /// 
+        public double Skewness
+        {
+            get { return analysis.Skewness[index]; }
+        }
+
+        /// <summary>
+        ///   Gets the variable <see cref="Circular.Skewness">kurtosis</see>.
+        /// </summary>
+        /// 
+        public double Kurtosis
+        {
+            get { return analysis.Kurtosis[index]; }
+        }
+
+        /// <summary>
+        ///   Gets a confidence interval for the <see cref="Mean"/>
+        ///   within the given confidence level percentage.
+        /// </summary>
+        /// 
+        /// <param name="percent">The confidence level. Default is 0.95.</param>
+        /// 
+        /// <returns>A confidence interval for the estimated value.</returns>
+        /// 
+        public DoubleRange GetConfidenceInterval(double percent = 0.95)
+        {
+            return analysis.GetConfidenceInterval(index, percent);
+        }
+
+        /// <summary>
+        ///   Gets a deviance interval for the <see cref="Mean"/>
+        ///   within the given confidence level percentage (i.e. uses
+        ///   the standard deviation rather than the standard error to
+        ///   compute the range interval for the variable).
+        /// </summary>
+        /// 
+        /// <param name="percent">The confidence level. Default is 0.95.</param>
+        /// 
+        /// <returns>A confidence interval for the estimated value.</returns>
+        /// 
+        public DoubleRange GetDevianceInterval(double percent = 0.95)
+        {
+            return analysis.GetDevianceInterval(index, percent);
+        }
     }
 
     /// <summary>
@@ -971,10 +1268,20 @@ namespace Accord.Statistics.Analysis
     /// <seealso cref="CircularDescriptiveAnalysis"/>
     /// 
     [Serializable]
-    public class CircularDescriptiveMeasureCollection : System.Collections.ObjectModel.ReadOnlyCollection<CircularDescriptiveMeasures>
+    public class CircularDescriptiveMeasureCollection : ReadOnlyKeyedCollection<string, CircularDescriptiveMeasures>
     {
         internal CircularDescriptiveMeasureCollection(CircularDescriptiveMeasures[] components)
-            : base(components) { }
-    }
+        {
+            AddRange(components);
+        }
 
+        /// <summary>
+        ///   Gets the key for item.
+        /// </summary>
+        /// 
+        protected override string GetKeyForItem(CircularDescriptiveMeasures item)
+        {
+            return item.Name;
+        }
+    }
 }

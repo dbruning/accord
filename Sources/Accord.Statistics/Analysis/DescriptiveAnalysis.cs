@@ -22,10 +22,12 @@
 
 namespace Accord.Statistics.Analysis
 {
-    using System;
+    using Accord.Collections;
     using Accord.Math;
     using Accord.Statistics.Distributions.Univariate;
     using AForge;
+    using System;
+    using System.ComponentModel;
 
     /// <summary>
     ///   Descriptive statistics analysis.
@@ -291,7 +293,6 @@ namespace Accord.Statistics.Analysis
             this.outerFences = null;
         }
 
-        #region Properties
 
         /// <summary>
         ///   Gets the source matrix from which the analysis was run.
@@ -630,7 +631,7 @@ namespace Accord.Statistics.Analysis
 
                     innerFences = new DoubleRange[variables];
                     for (int i = 0; i < innerFences.Length; i++)
-                        innerFences[i] = new DoubleRange(Q[i].Min - 1.5 * Q[i].Length, Q[i].Max + 1.5 * Q[i].Length);
+                        innerFences[i] = Statistics.Tools.InnerFence(Q[i]);
                 }
 
                 return innerFences;
@@ -651,7 +652,7 @@ namespace Accord.Statistics.Analysis
 
                     outerFences = new DoubleRange[variables];
                     for (int i = 0; i < outerFences.Length; i++)
-                        outerFences[i] = new DoubleRange(Q[i].Min - 3 * Q[i].Length, Q[i].Max + 3 * Q[i].Length);
+                        outerFences[i] = Statistics.Tools.OuterFence(Q[i]);
                 }
 
                 return outerFences;
@@ -742,8 +743,6 @@ namespace Accord.Statistics.Analysis
             get { return measuresCollection; }
         }
 
-        #endregion
-
 
         /// <summary>
         ///   Gets a confidence interval for the <see cref="Means"/>
@@ -798,7 +797,7 @@ namespace Accord.Statistics.Analysis
     /// <seealso cref="DescriptiveAnalysis"/>
     /// 
     [Serializable]
-    public class DescriptiveMeasures
+    public class DescriptiveMeasures : IDescriptiveMeasures
     {
 
         private DescriptiveAnalysis analysis;
@@ -808,6 +807,17 @@ namespace Accord.Statistics.Analysis
         {
             this.analysis = analysis;
             this.index = index;
+        }
+
+        /// <summary>
+        ///   Gets the descriptive analysis 
+        ///   that originated this measure.
+        /// </summary>
+        /// 
+        [Browsable(false)]
+        public DescriptiveAnalysis Analysis
+        {
+            get { return analysis; }
         }
 
         /// <summary>
@@ -1008,6 +1018,36 @@ namespace Accord.Statistics.Analysis
             get { return analysis.Source.GetColumn(index); }
         }
 
+        /// <summary>
+        ///   Gets a confidence interval for the <see cref="Mean"/>
+        ///   within the given confidence level percentage.
+        /// </summary>
+        /// 
+        /// <param name="percent">The confidence level. Default is 0.95.</param>
+        /// 
+        /// <returns>A confidence interval for the estimated value.</returns>
+        /// 
+        public DoubleRange GetConfidenceInterval(double percent = 0.95)
+        {
+            return analysis.GetConfidenceInterval(index, percent);
+        }
+
+        /// <summary>
+        ///   Gets a deviance interval for the <see cref="Mean"/>
+        ///   within the given confidence level percentage (i.e. uses
+        ///   the standard deviation rather than the standard error to
+        ///   compute the range interval for the variable).
+        /// </summary>
+        /// 
+        /// <param name="percent">The confidence level. Default is 0.95.</param>
+        /// 
+        /// <returns>A confidence interval for the estimated value.</returns>
+        /// 
+        public DoubleRange GetDevianceInterval(double percent = 0.95)
+        {
+            return analysis.GetDevianceInterval(index, percent);
+        }
+
     }
 
     /// <summary>
@@ -1018,10 +1058,21 @@ namespace Accord.Statistics.Analysis
     /// <seealso cref="DescriptiveAnalysis"/>
     /// 
     [Serializable]
-    public class DescriptiveMeasureCollection : System.Collections.ObjectModel.ReadOnlyCollection<DescriptiveMeasures>
+    public class DescriptiveMeasureCollection : ReadOnlyKeyedCollection<string, DescriptiveMeasures>
     {
         internal DescriptiveMeasureCollection(DescriptiveMeasures[] components)
-            : base(components) { }
+        {
+            AddRange(components);
+        }
+
+        /// <summary>
+        ///   Gets the key for item.
+        /// </summary>
+        /// 
+        protected override string GetKeyForItem(DescriptiveMeasures item)
+        {
+            return item.Name;
+        }
     }
 
 }
