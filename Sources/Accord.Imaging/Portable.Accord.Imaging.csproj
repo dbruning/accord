@@ -111,6 +111,7 @@
     <Compile Include="Interest Points\LocalBinaryPattern.cs" />
     <Compile Include="Interest Points\Matching\CorrelationMatching.cs" />
     <Compile Include="Interest Points\Matching\KNearestNeighborMatching.cs" />
+    <Compile Include="Interest Points\Matching\KNearestNeighborMatching`1.cs" />
     <Compile Include="Interest Points\SURF\ResponseLayer.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturePoint.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturesDescriptor.cs" />
