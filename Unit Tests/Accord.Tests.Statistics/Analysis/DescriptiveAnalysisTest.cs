@@ -27,8 +27,6 @@ namespace Accord.Tests.Statistics
     using AForge;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
-    using System.Windows.Forms;
-    using Accord.Controls;
 
     [TestClass()]
     public class DescriptiveAnalysisTest

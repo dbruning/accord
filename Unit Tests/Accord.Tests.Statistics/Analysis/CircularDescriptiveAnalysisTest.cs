@@ -28,7 +28,6 @@ namespace Accord.Tests.Statistics
     using Accord.Statistics.Analysis;
     using AForge;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Accord.Controls;
 
     [TestClass()]
     public class CircularDescriptiveAnalysisTest
