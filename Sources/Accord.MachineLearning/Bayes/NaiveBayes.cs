@@ -27,6 +27,8 @@ namespace Accord.MachineLearning.Bayes
     using System.Runtime.Serialization.Formatters.Binary;
     using Accord.Math;
     using Accord.Statistics.Distributions;
+    using Accord.Statistics.Distributions.Univariate;
+    using System.Threading.Tasks;
 
     /// <summary>
     ///   Naïve Bayes Classifier.
@@ -43,6 +45,12 @@ namespace Accord.MachineLearning.Bayes
     ///   variable. In spite of their naive design and apparently over-simplified assumptions, naive Bayes 
     ///   classifiers have worked quite well in many complex real-world situations.</para>
     ///   
+    /// <para>
+    ///   This class implements a discrete (integer-valued) Naive-Bayes classifier. There is also a 
+    ///   special <see cref="Normal(int, int)">named constructor to create classifiers assuming normal 
+    ///   distributions for each variable</see>. For arbitrary distribution classifiers, please see
+    ///   <see cref="NaiveBayes{TDistribution}"/>. </para>
+    /// 
     /// <para>
     ///   References:
     ///   <list type="bullet">
@@ -178,10 +186,10 @@ namespace Accord.MachineLearning.Bayes
         /// 
         public NaiveBayes(int classes, params int[] symbols)
         {
-            if (classes <= 0) 
+            if (classes <= 0)
                 throw new ArgumentOutOfRangeException("classes");
 
-            if (symbols == null) 
+            if (symbols == null)
                 throw new ArgumentNullException("symbols");
 
             initialize(classes, symbols, null);
@@ -197,13 +205,13 @@ namespace Accord.MachineLearning.Bayes
         /// 
         public NaiveBayes(int classes, double[] classPriors, params int[] symbols)
         {
-            if (classes <= 0) 
+            if (classes <= 0)
                 throw new ArgumentOutOfRangeException("classes");
 
-            if (classPriors == null) 
+            if (classPriors == null)
                 throw new ArgumentNullException("classPriors");
 
-            if (symbols == null) 
+            if (symbols == null)
                 throw new ArgumentNullException("symbols");
 
             if (classPriors.Length != classes) throw new DimensionMismatchException("classPriors");
@@ -299,13 +307,20 @@ namespace Accord.MachineLearning.Bayes
         public double Estimate(int[][] inputs, int[] outputs,
             bool empirical = true, double regularization = 1e-5)
         {
-            if (inputs == null) throw new ArgumentNullException("inputs");
-            if (outputs == null) throw new ArgumentNullException("outputs");
-            if (inputs.Length == 0) throw new ArgumentException("The array has zero length.", "inputs");
-            if (outputs.Length != inputs.Length) throw new DimensionMismatchException("outputs");
+            if (inputs == null) 
+                throw new ArgumentNullException("inputs");
+
+            if (outputs == null) 
+                throw new ArgumentNullException("outputs");
+
+            if (inputs.Length == 0)
+                throw new ArgumentException("The array has zero length.", "inputs");
+
+            if (outputs.Length != inputs.Length)
+                throw new DimensionMismatchException("outputs");
 
             // For each class
-            for (int i = 0; i < classCount; i++)
+            Parallel.For(0, classCount, i =>
             {
                 // Estimate conditional distributions
 
@@ -317,9 +332,8 @@ namespace Accord.MachineLearning.Bayes
                     priors[i] = (double)idx.Length / inputs.Length;
 
 
-
                 // For each variable (col)
-                for (int j = 0; j < symbols.Length; j++)
+                Parallel.For(0, symbols.Length, j =>
                 {
                     // Count value occurrences and store
                     // frequencies to form probabilities
@@ -344,8 +358,8 @@ namespace Accord.MachineLearning.Bayes
 
                         probabilities[i, j][k] = num / den;
                     }
-                }
-            }
+                });
+            });
 
             // Compute learning error
             int miss = 0;
@@ -419,7 +433,99 @@ namespace Accord.MachineLearning.Bayes
             return p;
         }
 
+        /// <summary>
+        ///   Constructs a new Naïve Bayes Classifier.
+        /// </summary>
+        /// 
+        /// <param name="classes">The number of output classes.</param>
+        /// <param name="inputs">The number of input variables.</param>
+        /// 
+        public static NaiveBayes<NormalDistribution> Normal(int classes, int inputs)
+        {
+            return Normal(classes, inputs, NormalDistribution.Standard);
+        }
 
+        /// <summary>
+        ///   Constructs a new Naïve Bayes Classifier.
+        /// </summary>
+        /// 
+        /// <param name="classes">The number of output classes.</param>
+        /// <param name="inputs">The number of input variables.</param>
+        /// <param name="initial">
+        ///   An initial distribution to be used to initialized all independent
+        ///   distribution components of this Naive Bayes. This distribution will
+        ///   be cloned and made available in the <see cref="Distributions"/> property.
+        /// </param>
+        /// 
+        public static NaiveBayes<NormalDistribution> Normal(int classes, int inputs, NormalDistribution initial)
+        {
+            return new NaiveBayes<NormalDistribution>(classes, inputs, initial);
+        }
+
+        /// <summary>
+        ///   Constructs a new Naïve Bayes Classifier.
+        /// </summary>
+        /// 
+        /// <param name="classes">The number of output classes.</param>
+        /// <param name="inputs">The number of input variables.</param>
+        /// <param name="classPriors">The prior probabilities for each output class.</param>
+        /// 
+        public static NaiveBayes<NormalDistribution> Normal(int classes, int inputs, double[] classPriors)
+        {
+            return new NaiveBayes<NormalDistribution>(classes, inputs, NormalDistribution.Standard, classPriors);
+        }
+
+        /// <summary>
+        ///   Constructs a new Naïve Bayes Classifier.
+        /// </summary>
+        /// 
+        /// <param name="classes">The number of output classes.</param>
+        /// <param name="inputs">The number of input variables.</param>
+        /// <param name="initial">
+        ///   An initial distribution to be used to initialized all independent
+        ///   distribution components of this Naive Bayes. This distribution will
+        ///   be cloned and made available in the <see cref="Distributions"/> property.
+        /// </param>
+        /// 
+        public static NaiveBayes<NormalDistribution> Normal(int classes, int inputs, NormalDistribution[] initial)
+        {
+            return new NaiveBayes<NormalDistribution>(classes, inputs, initial);
+        }
+
+        /// <summary>
+        ///   Constructs a new Naïve Bayes Classifier.
+        /// </summary>
+        /// 
+        /// <param name="classes">The number of output classes.</param>
+        /// <param name="inputs">The number of input variables.</param>
+        /// <param name="initial">
+        ///   An initial distribution to be used to initialized all independent
+        ///   distribution components of this Naive Bayes. This distribution will
+        ///   be cloned and made available in the <see cref="Distributions"/> property.
+        /// </param>
+        /// <param name="classPriors">The prior probabilities for each output class.</param>
+        /// 
+        public static NaiveBayes<NormalDistribution> Normal(int classes, int inputs, NormalDistribution[] initial, double[] classPriors)
+        {
+            return new NaiveBayes<NormalDistribution>(classes, inputs, initial, classPriors);
+        }
+
+        /// <summary>
+        ///   Constructs a new Naïve Bayes Classifier.
+        /// </summary>
+        /// 
+        /// <param name="classes">The number of output classes.</param>
+        /// <param name="inputs">The number of input variables.</param>
+        /// <param name="initial">
+        ///   An initial distribution to be used to initialized all independent
+        ///   distribution components of this Naive Bayes. This distribution will
+        ///   be cloned and made available in the <see cref="Distributions"/> property.
+        /// </param>
+        /// 
+        public static NaiveBayes<NormalDistribution> Normal(int classes, int inputs, NormalDistribution[,] initial)
+        {
+            return new NaiveBayes<NormalDistribution>(classes, inputs, initial);
+        }
 
         /// <summary>
         ///   Saves the Naïve Bayes model to a stream.
