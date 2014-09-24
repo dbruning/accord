@@ -202,6 +202,7 @@ namespace Accord.Statistics.Models.Markov
             return label;
         }
 
+
         /// <summary>
         ///   Computes the most likely class for a given sequence.
         /// </summary>
@@ -214,9 +215,27 @@ namespace Accord.Statistics.Models.Markov
         /// 
         protected int Compute(Array sequence, out double[] responsibilities)
         {
-            double[] logLikelihoods = new double[models.Length];
-            double thresholdValue = Double.NegativeInfinity;
+            double thresholdValue;
+            int imax = compute(sequence, out responsibilities, out thresholdValue);
 
+            double max = responsibilities[imax];
+
+            // Convert to probabilities
+            for (int i = 0; i < responsibilities.Length; i++)
+                responsibilities[i] = Math.Exp(responsibilities[i]);
+
+            // return the index of the most likely model
+            // or -1 if the sequence has been rejected.
+            //
+            return (thresholdValue > max) ? -1 : imax;
+        }
+
+        private int compute(Array sequence, out double[] logLikelihoods, out double rejectionThreshold)
+        {
+            logLikelihoods = new double[models.Length];
+
+            double[] responses = logLikelihoods;
+            double rejection = Double.NegativeInfinity;
 
             // For every model in the set (including the threshold model)
 #if SERIAL
@@ -228,36 +247,34 @@ namespace Accord.Statistics.Models.Markov
                 if (i < models.Length)
                 {
                     // Evaluate the probability of the sequence
-                    logLikelihoods[i] = models[i].Evaluate(sequence);
+                    responses[i] = models[i].Evaluate(sequence) + Math.Log(classPriors[i]);
                 }
                 else if (threshold != null)
                 {
                     // Evaluate the current rejection threshold 
-                    thresholdValue = threshold.Evaluate(sequence);
+                    rejection = threshold.Evaluate(sequence) + Math.Log(weight);
                 }
             }
 #if !SERIAL
-            );
+);
 #endif
 
+            logLikelihoods = responses;
+            rejectionThreshold = rejection;
 
             // Compute posterior likelihoods
             double lnsum = Double.NegativeInfinity;
             for (int i = 0; i < classPriors.Length; i++)
-            {
-                logLikelihoods[i] = Math.Log(classPriors[i]) + logLikelihoods[i];
                 lnsum = Special.LogSum(lnsum, logLikelihoods[i]);
-            }
 
             // Compute threshold model posterior likelihood
             if (threshold != null)
-            {
-                thresholdValue = Math.Log(weight) + thresholdValue;
-                lnsum = Special.LogSum(lnsum, thresholdValue);
-            }
+                lnsum = Special.LogSum(lnsum, rejection);
+
+            int imax; 
 
             // Get the index of the most likely model
-            int imax; double max = logLikelihoods.Max(out imax);
+            double max = logLikelihoods.Max(out imax);
 
             // Normalize if different from zero
             if (lnsum != Double.NegativeInfinity)
@@ -266,14 +283,7 @@ namespace Accord.Statistics.Models.Markov
                     logLikelihoods[i] -= lnsum;
             }
 
-            // Convert to probabilities
-            responsibilities = logLikelihoods;
-            for (int i = 0; i < logLikelihoods.Length; i++)
-                responsibilities[i] = Math.Exp(logLikelihoods[i]);
-
-            // return the index of the most likely model
-            // or -1 if the sequence has been rejected.
-            return (thresholdValue > max) ? -1 : imax;
+            return imax;
         }
 
         /// <summary>
@@ -288,9 +298,12 @@ namespace Accord.Statistics.Models.Markov
         /// 
         protected double LogLikelihood(Array sequence, int output)
         {
-            double[] responsabilities;
-            Compute(sequence, out responsabilities);
-            return Math.Log(responsabilities[output]);
+            double rejectionValue;
+
+            double[] logLikelihoods;
+            compute(sequence, out logLikelihoods, out rejectionValue);
+
+            return logLikelihoods[output];
         }
 
         /// <summary>
@@ -330,15 +343,18 @@ namespace Accord.Statistics.Models.Markov
         /// 
         protected double LogLikelihood(Array[] sequences, int[] outputs)
         {
-            double[] responsabilities;
-
-            double logLikelihood = 0;
+            double sum = 0;
             for (int i = 0; i < sequences.Length; i++)
             {
-                Compute(sequences[i], out responsabilities);
-                logLikelihood += Math.Log(responsabilities[outputs[i]]);
+                double rejectionValue;
+                double[] logLikelihoods;
+
+                int imax = compute(sequences[i], out logLikelihoods, out rejectionValue);
+
+                sum += logLikelihoods[outputs[i]];
             }
-            return logLikelihood;
+
+            return sum;
         }
 
 

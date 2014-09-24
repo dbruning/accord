@@ -25,6 +25,7 @@ namespace Accord.Statistics.Models.Fields.Functions
     using System;
     using System.Collections.Generic;
     using Accord.Statistics.Models.Fields.Features;
+    using Accord.Math;
 
     /// <summary>
     ///   Factor Potential (Clique Potential) function.
@@ -177,13 +178,17 @@ namespace Accord.Statistics.Models.Fields.Functions
         /// <param name="outputClass">The output class label for the sequence.</param>
         /// <returns>The value of the factor potential function evaluated for the given parameters.</returns>
         /// 
-        public virtual double Compute(int previousState, int currentState, T[] observations, int index,
-            int outputClass = 0)
+        public virtual double Compute(int previousState, int currentState,
+            T[] observations, int index, int outputClass = 0)
         {
+            if (outputClass != this.Index)
+                return Double.NegativeInfinity;
+
             int start = FactorParameters.Offset;
             int end = FactorParameters.Offset + FactorParameters.Count;
 
             double sum = 0;
+
             for (int k = start; k < end; k++)
             {
                 double weight = Owner.Weights[k];
@@ -193,16 +198,23 @@ namespace Accord.Statistics.Models.Fields.Functions
 
                 if (weight != 0)
                 {
-                    double value = Owner.Features[k].Compute(previousState, currentState, observations, index, outputClass);
+                    IFeature<T> feature = Owner.Features[k];
 
-                    if (value != 0) sum += weight * value;
+                    double value = feature.Compute(previousState, currentState, 
+                        observations, index, outputClass);
+
+                    if (value != 0) 
+                        sum += weight * value;
                 }
 
                 if (Double.IsNaN(sum))
                     return 0;
 
-                if (Double.IsInfinity(sum))
-                    return sum;
+                if (Double.IsPositiveInfinity(sum))
+                    return Double.MaxValue;
+
+                if (Double.IsNegativeInfinity(sum))
+                    return Double.NegativeInfinity;
             }
 
             return sum;
@@ -254,29 +266,6 @@ namespace Accord.Statistics.Models.Fields.Functions
             return clone;
         }
 
-
-
-        #region Backward compatibility
-
-        [Obsolete]
-        private int EdgeParameterIndex { get; set; }
-        [Obsolete]
-        private int EdgeParameterCount { get; set; }
-        [Obsolete]
-        private int StateParameterIndex { get; set; }
-        [Obsolete]
-        private int StateParameterCount { get; set; }
-        [Obsolete]
-        private int ParameterIndex { get; set; }
-        [Obsolete]
-        private int ParameterCount { get; set; }
-        [Obsolete]
-        private int EdgeParameterEnd { get; set; }
-        [Obsolete]
-        private int StateParameterEnd { get; set; }
-        [Obsolete]
-        private int ParameterEnd { get; set; }
-        #endregion
 
     }
 }
