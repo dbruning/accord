@@ -350,6 +350,7 @@
     <Compile Include="Moving\MovingNormalStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Running\IRunningStatistics.cs" />
+    <Compile Include="Models\Markov\Learning\Base\BaseViterbiLearning`1.cs" />
     <Compile Include="Running\IRunning`1.cs" />
     <Compile Include="Running\KalmanFilter2D.cs" />
     <Compile Include="Running\Markov\IRunningMarkovStatistics.cs" />

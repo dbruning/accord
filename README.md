@@ -54,7 +54,7 @@ Results, September 11, 2014 (corresponding to Accord.NET v 2.13.1+):
 * Accord.Tests.Audio, 12 unit tests, all passed
 * Accord.Tests.IO, 26 unit tests, all passed
 * Accord.Tests.Math, 472 unit tests, 4 failed
-* Accord.Tests.Statistics, 984 tests, all passed
+* Accord.Tests.Statistics, 1013 tests, all passed
 * Accord.Tests.MachineLearning, 145 tests, 6 failed
 * Accord.Tests.Neuro, 20 tests, all passed
 
