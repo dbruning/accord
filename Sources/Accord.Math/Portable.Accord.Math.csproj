@@ -177,6 +177,7 @@
     <Compile Include="Optimization\Unconstrained\TrustRegionNewtonMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Special.cs" />
+    <Compile Include="TaylorSeries.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Transforms\CosineTransform.cs" />
     <Compile Include="Transforms\HartleyTransform.cs" />

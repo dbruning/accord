@@ -49,7 +49,7 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, September 11, 2014 (corresponding to Accord.NET v 2.13.1+):
+Results, October 10, 2014 (synched with main repository commit [a4a6230](https://github.com/accord-net/framework/commit/a4a623036ea98caa2c8f32966c6a5852bb56406d)):
 
 * Accord.Tests.Audio, 12 unit tests, all passed
 * Accord.Tests.IO, 26 unit tests, all passed
