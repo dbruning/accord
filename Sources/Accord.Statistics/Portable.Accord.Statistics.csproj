@@ -90,7 +90,6 @@
     <Compile Include="Analysis\ProportionalHazardsAnalysis.cs" />
     <Compile Include="Analysis\StepwiseLogisticRegressionAnalysis.cs" />
     <Compile Include="Circular.cs" />
-    <Compile Include="Dissimilarity.cs" />
     <Compile Include="Distributions\Density Kernels\EpanechnikovKernel.cs" />
     <Compile Include="Distributions\Density Kernels\GaussianKernel.cs" />
     <Compile Include="Distributions\Density Kernels\IDensityKernel.cs" />
@@ -144,6 +143,7 @@
     <Compile Include="Distributions\Univariate\Continuous\GeneralContinuousDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GeneralizedNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\LevyDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\LogLogisticDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\FoldedNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GompertzDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GumbelDistribution.cs" />
@@ -163,6 +163,7 @@
     <Compile Include="Distributions\Univariate\Continuous\PowerLognormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\PowerNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\RayleighDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\ShiftedLogLogistic.cs" />
     <Compile Include="Distributions\Univariate\Continuous\SkewNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\TDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\TriangularDistribution.cs" />

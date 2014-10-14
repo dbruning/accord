@@ -90,6 +90,7 @@
     <Compile Include="Decompositions\SingularValueDecomposition.cs" />
     <Compile Include="Decompositions\SingularValueDecompositionF.cs" />
     <Compile Include="Differentiation\FiniteDifferences.cs" />
+    <Compile Include="Dissimilarity.cs" />
     <Compile Include="Distance.cs" />
     <Compile Include="Environments\OctaveEnvironment.cs" />
     <Compile Include="Environments\REnvironment.cs" />
@@ -177,7 +178,7 @@
     <Compile Include="Optimization\Unconstrained\TrustRegionNewtonMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Special.cs" />
-    <Compile Include="TaylorSeries.cs" />
+    <Compile Include="Taylor.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Transforms\CosineTransform.cs" />
     <Compile Include="Transforms\HartleyTransform.cs" />
