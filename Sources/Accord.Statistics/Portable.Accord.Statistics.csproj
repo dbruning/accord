@@ -163,7 +163,7 @@
     <Compile Include="Distributions\Univariate\Continuous\PowerLognormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\PowerNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\RayleighDistribution.cs" />
-    <Compile Include="Distributions\Univariate\Continuous\ShiftedLogLogistic.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\ShiftedLogLogisticDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\SkewNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\TDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\TriangularDistribution.cs" />
