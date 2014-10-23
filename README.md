@@ -73,7 +73,7 @@ Notes on commercial use
 The *Shim* and *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
 For those interested in using the Portable *Accord.NET* and *AForge.NET* libraries without having to adhere to GPL, please contact the copyright holder of the *Shim* assemblies at
 
-licenses@cureos.com
+[licenses@cureos.com](mailto:licenses@cureos.com)
 
 for commercial licensing alternatives.
 
@@ -83,3 +83,12 @@ Please also note that *AForge.NET Framework* (on which *Accord.NET Framework* is
 aforge.net [at] gmail {dot} com
 
 The *Accord.NET Framework* is released under LGPL version 2.1, and further licensing details can be found [here](http://accord-framework.net/license.html).
+
+Android and iOS support
+-----------------------
+
+There are now *Shim* and *Shim.Drawing* assemblies available for *Xamarin.Android* and *Xamarin.iOS*, making it possible to 
+incorporate *Portable Accord* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. For
+more information of how to enable *Portable Accord* on *Android* and *iOS*, please send an e-mail to
+
+[licenses@cureos.com](mailto:licenses@cureos.com)
