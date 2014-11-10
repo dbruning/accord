@@ -17,7 +17,7 @@ To sufficiently build and use the class libraries in the *Portable Accord.NET Fr
 *Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable
 Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in Windows Store, Windows Phone 8 or WPF applications.
 
-The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the target specific (Windows Store, Windows Phone or WPF)
+The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the target specific (Windows Phone or WPF)
 *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
  
 `WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *Shim.Drawing* assemblies 
@@ -49,13 +49,13 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, October 10, 2014 (synched with main repository commit [a4a6230](https://github.com/accord-net/framework/commit/a4a623036ea98caa2c8f32966c6a5852bb56406d)):
+Results, November 10, 2014 (synched with main repository commit [c7103f3](https://github.com/accord-net/framework/commit/c7103f3f889d86d6e95a045bae3ab9a039038780)):
 
 * Accord.Tests.Audio, 12 unit tests, all passed
 * Accord.Tests.IO, 26 unit tests, all passed
 * Accord.Tests.Math, 472 unit tests, 4 failed
-* Accord.Tests.Statistics, 1013 tests, all passed
-* Accord.Tests.MachineLearning, 145 tests, 6 failed
+* Accord.Tests.Statistics, 1059 tests, all passed
+* Accord.Tests.MachineLearning, 146 tests, 6 failed
 * Accord.Tests.Neuro, 20 tests, all passed
 
 2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in 
