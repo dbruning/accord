@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays.cs" />
+    <Compile Include="Attributes\ParameterAttributes.cs" />
     <Compile Include="DataTableExtensions.cs" />
     <Compile Include="Collections\RedBlackTree`2.cs" />
     <Compile Include="Collections\KeyValuePairComparer`2.cs" />
@@ -73,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.0.9.3-pre1\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
+      <HintPath>..\packages\shim.0.9.3-pre2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

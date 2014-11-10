@@ -133,6 +133,8 @@
     <Compile Include="Distributions\Univariate\Base\UnivariateDiscreteDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\BetaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\BirnbaumSaundersDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\AndersonDarlingDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\ShapiroWilkDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\CauchyDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\ChiSquareDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\EmpiricalDistribution.cs" />
@@ -377,6 +379,8 @@
     <Compile Include="Testing\Contingency\TwoAverageKappaTest.cs" />
     <Compile Include="Testing\Contingency\TwoMatrixKappaTest.cs" />
     <Compile Include="Testing\Contingency\TwoReceiverOperatingCurveTest.cs" />
+    <Compile Include="Testing\AndersonDarlingTest.cs" />
+    <Compile Include="Testing\ShapiroWilkTest.cs" />
     <Compile Include="Testing\FTest.cs" />
     <Compile Include="Testing\KolmogorovSmirnovTest.cs" />
     <Compile Include="Testing\MultinomialTest.cs" />
@@ -442,7 +446,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.0.9.3-pre1\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
+      <HintPath>..\packages\shim.0.9.3-pre2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
