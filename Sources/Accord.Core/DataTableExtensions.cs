@@ -61,9 +61,9 @@ namespace Accord
             var n = table.Rows.Count;
             if (n <= 1) return 0.0;
 
-            var k = table.Rows.Cast<DataRow>().Select(row => Math.Pow(Convert.ToDouble(row[columnName]), 2.0)).Sum();
+            var k = table.Rows.Cast<DataRow>().Select(row => System.Math.Pow(Convert.ToDouble(row[columnName]), 2.0)).Sum();
             var s = table.Rows.Cast<DataRow>().Select(row => Convert.ToDouble(row[columnName])).Sum();
-            return Math.Sqrt((k - s * s / n) / (n - 1.0));
+            return System.Math.Sqrt((k - s * s / n) / (n - 1.0));
         }
     }
 }
