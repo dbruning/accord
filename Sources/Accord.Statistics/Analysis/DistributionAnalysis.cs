@@ -26,6 +26,8 @@ namespace Accord.Statistics.Analysis
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
+    using System.Reflection;
+
     using Accord.Collections;
     using Accord.Math;
     using Accord.Math.Comparers;
@@ -210,7 +212,7 @@ namespace Accord.Statistics.Analysis
         private int[] getRank(double[] ks)
         {
             int[] idx = Matrix.Indices(0, Distributions.Length);
-            Array.Sort(ks, idx, new GeneralComparer(ComparerDirection.Descending));
+            Arrays.Sort(ks, idx, new GeneralComparer(ComparerDirection.Descending));
 
             int[] rank = new int[idx.Length];
             for (int i = 0; i < rank.Length; i++)
@@ -263,14 +265,14 @@ namespace Accord.Statistics.Analysis
 
                .SelectMany(s =>
                {
-                   try { return s.GetTypes(); }
-                   catch { return new Type[0]; }
+                   try { return s.DefinedTypes; }
+                   catch { return new TypeInfo[0]; }
                })
-               .Where(p => baseType.IsAssignableFrom(p) && !p.IsAbstract && !p.IsInterface)
+               .Where(p => baseType.GetTypeInfo().IsAssignableFrom(p) && !p.IsAbstract && !p.IsInterface)
                .OrderBy(p => p.Name)
                .ToArray();
 
-            return distributions;
+            return distributions.Select(t => t.AsType()).ToArray();
         }
     }
 
