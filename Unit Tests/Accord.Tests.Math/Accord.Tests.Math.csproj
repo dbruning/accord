@@ -95,6 +95,15 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %284.0%29|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %283.5%29|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %284.5%29|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Shim">
       <HintPath>..\..\Sources\packages\shim.0.9.3-pre2\lib\net45\Shim.dll</HintPath>
@@ -141,6 +150,7 @@
     <Compile Include="Optimization\BinarySearchTest.cs" />
     <Compile Include="Optimization\CobylaTest.cs" />
     <Compile Include="Optimization\BoundedBroydenFletcherGoldfarbShannoTest.cs" />
+    <Compile Include="Optimization\Quadprog\UnsafeGoldfarbIdnani.cs" />
     <Compile Include="Optimization\Quadprog\QuadprogComparisonTest.cs" />
     <Compile Include="Optimization\SubplexTest.cs" />
     <Compile Include="Optimization\NelderMeadTest.cs" />
@@ -174,6 +184,11 @@
     <Compile Include="Decompositions\NonnegativeMatrixFactorization.cs" />
     <Compile Include="Differentiation\FiniteDifferencesTest.cs" />
     <Compile Include="Decompositions\JaggedLuDecompositionFTest.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReducedRowEchelonFormTest.cs" />
     <Compile Include="Wavelets\CDF97Test.cs" />
     <Compile Include="Wavelets\HaarTest.cs" />
@@ -243,7 +258,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />
+    <None Include="Resources\constraintMatrix11_15.csv" />
+    <None Include="Resources\constraints11_14.csv" />
+    <None Include="Resources\dmatFull.csv" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
