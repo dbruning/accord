@@ -459,7 +459,7 @@ namespace Accord.Statistics.Distributions.Univariate
             int imin = -1;
 
             if (!sorted)
-                Array.Sort(observations, weights);
+                Arrays.Sort(observations, weights);
 
             if (!fixMin)
             {
