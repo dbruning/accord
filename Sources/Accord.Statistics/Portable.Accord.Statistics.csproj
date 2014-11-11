@@ -75,6 +75,7 @@
     <Compile Include="Analysis\Contrast Functions\Kurtosis.cs" />
     <Compile Include="Analysis\Contrast Functions\Logcosh.cs" />
     <Compile Include="Analysis\DescriptiveAnalysis.cs" />
+    <Compile Include="Analysis\DistributionAnalysis.cs" />
     <Compile Include="Analysis\IndependentComponentAnalysis.cs" />
     <Compile Include="Analysis\KernelDiscriminantAnalysis.cs" />
     <Compile Include="Analysis\KernelPrincipalComponentAnalysis.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Distributions\Fitting\MultivariateEmpiricalOptions.cs" />
     <Compile Include="Distributions\Fitting\NormalOptions.cs" />
     <Compile Include="Distributions\Fitting\SurvivalOptions.cs" />
+    <Compile Include="Distributions\Fitting\TriangularOptions.cs" />
     <Compile Include="Distributions\Fitting\VonMisesOptions.cs" />
     <Compile Include="Distributions\IDistribution.cs" />
     <Compile Include="Distributions\IFittableDistribution.cs" />
