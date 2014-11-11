@@ -26,7 +26,6 @@ namespace Accord.Statistics.Distributions.Univariate
     using Accord.Math;
     using Accord.Statistics.Distributions.Fitting;
     using AForge;
-    using System.ComponentModel;
 
     /// <summary>
     ///   Gamma distribution.
@@ -193,6 +192,12 @@ namespace Accord.Statistics.Distributions.Univariate
 
         private void init(double theta, double k)
         {
+            if (Double.IsNaN(theta))
+            {
+                theta = 1;
+                k = 1;
+            }
+
             this.theta = theta;
             this.k = k;
 
@@ -397,6 +402,11 @@ namespace Accord.Statistics.Distributions.Univariate
         /// 
         public override double InverseDistributionFunction(double p)
         {
+            if (p == 0)
+                return Support.Min;
+            if (p == 1)
+                return Support.Max;
+
             return Gamma.InverseLowerIncomplete(k, p) * theta;
         }
 
@@ -449,7 +459,6 @@ namespace Accord.Statistics.Distributions.Univariate
                 newK = oldK - (Math.Log(newK) - Gamma.Digamma(newK) - s) / ((1 / newK) - Gamma.Trigamma(newK));
             }
             while (Math.Abs(oldK - newK) / Math.Abs(oldK) < Double.Epsilon);
-
 
             double theta = mean / newK;
 

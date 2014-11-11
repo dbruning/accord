@@ -20,10 +20,10 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-namespace Accord.Math
+namespace Accord
 {
-    using System.ComponentModel.DataAnnotations;
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     ///   Specifies that an argument, in a method or function,
@@ -34,7 +34,7 @@ namespace Accord.Math
     public sealed class PositiveAttribute : RangeAttribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PositiveAttribute"/> class.
+        ///   Initializes a new instance of the <see cref="PositiveAttribute"/> class.
         /// </summary>
         /// 
         public PositiveAttribute() : base(double.Epsilon, double.MaxValue) { }
