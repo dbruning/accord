@@ -29,6 +29,7 @@ namespace Accord.Tests.Math
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.IO;
     using Accord.Tests.Math.Properties;
+    using System.Globalization;
 
 
     [TestClass()]
@@ -984,6 +985,120 @@ namespace Accord.Tests.Math
         }
 
         [TestMethod()]
+        public void GoldfarbIdnaniParseGlobalizationTestBase()
+        {
+            // minimize 0.5x² + 0.2y² + 0.3xy s.t. 0.01x + 0.02y - 0.03 = 0 AND x + y = 100
+            // http://www.wolframalpha.com/input/?i=minimize+0.5x%C2%B2+%2B+0.2y%C2%B2+%2B+0.3xy+s.t.+0.01x+%2B+0.02y+-+0.03+%3D+0+AND+x+%2B+y+%3D+100
+
+            String strObjective = "0.5x² + 0.2y² + 0.3xy";
+
+            String[] strConstraints = 
+            { 
+                "0.01x + 0.02y - 0.03 = 0", 
+                "x + y = 100" 
+            };
+
+            QuadraticObjectiveFunction function = new QuadraticObjectiveFunction(strObjective);
+            LinearConstraintCollection cst = new LinearConstraintCollection();
+            foreach (var tmpCst in strConstraints)
+                cst.Add(new LinearConstraint(function, tmpCst));
+
+            var classSolver = new Accord.Math.Optimization.GoldfarbIdnani(function, cst);
+            bool status = classSolver.Minimize();
+            double result = classSolver.Value;
+
+            Assert.IsTrue(status);
+            Assert.AreEqual(15553.60, result, 1e-10);
+        }
+
+        [TestMethod()]
+        public void GoldfarbIdnaniParseGlobalizationTest()
+        {
+            var fr = CultureInfo.GetCultureInfo("fr-FR");
+
+            Assert.AreEqual(",", fr.NumberFormat.NumberDecimalSeparator);
+
+            String strObjective = 0.5.ToString(fr)
+                + "x² +" + 0.2.ToString(fr) + "y² +"
+                + 0.3.ToString(fr) + "xy";
+
+            String[] strConstraints = 
+            { 
+                0.01.ToString(fr) + "x" + " + " + 
+                0.02.ToString(fr) + "y - " + 
+                0.03.ToString(fr) + " = 0", 
+                "x + y = 100" 
+            };
+
+            QuadraticObjectiveFunction function = new QuadraticObjectiveFunction(strObjective, fr);
+            LinearConstraintCollection cst = new LinearConstraintCollection();
+            foreach (var tmpCst in strConstraints)
+                cst.Add(new LinearConstraint(function, tmpCst, fr));
+
+            var classSolver = new Accord.Math.Optimization.GoldfarbIdnani(function, cst);
+            bool status = classSolver.Minimize();
+            double result = classSolver.Value;
+
+            Assert.IsTrue(status);
+            Assert.AreEqual(15553.60, result, 1e-10);
+        }
+
+        [TestMethod()]
+        public void GoldfarbIdnaniParseGlobalizationTest2()
+        {
+            String strObjective = 0.5.ToString(CultureInfo.InvariantCulture)
+                + "x² +" + 0.2.ToString(CultureInfo.InvariantCulture) + "y² +"
+                + 0.3.ToString(CultureInfo.InvariantCulture) + "xy";
+
+            String[] strConstraints = 
+            { 
+                0.01.ToString(CultureInfo.InvariantCulture) + "x" + " + " + 
+                0.02.ToString(CultureInfo.InvariantCulture) + "y - " + 
+                0.03.ToString(CultureInfo.InvariantCulture) + " = 0", 
+                "x + y = 100" 
+            };
+
+            QuadraticObjectiveFunction function = new QuadraticObjectiveFunction(strObjective);
+            LinearConstraintCollection cst = new LinearConstraintCollection();
+            foreach (var tmpCst in strConstraints)
+                cst.Add(new LinearConstraint(function, tmpCst));
+
+            var classSolver = new Accord.Math.Optimization.GoldfarbIdnani(function, cst);
+            bool status = classSolver.Minimize();
+            double result = classSolver.Value;
+
+            Assert.IsTrue(status);
+            Assert.AreEqual(15553.60, result, 1e-10);
+        }
+
+        [TestMethod()]
+        public void GoldfarbIdnaniParseTest()
+        {
+            var s = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+
+            String strObjective = "0" + s + "5x² + 0" + s + "2y² + 0" + s + "3xy";
+
+            String[] strConstraints = 
+            { 
+                "0" + s + "01x + 0" + s + "02y - 0" + s + "03 = 0", 
+                "x + y = 100" 
+            };
+
+            // Now we can start creating our function:
+            QuadraticObjectiveFunction function = new QuadraticObjectiveFunction(strObjective, CultureInfo.CurrentCulture);
+            LinearConstraintCollection cst = new LinearConstraintCollection();
+            foreach (var tmpCst in strConstraints)
+                cst.Add(new LinearConstraint(function, tmpCst, CultureInfo.CurrentCulture));
+
+            var classSolver = new Accord.Math.Optimization.GoldfarbIdnani(function, cst);
+            bool status = classSolver.Minimize();
+            double result = classSolver.Value;
+
+            Assert.IsTrue(status);
+            Assert.AreEqual(15553.60, result, 1e-10);
+        }
+
+        [TestMethod()]
         public void GoldfarbIdnaniMinimizeWithEqualityTest()
         {
             // This test reproduces Issue #33 at Google Code Tracker
@@ -1094,20 +1209,67 @@ namespace Accord.Tests.Math
                 Assert.AreEqual(expected[i], actual[i], 1e-5);
         }
 
+        [TestMethod()]
+        public void GoldfarbIdnaniLargeSampleTest2()
+        {
+            var Q = readMatrixFile(new StringReader(Resources.dmatFull));
+            var AMat = readMatrixFile(new StringReader(Resources.constraintMatrix11_15_2));
+            var bvec = readVectorFile(new StringReader(Resources.constraints11_14_2));
+
+            var dvec = new double[Q.GetLength(0)];
+            double[] b = new double[bvec.Length];
+            bvec.CopyTo(b, 0);
+
+            bool psd = Q.IsPositiveDefinite();
+            Assert.IsTrue(psd);
+
+            GoldfarbIdnani gfI = new GoldfarbIdnani(Q, dvec, AMat, b, 2);
+
+            for (int i = 0; i < gfI.ConstraintTolerances.Length; i++)
+                gfI.ConstraintTolerances[i] = 1e-10;
+
+            bool success = gfI.Minimize();
+
+            Assert.IsTrue(success);
+
+            double[] soln = gfI.Solution;
+            double value = Math.Sqrt(Matrix.Multiply(Matrix.Multiply(soln, Q), soln.Transpose())[0]);
+
+            double expectedSol = 0.048224950997808;
+            double actualSol = value;
+
+            double[] expected = 
+            {
+                0.41144782323407, // 2
+                0.27310552838116, // 13
+                0.31544664838498, // 14
+            };
+
+            double[] actual =
+            {
+                soln[1], soln[12], soln[13]
+            };
+
+            Assert.AreEqual(expectedSol, actualSol, 1e-8);
+            for (int i = 0; i < expected.Length; i++)
+                Assert.AreEqual(expected[i], actual[i], 1e-5);
+        }
+
         private double[,] readMatrixFile(StringReader reader)
         {
             string line = null;
             List<string> str = new List<string>();
             while ((line = reader.ReadLine()) != null)
             {
-                str.Add(line);
+                if (line.Length != 0)
+                    str.Add(line);
             }
             char[] sep = new char[] { ',' };
-            string[] parts = str[0].Split(sep);
+            string[] parts = str[0].Split(sep, StringSplitOptions.RemoveEmptyEntries);
             double[,] v = new double[str.Count, parts.Length];
             for (int i = 0; i < str.Count; i++)
             {
-                parts = str[i].Split(sep);
+                parts = str[i].Split(sep, StringSplitOptions.RemoveEmptyEntries);
                 for (int j = 0; j < parts.Length; j++)
                 {
                     string prt = parts[j];
@@ -1117,7 +1279,6 @@ namespace Accord.Tests.Math
             }
             reader.Close();
             return v;
-
         }
 
         private double[] readVectorFile(StringReader reader)
