@@ -632,6 +632,9 @@ namespace Accord.Statistics.Models.Markov
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
         /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// 
         public double[] Predict(double[][] observations)
         {
             if (!multivariate)
@@ -647,6 +650,9 @@ namespace Accord.Statistics.Models.Markov
         /// <summary>
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
+        /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observation that should be coming after the last observation in this sequence.</param>
         /// 
         public double Predict(double[] observations)
         {
@@ -664,6 +670,12 @@ namespace Accord.Statistics.Models.Markov
         /// <summary>
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
+        /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="logLikelihood">The log-likelihood of the given sequence, plus the predicted
+        ///   next observation. Exponentiate this value (use the System.Math.Exp function) to obtain
+        ///   a <c>likelihood</c> value.</param>
         /// 
         public double[] Predict(double[][] observations, out double logLikelihood)
         {
@@ -687,6 +699,12 @@ namespace Accord.Statistics.Models.Markov
         /// <summary>
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
+        /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="logLikelihood">The log-likelihood of the given sequence, plus the predicted
+        ///   next observation. Exponentiate this value (use the System.Math.Exp function) to obtain
+        ///   a <c>likelihood</c> value.</param>
         /// 
         public double Predict(double[] observations, out double logLikelihood)
         {
@@ -714,6 +732,15 @@ namespace Accord.Statistics.Models.Markov
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
         /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="logLikelihood">The log-likelihood of the given sequence, plus the predicted
+        ///   next observation. Exponentiate this value (use the System.Math.Exp function) to obtain
+        ///   a <c>likelihood</c> value.</param>
+        /// <param name="probabilities">The continuous probability distribution describing the next observations
+        ///   that are likely to be generated. Taking the mode of this distribution might give the most likely
+        ///   next value in the observed sequence.</param>
+        /// 
         public double[] Predict<TMultivariate>(double[][] observations,
             out double logLikelihood, out MultivariateMixture<TMultivariate> probabilities)
             where TMultivariate : DistributionBase, TDistribution, IMultivariateDistribution<double[]>
@@ -731,6 +758,12 @@ namespace Accord.Statistics.Models.Markov
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
         /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="probabilities">The continuous probability distribution describing the next observations
+        ///   that are likely to be generated. Taking the mode of this distribution might give the most likely
+        ///   next value in the observed sequence.</param>
+        /// 
         public double[] Predict<TMultivariate>(double[][] observations,
             out MultivariateMixture<TMultivariate> probabilities)
             where TMultivariate : DistributionBase, TDistribution, IMultivariateDistribution<double[]>
@@ -746,9 +779,16 @@ namespace Accord.Statistics.Models.Markov
             return prediction[0];
         }
 
+
         /// <summary>
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
+        /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="probabilities">The continuous probability distribution describing the next observations
+        ///   that are likely to be generated. Taking the mode of this distribution might give the most likely
+        ///   next value in the observed sequence.</param>
         /// 
         public double Predict<TUnivariate>(double[] observations, out Mixture<TUnivariate> probabilities)
             where TUnivariate : DistributionBase, TDistribution, IUnivariateDistribution<double>
@@ -769,23 +809,39 @@ namespace Accord.Statistics.Models.Markov
         ///   Predicts the next observation occurring after a given observation sequence.
         /// </summary>
         /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="logLikelihood">The log-likelihood of the given sequence, plus the predicted
+        ///   next observation. Exponentiate this value (use the System.Math.Exp function) to obtain
+        ///   a <c>likelihood</c> value.</param>
+        /// <param name="probabilities">The continuous probability distribution describing the next observations
+        ///   that are likely to be generated. Taking the mode of this distribution might give the most likely
+        ///   next value in the observed sequence.</param>
+        /// 
         public double Predict<TUnivariate>(double[] observations,
-            out double probability, out Mixture<TUnivariate> probabilities)
+            out double logLikelihood, out Mixture<TUnivariate> probabilities)
             where TUnivariate : DistributionBase, TDistribution, IUnivariateDistribution<double>
         {
             if (multivariate)
                 throw new ArgumentException("Model is multivariate.", "observations");
 
             // Compute the next observation (as if it were multidimensional)
-            double[] prediction = predict(observations, out probability, out probabilities);
+            double[] prediction = predict(observations, out logLikelihood, out probabilities);
 
             // Return the first (single) dimension of the next observation.
             return prediction[0];
         }
 
         /// <summary>
-        ///   Predicts the next observation occurring after a given observation sequence.
+        ///   Predicts the next observations occurring after a given observation sequence.
         /// </summary>
+        /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="next">The number of observations to be predicted. Default is 1.</param>
+        /// <param name="probabilities">The continuous probability distribution describing the next observations
+        ///   that are likely to be generated. Taking the mode of this distribution might give the most likely
+        ///   next value in the observed sequence.</param>
         /// 
         public double[][] Predict(double[][] observations, int next, out double logLikelihood)
         {
@@ -803,9 +859,16 @@ namespace Accord.Statistics.Models.Markov
         }
 
         /// <summary>
-        ///   Predicts the next observation occurring after a given observation sequence.
+        ///   Predicts the next observations occurring after a given observation sequence.
         /// </summary>
         /// 
+        /// <param name="observations">A sequence of observations. Predictions will be made regarding 
+        ///   the next observations that should be coming after the last observation in this sequence.</param>
+        /// <param name="next">The number of observations to be predicted. Default is 1.</param>
+        /// <param name="logLikelihood">The log-likelihood of the given sequence, plus the predicted
+        ///   next observations. Exponentiate this value (use the System.Math.Exp function) to obtain
+        ///   a <c>likelihood</c> value.</param>
+        ///   
         public double[] Predict(double[] observations, int next, out double logLikelihood)
         {
             if (multivariate)
