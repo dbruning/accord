@@ -162,7 +162,7 @@ namespace Accord.Imaging.Filters
 
 
             // do the processing job
-            if (destinationData.PixelFormat == PixelFormat.Format8bppIndexed)
+            if (sourceData.PixelFormat == PixelFormat.Format8bppIndexed)
             {
                 // for each line
                 for (int y = 0; y < height; y++)
@@ -173,7 +173,7 @@ namespace Accord.Imaging.Filters
                         long sum = 0;
                         int count = 0;
 
-                        for (int i = 0; i < radius; i++)
+                        for (int i = 0; i < size; i++)
                         {
                             int ir = i - radius;
                             int t = y + ir;
@@ -197,7 +197,7 @@ namespace Accord.Imaging.Filters
                         double mean = sum / (double)count;
                         double variance = 0;
 
-                        for (int i = 0; i < radius; i++)
+                        for (int i = 0; i < size; i++)
                         {
                             int ir = i - radius;
                             int t = y + ir;
@@ -308,9 +308,9 @@ namespace Accord.Imaging.Filters
                         double cutG = meanG * (1.0 + k * ((Math.Sqrt(varG) / r) - 1.0));
                         double cutB = meanB * (1.0 + k * ((Math.Sqrt(varB) / r) - 1.0));
 
-                        dst[RGB.R] = (dst[RGB.R] > cutR) ? (byte)255 : (byte)0;
-                        dst[RGB.G] = (dst[RGB.G] > cutG) ? (byte)255 : (byte)0;
-                        dst[RGB.B] = (dst[RGB.B] > cutB) ? (byte)255 : (byte)0;
+                        dst[RGB.R] = (src[RGB.R] > cutR) ? (byte)255 : (byte)0;
+                        dst[RGB.G] = (src[RGB.G] > cutG) ? (byte)255 : (byte)0;
+                        dst[RGB.B] = (src[RGB.B] > cutB) ? (byte)255 : (byte)0;
 
                         // take care of alpha channel
                         if (pixelSize == 4)

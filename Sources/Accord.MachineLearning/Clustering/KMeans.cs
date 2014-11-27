@@ -214,6 +214,12 @@ namespace Accord.MachineLearning
             set { clusters.Distance = value; }
         }
 
+        public bool ComputeInformation { get; set; }
+        public bool UseCentroidSeeding { get; set; }
+        public int MaxIterations { get; set; }
+        public double Tolerance { get; set; }
+        public int Iterations { get; private set; }
+
         /// <summary>
         ///   Initializes a new instance of the K-Means algorithm
         /// </summary>
@@ -235,14 +241,18 @@ namespace Accord.MachineLearning
         {
             if (k <= 0)
                 throw new ArgumentOutOfRangeException("k");
+
             if (distance == null)
                 throw new ArgumentNullException("distance");
+
+            this.Tolerance = 1e-5;
+            this.ComputeInformation = true;
+            this.UseCentroidSeeding = true;
 
             // Create the object-oriented structure to hold
             //  information about the k-means' clusters.
             this.clusters = new KMeansClusterCollection(k, distance);
         }
-
 
         /// <summary>
         ///   Randomizes the clusters inside a dataset.
@@ -251,14 +261,28 @@ namespace Accord.MachineLearning
         /// <param name="points">The data to randomize the algorithm.</param>
         /// <param name="useSeeding">True to use the k-means++ seeding algorithm. False otherwise.</param>
         /// 
-        public void Randomize(double[][] points, bool useSeeding = true)
+        public void Randomize(double[][] points)
+        {
+            Randomize(points, UseCentroidSeeding);
+        }
+
+        /// <summary>
+        ///   Randomizes the clusters inside a dataset.
+        /// </summary>
+        /// 
+        /// <param name="points">The data to randomize the algorithm.</param>
+        /// <param name="useSeeding">True to use the k-means++ seeding algorithm. False otherwise.</param>
+        /// 
+        public void Randomize(double[][] points, bool useSeeding)
         {
             if (points == null)
                 throw new ArgumentNullException("points");
 
+            this.UseCentroidSeeding = useSeeding;
+
             double[][] centroids = clusters.Centroids;
 
-            if (useSeeding)
+            if (UseCentroidSeeding)
             {
                 // Initialize using K-Means++
                 // http://en.wikipedia.org/wiki/K-means%2B%2B
@@ -317,9 +341,22 @@ namespace Accord.MachineLearning
         /// <param name="threshold">The relative convergence threshold
         ///   for the algorithm. Default is 1e-5.</param>
         /// 
+        public int[] Compute(double[][] points)
+        {
+            return Compute(points, Tolerance, ComputeInformation);
+        }
+
+        /// <summary>
+        ///   Divides the input data into K clusters. 
+        /// </summary>     
+        /// 
+        /// <param name="points">The data where to compute the algorithm.</param>
+        /// <param name="threshold">The relative convergence threshold
+        ///   for the algorithm. Default is 1e-5.</param>
+        /// 
         public int[] Compute(double[][] points, double threshold)
         {
-            return Compute(points, threshold, true);
+            return Compute(points, threshold, ComputeInformation);
         }
 
         /// <summary>
@@ -333,7 +370,7 @@ namespace Accord.MachineLearning
         ///   when the algorithm finishes, such as cluster variances and proportions; false
         ///   otherwise. Default is true.</param>
         ///   
-        public int[] Compute(double[][] data, double threshold = 1e-5, bool computeInformation = true)
+        public int[] Compute(double[][] data, double threshold, bool computeInformation)
         {
             // Initial argument checking
             if (data == null)
@@ -344,6 +381,10 @@ namespace Accord.MachineLearning
 
             if (threshold < 0)
                 throw new ArgumentException("Threshold should be a positive number.", "threshold");
+
+            this.ComputeInformation = computeInformation;
+            this.Tolerance = threshold;
+            this.Iterations = 0;
 
             // TODO: Implement a faster version using the triangle
             // inequality to reduce the number of distance calculations
@@ -359,9 +400,10 @@ namespace Accord.MachineLearning
 
             // Perform a random initialization of the clusters
             // if the algorithm has not been initialized before.
+            //
             if (this.Clusters.Centroids[0] == null)
             {
-                Randomize(data, useSeeding: false);
+                Randomize(data);
             }
 
 
@@ -383,7 +425,7 @@ namespace Accord.MachineLearning
             }
 
 
-            if (computeInformation)
+            if (ComputeInformation)
             {
                 // Compute cluster information (optional)
                 for (int i = 0; i < centroids.Length; i++)
@@ -499,9 +541,27 @@ namespace Accord.MachineLearning
         ///   data points to the clusters' centroids.
         /// </param>
         /// 
-        public int[] Compute(double[][] data, out double error, bool computeInformation = true)
+        public int[] Compute(double[][] data, out double error)
         {
-            return Compute(data, 1e-5, out error, computeInformation);
+            return Compute(data, Tolerance, out error, ComputeInformation);
+        }
+
+        /// <summary>
+        ///   Divides the input data into K clusters. 
+        /// </summary>  
+        /// 
+        /// <param name="data">The data where to compute the algorithm.</param>
+        /// <param name="computeInformation">Pass <c>true</c> to compute additional information
+        ///   when the algorithm finishes, such as cluster variances and proportions; false
+        ///   otherwise. Default is true.</param>
+        /// <param name="error">
+        ///   The average square distance from the
+        ///   data points to the clusters' centroids.
+        /// </param>
+        /// 
+        public int[] Compute(double[][] data, out double error, bool computeInformation)
+        {
+            return Compute(data, Tolerance, out error, computeInformation);
         }
 
         /// <summary>
@@ -519,10 +579,31 @@ namespace Accord.MachineLearning
         ///   data points to the clusters' centroids.
         /// </param>
         /// 
-        public int[] Compute(double[][] data, double threshold, out double error, bool computeInformation = true)
+        public int[] Compute(double[][] data, double threshold, out double error)
+        {
+            return Compute(data, threshold, out error, ComputeInformation);
+        }
+
+        /// <summary>
+        ///   Divides the input data into K clusters. 
+        /// </summary>  
+        /// 
+        /// <param name="data">The data where to compute the algorithm.</param>
+        /// <param name="threshold">The relative convergence threshold
+        /// for the algorithm. Default is 1e-5.</param>
+        /// <param name="computeInformation">Pass <c>true</c> to compute additional information
+        ///   when the algorithm finishes, such as cluster variances and proportions; false
+        ///   otherwise. Default is true.</param>
+        /// <param name="error">
+        ///   The average square distance from the
+        ///   data points to the clusters' centroids.
+        /// </param>
+        /// 
+        public int[] Compute(double[][] data, double threshold, out double error, bool computeInformation)
         {
             // Initial argument checking
-            if (data == null) throw new ArgumentNullException("data");
+            if (data == null) 
+                throw new ArgumentNullException("data");
 
             // Classify the input data
             int[] labels = Compute(data, threshold, computeInformation);
@@ -546,8 +627,13 @@ namespace Accord.MachineLearning
         /// <returns>Returns <see langword="true"/> if all centroids had a percentage change
         ///    less than <see param="threshold"/>. Returns <see langword="false"/> otherwise.</returns>
         ///    
-        private static bool converged(double[][] centroids, double[][] newCentroids, double threshold)
+        private bool converged(double[][] centroids, double[][] newCentroids, double threshold)
         {
+            Iterations++;
+
+            if (MaxIterations > 0 && Iterations > MaxIterations)
+                return true;
+
             for (int i = 0; i < centroids.Length; i++)
             {
                 double[] centroid = centroids[i];
@@ -559,6 +645,7 @@ namespace Accord.MachineLearning
                         return false;
                 }
             }
+
             return true;
         }
 
