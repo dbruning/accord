@@ -133,6 +133,7 @@
     <Compile Include="Distributions\Univariate\Base\IUnivariateDistribution.cs" />
     <Compile Include="Distributions\Univariate\Base\UnivariateContinuousDistribution.cs" />
     <Compile Include="Distributions\Univariate\Base\UnivariateDiscreteDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\KumaraswamyDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\BetaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\BirnbaumSaundersDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\AndersonDarlingDistribution.cs" />
