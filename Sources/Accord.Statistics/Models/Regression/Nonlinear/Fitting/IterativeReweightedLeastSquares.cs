@@ -144,6 +144,8 @@ namespace Accord.Statistics.Models.Regression.Fitting
         private double[] gradient;
         private double[] previous;
 
+        private double lambda = 1e-10;
+
 
         private bool computeStandardErrors = true;
         private ISolverMatrixDecomposition<double> decomposition;
@@ -197,6 +199,17 @@ namespace Accord.Statistics.Models.Regression.Fitting
             set { computeStandardErrors = value; }
         }
 
+        /// <summary>
+        ///   Gets or sets the regularization value to be
+        ///   added in the objective function. Default is
+        ///   1e-10.
+        /// </summary>
+        /// 
+        public double Regularization
+        {
+            get { return lambda; }
+            set { lambda = value; }
+        }
 
         /// <summary>
         ///   Constructs a new Iterative Reweighted Least Squares.
@@ -313,6 +326,11 @@ namespace Accord.Statistics.Models.Regression.Fitting
             //  - Bishop, Christopher M.; Pattern Recognition 
             //    and Machine Learning. Springer; 1st ed. 2006.
 
+            if (inputs.Length != outputs.Length)
+            {
+                throw new DimensionMismatchException("outputs",
+                    "The number of input vectors and their associated output values must have the same size.");
+            }
 
             // Initial definitions and memory allocations
             int N = inputs.Length;
@@ -355,6 +373,7 @@ namespace Accord.Statistics.Models.Regression.Fitting
                 }
             }
 
+            
 
             // Reset Hessian matrix and gradient
             Array.Clear(gradient, 0, gradient.Length);
@@ -373,6 +392,18 @@ namespace Accord.Statistics.Models.Regression.Fitting
                 for (int j = 0; j < row.Length; j++)
                     for (int i = 0; i < row.Length; i++)
                         hessian[j, i] += row[i] * row[j] * weights[k];
+            }
+
+
+            double w = coefficients.SquareEuclidean();
+
+            if (!Double.IsInfinity(w))
+            {
+                for (int i = 0; i < gradient.Length; i++)
+                    gradient[i] -= lambda * w;
+
+                for (int i = 0; i < parameterCount; i++)
+                    hessian[i, i] -= lambda;
             }
 
 
@@ -396,7 +427,6 @@ namespace Accord.Statistics.Models.Regression.Fitting
             // Hessian Matrix is singular, try pseudo-inverse solution
             decomposition = new SingularValueDecomposition(hessian);
             deltas = decomposition.Solve(gradient);
-
 
             previous = (double[])coefficients.Clone();
 
