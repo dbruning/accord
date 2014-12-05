@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2014
+// Copyright © César Souza, 2009-2015
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -58,7 +58,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
     using System.Threading;
 
     /// <summary>
-    ///   L2-regularized L2-loss support vector classification (primal).
+    ///   L2-regularized L2-loss linear support vector classification (primal).
     /// </summary>
     /// 
     /// <remarks>
@@ -72,7 +72,8 @@ namespace Accord.MachineLearning.VectorMachines.Learning
     ///   
     /// <para>
     ///   Liblinear's solver <c>-s 2</c>: <c>L2R_L2LOSS_SVC</c>. A trust region newton
-    ///   algorithm for the primal of L2-regularized, L2-loss support vector classification.
+    ///   algorithm for the primal of L2-regularized, L2-loss linear support vector 
+    ///   classification.
     /// </para>
     /// </remarks>
     /// 
@@ -155,11 +156,13 @@ namespace Accord.MachineLearning.VectorMachines.Learning
             set { this.tron.MaxIterations = value; }
         }
 
+
+
         private double objective(double[] w)
         {
             int[] y = Outputs;
 
-            Xv(w, z);
+            Xv(Inputs, biasIndex, w, z);
 
             double f = 0;
             for (int i = 0; i < w.Length; i++)
@@ -192,7 +195,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
                 }
             }
 
-            subXTv(z, g);
+            subXTv(Inputs, biasIndex, I, sizeI, z, g);
 
             for (int i = 0; i < w.Length; i++)
                 g[i] = w[i] + 2 * g[i];
@@ -202,21 +205,19 @@ namespace Accord.MachineLearning.VectorMachines.Learning
 
         private double[] hessian(double[] s)
         {
-            subXv(s, wa);
+            subXv(Inputs, biasIndex, I, sizeI, s, wa);
             for (int i = 0; i < sizeI; i++)
                 wa[i] = C[I[i]] * wa[i];
 
-            subXTv(wa, h);
+            subXTv(Inputs, biasIndex, I, sizeI, wa, h);
             for (int i = 0; i < s.Length; i++)
                 h[i] = s[i] + 2 * h[i];
 
             return h;
         }
 
-        private void Xv(double[] v, double[] Xv)
+        internal static void Xv(double[][] x, int biasIndex, double[] v, double[] Xv)
         {
-            double[][] x = Inputs;
-
             for (int i = 0; i < x.Length; i++)
             {
                 double[] s = x[i];
@@ -230,10 +231,8 @@ namespace Accord.MachineLearning.VectorMachines.Learning
             }
         }
 
-        private void subXv(double[] v, double[] Xv)
+        internal static void subXv(double[][] x, int biasIndex, int[] I, int sizeI, double[] v, double[] Xv)
         {
-            double[][] x = Inputs;
-
             for (int i = 0; i < sizeI; i++)
             {
                 double[] s = x[I[i]];
@@ -247,10 +246,8 @@ namespace Accord.MachineLearning.VectorMachines.Learning
             }
         }
 
-        private void subXTv(double[] v, double[] XTv)
+        internal static void subXTv(double[][] x, int biasIndex, int[] I, int sizeI, double[] v, double[] XTv)
         {
-            double[][] x = Inputs;
-
             for (int i = 0; i < XTv.Length; i++)
                 XTv[i] = 0;
 

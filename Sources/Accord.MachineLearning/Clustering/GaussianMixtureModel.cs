@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2014
+// Copyright © César Souza, 2009-2015
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -178,11 +178,12 @@ namespace Accord.MachineLearning
             KMeans kmeans = new KMeans(clusters.Count)
             {
                 ComputeInformation = true,
-                UseCentroidSeeding = false
+                UseCentroidSeeding = false,
+                Tolerance = threshold
             };
 
             // Compute the K-Means
-            kmeans.Compute(data, threshold, out error);
+            kmeans.Compute(data, out error);
 
             // Initialize the model with K-Means
             Initialize(kmeans);

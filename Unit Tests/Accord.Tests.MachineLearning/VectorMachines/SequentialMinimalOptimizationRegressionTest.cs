@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2014
+// Copyright © César Souza, 2009-2015
 // cesarsouza at gmail.com
 //
 //    This program is free software; you can redistribute it and/or modify
@@ -60,13 +60,13 @@ namespace Accord.Tests.MachineLearning.GPL
                 new double[] { 2,  2 }, // 2*2 + 2 =  6
                 new double[] { 6,  1 }, // 2*6 + 1 = 13
                 new double[] { 5,  4 }, // 2*5 + 4 = 14
-                new double[] { 9,  1 }, // 2*9 + 1 = 20
-                new double[] { 1,  6 }, // 2*1 + 6 =  5
+                new double[] { 9,  1 }, // 2*9 + 1 = 19
+                new double[] { 1,  6 }, // 2*1 + 6 =  8
             };
 
             double[] outputs = // f(x, y)
             {
-                    1, 11, 8, 6, 13, 14, 20, 5
+                    1, 11, 8, 6, 13, 14, 20, 8
             };
 
             // Create Kernel Support Vector Machine with a Polynomial Kernel of 2nd degree

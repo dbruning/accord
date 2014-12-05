@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2014
+// Copyright © César Souza, 2009-2015
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -160,8 +160,8 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         /// <param name="inputs">The input data points as row vectors.</param>
         /// <param name="outputs">The output label for each input point. Values must be either -1 or +1.</param>
         /// 
-        public LinearCoordinateDescent(SupportVectorMachine machine, 
-            double[][] inputs, int[] outputs) : base(machine, inputs, outputs)
+        public LinearCoordinateDescent(SupportVectorMachine machine, double[][] inputs, int[] outputs)
+            : base(machine, inputs, outputs)
         {
             int samples = inputs.Length;
             int dimension = inputs[0].Length;
@@ -269,7 +269,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
                 upper_bound = c;
             }
 
-          
+
             for (int i = 0; i < x.Length; i++)
             {
                 QD[i] = diag[i];
@@ -277,8 +277,9 @@ namespace Accord.MachineLearning.VectorMachines.Learning
                 double[] xi = x[i];
                 for (int j = 0; j < xi.Length; j++)
                 {
-                    QD[i] += xi[j] * xi[j];
-                    w[j] += y[i] * alpha[i] * xi[j];
+                    double val = xi[j];
+                    QD[i] += val * val;
+                    w[j] += y[i] * alpha[i] * val;
                 }
 
                 QD[i] += 1;
@@ -347,6 +348,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
                             var old = index[s];
                             index[s] = index[active_size];
                             index[active_size] = old;
+
                             s--;
                             continue;
                         }

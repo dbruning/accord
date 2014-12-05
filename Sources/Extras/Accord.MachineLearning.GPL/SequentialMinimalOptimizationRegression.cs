@@ -17,7 +17,7 @@
 // Copyright © Sylvain Roy, 2002
 // sro33 at student.canterbury.ac.nz
 //
-// Copyright © César Souza, 2009-2014
+// Copyright © César Souza, 2009-2015
 // cesarsouza at gmail.com
 //
 //   Portions of this file have been based on the GPL code by Sylvain
@@ -95,13 +95,13 @@ namespace Accord.MachineLearning.VectorMachines.Learning
     ///     new double[] { 2,  2 }, // 2*2 + 2 =  6
     ///     new double[] { 6,  1 }, // 2*6 + 1 = 13
     ///     new double[] { 5,  4 }, // 2*5 + 4 = 14
-    ///     new double[] { 9,  1 }, // 2*9 + 1 = 20
-    ///     new double[] { 1,  6 }, // 2*1 + 6 =  5
+    ///     new double[] { 9,  1 }, // 2*9 + 1 = 19
+    ///     new double[] { 1,  6 }, // 2*1 + 6 =  8
     /// };
         /// 
     /// double[] outputs = // f(x, y)
     /// {
-    ///         1, 11, 8, 6, 13, 14, 20, 5
+    ///         1, 11, 8, 6, 13, 14, 20, 8
     /// };
     /// 
     /// // Create Kernel Support Vector Machine with a Polynomial Kernel of 2nd degree
@@ -234,12 +234,14 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         ///   Insensitivity zone ε. Increasing the value of ε can result in fewer support
         ///   vectors in the created model. Default value is 1e-3.
         /// </summary>
+        /// 
         /// <remarks>
         ///   Parameter ε controls the width of the ε-insensitive zone, used to fit the training
         ///   data. The value of ε can affect the number of support vectors used to construct the
         ///   regression function. The bigger ε, the fewer support vectors are selected. On the
         ///   other hand, bigger ε-values results in more flat estimates.
         /// </remarks>
+        /// 
         public double Epsilon
         {
             get { return this.epsilon; }
