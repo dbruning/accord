@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2014
+// Copyright © César Souza, 2009-2015
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -212,7 +212,10 @@ namespace Accord.MachineLearning
         {
             kmeans.Randomize(cluster, useSeeding: false);
 
-            int[] idx = kmeans.Compute(cluster, threshold, false);
+            kmeans.Tolerance = threshold;
+            kmeans.ComputeInformation = false;
+
+            int[] idx = kmeans.Compute(cluster);
 
             List<double[]> a = new List<double[]>();
             List<double[]> b = new List<double[]>();
