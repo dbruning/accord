@@ -48,5 +48,12 @@ namespace Accord.Tests.Statistics
             }
         }
 
+        [TestMethod, Ignore]
+        public void ComputeTest1()
+        {
+            double[,] data = Matrix.Identity(5);
+
+            DataGridBox.Show(data).Hold();
+        }
     }
 }

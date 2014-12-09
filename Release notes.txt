@@ -1,4 +1,4 @@
-Accord.NET Framework 2.13.2 release notes
+Accord.NET Framework 2.14.0 release notes
 -----------------------------------------
 15.12.2014.
 
@@ -32,13 +32,15 @@ Version updates and fixes:
   - Adding weighted measure methods in Statistics.Tools that are 
     based on element repetitions rather than element importance;
   - Adding Anderson-Daring, Shapiro-Wilk, Inverse Chi-Square, Lévy, Folded 
-    Normal, Shifted Log-Logistic, Kumaraswamy, and BetaPrime distributions;
+    Normal, Shifted Log-Logistic, Kumaraswamy, Trapezoidal, U-quadratic and
+    BetaPrime distributions;
   - Adding Anderson-Daring and Shapiro-Wilk hypothesis tests;
   - Correcting the MarkovMultivariateFunction constructor for 
     explicit Independent<NormalDistribution> hidden Markov models;
   - Correcting discrete Viterbi learning convergence check and unifying 
     the Viterbi implementations for discrete and continuous variables;
   - Correcting the calculation of log likelihoods in Baum Welch learning;
+  - Correcting serialization issue with DynamicTimeWarping kernel;
   - Updating all distribution functions constructors to offer Range attributes
     that can be used to automatically determine valid values for its parameters;
   - Updating Logistic Regression and Cox's Proportional Hazards 
@@ -51,6 +53,9 @@ Version updates and fixes:
   - Updating univariate discrete distributions with Quantile Density functions.
 
 * Accord.MachineLearning
+  - Adding LIBLINEAR's linear support vector regression (SVR) algorithms;
+  - Adding LinearCoordinateDescent for the primal formulation and renaming the 
+    previous coordinate descent algorithm to LinearDualCoordinateDescent;
   - Adding named constructors in Naive Bayes to build Gaussian models more easily;
   - Updating Naive Bayes classifiers to estimate component variables in parallel;
   - Updating ID3 algorithm so attributes can join multiple times a decision;

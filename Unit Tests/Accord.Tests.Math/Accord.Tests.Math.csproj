@@ -96,6 +96,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %284.0%29|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release %283.5%29|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge, Version=2.2.3.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -277,8 +280,10 @@
     <None Include="Accord.snk" />
     <None Include="Resources\constraintMatrix11_15_2.csv" />
     <None Include="Resources\constraintMatrix11_15.csv" />
+    <None Include="Resources\constraintMatrix11_15_3.csv" />
     <None Include="Resources\constraints11_14_2.csv" />
     <None Include="Resources\constraints11_14.csv" />
+    <None Include="Resources\constraints11_14_3.csv" />
     <None Include="Resources\dmatFull.csv" />
   </ItemGroup>
   <ItemGroup>
