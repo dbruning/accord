@@ -128,6 +128,7 @@
     <Compile Include="VectorMachines\Learning\Base\ISupportVectorMachineLearning.cs" />
     <Compile Include="VectorMachines\Learning\LeastSquaresLearning.cs" />
     <Compile Include="VectorMachines\Learning\LinearCoordinateDescent.cs" />
+    <Compile Include="VectorMachines\Learning\LinearDualCoordinateDescent.cs" />
     <Compile Include="VectorMachines\Learning\LinearNewtonMethod.cs" />
     <Compile Include="VectorMachines\Learning\MulticlassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
