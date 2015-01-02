@@ -1,4 +1,4 @@
-﻿// Accord Statistics Library
+﻿// Accord Formats Library
 // The Accord.NET Framework
 // http://accord-framework.net
 //
@@ -20,15 +20,15 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-namespace Accord.IO
+namespace Accord.IO.Mat
 {
-    using Accord.Math;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.IO.Compression;
     using System.Runtime.InteropServices;
+    using Accord.Math;
 
     /// <summary>
     ///   Node object contained in <see cref="MatReader">.MAT file</see>. 
@@ -108,7 +108,22 @@ namespace Accord.IO
         /// 
         public T GetValue<T>()
         {
-            return (T)Value;
+            if (Value is T)
+                return (T)Value;
+
+            if (typeof(T).IsArray)
+            {
+                var targetType = typeof(T).DeclaringType;
+                Array src = Value as Array;
+                Array dst = Array.CreateInstance(targetType, dimensions);
+
+                foreach (int[] idx in Matrix.Indices(src))
+                    dst.SetValue(Convert.ChangeType(src.GetValue(idx), targetType), idx);
+
+                return (T)Convert.ChangeType(dst, typeof(T));
+            }
+
+            throw new InvalidCastException();
         }
 
         /// <summary>
