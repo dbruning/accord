@@ -62,7 +62,7 @@ namespace Accord.Statistics.Distributions.Multivariate
     [Serializable]
     public abstract class MultivariateDiscreteDistribution : DistributionBase,
         IMultivariateDistribution, IMultivariateDistribution<int[]>,
-        IDistribution<double[]>
+        IDistribution<double[]>, IFormattable
     {
 
         private int dimension;
@@ -455,15 +455,6 @@ namespace Accord.Statistics.Distributions.Multivariate
                 throw new NotSupportedException();
             }
         }
-
-        /// <summary>
-        ///   Creates a new object that is a copy of the current instance.
-        /// </summary>
-        /// <returns>
-        ///   A new object that is a copy of this instance.
-        /// </returns>
-        /// 
-        public abstract object Clone();
 
 
       
