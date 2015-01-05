@@ -175,7 +175,7 @@
     <Compile Include="VectorMachines\Probabilistic\ProbabilisticNewtonMethodTest.cs" />
     <Compile Include="VectorMachines\Regression\LinearRegressionCoordinateDescentTest.cs" />
     <Compile Include="VectorMachines\Regression\LinearRegressionNewtonMethodTest.cs" />
-    <Compile Include="VectorMachines\SequentialMinimalOptimizationRegressionTest.cs" />
+    <Compile Include="VectorMachines\Regression\SequentialMinimalOptimizationRegressionTest.cs" />
     <Compile Include="VectorMachines\SupportVectorReductionTest.cs" />
     <Compile Include="VectorMachines\MultilabelSupportVectorLearningTest.cs" />
     <Compile Include="VectorMachines\ProbabilisticOutputLearningTest.cs" />

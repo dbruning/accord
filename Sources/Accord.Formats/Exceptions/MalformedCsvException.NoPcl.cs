@@ -1,0 +1,79 @@
+// Accord Formats Library
+// The Accord.NET Framework
+// http://accord-framework.net
+//
+// LumenWorks.Framework.IO.CSV.CsvReader
+// Copyright (c) 2005 Sébastien Lorion
+//
+// Copyright © César Souza, 2009-2015
+// cesarsouza at gmail.com
+//
+// This class has been based on the original work by Sébastien Lorion, originally
+// published under the MIT license (and thus compatible with the LGPL). Original
+// license text is reproduced below:
+//
+//    MIT license (http://en.wikipedia.org/wiki/MIT_License)
+//
+//    Permission is hereby granted, free of charge, to any person obtaining a copy
+//    of this software and associated documentation files (the "Software"), to deal
+//    in the Software without restriction, including without limitation the rights 
+//    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+//    of the Software, and to permit persons to whom the Software is furnished to do so, 
+//    subject to the following conditions:
+//
+//    The above copyright notice and this permission notice shall be included in all 
+//    copies or substantial portions of the Software.
+//
+//    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+//    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+//    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+//    FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+//    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+
+namespace Accord.IO.Csv
+{
+    using System;
+    using System.Globalization;
+    using System.Runtime.Serialization;
+    using Accord.IO.Resources;
+
+    public partial class MalformedCsvException
+    {
+        /// <summary>
+        /// Initializes a new instance of the MalformedCsvException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:StreamingContext"/> that contains contextual information about the source or destination.</param>
+        protected MalformedCsvException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            message = info.GetString("MyMessage");
+
+            RawData = info.GetString("RawData");
+            CurrentPosition = info.GetInt32("CurrentPosition");
+            CurrentRecordIndex = info.GetInt64("CurrentRecordIndex");
+            CurrentFieldIndex = info.GetInt32("CurrentFieldIndex");
+        }
+
+        /// <summary>
+        ///   When overridden in a derived class, sets the <see cref="T:SerializationInfo"/> with information about the exception.
+        /// </summary>
+        /// 
+        /// <param name="info">The <see cref="T:SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:StreamingContext"/> that contains contextual information about the source or destination.</param>
+        /// 
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            info.AddValue("MyMessage", Message);
+
+            info.AddValue("RawData", RawData);
+            info.AddValue("CurrentPosition", CurrentPosition);
+            info.AddValue("CurrentRecordIndex", CurrentRecordIndex);
+            info.AddValue("CurrentFieldIndex", CurrentFieldIndex);
+        }
+
+    }
+}

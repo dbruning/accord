@@ -30,7 +30,6 @@ namespace Accord.Tests.Math
     using Accord.Math.Decompositions;
     using AForge;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Accord.Controls;
 
     [TestClass()]
     public partial class MatrixTest

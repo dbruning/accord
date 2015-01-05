@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Mark the assembly as CLS compliant since it exposes external types
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
 
 [assembly: InternalsVisibleTo("Accord.Tests.Math, PublicKey=" +
     "0024000004800000940000000602000000240000525341310004000001000100039880a76dac76" +

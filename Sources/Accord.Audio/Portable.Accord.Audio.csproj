@@ -85,6 +85,8 @@
     <Compile Include="Generators\CosineGenerator.cs" />
     <Compile Include="Generators\ImpulseGenerator.cs" />
     <Compile Include="Generators\ISignalGenerator.cs" />
+    <Compile Include="Generators\SignalGenerator.cs" />
+    <Compile Include="Generators\SineGenerator.cs" />
     <Compile Include="Generators\SquareGenerator.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IAudioOutput.cs" />

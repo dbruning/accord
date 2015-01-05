@@ -36,8 +36,7 @@ namespace Accord.IO.Csv
     using System;
     using System.Globalization;
     using System.Runtime.Serialization;
-    using System.Security.Permissions;
-
+    
     /// <summary>
     ///   Represents the exception that is thrown when a there is a missing field in a record of the CSV file.
     /// </summary>

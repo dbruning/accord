@@ -52,18 +52,41 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Csv\CsvReader.cs" />
+    <Compile Include="Csv\CsvReader.IDataReader.cs" />
+    <Compile Include="Csv\CsvReader.RecordEnumerator.cs" />
+    <Compile Include="Csv\CsvWriter.cs" />
+    <Compile Include="Csv\MissingFieldAction.cs" />
+    <Compile Include="Csv\ParseErrorAction.cs" />
+    <Compile Include="Csv\ValueTrimmingOptions.cs" />
+    <Compile Include="Events\ParseErrorEventArgs.cs" />
+    <Compile Include="Exceptions\MalformedCsvException.cs" />
+    <Compile Include="Exceptions\MissingFieldCsvException.cs" />
     <Compile Include="LibSvmModel.cs" />
-    <Compile Include="MatSparse.cs" />
+    <Compile Include="Mat\MatSparse.cs" />
     <Compile Include="Mat\MatArrayFlags.cs" />
     <Compile Include="Mat\MatArrayType.cs" />
     <Compile Include="Mat\MatDataType.cs" />
     <Compile Include="Mat\MatDataTag.cs" />
-    <Compile Include="MatNode.cs" />
-    <Compile Include="MatReader.cs" />
+    <Compile Include="Mat\MatNode.cs" />
+    <Compile Include="Mat\MatReader.cs" />
+    <Compile Include="Extensions.Matrix.cs" />
+    <Compile Include="Extensions.Table.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IdxReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SparseReader.cs" />
+    <Compile Include="Resources\ExceptionMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessage.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ExceptionMessage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />
