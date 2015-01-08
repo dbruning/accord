@@ -70,6 +70,7 @@
     <Compile Include="Filters\Concatenate.cs" />
     <Compile Include="Filters\DifferenceOfGaussians.cs" />
     <Compile Include="Filters\Exponential.cs" />
+    <Compile Include="Filters\FastVariance.cs" />
     <Compile Include="Filters\FeaturesMarker.cs" />
     <Compile Include="Filters\GaborFilter.cs" />
     <Compile Include="Filters\GrayWorld.cs" />
@@ -88,6 +89,8 @@
     <Compile Include="Filters\Variance.cs" />
     <Compile Include="Filters\WaveletTransform.cs" />
     <Compile Include="Filters\WhitePatch.cs" />
+    <Compile Include="Filters\WolfJolionThreshold.cs" />
+    <Compile Include="Filters\Transform\RotateNearestNeighbor.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="GrayLevelCooccurrenceMatrix.cs" />
     <Compile Include="GrayLevelDifferenceMethod.cs" />
