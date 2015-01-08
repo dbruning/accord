@@ -70,8 +70,6 @@
     <Compile Include="Mat\MatDataTag.cs" />
     <Compile Include="Mat\MatNode.cs" />
     <Compile Include="Mat\MatReader.cs" />
-    <Compile Include="Extensions.Matrix.cs" />
-    <Compile Include="Extensions.Table.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IdxReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,8 +10,8 @@
 
 namespace Accord.IO.Resources {
     using System;
-    
-    
+    using System.Reflection;
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -39,7 +39,7 @@ namespace Accord.IO.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Accord.IO.Resources.ExceptionMessage", typeof(ExceptionMessage).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Accord.IO.Resources.ExceptionMessage", typeof(ExceptionMessage).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -395,7 +395,12 @@ namespace Accord.IO.Csv
         char IDataRecord.GetChar(int i)
         {
             ValidateDataReader(DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed);
-            return Char.Parse(this[i]);
+            char result;
+            if (!Char.TryParse(this[i], out result))
+            {
+                throw new FormatException();
+            }
+            return result;
         }
 
         short IDataRecord.GetInt16(int i)

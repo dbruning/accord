@@ -46,7 +46,7 @@ namespace Accord.IO.Csv
     /// </remarks>
     /// 
     [Serializable()]
-    public class MissingFieldCsvException
+    public partial class MissingFieldCsvException
         : MalformedCsvException
     {
 
@@ -110,18 +110,5 @@ namespace Accord.IO.Csv
             : base(rawData, currentPosition, currentRecordIndex, currentFieldIndex, innerException)
         {
         }
-
-        /// <summary>
-        ///   Initializes a new instance of the MissingFieldCsvException class with serialized data.
-        /// </summary>
-        /// 
-        /// <param name="info">The <see cref="T:SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
-        /// <param name="context">The <see cref="T:StreamingContext"/> that contains contextual information about the source or destination.</param>
-        /// 
-        protected MissingFieldCsvException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
-
     }
 }
