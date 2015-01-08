@@ -73,6 +73,16 @@ namespace Accord.Tests.Imaging.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blend_result {
+            get {
+                object obj = ResourceManager.GetObject("blend_result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dc_left {
             get {
                 object obj = ResourceManager.GetObject("dc_left", resourceCulture);
@@ -496,6 +506,26 @@ namespace Accord.Tests.Imaging.Properties {
         internal static System.Drawing.Bitmap tt4 {
             get {
                 object obj = ResourceManager.GetObject("tt4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap variance_color_expected {
+            get {
+                object obj = ResourceManager.GetObject("variance_color_expected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wiki_flower {
+            get {
+                object obj = ResourceManager.GetObject("wiki_flower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
