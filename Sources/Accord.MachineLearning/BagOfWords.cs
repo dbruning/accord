@@ -26,7 +26,7 @@ namespace Accord.MachineLearning
     using System;
     using System.Collections.Generic;
 
-#if !NET40 && !NET35
+#if !NET35 && !NET40
     using System.Collections.ObjectModel;
 #else
     using Accord.Collections;
