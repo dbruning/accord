@@ -29,6 +29,7 @@
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Sources\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>64befc1f</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,18 +51,6 @@
     <DefineConstants>TRACE;NET45</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Math">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Neuro">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.Neuro.dll</HintPath>
-    </Reference>
     <Reference Include="Shim, Version=0.9.4.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Sources\packages\shim.0.9.4-pre1\lib\net45\Shim.dll</HintPath>
@@ -71,6 +60,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.XML" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
@@ -130,28 +120,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Formats\Accord.IO.csproj">
-      <Project>{63184EBD-6B28-4066-AAEE-5B99431E31F4}</Project>
-      <Name>Accord.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Neuro\Accord.Neuro.csproj">
-      <Project>{179F3045-8757-4F4B-9508-F48327BA11E3}</Project>
-      <Name>Accord.Neuro</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +128,44 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
+      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
+      <Name>Portable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
+      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
+      <Name>Portable.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Neuro\Portable.Neuro.csproj">
+      <Project>{e37ebfaf-5dc0-415c-9c1a-8a5a808a3ddf}</Project>
+      <Name>Portable.Neuro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
+      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
+      <Name>Portable.Accord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Formats\Portable.Accord.IO.csproj">
+      <Project>{8c4970de-ab6d-47de-b3d0-b1ef99e4ccc2}</Project>
+      <Name>Portable.Accord.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
+      <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
+      <Name>Portable.Accord.MachineLearning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
+      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
+      <Name>Portable.Accord.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Neuro\Portable.Accord.Neuro.csproj">
+      <Project>{46e4f987-424b-4bfd-a78f-03ae578a1aaa}</Project>
+      <Name>Portable.Accord.Neuro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Statistics\Portable.Accord.Statistics.csproj">
+      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
+      <Name>Portable.Accord.Statistics</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -167,7 +173,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\Sources\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\Sources\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
+  <Import Project="..\..\Sources\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\Sources\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

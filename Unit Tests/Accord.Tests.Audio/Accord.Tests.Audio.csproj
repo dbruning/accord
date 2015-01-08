@@ -50,14 +50,6 @@
     <DefineConstants>TRACE;NET45</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Math">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.Math.dll</HintPath>
-    </Reference>
     <Reference Include="SharpDX">
       <HintPath>..\..\Externals\SharpDX\net40\SharpDX.dll</HintPath>
       <HintPath>..\..\Externals\SharpDX\net20\SharpDX.dll</HintPath>
@@ -97,7 +89,6 @@
     </Compile>
     <Compile Include="SignalTest.cs" />
     <Compile Include="ToolsTest.cs" />
-    <Compile Include="WaveFileAudioSourceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\License.txt" />
@@ -109,28 +100,6 @@
     <None Include="Resources\Grand Piano - Fazioli - major A middle.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Audio.Formats\Accord.Audio.Formats.csproj">
-      <Project>{EC70C2A7-2B49-40D3-AE82-4C2F6E1724AF}</Project>
-      <Name>Accord.Audio.Formats</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Audio\Accord.Audio.csproj">
-      <Project>{E7B65F08-82F1-438F-847A-2AAC2BEC9AC0}</Project>
-      <Name>Accord.Audio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Controls.Statistics\Accord.Controls.csproj">
-      <Project>{0AB27A20-925C-4556-9FA4-6E2C109E448E}</Project>
-      <Name>Accord.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.DirectSound\Accord.DirectSound.csproj">
-      <Project>{456DB2E8-745A-4F87-A2BD-C43CF8677770}</Project>
-      <Name>Accord.DirectSound</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -160,6 +129,32 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
+      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
+      <Name>Portable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
+      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
+      <Name>Portable.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Audio.Formats\Portable.Accord.Audio.Formats.csproj">
+      <Project>{0c4dc074-2aa2-43fa-9d3e-5a4c52aebcf3}</Project>
+      <Name>Portable.Accord.Audio.Formats</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Audio\Portable.Accord.Audio.csproj">
+      <Project>{a96fccc6-d515-4e47-a7e6-b57c5c73d9ec}</Project>
+      <Name>Portable.Accord.Audio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
+      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
+      <Name>Portable.Accord.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
+      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
+      <Name>Portable.Accord.Math</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

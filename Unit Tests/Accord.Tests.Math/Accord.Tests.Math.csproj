@@ -54,18 +54,6 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Imaging">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.Imaging.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Math">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Externals\AForge.NET\AForge.Math.dll</HintPath>
-    </Reference>
     <Reference Include="Shim">
       <HintPath>..\..\Sources\packages\shim.0.9.4-pre1\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
@@ -175,35 +163,49 @@
     <Compile Include="ToolsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Controls.Imaging\Accord.Controls.Imaging.csproj">
-      <Project>{E1089999-EAED-4E55-AC47-B6A196DF84FC}</Project>
-      <Name>Accord.Controls.Imaging</Name>
+    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
+      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
+      <Name>Portable.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Controls.Statistics\Accord.Controls.csproj">
-      <Project>{0AB27A20-925C-4556-9FA4-6E2C109E448E}</Project>
-      <Name>Accord.Controls</Name>
+    <ProjectReference Include="..\..\..\aforge\Sources\Imaging\Portable.Imaging.csproj">
+      <Project>{0a22690c-9553-4b11-9835-8c0f0e2d44f1}</Project>
+      <Name>Portable.Imaging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
-      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
-      <Name>Accord.Core</Name>
-      <Aliases>global</Aliases>
+    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
+      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
+      <Name>Portable.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Imaging\Accord.Imaging.csproj">
-      <Project>{4959A83D-F78F-439E-80A5-41583ECEAAC6}</Project>
-      <Name>Accord.Imaging</Name>
+    <ProjectReference Include="..\..\..\aforge\Sources\System.Drawing\_WPF\WPF.Shim.Drawing.csproj">
+      <Project>{d1963a68-8848-4b70-9141-3ebb4cb6af34}</Project>
+      <Name>WPF.Shim.Drawing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
-      <Name>Accord.Math</Name>
+    <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
+      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
+      <Name>Portable.Accord.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Accord.Statistics.csproj">
-      <Project>{FD8101DD-C95D-42D6-AD44-AE01C25F2811}</Project>
-      <Name>Accord.Statistics</Name>
-      <Private>True</Private>
+    <ProjectReference Include="..\..\Sources\Accord.Imaging\Portable.Accord.Imaging.csproj">
+      <Project>{05e1d2f5-f28b-4689-b607-33ea288125ff}</Project>
+      <Name>Portable.Accord.Imaging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Extras\Accord.Math.NonCommercial\Accord.Math %28Noncommercial%29.csproj">
-      <Project>{1A83AF16-1AC8-45E3-9E7E-FA7248C7CBCB}</Project>
-      <Name>Accord.Math %28Noncommercial%29</Name>
+    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
+      <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
+      <Name>Portable.Accord.MachineLearning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
+      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
+      <Name>Portable.Accord.Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Neuro\Portable.Accord.Neuro.csproj">
+      <Project>{46e4f987-424b-4bfd-a78f-03ae578a1aaa}</Project>
+      <Name>Portable.Accord.Neuro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Statistics\Portable.Accord.Statistics.csproj">
+      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
+      <Name>Portable.Accord.Statistics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Extras\Accord.Math.NonCommercial\Portable.Accord.Math %28Noncommercial%29.csproj">
+      <Project>{c25123e2-a3d0-4229-8e3c-b2fd5a86e675}</Project>
+      <Name>Portable.Accord.Math %28Noncommercial%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\Accord.Tests.Math.Cpp\Accord.Tests.Math.Cpp.vcxproj">
       <Project>{161BD953-537D-4325-8A00-22475FC9088E}</Project>
