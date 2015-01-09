@@ -3,7 +3,7 @@
 Portable Accord.NET Framework
 =============================
 
-Copyright (c) 2009-2014 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013-2014 Anders Gustafsson, Cureos AB. 
+Copyright (c) 2009-2015 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013-2015 Anders Gustafsson, Cureos AB. 
 Distributed under the Lesser GNU Public License, LGPL, version 2.1.
 
 This project is a fork of César Souzas's original [Accord.NET Framework](https://github.com/accord-net/framework) project. 
@@ -14,17 +14,13 @@ The repository currently provides:
 * Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision, Audio) 
 
 To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
-*Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable
-Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in Windows Store, Windows Phone 8 or WPF applications.
+*Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in Windows Store, Windows Phone 8 or WPF applications.
 
-The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the target specific (Windows Phone or WPF)
-*Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
+The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the target specific (Windows Phone or WPF) *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
  
-`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *Shim.Drawing* assemblies 
-incorporates explicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
+`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *Shim.Drawing* assemblies incorporates explicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
 
-All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the
-image processing.
+All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the image processing.
 
 When using the WPF *Shim.Drawing* assembly, the real *System.Drawing* assembly from .NET Framework cannot be referenced. If there is a need to reference 
 the real *System.Drawing* assembly, you are recommended to use the original *Accord.NET Framework* libraries and use WPF hosting controls to display image processing results instead.
@@ -49,23 +45,16 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, November 10, 2014 (synched with main repository commit [c7103f3](https://github.com/accord-net/framework/commit/c7103f3f889d86d6e95a045bae3ab9a039038780)):
+Results, January 8, 2015 (synched with main repository commit [ae0e6bc](https://github.com/accord-net/framework/commit/ae0e6bc86408530f4a9660297a45d1ee98cbc9ce)):
 
-* Accord.Tests.Audio, 12 unit tests, all passed
-* Accord.Tests.IO, 26 unit tests, all passed
-* Accord.Tests.Math, 472 unit tests, 4 failed
-* Accord.Tests.Statistics, 1059 tests, all passed
-* Accord.Tests.MachineLearning, 146 tests, 6 failed
+* Accord.Tests.Audio, 12 unit tests (*WaveFileAudioSourceTest* excluded), all passed
+* Accord.Tests.IO, 42 unit tests, 2 failed
+* Accord.Tests.Math, 498 unit tests, all passed
+* Accord.Tests.Statistics, 1087 tests (*Controls* related tests excluded), all passed
+* Accord.Tests.MachineLearning, 150 tests (*RansacLineTest* excluded), 4 failed
 * Accord.Tests.Neuro, 20 tests, all passed
 
-2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in 
-the tested classes of the PCL *MachineLearning* library.
-2 failed *Accord.Tests.MachineLearning* tests are due to insufficient unit test formulations, see [Issue Report 84](https://code.google.com/p/accord/issues/detail?id=84).
-
-Also see [this issue report](https://github.com/cureos/accord/issues/10).
-
-Failed tests in *Accord.Tests.Math* are most likely due to invalid test assertions.
-
+2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library.
 
 Notes on commercial use
 -----------------------
