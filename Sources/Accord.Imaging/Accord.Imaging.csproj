@@ -98,6 +98,7 @@
     <Compile Include="Filters\DifferenceOfGaussians.cs" />
     <Compile Include="Filters\FastVariance.cs" />
     <Compile Include="Filters\HighBoost.cs" />
+    <Compile Include="Filters\RGChromacity.cs" />
     <Compile Include="Filters\SauvolaThreshold.cs" />
     <Compile Include="Filters\LineMarker.cs" />
     <Compile Include="Filters\NiblackThreshold.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Interest Points\FeatureDescriptor.cs" />
     <Compile Include="Interest Points\Haralick\HaralickDescriptor.NoPcl.cs" />
     <Compile Include="Interest Points\Matching\KNearestNeighborMatching`1.cs" />
+    <Compile Include="ObjectiveFidelity.cs" />
     <Compile Include="UnsafeTools.cs" />
     <Compile Include="Filters\CompassConvolution.cs" />
     <Compile Include="Filters\Exponential.cs" />
