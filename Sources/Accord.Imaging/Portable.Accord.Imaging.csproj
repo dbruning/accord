@@ -85,6 +85,7 @@
     <Compile Include="Filters\RectanglesMarker.cs" />
     <Compile Include="Filters\Rectification.cs" />
     <Compile Include="Filters\RobinsonEdgeDetector.cs" />
+    <Compile Include="Filters\RGChromacity.cs" />
     <Compile Include="Filters\SauvolaThreshold.cs" />
     <Compile Include="Filters\Variance.cs" />
     <Compile Include="Filters\WaveletTransform.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturePoint.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturesDescriptor.cs" />
     <Compile Include="Interest Points\SURF\SpeededUpRobustFeaturesDetector.cs" />
+    <Compile Include="ObjectiveFidelity.cs" />
     <Compile Include="MatrixH.cs" />
     <Compile Include="Moments\CentralMoments.cs" />
     <Compile Include="Moments\HuMoments.cs" />
