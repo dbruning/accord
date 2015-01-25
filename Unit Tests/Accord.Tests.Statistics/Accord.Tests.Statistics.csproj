@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Shim">
-      <HintPath>..\..\Sources\packages\shim.0.9.4-pre2\lib\net45\Shim.dll</HintPath>
+      <HintPath>..\..\Sources\packages\shim.1.0.0.50122\lib\net45\Shim.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
