@@ -54,9 +54,23 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.core.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\Sources\packages\portable.aforge.imaging.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.math.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Math.dll</HintPath>
+    </Reference>
     <Reference Include="Shim, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Sources\packages\shim.1.0.0.50126\lib\net45\Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="Shim.Drawing">
+      <HintPath>..\..\Sources\packages\shim.drawing.2.2.5.50126\lib\net45\Shim.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -163,22 +177,6 @@
     <Compile Include="ToolsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
-      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
-      <Name>Portable.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\Imaging\Portable.Imaging.csproj">
-      <Project>{0a22690c-9553-4b11-9835-8c0f0e2d44f1}</Project>
-      <Name>Portable.Imaging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
-      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
-      <Name>Portable.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\System.Drawing\_WPF\WPF.Shim.Drawing.csproj">
-      <Project>{d1963a68-8848-4b70-9141-3ebb4cb6af34}</Project>
-      <Name>WPF.Shim.Drawing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>

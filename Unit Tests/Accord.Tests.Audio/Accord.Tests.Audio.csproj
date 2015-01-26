@@ -50,6 +50,14 @@
     <DefineConstants>TRACE;NET45</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.core.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\..\Sources\packages\portable.aforge.math.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SharpDX">
       <HintPath>..\..\Externals\SharpDX\net40\SharpDX.dll</HintPath>
       <HintPath>..\..\Externals\SharpDX\net20\SharpDX.dll</HintPath>
@@ -131,14 +139,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
-      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
-      <Name>Portable.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
-      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
-      <Name>Portable.Math</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Sources\Accord.Audio.Formats\Portable.Accord.Audio.Formats.csproj">
       <Project>{0c4dc074-2aa2-43fa-9d3e-5a4c52aebcf3}</Project>
       <Name>Portable.Accord.Audio.Formats</Name>

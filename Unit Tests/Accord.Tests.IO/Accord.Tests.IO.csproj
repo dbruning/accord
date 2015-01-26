@@ -51,6 +51,22 @@
     <DefineConstants>TRACE;NET45</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.core.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Genetic, Version=2.2.4.0, Culture=neutral, PublicKeyToken=4336634eeb41b69b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.genetic.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Genetic.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.math.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Neuro, Version=2.2.5.0, Culture=neutral, PublicKeyToken=2094f4ea39731d4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sources\packages\portable.aforge.neuro.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Neuro.dll</HintPath>
+    </Reference>
     <Reference Include="Shim">
       <HintPath>..\..\Sources\packages\shim.1.0.0.50126\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
@@ -172,18 +188,6 @@
     <Content Include="Resources\liblinear\L2R_LR_a9a.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
-      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
-      <Name>Portable.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
-      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
-      <Name>Portable.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\Neuro\Portable.Neuro.csproj">
-      <Project>{e37ebfaf-5dc0-415c-9c1a-8a5a808a3ddf}</Project>
-      <Name>Portable.Neuro</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
