@@ -190,14 +190,6 @@
     <Compile Include="Wavelets\Haar.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\aforge\Sources\Core\Portable.Core.csproj">
-      <Project>{d4354d92-07cf-4f27-bd68-69347cf5aa3f}</Project>
-      <Name>Portable.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\aforge\Sources\Math\Portable.Math.csproj">
-      <Project>{d99e9bd6-3db6-445b-bf5a-fd9830bfb4fa}</Project>
-      <Name>Portable.Math</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
@@ -211,8 +203,16 @@
     <Folder Include="Base\" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\packages\portable.aforge.core.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\packages\portable.aforge.math.2.2.5.50126\lib\portable-net45+netcore45+wpa81+wp8\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.1.0.0.50122\lib\portable-net45+netcore45+wpa81+wp8\Shim.dll</HintPath>
+      <HintPath>..\packages\shim.1.0.0.50126\lib\portable-net45+netcore45+wpa81+wp8\Shim.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
