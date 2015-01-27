@@ -1,9 +1,9 @@
-﻿![The Accord.NET Framework](http://accord-framework.net/docs/icons/logo.png)
+﻿<img src="NuGet/portable-accord.png" alt="Portable Accord.NET logo" height="108" />
 
 Portable Accord.NET Framework
 =============================
 
-Copyright (c) 2009-2015 César Roberto de Souza; Portable Class Library, WPF, Windows Store and Windows Phone adaptations (c) 2013-2015 Anders Gustafsson, Cureos AB. 
+Copyright (c) 2009-2015 César Roberto de Souza; Portable Class Library adaptations (c) 2013-2015 Anders Gustafsson, Cureos AB. 
 Distributed under the Lesser GNU Public License, LGPL, version 2.1.
 
 This project is a fork of César Souzas's original [Accord.NET Framework](https://github.com/accord-net/framework) project. 
@@ -13,29 +13,36 @@ The repository currently provides:
 
 * Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision, Audio) 
 
-To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
-*Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in Windows Store, Windows Phone 8 or WPF applications.
-
-The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the target specific (Windows Phone or WPF) *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the target specific version of each type is used.
+The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the platform specific *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the platform specific version of each type is used.
  
-`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Store libraries. The target specific *Shim.Drawing* assemblies incorporates explicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
+`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Phone libraries. The target specific *Shim.Drawing* assemblies incorporates explicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
 
 All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the image processing.
 
 When using the WPF *Shim.Drawing* assembly, the real *System.Drawing* assembly from .NET Framework cannot be referenced. If there is a need to reference 
 the real *System.Drawing* assembly, you are recommended to use the original *Accord.NET Framework* libraries and use WPF hosting controls to display image processing results instead.
 
+Installation
+------------
+
+The preferred method for using *Portable Accord.NET* in your application is to download the required packages, including dependencies, from [NuGet](https://www.nuget.org/packages?q=portable.accord). Open the NuGet Package Manager
+in Visual Studio and search for **portable.accord** to obtain a list of the currently available packages on *NuGet*.
 
 Building the libraries
 ----------------------
 
-The *Portable Accord* libraries make use of the following libraries from NuGet:
+You are strongly advised to obtain the *Portable Accord.NET Framework* libraries from *NuGet*. If you do prefer to build the libraries yourself, follow these instructions.
 
-* [CSShim](https://www.nuget.org/packages/shim)
+To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
+*Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in mobile, tablet or desktop WPF applications.
+
+The *Portable Accord* libraries make use of the following libraries from *NuGet*:
+
+* Shim
+* Shim.Drawing
+* Portable AForge libraries
 * [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression/)
 * [Microsoft BCL Build Components](https://www.nuget.org/packages/Microsoft.Bcl.Build/)
-
-As a prerequisite, download the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) to a folder named *aforge*, which should be located alongside the *accord* main folder.
 
 Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder and build the entire solution or selected projects. Visual Studio 2012 Professional or higher is required.
 

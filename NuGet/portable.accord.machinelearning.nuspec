@@ -7,10 +7,10 @@
         <authors>César de Souza, Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://www.gnu.org/licenses/lgpl.html#content</licenseUrl>
         <projectUrl>https://github.com/cureos/accord</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/cureos/accord/master/NuGet/portable-accord.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/cureos/accord/portable/NuGet/portable-accord.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>Portable Accord Machine Learning contains machine learning algorithms for the Accord.NET Framework on mobile and tablet devices.</description>
-        <summary>Machine learning algorithms for Portable Accord.NET Framework</summary>
+        <description>Portable Accord Machine Learning contains machine learning algorithms of the Accord.NET Framework for mobile and tablet devices.</description>
+        <summary>Machine learning algorithms of Portable Accord.NET Framework</summary>
         <copyright>(c) 2009-2015 César de Souza, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>v 2.14.0.50126
 ----------------

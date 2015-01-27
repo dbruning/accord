@@ -3,14 +3,14 @@
     <metadata>
         <id>portable.accord.math.nocom</id>
         <version>2.14.0.50126</version>
-        <title>Portable Accord Math (Non-commercial)</title>
+        <title>Portable Accord Math (Noncommercial)</title>
         <authors>César de Souza, Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/accord/portable/Sources/Extras/Accord.Math.NonCommercial/License.txt</licenseUrl>
         <projectUrl>https://github.com/cureos/accord</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/cureos/accord/portable/NuGet/portable-accord.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>Portable Accord Math (Non-commercial) contains non-commercial licensed scientific computing functionality for the Accord.NET Framework on mobile and tablet devices.</description>
-        <summary>Scientific computing functionality (non-commercial license) for Portable Accord.NET Framework</summary>
+        <description>Portable Accord Math (Noncommercial) contains non-commercial licensed scientific computing functionality of the Accord.NET Framework for mobile and tablet devices.</description>
+        <summary>Scientific computing functionality (non-commercial license) of Portable Accord.NET Framework</summary>
         <copyright>(c) 2009-2015 César de Souza, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>v 2.14.0.50126
 ----------------
