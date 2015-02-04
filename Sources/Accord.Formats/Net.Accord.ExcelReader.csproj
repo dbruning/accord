@@ -43,8 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.1.0.0.50126\lib\net45\Shim.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\shim.1.0.1.50204\lib\net45\Shim.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
