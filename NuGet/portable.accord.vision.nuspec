@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>portable.accord.vision</id>
-        <version>2.14.0.50126</version>
+        <version>2.14.0.50204</version>
         <title>Portable Accord Vision</title>
         <authors>César de Souza, Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://www.gnu.org/licenses/lgpl.html#content</licenseUrl>
@@ -12,14 +12,18 @@
         <description>Portable Accord Vision contains face detection algorithms of the Accord.NET Framework for mobile and tablet devices.</description>
         <summary>Face detection algorithms of Portable Accord.NET Framework</summary>
         <copyright>(c) 2009-2015 César de Souza, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 2.14.0.50126
+        <releaseNotes>v 2.14.0.50204
+----------------
+* No functional change.
+
+v 2.14.0.50126
 ----------------
 * Portable Class Library for Windows, iOS and Android phone and tablet devices.</releaseNotes>
         <language>en-US</language>
         <tags>accord.net aforge.net PCL .NET WPF WP8 WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
         <dependencies>
-            <dependency id="portable.aforge.vision" version="2.2.5.50126" />
-            <dependency id="portable.accord.imaging" version="2.14.0.50126" />
+            <dependency id="portable.aforge.vision" version="2.2.5.50204" />
+            <dependency id="portable.accord.imaging" version="2.14.0.50204" />
         </dependencies>
     </metadata>
     <files>

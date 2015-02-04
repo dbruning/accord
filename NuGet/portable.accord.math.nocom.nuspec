@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>portable.accord.math.nocom</id>
-        <version>2.14.0.50126</version>
+        <version>2.14.0.50204</version>
         <title>Portable Accord Math (Noncommercial)</title>
         <authors>César de Souza, Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/accord/portable/Sources/Extras/Accord.Math.NonCommercial/License.txt</licenseUrl>
@@ -12,13 +12,17 @@
         <description>Portable Accord Math (Noncommercial) contains non-commercial licensed scientific computing functionality of the Accord.NET Framework for mobile and tablet devices.</description>
         <summary>Scientific computing functionality (non-commercial license) of Portable Accord.NET Framework</summary>
         <copyright>(c) 2009-2015 César de Souza, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 2.14.0.50126
+        <releaseNotes>v 2.14.0.50204
+----------------
+* No functional change.
+
+v 2.14.0.50126
 ----------------
 * Portable Class Library for Windows, iOS and Android phone and tablet devices.</releaseNotes>
         <language>en-US</language>
         <tags>accord.net aforge.net PCL .NET WPF WP8 WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
         <dependencies>
-            <dependency id="portable.accord.math" version="2.14.0.50126" />
+            <dependency id="portable.accord.math" version="2.14.0.50204" />
         </dependencies>
     </metadata>
     <files>
