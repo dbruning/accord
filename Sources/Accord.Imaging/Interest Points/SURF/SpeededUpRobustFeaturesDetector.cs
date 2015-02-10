@@ -29,6 +29,8 @@ namespace Accord.Imaging
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
+    using System.Linq;
+
     using Accord.Math;
     using AForge;
     using AForge.Imaging;
@@ -543,7 +545,7 @@ namespace Accord.Imaging
         /// </returns>
         List<IntPoint> ICornersDetector.ProcessImage(UnmanagedImage image)
         {
-            return ProcessImage(image).ConvertAll(p => new IntPoint((int)p.X, (int)p.Y));
+            return ProcessImage(image).Select(p => new IntPoint((int)p.X, (int)p.Y)).ToList();
         }
 
         /// <summary>
@@ -555,7 +557,7 @@ namespace Accord.Imaging
         /// </returns>
         List<IntPoint> ICornersDetector.ProcessImage(BitmapData imageData)
         {
-            return ProcessImage(imageData).ConvertAll(p => new IntPoint((int)p.X, (int)p.Y));
+            return ProcessImage(imageData).Select(p => new IntPoint((int)p.X, (int)p.Y)).ToList();
         }
 
         /// <summary>
@@ -567,7 +569,7 @@ namespace Accord.Imaging
         /// </returns>
         List<IntPoint> ICornersDetector.ProcessImage(Bitmap image)
         {
-            return ProcessImage(image).ConvertAll(p => new IntPoint((int)p.X, (int)p.Y));
+            return ProcessImage(image).Select(p => new IntPoint((int)p.X, (int)p.Y)).ToList();
         }
 
         #endregion
