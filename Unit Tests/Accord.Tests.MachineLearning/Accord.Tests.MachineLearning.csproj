@@ -236,6 +236,10 @@
       <Project>{f6850287-e22b-4372-928e-a0dc2755eef4}</Project>
       <Name>Portable.Accord.MachineLearning %28GPL%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Accord.Tests.MachineLearning.FSharp\Accord.Tests.MachineLearning.FSharp.fsproj">
+      <Project>{a6775b59-6919-4d7c-a960-7e875f0bd81a}</Project>
+      <Name>Accord.Tests.MachineLearning.FSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
     <Name>Accord.Tests.MachineLearning.FSharp</Name>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Sources\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,36 +60,48 @@
     <None Include="trainingsample.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Sources\Accord.Statistics\Portable.Accord.Statistics.csproj">
+      <Name>Portable.Accord.Statistics</Name>
+      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Shim">
+      <HintPath>..\..\Sources\packages\shim.1.0.1.50204\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
-      <Name>Accord.Core</Name>
-      <Project>{a177a90c-8207-466a-af70-f2b8452a42ac}</Project>
+    <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
+      <Name>Portable.Accord.Core</Name>
+      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Accord.MachineLearning.csproj">
-      <Name>Accord.MachineLearning</Name>
-      <Project>{7ab4bbcc-6222-423d-9ff9-ba9cb7c09199}</Project>
+    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
+      <Name>Portable.Accord.MachineLearning</Name>
+      <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
-      <Name>Accord.Math</Name>
-      <Project>{f718e9a8-db62-4785-8c49-4333a60d256a}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Accord.Statistics.csproj">
-      <Name>Accord.Statistics</Name>
-      <Project>{fd8101dd-c95d-42d6-ad44-ae01c25f2811}</Project>
+    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
+      <Name>Portable.Accord.Math</Name>
+      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
