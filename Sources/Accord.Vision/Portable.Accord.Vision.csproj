@@ -60,6 +60,7 @@
     <Compile Include="Detection\Haar Cascade\HaarRectangle.cs" />
     <Compile Include="Detection\HaarObjectDetector.cs" />
     <Compile Include="Detection\IObjectDetector.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="GroupMatching.cs" />
     <Compile Include="GroupMatching`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

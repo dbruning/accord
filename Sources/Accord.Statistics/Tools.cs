@@ -5944,7 +5944,7 @@ namespace Accord.Statistics
             for (int i = 0; i < x.Length; i++)
                 x[i] = random.NextDouble();
 
-            Array.Sort(x, idx);
+            Arrays.Sort(x, idx);
 
             return idx;
         }
@@ -6053,7 +6053,7 @@ namespace Accord.Statistics
             if (!alreadySorted)
             {
                 samples = (double[])samples.Clone();
-                Array.Sort(samples, idx);
+                Arrays.Sort(samples, idx);
             }
 
             double[] ranks = new double[samples.Length];
@@ -6096,7 +6096,7 @@ namespace Accord.Statistics
             }
 
             if (!alreadySorted)
-                Array.Sort(idx, ranks);
+                Arrays.Sort(idx, ranks);
 
             return ranks;
         }
