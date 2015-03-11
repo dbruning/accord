@@ -66,12 +66,28 @@ Results, January 8, 2015 (synched with main repository commit [ae0e6bc](https://
 Notes on commercial use
 -----------------------
 
-The *Shim* and *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
-For those interested in using the Portable *Accord.NET* and *AForge.NET* libraries without having to adhere to GPL, please contact the copyright holder of the *Shim* assemblies at
+The *Shim.Drawing* assemblies that are required to build the Portable Class Library version of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
 
-[licenses@cureos.com](mailto:licenses@cureos.com)
+There are *Shim* and *Shim.Drawing* assemblies available for *Xamarin.Android* and *Xamarin.iOS*, making it possible to 
+incorporate *Portable AForge* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. 
 
-for commercial licensing alternatives.
+*Shim Drawing* is available for evaluation from *NuGet* for all supported platforms.
+
+To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Universal*/*Windows 8.1*/*Windows Phone (non-Silverlight) 8.1* for unlimited distribution of *Portable Accord* and *Portable AForge* based applications on app stores, simply click on one of these buttons:
+
+<table>
+<tr>
+<th>Android</th>
+<th>iOS</th>
+<th>Windows</th>
+<th>All platforms</th>
+</tr>
+<tr>
+<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QF33BCWJXJU26"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td>
+<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KN9Q7U76ETCDS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td>
+<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UU5XKDER4JFQ4"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td><td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LLK2ZYW4JV8GY"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td>
+</tr>
+</table>
 
 Please also note that *AForge.NET Framework* (on which *Accord.NET Framework* is dependent) is licensed under LGPL version 3, and the copyright holder states the following on the *AForge.NET Framework* website:
 
@@ -79,12 +95,3 @@ Please also note that *AForge.NET Framework* (on which *Accord.NET Framework* is
 aforge.net [at] gmail {dot} com
 
 The *Accord.NET Framework* is released under LGPL version 2.1, and further licensing details can be found [here](http://accord-framework.net/license.html).
-
-Android and iOS support
------------------------
-
-There are now *Shim* and *Shim.Drawing* assemblies available for *Xamarin.Android* and *Xamarin.iOS*, making it possible to 
-incorporate *Portable Accord* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. For
-more information of how to enable *Portable Accord* on *Android* and *iOS*, please send an e-mail to
-
-[licenses@cureos.com](mailto:licenses@cureos.com)
