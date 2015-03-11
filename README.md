@@ -66,14 +66,14 @@ Results, January 8, 2015 (synched with main repository commit [ae0e6bc](https://
 Notes on commercial use
 -----------------------
 
-The *Shim.Drawing* assemblies that are required to build the Portable Class Library version of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
+The *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
 
 There are *Shim* and *Shim.Drawing* assemblies available for *Xamarin.Android* and *Xamarin.iOS*, making it possible to 
-incorporate *Portable AForge* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. 
+incorporate *Portable AForge* and *Portable Accord* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. 
 
 *Shim Drawing* is available for evaluation from *NuGet* for all supported platforms.
 
-To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Universal*/*Windows 8.1*/*Windows Phone (non-Silverlight) 8.1* for unlimited distribution of *Portable Accord* and *Portable AForge* based applications on app stores, simply click on one of these buttons:
+To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Universal*/*Windows 8.1*/*Windows Phone (non-Silverlight) 8.1* for unlimited distribution of *Portable AForge* and *Portable Accord* based applications on app stores, simply click on one of these buttons:
 
 <table>
 <tr>
