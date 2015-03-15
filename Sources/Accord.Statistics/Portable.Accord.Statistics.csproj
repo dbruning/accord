@@ -98,6 +98,8 @@
     <Compile Include="Distributions\Density Kernels\UniformKernel.cs" />
     <Compile Include="Distributions\DistributionBase.cs" />
     <Compile Include="Distributions\Fitting\Base\IFittingOptions.cs" />
+    <Compile Include="Distributions\Fitting\GeneralizedBetaOptions.cs" />
+    <Compile Include="Distributions\Fitting\BetaOptions.cs" />
     <Compile Include="Distributions\Fitting\CauchyOptions.cs" />
     <Compile Include="Distributions\Fitting\EmpiricalOptions.cs" />
     <Compile Include="Distributions\Fitting\ExpectationMaximization.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="Distributions\Univariate\Continuous\FDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GammaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GeneralContinuousDistribution.cs" />
+    <Compile Include="Distributions\Univariate\Continuous\GeneralizedBetaDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\GeneralizedNormalDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\LevyDistribution.cs" />
     <Compile Include="Distributions\Univariate\Continuous\LogLogisticDistribution.cs" />
@@ -274,6 +277,8 @@
     <Compile Include="Links\ProbitLinkFunction.cs" />
     <Compile Include="Links\SinLinkFunction.cs" />
     <Compile Include="Links\ThresholdLinkFunction.cs" />
+    <Compile Include="Measures\Tools.cs" />
+    <Compile Include="Measures\Tools.Vectors.Weighted.cs" />
     <Compile Include="Models\Accord.Statistics.Models.cs" />
     <Compile Include="Models\Fields\ConditionalRandomField.cs" />
     <Compile Include="Models\Fields\Features\Base\FeatureBase.cs" />
@@ -422,7 +427,6 @@
     <Compile Include="Testing\WilcoxonSignedRankTest.cs" />
     <Compile Include="Testing\WilcoxonTest.cs" />
     <Compile Include="Testing\ZTest.cs" />
-    <Compile Include="Tools.cs" />
     <Compile Include="Visualizations\Histogram.cs" />
     <Compile Include="Visualizations\HistogramBin.cs" />
     <Compile Include="Visualizations\HistogramBinCollection.cs" />
