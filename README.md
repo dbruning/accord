@@ -52,14 +52,14 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, January 8, 2015 (synched with main repository commit [ae0e6bc](https://github.com/accord-net/framework/commit/ae0e6bc86408530f4a9660297a45d1ee98cbc9ce)):
+Results, March 15, 2015 (synched with main repository commit [c4ee453](https://github.com/cureos/accord/commit/c4ee453c3ef9020208ffcb17699084e42726899d)):
 
 * Accord.Tests.Audio, 12 unit tests (*WaveFileAudioSourceTest* excluded), all passed
-* Accord.Tests.IO, 42 unit tests, 2 failed
-* Accord.Tests.Math, 498 unit tests, all passed
-* Accord.Tests.Statistics, 1087 tests (*Controls* related tests excluded), all passed
-* Accord.Tests.MachineLearning, 150 tests (*RansacLineTest* excluded), 4 failed
-* Accord.Tests.Neuro, 20 tests, all passed
+* Accord.Tests.IO, 44 unit tests, 2 failed
+* Accord.Tests.Math, 500 unit tests, all passed
+* Accord.Tests.Statistics, 1124 tests (*Controls* related tests excluded), 7 failed
+* Accord.Tests.MachineLearning, 153 tests (*RansacLineTest* excluded), 4 failed
+* Accord.Tests.Neuro, 22 tests, 1 failed
 
 2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library.
 
