@@ -37,14 +37,21 @@ namespace Accord
 
         public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
         {
-            var ordered =
-                keys.Zip(items, (k, v) => new KeyValuePair<TKey, TValue>(k, v))
-                    .OrderBy(kv => kv.Key, comparer)
-                    .ToArray();
-            lock (keys)
+            if (items != null)
             {
-                Array.Copy(ordered.Select(kv => kv.Key).ToArray(), keys, ordered.Length);
-                Array.Copy(ordered.Select(kv => kv.Value).ToArray(), items, ordered.Length);
+                var ordered =
+                    keys.Zip(items, (k, v) => new KeyValuePair<TKey, TValue>(k, v))
+                        .OrderBy(kv => kv.Key, comparer)
+                        .ToArray();
+                lock (keys)
+                {
+                    Array.Copy(ordered.Select(kv => kv.Key).ToArray(), keys, ordered.Length);
+                    Array.Copy(ordered.Select(kv => kv.Value).ToArray(), items, ordered.Length);
+                }
+            }
+            else
+            {
+                Array.Sort(keys);
             }
         }
 
@@ -67,15 +74,7 @@ namespace Accord
             }
             else
             {
-                var ordered =
-                    keys.Skip(index)
-                        .Take(length)
-                        .OrderBy(key => key, comparer)
-                        .ToArray();
-                lock (keys)
-                {
-                    Array.Copy(ordered, 0, keys, index, length);
-                }
+                Array.Sort(keys, index, length, comparer);
             }
         }
 
