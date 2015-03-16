@@ -500,7 +500,7 @@ namespace Accord.Tests.MachineLearning
         public void IrisDatasetTest()
         {
             string[][] text = Resources.iris_data.Split(
-                new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
                 .Apply(x => x.Split(','));
 
             double[][] inputs = new double[text.Length][];
@@ -547,7 +547,7 @@ namespace Accord.Tests.MachineLearning
         public void AttributeReuseTest1()
         {
             string[][] text = Resources.iris_data.Split(
-                new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
                 .Apply(x => x.Split(','));
 
             double[][] inputs = new double[text.Length][];
