@@ -1,4 +1,4 @@
-﻿<img src="NuGet/portable-accord.png" alt="Portable Accord.NET logo" height="108" />
+﻿<img src="Setup/Portable/NuGet/portable-accord.png" alt="Portable Accord.NET logo" height="108" />
 
 Portable Accord.NET Framework
 =============================
