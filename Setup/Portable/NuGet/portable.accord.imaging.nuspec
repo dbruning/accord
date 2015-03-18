@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>portable.accord.imaging</id>
+        <version>$version$</version>
+        <title>Portable Accord Imaging</title>
+        <authors>César de Souza, Anders Gustafsson, Cureos AB</authors>
+        <licenseUrl>https://www.gnu.org/licenses/lgpl.html#content</licenseUrl>
+        <projectUrl>https://github.com/cureos/accord</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/cureos/accord/portable/Setup/Portable/NuGet/portable-accord.png</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Portable Accord Imaging contains image matching and stitching of the Accord.NET Framework for mobile and tablet devices.</description>
+        <summary>Image matching and stitching of Portable Accord.NET Framework</summary>
+        <copyright>(c) 2009-2015 César de Souza, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+        <language>en-US</language>
+        <tags>accord.net aforge.net PCL .NET WPF WP8 WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
+        <dependencies>
+            <dependency id="portable.aforge.imaging" version="$aforgever$" />
+            <dependency id="portable.accord.machinelearning" version="$version$" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\Publish\lib\portable-net45+netcore45+wpa81+wp8\Accord.Imaging.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
+        <file src="..\Publish\lib\portable-net45+netcore45+wpa81+wp8\Accord.Imaging.pdb" target="lib\portable-net45+netcore45+wpa81+wp8" />
+    </files>
+</package>
