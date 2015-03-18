@@ -20,7 +20,7 @@ timeout /T 5
 @echo .mdb >> exclude.txt
 
 @set PUBLISH=..\Setup\Portable\Publish\
-@set PCLDIR=%PUBLISH%lib\portable-net45+netcore45+wpa81+wp8\
+@set PCLDIR=%PUBLISH%lib\portable-net45+netcore45+wpa81\
 
 @if EXIST "%PUBLISH%" (rd /s /q "%PUBLISH%")
 
