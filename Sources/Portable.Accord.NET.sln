@@ -54,16 +54,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Statistics", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF9D9E07-35D7-4FB8-A7F9-764DAFD10548}"
 	ProjectSection(SolutionItems) = preProject
-		..\NuGet\portable.accord.core.nuspec = ..\NuGet\portable.accord.core.nuspec
-		..\NuGet\portable.accord.imaging.nuspec = ..\NuGet\portable.accord.imaging.nuspec
-		..\NuGet\portable.accord.io.nuspec = ..\NuGet\portable.accord.io.nuspec
-		..\NuGet\portable.accord.machinelearning.gpl.nuspec = ..\NuGet\portable.accord.machinelearning.gpl.nuspec
-		..\NuGet\portable.accord.machinelearning.nuspec = ..\NuGet\portable.accord.machinelearning.nuspec
-		..\NuGet\portable.accord.math.nocom.nuspec = ..\NuGet\portable.accord.math.nocom.nuspec
-		..\NuGet\portable.accord.math.nuspec = ..\NuGet\portable.accord.math.nuspec
-		..\NuGet\portable.accord.neuro.nuspec = ..\NuGet\portable.accord.neuro.nuspec
-		..\NuGet\portable.accord.statistics.nuspec = ..\NuGet\portable.accord.statistics.nuspec
-		..\NuGet\portable.accord.vision.nuspec = ..\NuGet\portable.accord.vision.nuspec
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
