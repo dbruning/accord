@@ -8,6 +8,8 @@ echo This Windows batch file will use Visual Studio 2013 to
 echo compile the Release versions of the Portable framework.
 echo. 
 
+timeout /T 5
+
 @if "%VS120COMNTOOLS%"=="" goto error_no_VS120COMNTOOLSDIR
 @call "%VS120COMNTOOLS%VsDevCmd.bat"
 
