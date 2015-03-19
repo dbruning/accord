@@ -26,6 +26,7 @@ namespace Accord.Tests.Math
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using AForge.Math;
     using System;
+    using System.Numerics;
     using Accord.Math.Transforms;
 
     [TestClass()]

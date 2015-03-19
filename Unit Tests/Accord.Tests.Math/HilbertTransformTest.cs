@@ -22,6 +22,7 @@
 
 namespace Accord.Tests.Math
 {
+    using System.Numerics;
     using Accord.Math;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using AForge.Math;
@@ -56,15 +57,15 @@ namespace Accord.Tests.Math
             Complex[] actual = (Complex[])original.Clone();
             HilbertTransform.FHT(actual, FourierTransform.Direction.Forward);
 
-            Assert.AreEqual(actual[0].Re, 1);
-            Assert.AreEqual(actual[1].Re, 2);
-            Assert.AreEqual(actual[2].Re, 3);
-            Assert.AreEqual(actual[3].Re, 4);
+            Assert.AreEqual(actual[0].Real, 1);
+            Assert.AreEqual(actual[1].Real, 2);
+            Assert.AreEqual(actual[2].Real, 3);
+            Assert.AreEqual(actual[3].Real, 4);
 
-            Assert.AreEqual(actual[0].Im, +1, 0.000000001);
-            Assert.AreEqual(actual[1].Im, -1, 0.000000001);
-            Assert.AreEqual(actual[2].Im, -1, 0.000000001);
-            Assert.AreEqual(actual[3].Im, +1, 0.000000001);
+            Assert.AreEqual(actual[0].Imaginary, +1, 0.000000001);
+            Assert.AreEqual(actual[1].Imaginary, -1, 0.000000001);
+            Assert.AreEqual(actual[2].Imaginary, -1, 0.000000001);
+            Assert.AreEqual(actual[3].Imaginary, +1, 0.000000001);
 
             HilbertTransform.FHT(actual, FourierTransform.Direction.Backward);
 

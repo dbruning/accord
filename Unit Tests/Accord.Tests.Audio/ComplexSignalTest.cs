@@ -27,9 +27,9 @@ namespace Accord.Tests.Audio
     using Accord.Audio.Formats;
     using Accord.Audio.Windows;
     using Accord.Math;
-    using AForge.Math;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
+    using System.Numerics;
 
     [TestClass()]
     public class ComplexSignalTest

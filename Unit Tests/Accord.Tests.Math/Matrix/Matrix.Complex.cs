@@ -25,7 +25,7 @@ namespace Accord.Tests.Math
     using Accord.Math;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
-    using AForge.Math;
+    using System.Numerics;
     using AForge;
 
     [TestClass()]
@@ -95,7 +95,7 @@ namespace Accord.Tests.Math
             double[] actual = ComplexMatrix.Phase(x);
 
             for (int i = 0; i < x.Length; i++)
-                Assert.AreEqual(x[i].Phase, Math.Atan2(x[i].Im, x[i].Re));
+                Assert.AreEqual(x[i].Phase, Math.Atan2(x[i].Imaginary, x[i].Real));
         }
 
 
