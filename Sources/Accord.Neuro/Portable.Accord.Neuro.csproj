@@ -89,16 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AForge">
-      <HintPath>..\packages\portable.aforge.core.2.2.5.50318\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
+      <HintPath>..\packages\portable.aforge.core.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Genetic">
-      <HintPath>..\packages\portable.aforge.genetic.2.2.5.50318\lib\portable-net45+netcore45+wpa81\AForge.Genetic.dll</HintPath>
+      <HintPath>..\packages\portable.aforge.genetic.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Genetic.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Math">
-      <HintPath>..\packages\portable.aforge.math.2.2.5.50318\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
+      <HintPath>..\packages\portable.aforge.math.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Neuro">
-      <HintPath>..\packages\portable.aforge.neuro.2.2.5.50318\lib\portable-net45+netcore45+wpa81\AForge.Neuro.dll</HintPath>
+      <HintPath>..\packages\portable.aforge.neuro.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Neuro.dll</HintPath>
     </Reference>
     <Reference Include="Shim">
       <HintPath>..\packages\shim.1.0.1.50318\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>

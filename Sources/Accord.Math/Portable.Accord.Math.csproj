@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;USE_SYSTEM_NUMERICS_COMPLEX</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -31,7 +31,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;USE_SYSTEM_NUMERICS_COMPLEX</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -204,11 +204,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AForge">
-      <HintPath>..\packages\portable.aforge.core.2.2.5.50318\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
+      <HintPath>..\packages\portable.aforge.core.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AForge.Math">
-      <HintPath>..\packages\portable.aforge.math.2.2.5.50318\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
+      <HintPath>..\packages\portable.aforge.math.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
     </Reference>
     <Reference Include="Shim">
       <HintPath>..\packages\shim.1.0.1.50318\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
