@@ -25,7 +25,12 @@ namespace Accord.Statistics.Distributions.Univariate
     using System;
     using Accord.Statistics.Distributions.Fitting;
     using AForge;
-    using AForge.Math;
+
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
+    using Complex = AForge.Math.Complex;
+#endif
 
     /// <summary>
     ///   Wrapped Cauchy Distribution.

@@ -24,8 +24,14 @@ namespace Accord.Audio
 {
     using System;
     using System.Runtime.InteropServices;
-    using AForge.Math;
     using Accord.Math;
+    using AForge.Math;
+
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
+    using Complex = AForge.Math.Complex;
+#endif
 
     /// <summary>
     ///   Tool functions for audio processing.
@@ -105,10 +111,17 @@ namespace Accord.Audio
 
             double[] mx = new double[n];
 
+#if USE_SYSTEM_NUMERICS_COMPLEX
+            mx[0] = fft[0].Magnitude * fft[0].Magnitude / fft.Length;
+#else
             mx[0] = fft[0].SquaredMagnitude / fft.Length;
-
+#endif
             for (int i = 1; i < n; i++)
+#if USE_SYSTEM_NUMERICS_COMPLEX
+                mx[i] = fft[i].Magnitude * fft[i].Magnitude * 2.0 / fft.Length;
+#else
                 mx[i] = fft[i].SquaredMagnitude * 2.0 / fft.Length;
+#endif
 
             return mx;
         }
@@ -167,7 +180,11 @@ namespace Accord.Audio
 
             Complex[] logabs = new Complex[signal.Length];
             for (int i = 0; i < logabs.Length; i++)
+#if USE_SYSTEM_NUMERICS_COMPLEX
+                logabs[i] = new Complex(System.Math.Log(signal[i].Magnitude), logabs[i].Imaginary);
+#else
                 logabs[i].Re = System.Math.Log(signal[i].Magnitude);
+#endif
 
             FourierTransform.FFT(logabs, FourierTransform.Direction.Forward);
 

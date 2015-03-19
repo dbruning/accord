@@ -24,7 +24,12 @@ namespace Accord.Audio.ComplexFilters
 {
     using System;
     using Accord.Audio;
-    using AForge.Math;
+
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
+    using Complex = AForge.Math.Complex;
+#endif
 
     /// <summary>
     ///   Hilbert transform based envelope detector.
@@ -71,7 +76,11 @@ namespace Accord.Audio.ComplexFilters
 
             for (int i = 0; i < samples; i++, src++, dst++)
             {
+#if USE_SYSTEM_NUMERICS_COMPLEX
+                d = new Complex((*dst).Magnitude, d.Imaginary);
+#else
                 d.Re = (*dst).Magnitude;
+#endif
                 *dst = d;
             }
         }

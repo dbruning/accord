@@ -22,7 +22,11 @@
 
 namespace Accord.Audio.ComplexFilters
 {
-    using AForge.Math;
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
+    using Complex = AForge.Math.Complex;
+#endif
 
     /// <summary>
     ///   Differential Rectification filter.
@@ -58,10 +62,17 @@ namespace Accord.Audio.ComplexFilters
 
                 for (int i = 0; i < length - 1; i++, src++, dst++)
                 {
+#if USE_SYSTEM_NUMERICS_COMPLEX
+                    d = new Complex(src[i + 1].Real - src[i].Real, d.Imaginary);
+
+                    // Retain only if difference is positive
+                    *dst = (d.Real > 0) ? d : Complex.Zero;
+#else
                     d.Re = src[i + 1].Re - src[i].Re;
 
                     // Retain only if difference is positive
                     *dst = (d.Re > 0) ? d : Complex.Zero;
+#endif
                 }
             }
         }

@@ -53,11 +53,11 @@ namespace Accord.Math.Transforms
     using System;
     using System.Runtime.CompilerServices;
 
-    // #if NET35
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
     using Complex = AForge.Math.Complex;
-    // #else
-    //     using Complex = System.Numerics.Complex;
-    // #endif
+#endif
 
     /// <summary>
     ///   Fourier Transform (for arbitrary size matrices).

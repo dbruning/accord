@@ -25,7 +25,13 @@ namespace Accord.Math
     using System;
     using AForge.Math;
 
-	/// <summary>
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
+    using Complex = AForge.Math.Complex;
+#endif
+
+    /// <summary>
 	///   Discrete Hilbert Transformation.
 	/// </summary>
     /// 
@@ -77,8 +83,12 @@ namespace Accord.Math
 				// Copy the input to a complex array which can be processed
 				//  in the complex domain by the FFT
 				Complex[] cdata = new Complex[N];
-				for (int i = 0; i < N; i++)
+			    for (int i = 0; i < N; i++)
+#if USE_SYSTEM_NUMERICS_COMPLEX
+			        cdata[i] = data[i];
+#else
 					cdata[i].Re = data[i];
+#endif
 				
 				// Perform FFT
 				FourierTransform.FFT(cdata, FourierTransform.Direction.Forward);
@@ -86,24 +96,36 @@ namespace Accord.Math
 				//double positive frequencies
 				for (int i = 1; i < (N/2); i++)
 				{
+#if USE_SYSTEM_NUMERICS_COMPLEX
+				    cdata[i] *= 2.0;
+#else
 					cdata[i].Re *= 2.0;
 					cdata[i].Im *= 2.0;
+#endif
 				}
 
 				// zero out negative frequencies
 				//  (leaving out the dc component)
 				for (int i = (N/2)+1; i < N; i++)
 				{
+#if USE_SYSTEM_NUMERICS_COMPLEX
+				    cdata[i] = Complex.Zero;
+#else
 					cdata[i].Re = 0.0;
 					cdata[i].Im = 0.0;
+#endif
 				}
 				
 				// Reverse the FFT
 				FourierTransform.FFT(cdata, FourierTransform.Direction.Backward);
 
 				// Convert back to our initial double array
-				for (int i = 0; i < N; i++)
+			    for (int i = 0; i < N; i++)
+#if USE_SYSTEM_NUMERICS_COMPLEX
+			        data[i] = cdata[i].Imaginary;
+#else
 					data[i] = cdata[i].Im;
+#endif
 			}
 			
 			else // Backward operation
@@ -143,15 +165,23 @@ namespace Accord.Math
 				//double positive frequencies
 				for (int i = 1; i < (N/2); i++)
 				{
+#if USE_SYSTEM_NUMERICS_COMPLEX
+				    shift[i] *= 2.0;
+#else
 					shift[i].Re *= 2.0;
 					shift[i].Im *= 2.0;
+#endif
 				}
 				// zero out negative frequencies
 				//  (leaving out the dc component)
 				for (int i = (N/2)+1; i < N; i++)
 				{
+#if USE_SYSTEM_NUMERICS_COMPLEX
+				    shift[i] = Complex.Zero;
+#else
 					shift[i].Re = 0.0;
 					shift[i].Im = 0.0;
+#endif
 				}
 				
 				// Reverse the FFT
@@ -160,14 +190,22 @@ namespace Accord.Math
 				// Put the Hilbert transform in the Imaginary part
 				//  of the input signal, creating a Analytic Signal
 				for (int i = 0; i < N; i++)
+#if USE_SYSTEM_NUMERICS_COMPLEX
+                    data[i] = new Complex(data[i].Real, shift[i].Imaginary);
+#else
 					data[i].Im = shift[i].Im;
+#endif
 			}
 			
 			else // Backward operation
 			{
 				// Just discard the imaginary part
-				for (int i = 0; i < data.Length; i++)
+			    for (int i = 0; i < data.Length; i++)
+#if USE_SYSTEM_NUMERICS_COMPLEX
+			        data[i] = data[i].Real;
+#else
 					data[i].Im = 0.0;
+#endif
 			}
 		}
 		

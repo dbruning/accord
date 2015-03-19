@@ -58,7 +58,12 @@ namespace Accord.Statistics
     using AForge;
     using Accord.Math;
     using Accord.Statistics.Distributions.Univariate;
-    using AForge.Math;
+
+#if USE_SYSTEM_NUMERICS_COMPLEX
+    using Complex = System.Numerics.Complex;
+#else
+    using Complex = AForge.Math.Complex;
+#endif
 
     /// <summary>
     ///   Set of statistics functions operating over a circular space.
