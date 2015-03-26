@@ -26,5 +26,6 @@
     <files>
         <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.Math.dll" target="lib\portable-net45+netcore45+wpa81" />
         <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.Math.pdb" target="lib\portable-net45+netcore45+wpa81" />
+        <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.Math.xml" target="lib\portable-net45+netcore45+wpa81" />
     </files>
 </package>
