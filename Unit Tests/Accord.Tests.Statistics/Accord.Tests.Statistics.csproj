@@ -329,13 +329,13 @@
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Formats\Net.Accord.ExcelReader.csproj">
-      <Project>{61c2bc7a-0141-4185-bb49-66afbe5bfe23}</Project>
-      <Name>Net.Accord.ExcelReader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Sources\Accord.Formats\Portable.Accord.IO.csproj">
       <Project>{8c4970de-ab6d-47de-b3d0-b1ef99e4ccc2}</Project>
       <Name>Portable.Accord.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Formats\_ExcelReader\Net.Accord.ExcelReader.csproj">
+      <Project>{61c2bc7a-0141-4185-bb49-66afbe5bfe23}</Project>
+      <Name>Net.Accord.ExcelReader</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
       <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>

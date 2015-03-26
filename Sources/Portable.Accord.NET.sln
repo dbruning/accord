@@ -48,8 +48,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Math", "..\Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Neuro", "..\Unit Tests\Accord.Tests.Neuro\Accord.Tests.Neuro.csproj", "{AB8B83D8-F7B4-4C21-AEB4-B0C5D2217DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Accord.ExcelReader", "Accord.Formats\Net.Accord.ExcelReader.csproj", "{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Statistics", "..\Unit Tests\Accord.Tests.Statistics\Accord.Tests.Statistics.csproj", "{49679C95-28CE-4D35-8F38-3D67A511A3C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF9D9E07-35D7-4FB8-A7F9-764DAFD10548}"
@@ -58,6 +56,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Accord.Tests.MachineLearning.FSharp", "..\Unit Tests\Accord.Tests.MachineLearning.FSharp\Accord.Tests.MachineLearning.FSharp.fsproj", "{A6775B59-6919-4D7C-A960-7E875F0BD81A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Accord.ExcelReader", "Accord.Formats\_ExcelReader\Net.Accord.ExcelReader.csproj", "{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,10 +137,6 @@ Global
 		{AB8B83D8-F7B4-4C21-AEB4-B0C5D2217DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB8B83D8-F7B4-4C21-AEB4-B0C5D2217DEF}.Release|Any CPU.ActiveCfg = NET45|Any CPU
 		{AB8B83D8-F7B4-4C21-AEB4-B0C5D2217DEF}.Release|Any CPU.Build.0 = NET45|Any CPU
-		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1}.Release|Any CPU.ActiveCfg = NET45|Any CPU
@@ -149,6 +145,10 @@ Global
 		{A6775B59-6919-4D7C-A960-7E875F0BD81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6775B59-6919-4D7C-A960-7E875F0BD81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6775B59-6919-4D7C-A960-7E875F0BD81A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,9 +160,9 @@ Global
 		{161BD953-537D-4325-8A00-22475FC9088E} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{F454DBD6-2AB9-461D-9624-2249B921B6E6} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{AB8B83D8-F7B4-4C21-AEB4-B0C5D2217DEF} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
-		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{49679C95-28CE-4D35-8F38-3D67A511A3C1} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 		{A6775B59-6919-4D7C-A960-7E875F0BD81A} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
+		{61C2BC7A-0141-4185-BB49-66AFBE5BFE23} = {B5B7BB6A-0E47-4476-AA2A-6EE370133211}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Accord.NET.vsmdi
