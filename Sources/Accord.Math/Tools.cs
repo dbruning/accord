@@ -37,7 +37,7 @@ namespace Accord.Math
 
         #region Framework-wide random number generator
         
-#if !NET35 && !NET40
+#if !NET35 && !NET40 && !MONO
         private static ThreadLocal<Random> random = new ThreadLocal<Random>(create, true);
 #else
         private static ThreadLocal<Random> random = new ThreadLocal<Random>(create);
