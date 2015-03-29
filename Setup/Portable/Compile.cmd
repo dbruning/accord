@@ -15,14 +15,12 @@ timeout /T 5
 
 @cd "..\..\Sources"
 @msbuild "Portable.Accord.NET.sln" /t:Rebuild /p:Configuration=Release;Platform="Any CPU"
-@msbuild "Accord.Math\Portable.Accord.Math.csproj" /t:Rebuild /p:Configuration=Release;Platform="Any CPU";OutputPath="bin\\ReleaseMono\\";DefineConstants="TRACE;USE_SYSTEM_NUMERICS_COMPLEX;MONO";IntermediateOutputPath="obj\\ReleaseMono\\";AllowUnsafeBlocks=true;DebugType=pdbonly;Optimize=true;ErrorReport=prompt;WarningLevel=4;DocumentationFile="bin\ReleaseMono\Accord.Math.XML"
 
 @echo .pri > exclude.txt
 @echo .mdb >> exclude.txt
 
 @set PUBLISH=..\Setup\Portable\Publish\
 @set PCLDIR=%PUBLISH%lib\portable-net45+netcore45+wpa81\
-@set MONODIR=%PUBLISH%lib\mono\
 
 @if EXIST "%PUBLISH%" (rd /s /q "%PUBLISH%")
 
@@ -45,9 +43,6 @@ timeout /T 5
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Vision\bin\Release\Accord.Vision.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Extras\Accord.MachineLearning.GPL\bin\Release\Accord.MachineLearning.GPL.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Extras\Accord.Math.NonCommercial\bin\Release\Accord.Math.Noncommercial.* "%PCLDIR%"
-
-@md "%MONODIR%"
-@xcopy /k /r /v /y /exclude:exclude.txt Accord.Math\bin\ReleaseMono\Accord.Math.* "%MONODIR%"
 
 @del /f exclude.txt
 
