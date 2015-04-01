@@ -89,6 +89,8 @@ To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Univ
 </tr>
 </table>
 
+All prices include VAT. Upon purchase, you will receive a link from where you can download the corresponding versions of the *Shim.Drawing* assemblies that do not insert watermarks into the images.
+
 Please also note that *AForge.NET Framework* (on which *Accord.NET Framework* is dependent) is licensed under LGPL version 3, and the copyright holder states the following on the *AForge.NET Framework* website:
 
 > Regarding collaboration, contribution, offers, partnering, custom work/consulting, none GPL/LGPL licensing, etc., please, contact using the next e-mail:
