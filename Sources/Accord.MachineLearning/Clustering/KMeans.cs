@@ -31,7 +31,6 @@ namespace Accord.MachineLearning
     using System.Threading.Tasks;
     using System.Threading;
     using Accord.Math.Comparers;
-    using System.Runtime.Serialization;
 
     /// <summary>
     ///   k-Means clustering algorithm.
@@ -171,7 +170,7 @@ namespace Accord.MachineLearning
     /// <seealso cref="GaussianMixtureModel"/>
     ///
     [Serializable]
-    public class KMeans : IClusteringAlgorithm<double[]>
+    public partial class KMeans : IClusteringAlgorithm<double[]>
     {
 
         private KMeansClusterCollection clusters;
@@ -689,18 +688,6 @@ namespace Accord.MachineLearning
         IClusterCollection<double[]> IClusteringAlgorithm<double[]>.Clusters
         {
             get { return clusters; }
-        }
-
-
-        [OnDeserialized]
-        private void OnDeserializedMethod(StreamingContext context)
-        {
-            if (this.Iterations == 0 && MaxIterations == 0 && Tolerance == 0)
-            {
-                this.Tolerance = 1e-5;
-                this.ComputeInformation = true;
-                this.UseCentroidSeeding = true;
-            }
         }
 
 
