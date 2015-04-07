@@ -171,7 +171,8 @@
       <HintPath>..\packages\portable.aforge.math.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
     </Reference>
     <Reference Include="Shim">
-      <HintPath>..\packages\shim.1.0.1.50318\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
+      <HintPath>..\packages\shim.1.0.1.50407\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
