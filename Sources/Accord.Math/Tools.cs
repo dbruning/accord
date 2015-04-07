@@ -610,7 +610,7 @@ namespace Accord.Math
             var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>(comparison));
+            Arrays.Sort(keys, values, new StableComparer<T>(comparison));
         }
 
         /// <summary>
@@ -623,7 +623,7 @@ namespace Accord.Math
             var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
+            Arrays.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
         }
 
         /// <summary>
@@ -636,7 +636,7 @@ namespace Accord.Math
             var keys = new KeyValuePair<int, T>[values.Length];
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
-            Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
+            Arrays.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
 
             order = new int[values.Length];
             for (int i = 0; i < keys.Length; i++)
