@@ -133,7 +133,7 @@
     <Compile Include="Distributions\Multivariate\Discrete\MultinomialDistribution.cs" />
     <Compile Include="Distributions\Multivariate\Independent.cs" />
     <Compile Include="Distributions\Multivariate\Independent`1.cs" />
-    <Compile Include="Distributions\Multivariate\MultivariateMixture.cs" />
+    <Compile Include="Distributions\Multivariate\MultivariateMixture`1.cs" />
     <Compile Include="Distributions\Univariate\Base\IUnivariateDistribution.cs" />
     <Compile Include="Distributions\Univariate\Base\UnivariateContinuousDistribution.cs" />
     <Compile Include="Distributions\Univariate\Base\UnivariateDiscreteDistribution.cs" />
@@ -196,7 +196,7 @@
     <Compile Include="Distributions\Univariate\Discrete\NegativeBinomialDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\PoissonDistribution.cs" />
     <Compile Include="Distributions\Univariate\Discrete\UniformDiscreteDistribution.cs" />
-    <Compile Include="Distributions\Univariate\Mixture.cs" />
+    <Compile Include="Distributions\Univariate\Mixture`1.cs" />
     <Compile Include="Filters\Base\BaseFilter.cs" />
     <Compile Include="Filters\Base\IAutoConfigurableColumn.cs" />
     <Compile Include="Filters\Base\IAutoConfigurableFilter.cs" />
