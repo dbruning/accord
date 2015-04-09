@@ -26,16 +26,44 @@ namespace Accord
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class Arrays
+    /// <summary>
+    /// Support class providing implementations from the System.Array class that are not
+    /// available in PCL.
+    /// </summary>
+    internal static class Arrays
     {
         #region METHODS
 
-        public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items)
+        /// <summary>
+        /// Sorts a pair of Array objects (one contains the keys and the other contains the corresponding items) 
+        /// based on the keys in the first Array using the IComparable&lt;T&gt; generic interface implementation of each key.
+        /// </summary>
+        /// <typeparam name="TKey">The type of the elements of the key array.</typeparam>
+        /// <typeparam name="TValue">The type of the elements of the items array.</typeparam>
+        /// <param name="keys">The one-dimensional, zero-based Array that contains the keys to sort.</param>
+        /// <param name="items">The one-dimensional, zero-based Array that contains the items that correspond to the keys in keys, 
+        /// or null to sort only keys.</param>
+        /// <remarks>Implementation relies on the LINQ OrderBy method, which uses stable sort. Original .NET implementation of
+        /// Array.Sort uses an unstable sort algorithm.</remarks>
+        internal static void Sort<TKey, TValue>(TKey[] keys, TValue[] items)
         {
             Sort(keys, items, Comparer<TKey>.Default);
         }
 
-        public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
+        /// <summary>
+        /// Sorts a pair of Array objects (one contains the keys and the other contains the corresponding items) 
+        /// based on the keys in the first Array using the specified IComparer&lt;T&gt; generic interface.
+        /// </summary>
+        /// <typeparam name="TKey">The type of the elements of the key array.</typeparam>
+        /// <typeparam name="TValue">The type of the elements of the items array.</typeparam>
+        /// <param name="keys">The one-dimensional, zero-based Array that contains the keys to sort.</param>
+        /// <param name="items">The one-dimensional, zero-based Array that contains the items that correspond to the keys in keys, 
+        /// or null to sort only keys.</param>
+        /// <param name="comparer">The IComparer&lt;T&gt; generic interface implementation to use when comparing elements, 
+        /// or null to use the IComparable&lt;T&gt; generic interface implementation of each element.</param>
+        /// <remarks>Implementation relies on the LINQ OrderBy method, which uses stable sort. Original .NET implementation of
+        /// Array.Sort uses an unstable sort algorithm.</remarks>
+        internal static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
         {
             if (items != null)
             {
@@ -55,7 +83,26 @@ namespace Accord
             }
         }
 
-        public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, int index, int length,
+        /// <summary>
+        /// Sorts a range of elements in a pair of Array objects (one contains the keys and the other contains the corresponding items)
+        /// based on the keys in the first Array using the specified IComparer&lt;T&gt; generic interface.
+        /// </summary>
+        /// <typeparam name="TKey">The type of the elements of the key array.</typeparam>
+        /// <typeparam name="TValue">The type of the elements of the items array.</typeparam>
+        /// <param name="keys">The one-dimensional, zero-based Array that contains the keys to sort.</param>
+        /// <param name="items">The one-dimensional, zero-based Array that contains the items that correspond to the keys in keys, 
+        /// or null to sort only keys.</param>
+        /// <param name="index">The starting index of the range to sort.</param>
+        /// <param name="length">The number of elements in the range to sort.</param>
+        /// <param name="comparer">The IComparer&lt;T&gt; generic interface implementation to use when comparing elements, 
+        /// or null to use the IComparable&lt;T&gt; generic interface implementation of each element.</param>
+        /// <remarks>Implementation relies on the LINQ OrderBy method, which uses stable sort. Original .NET implementation of
+        /// Array.Sort uses an unstable sort algorithm.</remarks>
+        internal static void Sort<TKey, TValue>(
+            TKey[] keys,
+            TValue[] items,
+            int index,
+            int length,
             IComparer<TKey> comparer)
         {
             if (items != null)

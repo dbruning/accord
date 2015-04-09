@@ -20,38 +20,41 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-using System;
-using System.Linq;
-using System.Reflection;
-
 namespace Accord
 {
-	public static class TypeExtensions
-	{
-		public static ConstructorInfo GetConstructor(this Type thisType, Type[] types)
-		{
-			var typeInfo = thisType.GetTypeInfo();
-			foreach (var constructorInfo in typeInfo.DeclaredConstructors)
-			{
-				var constructorTypes = constructorInfo.GetParameters().Select(param => param.ParameterType).ToArray();
-				if (constructorTypes.Length != types.Length) continue;
-				var use = true;
-				for (var i = 0; i < constructorTypes.Length; ++i)
-				{
-					if (constructorTypes[i] != types[i])
-					{
-						use = false;
-						break;
-					}
-				}
-				if (use) return constructorInfo;
-			}
-			return null;
-		}
+    using System;
+    using System.Linq;
+    using System.Reflection;
 
-	    public static FieldInfo GetField(this Type thisType, string name)
-	    {
-	        return thisType.GetRuntimeField(name);
-	    }
-	}
+    internal static class TypeExtensions
+    {
+        internal static ConstructorInfo GetConstructor(this Type thisType, Type[] types)
+        {
+            var typeInfo = thisType.GetTypeInfo();
+            foreach (var constructorInfo in typeInfo.DeclaredConstructors)
+            {
+                var constructorTypes = constructorInfo.GetParameters().Select(param => param.ParameterType).ToArray();
+                if (constructorTypes.Length != types.Length)
+                {
+                    continue;
+                }
+                var use = true;
+                for (var i = 0; i < constructorTypes.Length; ++i)
+                {
+                    if (constructorTypes[i] != types[i])
+                    {
+                        use = false;
+                        break;
+                    }
+                }
+                if (use) return constructorInfo;
+            }
+            return null;
+        }
+
+        internal static FieldInfo GetField(this Type thisType, string name)
+        {
+            return thisType.GetRuntimeField(name);
+        }
+    }
 }

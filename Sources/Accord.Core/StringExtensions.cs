@@ -22,11 +22,11 @@
 
 namespace Accord
 {
-    public static class StringExtensions
+    internal static class StringExtensions
     {
-        public static string Clone(this string thisString)
+        internal static string Clone(this string thisString)
         {
-            return new string(thisString.ToCharArray());
+            return thisString.Substring(0);
         }
     }
 }
