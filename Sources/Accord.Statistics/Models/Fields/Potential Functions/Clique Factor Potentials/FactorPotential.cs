@@ -24,6 +24,7 @@ namespace Accord.Statistics.Models.Fields.Functions
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     using Accord.Statistics.Models.Fields.Features;
     using Accord.Math;
 
@@ -34,7 +35,7 @@ namespace Accord.Statistics.Models.Fields.Functions
     /// <typeparam name="T">The type of the observations being modeled.</typeparam>
     /// 
     [Serializable]
-    public partial class FactorPotential<T> : IEnumerable<IFeature<T>>
+    public class FactorPotential<T> : IEnumerable<IFeature<T>>
     {
 
         /// <summary>

@@ -259,7 +259,7 @@ namespace Accord.Imaging
         private void createGaussian()
         {
             double[] aforgeKernel = new AForge.Math.Gaussian(sigma).Kernel(size);
-            this.kernel = aforgeKernel.Select(Convert.ToSingle).ToArray();
+            this.kernel = Arrays.ConvertAll<double, float>(aforgeKernel, Convert.ToSingle);
         }
         #endregion
 

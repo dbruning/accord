@@ -239,7 +239,7 @@ namespace Accord.Statistics.Filters
                     string name = column.ColumnName;
 
 	                string safeName = name
-                        /*.Replace("]", @"\]")*/;
+                        .Replace("]", @"\]");
 
                     double sdev = data.GetStdev(safeName);
                     double mean = data.GetAverage(safeName);

@@ -147,22 +147,22 @@ namespace Accord.Statistics.Distributions.Multivariate
 
         double IDistribution.DistributionFunction(double[] x)
         {
-            return DistributionFunction(x.Select(Convert.ToInt32).ToArray());
+            return DistributionFunction(Arrays.ConvertAll<double, int>(x, Convert.ToInt32));
         }
 
         double IDistribution.ProbabilityFunction(double[] x)
         {
-            return ProbabilityMassFunction(x.Select(Convert.ToInt32).ToArray());
+            return ProbabilityMassFunction(Arrays.ConvertAll<double, int>(x, Convert.ToInt32));
         }
 
         double IDistribution.LogProbabilityFunction(double[] x)
         {
-            return LogProbabilityMassFunction(x.Select(Convert.ToInt32).ToArray());
+            return LogProbabilityMassFunction(Arrays.ConvertAll<double, int>(x, Convert.ToInt32));
         }
 
         double IDistribution.ComplementaryDistributionFunction(double[] x)
         {
-            return ComplementaryDistributionFunction(x.Select(Convert.ToInt32).ToArray());
+            return ComplementaryDistributionFunction(Arrays.ConvertAll<double, int>(x, Convert.ToInt32));
         }
 
         void IDistribution.Fit(Array observations)

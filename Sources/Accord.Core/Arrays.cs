@@ -24,6 +24,7 @@ namespace Accord
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Linq;
 
     /// <summary>
@@ -123,6 +124,34 @@ namespace Accord
             {
                 Array.Sort(keys, index, length, comparer);
             }
+        }
+
+        /// <summary>
+        /// Converts an array of one type to an array of another type.
+        /// </summary>
+        /// <typeparam name="TInput">The type of the elements of the source array.</typeparam>
+        /// <typeparam name="TOutput">The type of the elements of the target array.</typeparam>
+        /// <param name="array">The one-dimensional, zero-based Array to convert to a target type.</param>
+        /// <param name="converter">A Converter&lt;TInput, TOutput&gt; that converts each element from one type to another type.</param>
+        /// <returns>An array of the target type containing the converted elements from the source array.</returns>
+        internal static TOutput[] ConvertAll<TInput, TOutput>(TInput[] array, Converter<TInput, TOutput> converter)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+
+            if (converter == null)
+            {
+                throw new ArgumentNullException("converter");
+            }
+
+            var newArray = new TOutput[array.Length];
+            for (var i = 0; i < array.Length; i++)
+            {
+                newArray[i] = converter(array[i]);
+            }
+            return newArray;
         }
 
         #endregion
