@@ -128,6 +128,7 @@
     <Compile Include="Distributions\Multivariate\Continuous\MultivariateEmpiricalDistribution.cs" />
     <Compile Include="Distributions\Multivariate\Continuous\MultivariateNormalDistribution.cs" />
     <Compile Include="Distributions\Multivariate\Continuous\WishartDistribution.cs" />
+    <Compile Include="Distributions\Multivariate\Continuous\VonMisesFisherDistribution.cs" />
     <Compile Include="Distributions\Multivariate\Discrete\HiddenMarkovDistribution.cs" />
     <Compile Include="Distributions\Multivariate\Discrete\JointDistribution.cs" />
     <Compile Include="Distributions\Multivariate\Discrete\MultinomialDistribution.cs" />
