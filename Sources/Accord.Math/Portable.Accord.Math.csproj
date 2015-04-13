@@ -73,6 +73,11 @@
     <Compile Include="Decompositions\EigenvalueDecompositionF.cs" />
     <Compile Include="Decompositions\GeneralizedEigenvalueDecomposition.cs" />
     <Compile Include="Decompositions\GramSchmidtOrthogonalization.cs" />
+    <Compile Include="Decompositions\JaggedEigenvalueDecomposition.cs"/>
+    <Compile Include="Decompositions\JaggedEigenvalueDecompositionF.cs"/>
+    <Compile Include="Decompositions\JaggedQrDecomposition.cs"/>
+    <Compile Include="Decompositions\JaggedQrDecompositionD.cs"/>
+    <Compile Include="Decompositions\JaggedQrDecompositionF.cs"/>
     <Compile Include="Decompositions\JaggedCholeskyDecomposition.cs" />
     <Compile Include="Decompositions\JaggedCholeskyDecompositionD.cs" />
     <Compile Include="Decompositions\JaggedCholeskyDecompositionF.cs" />
