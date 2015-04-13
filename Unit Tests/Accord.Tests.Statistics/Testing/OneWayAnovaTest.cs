@@ -22,6 +22,7 @@
 
 using Accord.Statistics.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Accord.Math;
 using Accord.Statistics;
 
 namespace Accord.Tests.Statistics

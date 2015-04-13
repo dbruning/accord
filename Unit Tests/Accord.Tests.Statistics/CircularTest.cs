@@ -125,6 +125,7 @@ namespace Accord.Tests.Statistics
             double expected = 5.4163747152893815251e-01;
             double actual = Circular.AngularDeviation(angles);
 
+            Assert.IsFalse(Double.IsNaN(actual));
             Assert.AreEqual(expected, actual, 1e-15);
         }
 
