@@ -23,7 +23,6 @@
 namespace Accord.Statistics.Distributions.Multivariate
 {
     using System;
-    using System.Linq;
     using Accord.Math;
     using Accord.Statistics.Distributions.Fitting;
 

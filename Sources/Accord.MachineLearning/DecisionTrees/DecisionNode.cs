@@ -22,9 +22,9 @@
 
 namespace Accord.MachineLearning.DecisionTrees
 {
+    using Accord.Statistics.Filters;
     using System;
     using System.Collections.Generic;
-    using Accord.Statistics.Filters;
 
     /// <summary>
     ///   Decision Tree (DT) Node.
