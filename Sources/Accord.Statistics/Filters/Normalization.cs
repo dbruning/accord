@@ -238,11 +238,8 @@ namespace Accord.Statistics.Filters
                 {
                     string name = column.ColumnName;
 
-	                string safeName = name
-                        .Replace("]", @"\]");
-
-                    double sdev = data.GetStdev(safeName);
-                    double mean = data.GetAverage(safeName);
+                    double sdev = data.GetStdev(name);
+                    double mean = data.GetAverage(name);
 
                     if (!Columns.Contains(name))
                         Columns.Add(new Options(name));

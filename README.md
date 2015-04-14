@@ -41,8 +41,6 @@ The *Portable Accord* libraries make use of the following libraries from *NuGet*
 * Shim
 * Shim.Drawing
 * Portable AForge libraries
-* [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression/)
-* [Microsoft BCL Build Components](https://www.nuget.org/packages/Microsoft.Bcl.Build/)
 
 Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder and build the entire solution or selected projects. Visual Studio 2012 Professional or higher is required.
 
@@ -52,16 +50,16 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, March 15, 2015 (synched with main repository commit [4c95329](https://github.com/cureos/accord/commit/4c95329bfeaa436f14ccef88698a3bee4a66caf1)):
+Results, April 14, 2015 (synched with main repository commit [2f27a21](https://github.com/accord-net/framework/commit/2f27a215dcb1cdbe0302a6a5515fb61368292891)):
 
 * Accord.Tests.Audio, 12 unit tests (*WaveFileAudioSourceTest* excluded), all passed
-* Accord.Tests.IO, 44 unit tests, 2 failed
-* Accord.Tests.Math, 500 unit tests, all passed
-* Accord.Tests.Statistics, 1124 tests (*Controls* related tests excluded), 1 failed
-* Accord.Tests.MachineLearning, 153 tests (*RansacLineTest* excluded), 2 failed
-* Accord.Tests.Neuro, 22 tests, all passed
+* Accord.Tests.IO, 44 unit tests, all passed
+* Accord.Tests.Math, 513 unit tests, all passed
+* Accord.Tests.Statistics, 1139 tests (*Controls* related tests excluded), all passed
+* Accord.Tests.MachineLearning, 156 tests (*RansacLineTest* excluded), 3 failed
+* Accord.Tests.Neuro, 25 tests, all passed
 
-2 of the failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library. The *IO* tests fail due to varying representations of newline.
+The failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library.
 
 Notes on commercial use
 -----------------------
