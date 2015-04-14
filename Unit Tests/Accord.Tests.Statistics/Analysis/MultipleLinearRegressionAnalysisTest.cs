@@ -210,10 +210,10 @@ namespace Accord.Tests.Statistics
             regression.Compute(); // compute the analysis
 
             // Now we can show a summary of analysis
-            // DataGridBox.Show(regression.Coefficients);
+            // Accord.Controls.DataGridBox.Show(regression.Coefficients);
 
             // We can also show a summary ANOVA
-            // DataGridBox.Show(regression.Table);
+            // Accord.Controls.DataGridBox.Show(regression.Table);
 
 
             // And also extract other useful information, such

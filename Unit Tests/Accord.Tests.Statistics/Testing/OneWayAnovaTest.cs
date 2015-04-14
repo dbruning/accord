@@ -84,7 +84,7 @@ namespace Accord.Tests.Statistics
             // illustrate, we could use Accord.NET's DataGridBox to inspect the
             // table's contents.
 
-            // DataGridBox.Show(anova.Table);
+            // Accord.Controls.DataGridBox.Show(anova.Table);
 
             // The p-level for the analysis is about 0.002, meaning the test is
             // significant at the 5% significance level. The experimenter would

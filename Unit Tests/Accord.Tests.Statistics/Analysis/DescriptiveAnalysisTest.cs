@@ -646,7 +646,7 @@ namespace Accord.Tests.Statistics
             Assert.AreEqual(m1, analysis.Measures["Column 1"]);
             Assert.AreEqual(m2, analysis.Measures["Column 2"]);
 
-            // var box = DataGridBox.Show(analysis.Measures);
+            // var box = Accord.Controls.DataGridBox.Show(analysis.Measures);
             // Assert.AreEqual(21, box.DataGridView.Columns.Count);
         }
     }

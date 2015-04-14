@@ -24,7 +24,7 @@ namespace Accord.Tests.Statistics
 {
     using Accord.Statistics.Distributions.Univariate;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-	using Accord.Statistics.Testing;
+    using Accord.Statistics.Testing;
 
     [TestClass()]
     public class GompertzDistributionTest

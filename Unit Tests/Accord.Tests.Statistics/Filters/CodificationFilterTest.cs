@@ -56,7 +56,7 @@ namespace Accord.Tests.Statistics
             DataTable table = ProjectionFilterTest.CreateTable();
 
             // Show the start data
-            //DataGridBox.Show(table);
+            //Accord.Controls.DataGridBox.Show(table);
 
             // Create a new data projection (column) filter
             var filter = new Codification(table, "Category");
@@ -65,7 +65,7 @@ namespace Accord.Tests.Statistics
             DataTable result = filter.Apply(table);
 
             // Show it
-            //DataGridBox.Show(result);
+            //Accord.Controls.DataGridBox.Show(result);
 
             Assert.AreEqual(5, result.Columns.Count);
             Assert.AreEqual(5, result.Rows.Count);

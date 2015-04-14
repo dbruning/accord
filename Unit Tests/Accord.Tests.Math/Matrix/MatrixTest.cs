@@ -2808,7 +2808,7 @@ namespace Accord.Tests.Math
             );
 
             // Now we can plot the points on-screen
-            // ScatterplotBox.Show("Grid (step size)", grid).Hold();
+            // Accord.Controls.ScatterplotBox.Show("Grid (step size)", grid).Hold();
 
             Assert.AreEqual(55, grid.Length);
         }
@@ -2827,7 +2827,7 @@ namespace Accord.Tests.Math
             );
 
             // Now we can plot the points on-screen
-            // ScatterplotBox.Show("Grid (fixed steps)", grid).Hold();
+            // Accord.Controls.ScatterplotBox.Show("Grid (fixed steps)", grid).Hold();
 
             Assert.AreEqual(66, grid.Length);
         }

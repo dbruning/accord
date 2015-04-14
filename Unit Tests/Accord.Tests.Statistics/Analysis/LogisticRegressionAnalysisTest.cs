@@ -169,7 +169,7 @@ namespace Accord.Tests.Statistics
             regression.Compute(); // compute the analysis.
 
             // Now we can show a summary of the analysis
-            // DataGridBox.Show(regression.Coefficients);
+            // Accord.Controls.DataGridBox.Show(regression.Coefficients);
 
 
             // We can also investigate all parameters individually. For
@@ -235,7 +235,7 @@ namespace Accord.Tests.Statistics
             regression.Compute(); // compute the analysis.
 
             // Now we can show a summary of the analysis
-            // DataGridBox.Show(regression.Coefficients);
+            // Accord.Controls.DataGridBox.Show(regression.Coefficients);
 
 
             // We can also investigate all parameters individually. For
