@@ -301,7 +301,7 @@ namespace Accord.Math.Optimization
                 for (int j = 0; j < absdx.Length; j++)
                     absdx[j] = Math.Abs(dx[j]);
 
-                Arrays.Sort(p, absdx);
+                Array_.Sort(p, absdx);
 
 
                 // find the subspaces, and perform nelder-mead on each one

@@ -830,7 +830,7 @@ namespace Accord.MachineLearning.Structures
 
             // We will be doing sorting in place
             int axis = comparer.Index = depth % k;
-            Arrays.Sort(points, values, start, length, comparer);
+            Array_.Sort(points, values, start, length, comparer);
 
             // Middle of the input section
             int half = start + length / 2;

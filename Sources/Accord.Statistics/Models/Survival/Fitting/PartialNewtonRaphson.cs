@@ -432,7 +432,7 @@ namespace Accord.Statistics.Models.Regression.Fitting
             int[] idx = Matrix.Indices(0, inputs.Length);
 
             time = (double[])time.Clone();
-            Arrays.Sort(time, idx, new GeneralComparer(ComparerDirection.Descending));
+            Array_.Sort(time, idx, new GeneralComparer(ComparerDirection.Descending));
 
             inputs = inputs.Submatrix(idx);
             output = output.Submatrix(idx);

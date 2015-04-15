@@ -589,7 +589,7 @@ namespace Accord.Statistics.Analysis
                 }
 
                 // 2.2 Order them
-                Arrays.Sort(d2, inx);
+                Array_.Sort(d2, inx);
 
                 // 2.3 Select nn neighbors
 

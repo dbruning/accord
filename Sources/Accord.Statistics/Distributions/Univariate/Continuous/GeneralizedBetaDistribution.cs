@@ -696,7 +696,7 @@ namespace Accord.Statistics.Distributions.Univariate
             }
 
             if (!sorted)
-                Arrays.Sort(observations, weights);
+                Array_.Sort(observations, weights);
 
             if (!fixMin)
                 min = TriangularDistribution.GetMin(observations, weights, out imin);
@@ -776,7 +776,7 @@ namespace Accord.Statistics.Distributions.Univariate
             }
 
             if (!sorted)
-                Arrays.Sort(observations, weights);
+                Array_.Sort(observations, weights);
 
             if (!fixMin)
                 min = TriangularDistribution.GetMin(observations, weights, out imin);

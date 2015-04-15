@@ -1569,7 +1569,7 @@ namespace Accord.Math
         {
             int[] indices = new int[keys.Length];
             for (int i = 0; i < keys.Length; i++) indices[i] = i;
-            Arrays.Sort<TKey, int>(keys, indices, comparer);
+            Array_.Sort<TKey, int>(keys, indices, comparer);
 
             return values.Submatrix(0, values.GetLength(0) - 1, indices);
         }

@@ -30,7 +30,8 @@ namespace Accord
     /// Support class providing implementations from the System.Array class that are not
     /// available in PCL.
     /// </summary>
-    internal static class Arrays
+    // ReSharper disable once InconsistentNaming
+    internal static class Array_
     {
         #region METHODS
 
