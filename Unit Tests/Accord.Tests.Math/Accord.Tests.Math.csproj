@@ -78,16 +78,10 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
+    <Reference Include="System.XML" />
   </ItemGroup>
   <!--
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release (3.5)|AnyCPU'">
@@ -116,7 +110,7 @@
     <Compile Include="Convergence\RelativeConvergenceTest.cs" />
     <Compile Include="CombinatoricsTest.cs" />
     <Compile Include="Decompositions\JaggedSingularValueDecompositionTest.cs" />
-    <Compile Include="Geometry\ConvexHullDefectsTest.cs" />
+    <Compile Include="IO\MatReaderTest.cs" />
     <Compile Include="Matrix\Matrix.Common.cs" />
     <Compile Include="Optimization\BinarySearchTest.cs" />
     <Compile Include="Optimization\CobylaTest.cs" />
@@ -126,7 +120,6 @@
     <Compile Include="Optimization\Quadprog\QuadprogComparisonTest.cs" />
     <Compile Include="Optimization\SubplexTest.cs" />
     <Compile Include="Optimization\NelderMeadTest.cs" />
-    <Compile Include="Optimization\NonlinearConjugateGradientTest.cs" />
     <Compile Include="Optimization\Lbfgsb3\LbfgsbComparer.cs" />
     <Compile Include="Optimization\Lbfgsb3\LbfgsbComparisonTest.cs" />
     <Compile Include="Optimization\LibBFGS\LibBFGSComparisonTest.cs" />
@@ -215,9 +208,7 @@
       <Name>Accord.Tests.Math.Cpp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formats\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
@@ -250,6 +241,24 @@
     <None Include="Resources\constraints11_14.csv" />
     <None Include="Resources\constraints11_14_3.csv" />
     <None Include="Resources\dmatFull.csv" />
+    <None Include="Resources\mat\A64.mat" />
+    <None Include="Resources\mat\bigsparse.mat" />
+    <None Include="Resources\mat\cell.mat" />
+    <None Include="Resources\mat\int32.mat" />
+    <None Include="Resources\mat\int64.mat" />
+    <None Include="Resources\mat\int8.mat" />
+    <None Include="Resources\mat\java.mat" />
+    <None Include="Resources\mat\logical.mat" />
+    <None Include="Resources\mat\matnativedouble.mat" />
+    <None Include="Resources\mat\matnativedouble2.mat" />
+    <None Include="Resources\mat\nan.mat" />
+    <None Include="Resources\mat\object.mat" />
+    <None Include="Resources\mat\simplestruct.mat" />
+    <None Include="Resources\mat\single.mat" />
+    <None Include="Resources\mat\sparse.mat" />
+    <None Include="Resources\mat\uint32.mat" />
+    <None Include="Resources\mat\uint64.mat" />
+    <None Include="Resources\mat\uint8.mat" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

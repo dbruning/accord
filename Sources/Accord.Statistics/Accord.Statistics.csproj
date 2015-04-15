@@ -92,7 +92,6 @@
     <Compile Include="Analysis\Base\IMultivariateRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IRegressionAnalysis.cs" />
     <Compile Include="Analysis\Base\IDiscriminantAnalysis.cs" />
-    <Compile Include="Analysis\Performance\ReceiverOperatingCharacteristic.NoPcl.cs" />
     <Compile Include="Analysis\Contrast Functions\Exponential.cs" />
     <Compile Include="Analysis\Contrast Functions\IContrastFunction.cs" />
     <Compile Include="Analysis\Contrast Functions\Kurtosis.cs" />
@@ -249,6 +248,7 @@
     <Compile Include="Filters\Selection.cs" />
     <Compile Include="Analysis\Base\IMultivariateAnalysis.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="Kernels\Additive.cs" />
     <Compile Include="Kernels\Anova.cs" />
     <Compile Include="Kernels\Base\IRadialBasisKernel.cs" />
@@ -306,10 +306,11 @@
     <Compile Include="Links\LogLinkFunction.cs" />
     <Compile Include="Links\InverseSquaredLinkFunction.cs" />
     <Compile Include="Links\ProbitLinkFunction.cs" />
-    <Compile Include="Measures\Tools.Vectors.Weighted.cs" />
+    <Compile Include="Measures\Measures.Vectors.cs" />
+    <Compile Include="Measures\Measures.Matrix.cs" />
+    <Compile Include="Measures\Measures.Matrix.Weighted.cs" />
+    <Compile Include="Measures\Measures.Vectors.Weighted.cs" />
     <Compile Include="Models\Accord.Statistics.Models.cs" />
-    <Compile Include="Models\Fields\Potential Functions\Clique Factor Potentials\FactorPotential.NoPcl.cs" />
-    <Compile Include="Models\Markov\Base\BaseHiddenMarkovClassifier.NoPcl.cs" />
     <Compile Include="Models\Fields\Accord.Statistics.Models.Fields.cs" />
     <Compile Include="Models\Fields\Learning\Accord.Statistics.Models.Fields.Learning.cs" />
     <Compile Include="Models\Fields\Potential Functions\Clique Factor Potentials\Specialized\MarkovIndependentFactor.cs">
@@ -534,7 +535,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Reflection\" />
     <Folder Include="Running\Markov\Base\" />
   </ItemGroup>
 </Project>
