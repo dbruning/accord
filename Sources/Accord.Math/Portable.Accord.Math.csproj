@@ -51,6 +51,16 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Indices.cs" />
+    <Compile Include="IO\Mat\MatArrayFlags.cs" />
+    <Compile Include="IO\Mat\MatArrayType.cs" />
+    <Compile Include="IO\Mat\MatDataTag.cs" />
+    <Compile Include="IO\Mat\MatDataType.cs" />
+    <Compile Include="IO\Mat\MatHeader.cs" />
+    <Compile Include="IO\Mat\MatNode.cs" />
+    <Compile Include="IO\Mat\MatReader.cs" />
+    <Compile Include="IO\Mat\MatSparse.cs" />
+    <Compile Include="Random\Generator.cs" />
     <Compile Include="Combinatorics.cs" />
     <Compile Include="Comparers\ArrayComparer`1.cs" />
     <Compile Include="Comparers\CustomComparer`1.cs" />
@@ -194,6 +204,7 @@
     <Compile Include="Wavelets\Base\IWavelet.cs" />
     <Compile Include="Wavelets\CDF97.cs" />
     <Compile Include="Wavelets\Haar.cs" />
+    <Compile Include="Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">

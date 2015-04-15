@@ -220,6 +220,7 @@
     <Compile Include="Filters\Stratification.cs" />
     <Compile Include="Filters\Windowing.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="Kernels\Additive.cs" />
     <Compile Include="Kernels\Anova.cs" />
     <Compile Include="Kernels\Base\IDistance.cs" />
@@ -282,7 +283,10 @@
     <Compile Include="Links\SinLinkFunction.cs" />
     <Compile Include="Links\ThresholdLinkFunction.cs" />
     <Compile Include="Measures\Tools.cs" />
-    <Compile Include="Measures\Tools.Vectors.Weighted.cs" />
+    <Compile Include="Measures\Measures.Vectors.cs" />
+    <Compile Include="Measures\Measures.Matrix.cs" />
+    <Compile Include="Measures\Measures.Matrix.Weighted.cs" />
+    <Compile Include="Measures\Measures.Vectors.Weighted.cs" />
     <Compile Include="Models\Accord.Statistics.Models.cs" />
     <Compile Include="Models\Fields\ConditionalRandomField.cs" />
     <Compile Include="Models\Fields\Features\Base\FeatureBase.cs" />

@@ -63,7 +63,7 @@ namespace Accord.Math
             for (int i = 0; i < x.Length; i++)
                 x[i] = random.NextDouble();
 
-            Array.Sort(x, idx);
+            Arrays.Sort(x, idx);
 
             return idx;
         }

@@ -97,6 +97,7 @@
     <Compile Include="Gridsearch.cs" />
     <Compile Include="GridSearchParameter.cs" />
     <Compile Include="GridSearchRange.cs" />
+    <Compile Include="IO\LibSvmModel.cs" />
     <Compile Include="KNearestNeighbors.cs" />
     <Compile Include="KNearestNeighbors`1.cs" />
     <Compile Include="MinimumMeanDistanceClassifier.cs" />
