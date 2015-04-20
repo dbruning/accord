@@ -134,6 +134,7 @@
     <Compile Include="VectorMachines\Learning\LinearNewtonMethod.cs" />
     <Compile Include="VectorMachines\Learning\MulticlassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
+    <Compile Include="VectorMachines\Learning\OneclassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticCoordinateDescent.cs" />
     <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticDualCoordinateDescent.cs" />
     <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticNewtonMethod.cs" />

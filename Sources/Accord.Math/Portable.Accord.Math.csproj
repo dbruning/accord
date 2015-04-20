@@ -142,6 +142,7 @@
     <Compile Include="Integration\Base\IMultidimensionalIntegration.cs" />
     <Compile Include="Integration\Base\INumericalIntegration.cs" />
     <Compile Include="Integration\Base\IUnidimensionalIntegration.cs" />
+    <Compile Include="Jagged.cs" />
     <Compile Include="Kinematics\DenavitHartenbergJoint.cs" />
     <Compile Include="Kinematics\DenavitHartenbergMatrix.cs" />
     <Compile Include="Kinematics\DenavitHartenbergModel.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Optimization\Unconstrained\BroydenFletcherGoldfarbShanno.cs" />
     <Compile Include="Optimization\Unconstrained\BroydenFletcherGoldfarbShanno.LIBLBFGS.cs" />
     <Compile Include="Optimization\Unconstrained\ConjugateGradient.cs" />
+    <Compile Include="Optimization\Unconstrained\FanChenLinQuadraticOptimization.cs" />
     <Compile Include="Optimization\Unconstrained\Least Squares\GaussNewton.cs" />
     <Compile Include="Optimization\Unconstrained\Least Squares\LevenbergMarquardt.cs" />
     <Compile Include="Optimization\Unconstrained\LineSearchFailedException.cs" />
@@ -201,10 +203,11 @@
     <Compile Include="Transforms\HartleyTransform.cs" />
     <Compile Include="Transforms\HilbertTransform.cs" />
     <Compile Include="Transforms\SineTransform.cs" />
+    <Compile Include="Vector\Vector.Scale.cs" />
+    <Compile Include="Vector\Vector.cs" />
     <Compile Include="Wavelets\Base\IWavelet.cs" />
     <Compile Include="Wavelets\CDF97.cs" />
     <Compile Include="Wavelets\Haar.cs" />
-    <Compile Include="Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Accord.Core\Portable.Accord.Core.csproj">
