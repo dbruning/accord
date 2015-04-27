@@ -35,4 +35,29 @@
    applications for examples. Complete documentation is also available online at
    
      http://accord-framework.net/docs/Index.html
-	 
+
+
+
+ Building with Visual Studio
+ ---------------------------
+
+1) Clone the repository (SmartGit is the best Git tool available for Windows)
+2) Open Sources/Accord.NET.sln in Visual Studio (works with Express versions)
+
+
+
+ Building in Linux with Mono
+ ---------------------------
+
+# Install Mono
+sudo apt-get install mono-complete monodevelop monodevelop-nunit
+
+# Clone the repository
+git clone https://github.com/accord-net/framework.git
+
+# Enter the directory
+cd framework
+
+# Build the framework solution using Mono
+mdtool build -c:"NET40" Sources/Accord.NET.Mono.sln
+

@@ -114,6 +114,7 @@
     <Compile Include="IO\MatReaderTest.cs" />
     <Compile Include="Matrix\Matrix.Construction.cs" />
     <Compile Include="Matrix\Matrix.Common.cs" />
+    <Compile Include="Matrix\VectorTest.cs" />
     <Compile Include="Optimization\BinarySearchTest.cs" />
     <Compile Include="Optimization\CobylaTest.cs" />
     <Compile Include="Optimization\BoundedBroydenFletcherGoldfarbShannoTest.cs" />
@@ -243,7 +244,7 @@
     <None Include="Resources\constraints11_14.csv" />
     <None Include="Resources\constraints11_14_3.csv" />
     <None Include="Resources\dmatFull.csv" />
-    <None Include="Resources\mat\A64.mat" />
+    <None Include="Resources\mat\a64.mat" />
     <None Include="Resources\mat\bigsparse.mat" />
     <None Include="Resources\mat\cell.mat" />
     <None Include="Resources\mat\int32.mat" />

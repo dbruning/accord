@@ -22,10 +22,10 @@
 
 namespace Accord.Statistics.Models.Markov
 {
+    using Accord.Math;
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Accord.Math;
 
     /// <summary>
     ///   Base class for (HMM) Sequence Classifiers. 
@@ -348,7 +348,7 @@ namespace Accord.Statistics.Models.Markov
                 double[] logLikelihoods;
 
                 double rejectionValue, maxValue;
-                int imax = compute(sequences[i], out logLikelihoods, out rejectionValue, out maxValue);
+                compute(sequences[i], out logLikelihoods, out rejectionValue, out maxValue);
 
                 sum += logLikelihoods[outputs[i]];
             }
