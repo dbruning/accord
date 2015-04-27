@@ -75,7 +75,7 @@
     <None Include="trainingsample.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Content Include="packages.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sources\Accord.Statistics\Portable.Accord.Statistics.csproj">
@@ -88,7 +88,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Shim">
-      <HintPath>..\..\Sources\packages\shim.1.0.1.50409\lib\net45\Shim.dll</HintPath>
+      <HintPath>..\..\Sources\packages\shim.1.0.1.50427\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
