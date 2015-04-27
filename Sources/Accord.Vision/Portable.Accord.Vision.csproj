@@ -65,7 +65,7 @@
     <Compile Include="GroupMatching.cs" />
     <Compile Include="GroupMatching`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tracking\CamShift.cs" />
+    <Compile Include="Tracking\Camshift.cs" />
     <Compile Include="Tracking\HslBlobTracker.cs" />
     <Compile Include="Tracking\IObjectTracker.cs" />
     <Compile Include="Tracking\MatchingTracker.cs" />

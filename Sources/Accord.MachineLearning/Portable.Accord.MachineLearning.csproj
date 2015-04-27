@@ -94,7 +94,7 @@
     <Compile Include="Geometry\RansacLine.cs" />
     <Compile Include="Geometry\RansacPlane.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Gridsearch.cs" />
+    <Compile Include="GridSearch.cs" />
     <Compile Include="GridSearchParameter.cs" />
     <Compile Include="GridSearchRange.cs" />
     <Compile Include="IO\LibSvmModel.cs" />
@@ -104,7 +104,7 @@
     <Compile Include="Performance\Bootstrap\Bootstrap.cs" />
     <Compile Include="Performance\Bootstrap\BootstrapResult.cs" />
     <Compile Include="Performance\Bootstrap\BootstrapValues.cs" />
-    <Compile Include="Performance\CrossValidation\Crossvalidation.cs" />
+    <Compile Include="Performance\CrossValidation\CrossValidation.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidationResult`1.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidationStatistics.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidationValues.cs" />

@@ -1566,7 +1566,7 @@ namespace Accord.Math
         public static TValue[,] Sort<TKey, TValue>(TKey[] keys, TValue[,] values, IComparer<TKey> comparer)
         {
             int[] indices = new int[keys.Length];
-            for (int i = 0; i < keys.Length; i++) indices[i] = i
+            for (int i = 0; i < keys.Length; i++) indices[i] = i;
 
             Array_.Sort<TKey, int>(keys, indices, comparer);
 

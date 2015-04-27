@@ -79,7 +79,7 @@
     <Compile Include="Decompositions\CholeskyDecomposition.cs" />
     <Compile Include="Decompositions\CholeskyDecompositionD.cs" />
     <Compile Include="Decompositions\CholeskyDecompositionF.cs" />
-    <Compile Include="Decompositions\EigenValueDecomposition.cs" />
+    <Compile Include="Decompositions\EigenvalueDecomposition.cs" />
     <Compile Include="Decompositions\EigenvalueDecompositionF.cs" />
     <Compile Include="Decompositions\GeneralizedEigenvalueDecomposition.cs" />
     <Compile Include="Decompositions\GramSchmidtOrthogonalization.cs" />
