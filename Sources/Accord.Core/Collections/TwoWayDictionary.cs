@@ -41,7 +41,7 @@ namespace Accord.Collections
     /// <typeparam name="TSecond">The type of left keys in the dictionary.</typeparam>
     /// 
     [Serializable]
-    public sealed class TwoWayDictionary<TFirst, TSecond> : IDictionary<TFirst, TSecond>,
+    public sealed partial class TwoWayDictionary<TFirst, TSecond> : IDictionary<TFirst, TSecond>,
         IReadOnlyDictionary<TFirst, TSecond>, IDictionary
     {
         private readonly IDictionary<TFirst, TSecond> firstToSecond;
@@ -449,14 +449,6 @@ namespace Accord.Collections
         void ICollection.CopyTo(Array array, int index)
         {
             ((IDictionary)firstToSecond).CopyTo(array, index);
-        }
-
-        [OnDeserialized]
-        private void OnDeserialized(StreamingContext context)
-        {
-            secondToFirst.Clear();
-            foreach (var item in firstToSecond)
-                secondToFirst.Add(item.Value, item.Key);
         }
 
         private class ReverseDictionary : IDictionary<TSecond, TFirst>, IReadOnlyDictionary<TSecond, TFirst>, IDictionary
