@@ -145,7 +145,7 @@
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Formats\Portable.Accord.IO.csproj">
+    <ProjectReference Include="..\..\Sources\Accord.IO\Portable.Accord.IO.csproj">
       <Project>{8c4970de-ab6d-47de-b3d0-b1ef99e4ccc2}</Project>
       <Name>Portable.Accord.IO</Name>
     </ProjectReference>
