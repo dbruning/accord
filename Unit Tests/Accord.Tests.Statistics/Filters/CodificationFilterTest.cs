@@ -147,7 +147,7 @@ namespace Accord.Tests.Statistics
         [TestMethod()]
         public void ApplyTest4()
         {
-            string path = @"..\..\..\..\Accord.Tests.Statistics\Resources\intrusion.xls";
+            string path = @"..\..\..\..\Unit Tests\Accord.Tests.Statistics\Resources\intrusion.xls";
 
             ExcelReader db = new ExcelReader(path, false, true);
 
