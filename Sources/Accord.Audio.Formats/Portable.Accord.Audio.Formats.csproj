@@ -69,11 +69,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <HintPath>..\packages\portable.aforge.core.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Math">
-      <HintPath>..\packages\portable.aforge.math.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\portable.aforge.core.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SharpDX">
       <HintPath>..\..\Externals\SharpDX\PCL\SharpDX.dll</HintPath>

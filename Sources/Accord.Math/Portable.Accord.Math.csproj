@@ -223,12 +223,13 @@
     <Folder Include="Base\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <HintPath>..\packages\portable.aforge.core.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\portable.aforge.core.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AForge.Math">
-      <HintPath>..\packages\portable.aforge.math.2.2.5.50319\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\portable.aforge.math.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Shim">
       <HintPath>..\packages\shim.1.0.1.50427\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
