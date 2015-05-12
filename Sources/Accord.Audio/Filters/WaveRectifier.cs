@@ -23,12 +23,8 @@
 namespace Accord.Audio.Filters
 {
     using System.Collections.Generic;
-
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using AForge.Math;
+    using System.Numerics;
 
     /// <summary>
     ///   Wave Rectifier filter.
@@ -95,16 +91,9 @@ namespace Accord.Audio.Filters
                 Complex* src = (Complex*)sourceData.Data.ToPointer();
                 Complex* dst = (Complex*)destinationData.Data.ToPointer();
 
-                Complex c = new Complex();
-
                 for (int i = 0; i < samples; i++, dst++, src++)
                 {
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                    c = new Complex((*src).Magnitude, c.Imaginary);
-#else
-                    c.Re = (*src).Magnitude;
-#endif
-                    *dst = c;
+                    *dst = new Complex((*src).Magnitude, 0);
                 }
             }
         }

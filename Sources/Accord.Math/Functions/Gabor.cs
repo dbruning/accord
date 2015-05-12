@@ -26,12 +26,8 @@
 namespace Accord.Math
 {
     using System;
-
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using AForge.Math;
+    using System.Numerics;
 
     /// <summary>
     ///   Gabor kernel types.
@@ -230,13 +226,11 @@ namespace Accord.Math
                 case GaborKernelKind.SquaredMagnitude:
                     for (int i = 0; i < xValues.Length; i++)
                         for (int j = 0; j < yValues.Length; j++)
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                            sum += kernel[i, j] = Math.Pow(Gabor.Function2D(
-                                xValues[i], yValues[j], lambda, theta, psi, sigma, gamma).Magnitude, 2.0);
-#else
-                            sum += kernel[i, j] = Gabor.Function2D(
-                                xValues[i], yValues[j], lambda, theta, psi, sigma, gamma).SquaredMagnitude;
-#endif
+                        {
+                            double v = Gabor.Function2D(
+                                xValues[i], yValues[j], lambda, theta, psi, sigma, gamma).Magnitude;
+                            sum += kernel[i, j] = v * v;
+                        }
                     break;
             }
 

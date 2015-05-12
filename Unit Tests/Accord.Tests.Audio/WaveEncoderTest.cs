@@ -22,12 +22,13 @@
 
 namespace Accord.Tests.Audio
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Accord.DirectSound;
+    using NUnit.Framework;
     using Accord.Audio;
     using Accord.Audio.Formats;
     using System.IO;
 
-    [TestClass()]
+    [TestFixture]
     public class WaveEncoderTest
     {
 
@@ -47,7 +48,7 @@ namespace Accord.Tests.Audio
 
 
 
-        [TestMethod()]
+        [Test]
         public void WaveEncoderConstructorTest()
         {
             // Load a file in PCM 16bpp format

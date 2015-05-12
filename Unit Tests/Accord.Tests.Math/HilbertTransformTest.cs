@@ -22,34 +22,16 @@
 
 namespace Accord.Tests.Math
 {
-    using System.Numerics;
     using Accord.Math;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using AForge.Math;
+    using System.Numerics;
 
-    [TestClass()]
+    [TestFixture]
     public class HilbertTransformTest
     {
 
-
-        private TestContext testContextInstance;
-
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-
-
-
-        [TestMethod()]
+        [Test]
         public void FHTTest()
         {
             Complex[] original = { (Complex)1, (Complex)2, (Complex)3, (Complex)4 };
@@ -75,7 +57,7 @@ namespace Accord.Tests.Math
             Assert.AreEqual(actual[3], original[3]);
         }
 
-        [TestMethod()]
+        [Test]
         public void FHTTest2()
         {
             double[] original = { -1.0, -0.8, -0.2, -0.1, 0.1, 0.2, 0.8, 1.0  };

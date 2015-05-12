@@ -22,11 +22,8 @@
 
 namespace Accord.Audio.ComplexFilters
 {
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using AForge.Math;
+    using System.Numerics;
 
     /// <summary>
     ///   Differential Rectification filter.
@@ -34,8 +31,6 @@ namespace Accord.Audio.ComplexFilters
     /// 
     public class DifferentialRectificationFilter : BaseComplexFilter
     {
-
-
 
         /// <summary>
         ///   Constructs a new Differential Rectification filter.
@@ -49,34 +44,21 @@ namespace Accord.Audio.ComplexFilters
         ///   Processes the filter.
         /// </summary>
         /// 
-        protected override void ProcessFilter(ComplexSignal sourceData, ComplexSignal destinationData)
+        protected unsafe override void ProcessFilter(ComplexSignal sourceData, ComplexSignal destinationData)
         {
             int length = sourceData.Length;
 
-            unsafe
+            Complex* src = (Complex*)sourceData.Data.ToPointer();
+            Complex* dst = (Complex*)destinationData.Data.ToPointer();
+
+            for (int i = 0; i < length - 1; i++, src++, dst++)
             {
-                Complex* src = (Complex*)sourceData.Data.ToPointer();
-                Complex* dst = (Complex*)destinationData.Data.ToPointer();
+                double re = src[i + 1].Real - src[i].Real;
 
-                Complex d = new Complex();
-
-                for (int i = 0; i < length - 1; i++, src++, dst++)
-                {
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                    d = new Complex(src[i + 1].Real - src[i].Real, d.Imaginary);
-
-                    // Retain only if difference is positive
-                    *dst = (d.Real > 0) ? d : Complex.Zero;
-#else
-                    d.Re = src[i + 1].Re - src[i].Re;
-
-                    // Retain only if difference is positive
-                    *dst = (d.Re > 0) ? d : Complex.Zero;
-#endif
-                }
+                // Retain only if difference is positive
+                *dst = (re > 0) ? new Complex(re, 0) : Complex.Zero;
             }
         }
-
 
     }
 }

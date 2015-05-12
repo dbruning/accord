@@ -27,8 +27,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Sources\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,31 +52,15 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
-      <HintPath>..\..\Sources\packages\portable.aforge.core.2.2.5.50504\lib\net45\AForge.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
-      <HintPath>..\..\Sources\packages\portable.aforge.math.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Shim, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Sources\packages\shim.1.0.1.50427\lib\net45\Shim.dll</HintPath>
-    </Reference>
-    <Reference Include="Shim.Drawing, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a7d03c0bc8d64dbc, processorArchitecture=MSIL">
-      <HintPath>..\..\Sources\packages\shim.drawing.2.2.5.50504\lib\net45\Shim.Drawing.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\Externals\NUnit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics" Condition="'$(Configuration)' != 'NET35'" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <!--
@@ -93,6 +75,21 @@
   </ItemGroup>
  -->
   <ItemGroup>
+    <Compile Include="AForge\Geometry\ClosePointsMergingOptimizerTest.cs" />
+    <Compile Include="AForge\Geometry\FlatAnglesOptimizerTest.cs" />
+    <Compile Include="AForge\Geometry\GeometryToolsTest.cs" />
+    <Compile Include="AForge\Geometry\GrahamConvexHullTest.cs" />
+    <Compile Include="AForge\Geometry\LineSegmentTest.cs" />
+    <Compile Include="AForge\Geometry\LineStraighteningOptimizerTest.cs" />
+    <Compile Include="AForge\Geometry\LineTest.cs" />
+    <Compile Include="AForge\Geometry\ShapeOptimizerTestBase.cs" />
+    <Compile Include="AForge\Geometry\SimpleShapeCheckerTest.cs" />
+    <Compile Include="AForge\Matrix3x3Test.cs" />
+    <Compile Include="AForge\Matrix4x4Test.cs" />
+    <Compile Include="AForge\Metrics\MetricsTest.cs" />
+    <Compile Include="AForge\StatisticsTest.cs" />
+    <Compile Include="AForge\ToolsTest.cs" />
+    <Compile Include="AForge\Vector3Test.cs" />
     <Compile Include="Collections\RedBlackTreeDictionaryTest.cs" />
     <Compile Include="Collections\RedBlackTreeTest.cs" />
     <Compile Include="Decompositions\JaggedEigenvalueDecompositionTest.cs" />
@@ -175,33 +172,13 @@
     <Compile Include="ToolsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Accord.Core\Portable.Accord.Core.csproj">
-      <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
-      <Name>Portable.Accord.Core</Name>
+    <ProjectReference Include="..\..\Sources\Accord.Core\Accord.Core.csproj">
+      <Project>{A177A90C-8207-466A-AF70-F2B8452A42AC}</Project>
+      <Name>Accord.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Imaging\Portable.Accord.Imaging.csproj">
-      <Project>{05e1d2f5-f28b-4689-b607-33ea288125ff}</Project>
-      <Name>Portable.Accord.Imaging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.MachineLearning\Portable.Accord.MachineLearning.csproj">
-      <Project>{cfc7e81e-1e71-46be-80b7-4dede5e51612}</Project>
-      <Name>Portable.Accord.MachineLearning</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
-      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
-      <Name>Portable.Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Neuro\Portable.Accord.Neuro.csproj">
-      <Project>{46e4f987-424b-4bfd-a78f-03ae578a1aaa}</Project>
-      <Name>Portable.Accord.Neuro</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Accord.Statistics\Portable.Accord.Statistics.csproj">
-      <Project>{8dc51a9c-679f-433b-960e-df18fd27d04f}</Project>
-      <Name>Portable.Accord.Statistics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Sources\Extras\Accord.Math.NonCommercial\Portable.Accord.Math %28Noncommercial%29.csproj">
-      <Project>{c25123e2-a3d0-4229-8e3c-b2fd5a86e675}</Project>
-      <Name>Portable.Accord.Math %28Noncommercial%29</Name>
+    <ProjectReference Include="..\..\Sources\Accord.Math\Accord.Math.csproj">
+      <Project>{F718E9A8-DB62-4785-8C49-4333A60D256A}</Project>
+      <Name>Accord.Math</Name>
     </ProjectReference>
     <ProjectReference Include="..\Accord.Tests.Math.Cpp\Accord.Tests.Math.Cpp.vcxproj">
       <Project>{161BD953-537D-4325-8A00-22475FC9088E}</Project>
@@ -233,7 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />
-    <None Include="packages.config" />
     <None Include="Resources\constraintMatrix11_15_2.csv" />
     <None Include="Resources\constraintMatrix11_15.csv" />
     <None Include="Resources\constraintMatrix11_15_3.csv" />
@@ -267,13 +243,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

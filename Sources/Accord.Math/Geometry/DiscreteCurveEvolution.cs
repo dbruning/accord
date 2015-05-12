@@ -38,13 +38,9 @@ namespace Accord.Math.Geometry
     using System.Collections.Generic;
     using Accord.Math;
     using AForge;
+    using AForge.Math;
     using AForge.Math.Geometry;
-
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using System.Numerics;
 
     /// <summary>
     ///   Discrete Curve Evolution.
@@ -151,11 +147,7 @@ namespace Accord.Math.Geometry
             var newShape = new List<IntPoint>(complex.Count);
 
             for (int i = 0; i < complex.Count; i++)
-#if USE_SYSTEM_NUMERICS_COMPLEX
                 newShape.Add(new IntPoint((int)complex[i].Real, (int)complex[i].Imaginary));
-#else
-                newShape.Add(new IntPoint((int)complex[i].Re, (int)complex[i].Im));
-#endif
 
             return newShape;
         }

@@ -24,12 +24,8 @@ namespace Accord.Audio
 {
     using System;
     using System.Runtime.InteropServices;
-
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using AForge.Math;
+    using System.Numerics;
 
     /// <summary>
     ///   Specifies the format of each sample in a signal.
@@ -294,11 +290,10 @@ namespace Accord.Audio
                 // Iterate over all samples and compute energy
                 Complex* src = (Complex*)this.Data.ToPointer();
                 for (int i = 0; i < this.Samples; i++, src++)
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                    e += Math.Pow((*src).Magnitude, 2.0);
-#else
-                    e += (*src).SquaredMagnitude;
-#endif
+                {
+                    double m = (*src).Magnitude;
+                    e += m * m;
+                }
             }
 
             return e;

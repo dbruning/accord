@@ -27,12 +27,7 @@ namespace Accord.Audio
     using AForge.Math;
     using Accord.Math;
     using System.Collections.Generic;
-
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using System.Numerics;
 
     /// <summary>
     ///   Tool functions for audio processing.
@@ -106,23 +101,17 @@ namespace Accord.Audio
         /// 
         public static double[] GetPowerSpectrum(Complex[] fft)
         {
-            if (fft == null) throw new ArgumentNullException("fft");
+            if (fft == null) 
+                throw new ArgumentNullException("fft");
 
             int n = (int)System.Math.Ceiling((fft.Length + 1) / 2.0);
 
             double[] mx = new double[n];
 
-#if USE_SYSTEM_NUMERICS_COMPLEX
-            mx[0] = fft[0].Magnitude * fft[0].Magnitude / fft.Length;
-#else
-            mx[0] = fft[0].SquaredMagnitude / fft.Length;
-#endif
+            mx[0] = fft[0].SquaredMagnitude() / fft.Length;
+
             for (int i = 1; i < n; i++)
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                mx[i] = fft[i].Magnitude * fft[i].Magnitude * 2.0 / fft.Length;
-#else
-                mx[i] = fft[i].SquaredMagnitude * 2.0 / fft.Length;
-#endif
+                mx[i] = fft[i].SquaredMagnitude() * 2.0 / fft.Length;
 
             return mx;
         }
@@ -175,17 +164,14 @@ namespace Accord.Audio
         /// 
         public static double[] GetPowerCepstrum(Complex[] signal)
         {
-            if (signal == null) throw new ArgumentNullException("signal");
+            if (signal == null)
+                throw new ArgumentNullException("signal");
 
             FourierTransform.FFT(signal, FourierTransform.Direction.Backward);
 
             Complex[] logabs = new Complex[signal.Length];
             for (int i = 0; i < logabs.Length; i++)
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                logabs[i] = new Complex(System.Math.Log(signal[i].Magnitude), logabs[i].Imaginary);
-#else
-                logabs[i].Re = System.Math.Log(signal[i].Magnitude);
-#endif
+                logabs[i] = new Complex(System.Math.Log(signal[i].Magnitude), 0);
 
             FourierTransform.FFT(logabs, FourierTransform.Direction.Forward);
 

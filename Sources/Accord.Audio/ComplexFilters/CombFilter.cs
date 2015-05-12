@@ -24,13 +24,8 @@ namespace Accord.Audio.ComplexFilters
 {
     using Accord.Audio;
     using Accord.Audio.Generators;
-
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
-
+    using AForge.Math;
+    using System.Numerics;
 
     /// <summary>
     ///   Comb filter.
@@ -127,16 +122,9 @@ namespace Accord.Audio.ComplexFilters
                 Complex* dst = (Complex*)destinationData.Data.ToPointer();
                 Complex* comb = (Complex*)combSignal.Data.ToPointer();
 
-                Complex d = new Complex();
-
                 for (int i = 0; i < samples; i++, src++, dst++, comb++)
                 {
-#if USE_SYSTEM_NUMERICS_COMPLEX
-                    d = new Complex((src[0] * comb[0]).Magnitude, d.Imaginary);
-#else
-                    d.Re = (src[0] * comb[0]).Magnitude;
-#endif
-                    *dst = d;
+                    *dst = new Complex((src[0] * comb[0]).Magnitude, 0);
                 }
             }
         }

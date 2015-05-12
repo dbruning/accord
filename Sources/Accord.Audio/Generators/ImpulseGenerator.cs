@@ -22,11 +22,9 @@
 
 namespace Accord.Audio.Generators
 {
-#if USE_SYSTEM_NUMERICS_COMPLEX
-    using Complex = System.Numerics.Complex;
-#else
-    using Complex = AForge.Math.Complex;
-#endif
+    using System;
+    using AForge.Math;
+    using System.Numerics;
 
     /// <summary>
     ///   Impulse train signal generator.
