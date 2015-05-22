@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Accord.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -50,26 +52,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays.cs" />
-    <Compile Include="Attributes\IntegerAttribute.cs" />
+    <Compile Include="AForge\Delegates.cs" />
+    <Compile Include="AForge\DoublePoint.cs" />
+    <Compile Include="AForge\DoubleRange.cs" />
+    <Compile Include="AForge\EventArgs.cs" />
+    <Compile Include="AForge\Exceptions.cs" />
+    <Compile Include="AForge\IntPoint.cs" />
+    <Compile Include="AForge\IntRange.cs" />
+    <Compile Include="AForge\Point.cs" />
+    <Compile Include="AForge\PolishExpression.cs" />
+    <Compile Include="AForge\Range.cs" />
+    <Compile Include="AForge\SystemTools.cs" />
+    <Compile Include="AForge\ThreadSafeRandom.cs" />
     <Compile Include="Attributes\RealAttribute.cs" />
+    <Compile Include="Attributes\IntegerAttribute.cs" />
     <Compile Include="Cast.cs" />
-    <Compile Include="DataTableExtensions.cs" />
     <Compile Include="Collections\RedBlackTree`2.cs" />
     <Compile Include="Collections\KeyValuePairComparer`2.cs" />
-    <Compile Include="Collections\ReadOnlyOrderedDictionary.cs" />
-    <Compile Include="Collections\RedBlackTreeDictionary`2.cs" />
-    <Compile Include="Collections\RedBlackTreeNode.cs" />
-    <Compile Include="Collections\RedBlackTree`1.cs" />
     <Compile Include="Collections\TwoWayDictionary.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Exceptions\ConvergenceException.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.cs" />
     <Compile Include="Exceptions\NonPositiveDefiniteMatrixException.cs" />
     <Compile Include="Exceptions\NonSymmetricMatrixException.cs" />
     <Compile Include="Exceptions\SingularMatrixException.cs" />
-    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Collections\ReadOnlyOrderedDictionary.cs" />
+    <Compile Include="Collections\ReadOnlyDictionary.cs" />
+    <Compile Include="Collections\RedBlackTreeDictionary`2.cs" />
+    <Compile Include="Collections\RedBlackTreeNode.cs" />
+    <Compile Include="Collections\RedBlackTree`1.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />
