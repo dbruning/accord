@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Accord.ExcelReader", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Fuzzy", "Accord.Fuzzy\Portable.Accord.Fuzzy.csproj", "{F6B9158D-7B47-48AE-B798-F6B349689F0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Accord.Genetic", "Accord.Genetic\Portable.Accord.Genetic.csproj", "{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -311,6 +313,16 @@ Global
 		{F6B9158D-7B47-48AE-B798-F6B349689F0F}.NET45|Any CPU.Build.0 = Release|Any CPU
 		{F6B9158D-7B47-48AE-B798-F6B349689F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6B9158D-7B47-48AE-B798-F6B349689F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.NET35|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.NET35|Any CPU.Build.0 = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.NET40|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.NET40|Any CPU.Build.0 = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.NET45|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.NET45|Any CPU.Build.0 = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7F767B-1D8C-4FF4-8632-9AC1BEF431B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
