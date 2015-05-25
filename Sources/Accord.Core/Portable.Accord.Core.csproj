@@ -70,6 +70,7 @@
     <Compile Include="Collections\RedBlackTree`2.cs" />
     <Compile Include="Collections\KeyValuePairComparer`2.cs" />
     <Compile Include="Collections\TwoWayDictionary.cs" />
+    <Compile Include="DataTableExtensions.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Exceptions\ConvergenceException.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.cs" />
