@@ -44,108 +44,120 @@
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="Accord.snk" />
-    <None Include="Boosting\Accord.MachineLearning.Boosting.cd" />
-    <None Include="Clustering\Accord.MachineLearning.Clustering.cd" />
-    <None Include="DecisionTrees\Accord.MachineLearning.DecisionTrees.cd" />
     <None Include="packages.config" />
-    <None Include="Structures\Accord.MachineLearning.Structures.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="BagOfWords.cs" />
-    <Compile Include="Bayes\NaiveBayes.cs" />
-    <Compile Include="Bayes\NaiveBayes`1.cs" />
+    <Compile Include="Boosting\Accord.MachineLearning.Boosting.cs" />
     <Compile Include="Boosting\AdaBoost.cs" />
+    <Compile Include="BagOfWords.cs" />
+    <Compile Include="Bayes\NaiveBayes`1.cs" />
     <Compile Include="Boosting\Boost.cs" />
-    <Compile Include="Boosting\Learners\DecisionStump.cs" />
-    <Compile Include="Boosting\Learners\IWeakClassifier.cs" />
+    <Compile Include="Boosting\Learners\Accord.MachineLearning.Boosting.Learners.cs" />
     <Compile Include="Boosting\Learners\Weak.cs" />
+    <Compile Include="Boosting\Learners\IWeakClassifier.cs" />
+    <Compile Include="Boosting\Learners\DecisionStump.cs" />
     <Compile Include="Clustering\BinarySplit.cs" />
     <Compile Include="Clustering\GaussianCluster.cs" />
-    <Compile Include="Clustering\GaussianMixtureModel.cs" />
-    <Compile Include="Clustering\IClusteringAlgorithm.cs" />
-    <Compile Include="Clustering\KMeans.cs" />
-    <Compile Include="Clustering\KMeansCluster.cs" />
-    <Compile Include="Clustering\KModesCluster.cs" />
-    <Compile Include="Clustering\KModes`1.cs" />
-    <Compile Include="Clustering\MeanShift.cs" />
     <Compile Include="Clustering\MeanShiftCluster.cs" />
+    <Compile Include="Clustering\KMeansCluster.cs" />
+    <Compile Include="Clustering\IClusteringAlgorithm.cs" />
+    <Compile Include="Clustering\KModesCluster.cs" />
+    <Compile Include="Clustering\MeanShift.cs" />
+    <Compile Include="DecisionTrees\Accord.MachineLearning.DecisionTrees.cs" />
     <Compile Include="DecisionTrees\ComparisonKind.cs" />
     <Compile Include="DecisionTrees\DecisionBranchNodeCollection.cs" />
-    <Compile Include="DecisionTrees\DecisionNode.cs" />
-    <Compile Include="DecisionTrees\DecisionTree.cs" />
-    <Compile Include="DecisionTrees\DecisionTreeTraversal.cs" />
-    <Compile Include="DecisionTrees\DecisionTreeWriter.cs" />
-    <Compile Include="DecisionTrees\DecisionVariable.cs" />
-    <Compile Include="DecisionTrees\Learning\C45Learning.cs" />
-    <Compile Include="DecisionTrees\Learning\ID3Learning.cs" />
-    <Compile Include="DecisionTrees\Learning\Measures.cs" />
-    <Compile Include="DecisionTrees\Pruning\ErrorBasedPruning.cs" />
-    <Compile Include="DecisionTrees\Pruning\ReducedErrorPruning.cs" />
+    <Compile Include="DecisionTrees\Learning\Accord.MachineLearning.DecisionTrees.Learning.cs" />
+    <Compile Include="DecisionTrees\Pruning\Accord.MachineLearning.DecisionTrees.Prunning.cs" />
+    <Compile Include="DecisionTrees\Rules\Accord.MachineLearning.DecisionTrees.Rules.cs" />
     <Compile Include="DecisionTrees\Rules\Antecedent.cs" />
-    <Compile Include="DecisionTrees\Rules\DecisionRule.cs" />
     <Compile Include="DecisionTrees\Rules\DecisionSet.cs" />
-    <Compile Include="DecisionTrees\Rules\Simplification.cs" />
-    <Compile Include="DecisionTrees\TreeExpression.cs" />
-    <Compile Include="EarlyStopping.cs" />
+    <Compile Include="DecisionTrees\Rules\DecisionRule.cs" />
+    <Compile Include="DecisionTrees\DecisionTreeWriter.cs" />
+    <Compile Include="DecisionTrees\Pruning\ReducedErrorPruning.cs" />
+    <Compile Include="DecisionTrees\Pruning\ErrorBasedPruning.cs" />
+    <Compile Include="DecisionTrees\Rules\Simplification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AForge\Exploration Policy\BoltzmannExploration.cs" />
+    <Compile Include="AForge\Exploration Policy\EpsilonGreedyExploration.cs" />
+    <Compile Include="AForge\Exploration Policy\IExplorationPolicy.cs" />
+    <Compile Include="AForge\Exploration Policy\RouletteWheelExploration.cs" />
+    <Compile Include="AForge\Exploration Policy\TabuSearchExploration.cs" />
     <Compile Include="Geometry\RansacCircle.cs" />
-    <Compile Include="Geometry\RansacLine.cs" />
-    <Compile Include="Geometry\RansacPlane.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="GridSearch.cs" />
-    <Compile Include="GridSearchParameter.cs" />
-    <Compile Include="GridSearchRange.cs" />
     <Compile Include="IO\LibSvmModel.cs" />
-    <Compile Include="KNearestNeighbors.cs" />
-    <Compile Include="KNearestNeighbors`1.cs" />
     <Compile Include="MinimumMeanDistanceClassifier.cs" />
+    <Compile Include="KNearestNeighbors`1.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Performance\Bootstrap\Bootstrap.cs" />
     <Compile Include="Performance\Bootstrap\BootstrapResult.cs" />
     <Compile Include="Performance\Bootstrap\BootstrapValues.cs" />
-    <Compile Include="Performance\CrossValidation\CrossValidation.cs" />
-    <Compile Include="Performance\CrossValidation\CrossValidationResult`1.cs" />
-    <Compile Include="Performance\CrossValidation\CrossValidationStatistics.cs" />
-    <Compile Include="Performance\CrossValidation\CrossValidationValues.cs" />
+    <Compile Include="Clustering\KModes`1.cs" />
+    <Compile Include="EarlyStopping.cs" />
+    <Compile Include="GridSearchRange.cs" />
+    <Compile Include="GridSearchParameter.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidationValues`1.cs" />
+    <Compile Include="Performance\CrossValidation\CrossValidationResult`1.cs" />
+    <Compile Include="Performance\CrossValidation\CrossValidationValues.cs" />
+    <Compile Include="Performance\CrossValidation\CrossValidationStatistics.cs" />
+    <Compile Include="Performance\CrossValidation\CrossValidation.cs" />
     <Compile Include="Performance\CrossValidation\CrossValidation`1.cs" />
-    <Compile Include="Performance\SplitSet\SplitSetResult`1.cs" />
-    <Compile Include="Performance\SplitSet\SplitSetStatistics`1.cs" />
+    <Compile Include="DecisionTrees\DecisionVariable.cs" />
+    <Compile Include="DecisionTrees\Learning\C45Learning.cs" />
+    <Compile Include="DecisionTrees\Learning\Measures.cs" />
+    <Compile Include="DecisionTrees\TreeExpression.cs" />
+    <Compile Include="DecisionTrees\Learning\ID3Learning.cs" />
+    <Compile Include="DecisionTrees\DecisionTree.cs" />
+    <Compile Include="DecisionTrees\DecisionNode.cs" />
+    <Compile Include="Clustering\GaussianMixtureModel.cs" />
+    <Compile Include="Bayes\NaiveBayes.cs" />
+    <Compile Include="KNearestNeighbors.cs" />
     <Compile Include="Performance\SplitSet\SplitSetValidation.cs" />
+    <Compile Include="Performance\SplitSet\SplitSetStatistics`1.cs" />
+    <Compile Include="Performance\SplitSet\SplitSetResult`1.cs" />
     <Compile Include="Performance\SplitSet\SplitSetValidation`1.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GridSearch.cs" />
+    <Compile Include="Clustering\KMeans.cs" />
+    <Compile Include="AForge\QLearning.cs" />
     <Compile Include="Ransac.cs" />
+    <Compile Include="Geometry\RansacLine.cs" />
+    <Compile Include="Geometry\RansacPlane.cs" />
+    <Compile Include="AForge\Sarsa.cs" />
+    <Compile Include="Structures\KDTreeNodeList.cs" />
+    <Compile Include="Structures\KDTreeTraversal.cs" />
+    <Compile Include="Structures\KDTreeNodeDistance.cs" />
+    <Compile Include="Structures\KDTree`1.cs" />
     <Compile Include="Structures\KDTree.cs" />
     <Compile Include="Structures\KDTreeNode.cs" />
     <Compile Include="Structures\KDTreeNodeCollection.cs" />
-    <Compile Include="Structures\KDTreeNodeDistance.cs" />
-    <Compile Include="Structures\KDTreeNodeList.cs" />
-    <Compile Include="Structures\KDTreeTraversal.cs" />
-    <Compile Include="Structures\KDTree`1.cs" />
-    <Compile Include="VectorMachines\ISupportVectorMachine.cs" />
-    <Compile Include="VectorMachines\KernelSupportVectorMachine.cs" />
+    <Compile Include="DecisionTrees\DecisionTreeTraversal.cs" />
+    <Compile Include="VectorMachines\Accord.MachineLearning.VectorMachines.cs" />
     <Compile Include="VectorMachines\Learning\Base\BaseSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\Base\BaseSupportVectorRegression.cs" />
-    <Compile Include="VectorMachines\Learning\Base\ISupportVectorMachineLearning.cs" />
-    <Compile Include="VectorMachines\Learning\LeastSquaresLearning.cs" />
     <Compile Include="VectorMachines\Learning\LinearCoordinateDescent.cs" />
+    <Compile Include="VectorMachines\Learning\LeastSquaresLearning.cs" />
     <Compile Include="VectorMachines\Learning\LinearDualCoordinateDescent.cs" />
-    <Compile Include="VectorMachines\Learning\LinearNewtonMethod.cs" />
-    <Compile Include="VectorMachines\Learning\MulticlassSupportVectorLearning.cs" />
-    <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
-    <Compile Include="VectorMachines\Learning\OneclassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticCoordinateDescent.cs" />
     <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticDualCoordinateDescent.cs" />
     <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticNewtonMethod.cs" />
-    <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticOutputCalibration.cs" />
+    <Compile Include="VectorMachines\Learning\LinearNewtonMethod.cs" />
+    <Compile Include="VectorMachines\Learning\MultilabelSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\Learning\Regression\LinearRegressionCoordinateDescent.cs" />
     <Compile Include="VectorMachines\Learning\Regression\LinearRegressionNewtonMethod.cs" />
-    <Compile Include="VectorMachines\Learning\SequentialMinimalOptimization.cs" />
     <Compile Include="VectorMachines\Learning\SupportVectorLearningHelper.cs" />
     <Compile Include="VectorMachines\Learning\SupportVectorReduction.cs" />
-    <Compile Include="VectorMachines\MulticlassSupportVectorMachine.cs" />
     <Compile Include="VectorMachines\MultilabelSupportVectorMachine.cs" />
+    <Compile Include="VectorMachines\ISupportVectorMachine.cs" />
+    <Compile Include="VectorMachines\Learning\Base\ISupportVectorMachineLearning.cs" />
+    <Compile Include="VectorMachines\Learning\SequentialMinimalOptimization.cs" />
+    <Compile Include="VectorMachines\KernelSupportVectorMachine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VectorMachines\MulticlassSupportVectorMachine.cs" />
+    <Compile Include="VectorMachines\Learning\MulticlassSupportVectorLearning.cs" />
+    <Compile Include="VectorMachines\Learning\Probabilistic\ProbabilisticOutputCalibration.cs" />
+    <Compile Include="VectorMachines\Learning\OneclassSupportVectorLearning.cs" />
     <Compile Include="VectorMachines\SupportVectorMachine.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,14 +178,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
-      <HintPath>..\packages\portable.aforge.core.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
-      <HintPath>..\packages\portable.aforge.math.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Shim">
       <HintPath>..\packages\shim.1.0.1.50427\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
     </Reference>
