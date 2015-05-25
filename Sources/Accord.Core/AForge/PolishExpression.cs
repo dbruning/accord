@@ -63,7 +63,7 @@ namespace AForge
             // split expression to separate tokens, which represent functions ans variables
             string[] tokens = expression.Trim( ).Split( ' ' );
             // arguments stack
-            Stack<double> arguments = new Stack<double>( );
+            Stack<double> arguments = new Stack<double>();
 
             // walk through all tokens
             foreach ( string token in tokens )
