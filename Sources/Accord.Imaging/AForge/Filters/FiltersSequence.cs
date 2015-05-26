@@ -11,7 +11,7 @@ namespace AForge.Imaging.Filters
     using System;
     using System.Drawing;
     using System.Drawing.Imaging;
-    using System.Collections;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Filters' collection to apply to an image in sequence.
@@ -37,8 +37,10 @@ namespace AForge.Imaging.Filters
     /// </code>
     /// </remarks>
     /// 
-    public class FiltersSequence : CollectionBase, IFilter
+    public class FiltersSequence : IFilter
     {
+        private readonly List<IFilter> InnerList = new List<IFilter>();
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FiltersSequence"/> class.
         /// </summary>
