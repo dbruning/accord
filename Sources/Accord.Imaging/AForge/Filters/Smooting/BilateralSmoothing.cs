@@ -14,6 +14,7 @@ namespace AForge.Imaging.Filters
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Bilateral filter implementation - edge preserving smoothing and noise reduction that uses chromatic and spatial factors.
