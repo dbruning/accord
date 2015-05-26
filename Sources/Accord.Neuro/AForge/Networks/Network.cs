@@ -173,7 +173,7 @@ namespace AForge.Neuro
         /// 
         public void Save( Stream stream )
         {
-            IFormatter formatter = new BinaryFormatter( );
+            BinaryFormatter formatter = new BinaryFormatter( );
             formatter.Serialize( stream, this );
         }
 
@@ -208,7 +208,7 @@ namespace AForge.Neuro
         /// 
         public static Network Load( Stream stream )
         {
-            IFormatter formatter = new BinaryFormatter( );
+            BinaryFormatter formatter = new BinaryFormatter( );
             Network network = (Network) formatter.Deserialize( stream );
             return network;
         }

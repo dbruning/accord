@@ -49,24 +49,51 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Activation Functions\Base\IStochasticFunction.cs" />
     <Compile Include="Activation Functions\IdentityFunction.cs" />
     <Compile Include="Activation Functions\RectifiedLinearFunction.cs" />
-    <Compile Include="Activation Functions\BernoulliFunction.cs" />
     <Compile Include="Activation Functions\GaussianFunction.cs" />
+    <Compile Include="Activation Functions\Base\IStochasticFunction.cs" />
     <Compile Include="Activation Functions\LinearFunction.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Activation Functions\BernoulliFunction.cs" />
+    <Compile Include="AForge\Activation Functions\BipolarSigmoidFunction.cs" />
+    <Compile Include="AForge\Activation Functions\IActivationFunction.cs" />
+    <Compile Include="AForge\Activation Functions\SigmoidFunction.cs" />
+    <Compile Include="AForge\Activation Functions\ThresholdFunction.cs" />
+    <Compile Include="AForge\Layers\ActivationLayer.cs" />
+    <Compile Include="AForge\Layers\DistanceLayer.cs" />
+    <Compile Include="AForge\Layers\Layer.cs" />
+    <Compile Include="AForge\Learning\BackPropagationLearning.cs" />
+    <Compile Include="AForge\Learning\DeltaRuleLearning.cs" />
+    <Compile Include="AForge\Learning\ElasticNetworkLearning.cs" />
+    <Compile Include="AForge\Learning\EvolutionaryFitness.cs" />
+    <Compile Include="AForge\Learning\EvolutionaryLearning.cs" />
+    <Compile Include="AForge\Learning\ISupervisedLearning.cs" />
+    <Compile Include="AForge\Learning\IUnsupervisedLearning.cs" />
+    <Compile Include="AForge\Learning\PerceptronLearning.cs" />
+    <Compile Include="AForge\Learning\ResilientBackPropagationLearning.cs" />
+    <Compile Include="AForge\Learning\SOMLearning.cs" />
+    <Compile Include="AForge\Networks\ActivationNetwork.cs" />
+    <Compile Include="AForge\Networks\DistanceNetwork.cs" />
+    <Compile Include="AForge\Networks\Network.cs" />
+    <Compile Include="AForge\Neurons\ActivationNeuron.cs" />
+    <Compile Include="AForge\Neurons\DistanceNeuron.cs" />
+    <Compile Include="AForge\Neurons\Neuron.cs" />
     <Compile Include="Initialization\GaussianWeights.cs" />
-    <Compile Include="Initialization\NguyenWidrow.cs" />
-    <Compile Include="Layers\StochasticLayer.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Layers\StochasticLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Learning\ContrastiveDivergenceLearning.cs" />
-    <Compile Include="Learning\DeepBeliefNetworkLearning.cs" />
     <Compile Include="Learning\DeepNeuralNetworkLearning.cs" />
+    <Compile Include="Learning\DeepBeliefNetworkLearning.cs" />
     <Compile Include="Learning\LevenbergMarquardtLearning.cs" />
     <Compile Include="Learning\ParallelResilientBackPropagationLearning.cs" />
     <Compile Include="Networks\DeepBeliefNetwork.cs" />
     <Compile Include="Networks\RestrictedBoltzmannMachine.cs" />
-    <Compile Include="Neurons\StochasticNeuron.cs" />
+    <Compile Include="Neurons\StochasticNeuron.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Initialization\NguyenWidrow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Visualization\ActivationMaximization.cs" />
   </ItemGroup>
@@ -79,6 +106,10 @@
       <Project>{5e441557-080b-4664-a8eb-4185ddfd668d}</Project>
       <Name>Portable.Accord.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Accord.Genetic\Portable.Accord.Genetic.csproj">
+      <Project>{1c7f767b-1d8c-4ff4-8632-9ac1bef431b5}</Project>
+      <Name>Portable.Accord.Genetic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
@@ -89,24 +120,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
-      <HintPath>..\packages\portable.aforge.core.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AForge.Genetic, Version=2.2.5.0, Culture=neutral, PublicKeyToken=4336634eeb41b69b, processorArchitecture=MSIL">
-      <HintPath>..\packages\portable.aforge.genetic.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.Genetic.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
-      <HintPath>..\packages\portable.aforge.math.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.Math.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AForge.Neuro, Version=2.2.5.0, Culture=neutral, PublicKeyToken=2094f4ea39731d4f, processorArchitecture=MSIL">
-      <HintPath>..\packages\portable.aforge.neuro.2.2.5.50504\lib\portable-net45+netcore45+wpa81\AForge.Neuro.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Shim">
+    <Content Include="AForge\Images\sigmoid.bmp" />
+    <Content Include="AForge\Images\sigmoid_bipolar.bmp" />
+    <Content Include="AForge\Images\threshold.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Shim, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
       <HintPath>..\packages\shim.1.0.1.50427\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
