@@ -11,7 +11,7 @@ For general information and tutorials, see [here](http://accord-net.github.io).
 
 The repository currently provides:
 
-* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Neuro, Imaging, Vision, Audio) 
+* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Genetic, Fuzzy, Neuro, Imaging, Vision, Audio) 
 
 The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the platform specific *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the platform specific version of each type is used.
  
@@ -33,16 +33,12 @@ Building the libraries
 
 You are strongly advised to obtain the *Portable Accord.NET Framework* libraries from *NuGet*. If you do prefer to build the libraries yourself, follow these instructions.
 
-To sufficiently build and use the class libraries in the *Portable Accord.NET Framework*, the companion repository [Portable AForge.NET Framework](https://github.com/cureos/aforge) must be readily available.
-*Accord.NET Framework* is dependent upon *AForge.NET Framework*, and the *Portable AForge.NET Framework* also contains support libraries for successfully building Portable Class Libraries from the *Accord.NET Framework* code base and incorporate these PCL:s in mobile, tablet or desktop WPF applications.
-
 The *Portable Accord* libraries make use of the following libraries from *NuGet*:
 
 * Shim
 * Shim.Drawing
-* Portable AForge libraries
 
-Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder and build the entire solution or selected projects. Visual Studio 2012 Professional or higher is required.
+Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder and build the entire solution or selected projects. Visual Studio 2013 Community or higher is required.
 
 
 Ported Status
@@ -50,30 +46,31 @@ Ported Status
 
 The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
 
-Results, April 15, 2015 (synched with main repository commit [4edaa7e](https://github.com/accord-net/framework/commit/4edaa7e958ed607deece93d4d0de303e22e433b2)):
+Results, May 26, 2015 (synched with main repository commit [7b75468](https://github.com/accord-net/framework/commit/7b75468df41e0f02eeefda5d58eebf88962b08e3)):
 
-* Accord.Tests.Audio, 12 unit tests (*WaveFileAudioSourceTest* excluded), all passed
-* Accord.Tests.IO, 29 unit tests, all passed
-* Accord.Tests.MachineLearning, 160 tests (*RansacLineTest* excluded), 3 failed
+* Accord.Tests.Core, 73 unit tests, all passed
+* Accord.Tests.IO, 35 unit tests, all passed
+* Accord.Tests.MachineLearning, 165 tests, 3 failed
 * Accord.Tests.MachineLearning (GPL), 1 test, passed
-* Accord.Tests.Math, 518 unit tests, all passed
+* Accord.Tests.MachineLearning.FSharp, 2 tests, all passed
+* Accord.Tests.Math, 798 unit tests, all passed
 * Accord.Tests.Math (Noncommercial), 3 unit tests, all passed
-* Accord.Tests.Statistics, 1140 tests, all passed
 * Accord.Tests.Neuro, 25 tests, all passed
+* Accord.Tests.Statistics, 1145 tests, all passed
 
 The failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library.
 
 Notes on commercial use
 -----------------------
 
-The *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *AForge.NET Framework* and *Accord.NET Framework* are published under the General Public License, version 3.
+The *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *Accord.NET Framework* are published under the General Public License, version 3.
 
 There are *Shim* and *Shim.Drawing* assemblies available for *Xamarin.Android* and *Xamarin.iOS*, making it possible to 
-incorporate *Portable AForge* and *Portable Accord* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. 
+incorporate *Portable Accord* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. 
 
 *Shim Drawing* is available for evaluation from *NuGet* for all supported platforms.
 
-To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Universal*/*Windows 8.1*/*Windows Phone (non-Silverlight) 8.1* for unlimited distribution of *Portable AForge* and *Portable Accord* based applications on app stores, simply click on one of these buttons:
+To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Universal*/*Windows 8.1*/*Windows Phone (non-Silverlight) 8.1* for unlimited distribution of *Portable Accord* based applications on app stores, simply click on one of these buttons:
 
 <table>
 <tr>
