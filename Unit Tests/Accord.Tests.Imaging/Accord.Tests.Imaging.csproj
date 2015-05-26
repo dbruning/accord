@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Accord.snk" />
+    <None Include="packages.config" />
     <None Include="Resources\image2.bmp" />
   </ItemGroup>
   <ItemGroup>
