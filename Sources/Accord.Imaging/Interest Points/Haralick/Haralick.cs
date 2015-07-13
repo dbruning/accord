@@ -242,7 +242,7 @@ namespace Accord.Imaging
         ///   The source image has incorrect pixel format.
         /// </exception>
         /// 
-        public unsafe List<double[]> ProcessImage(UnmanagedImage image)
+        public List<double[]> ProcessImage(UnmanagedImage image)
         {
 
             // check image format

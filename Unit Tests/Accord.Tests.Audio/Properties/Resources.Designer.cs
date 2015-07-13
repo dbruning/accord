@@ -63,18 +63,18 @@ namespace Accord.Tests.Audio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Grand_Piano___Fazioli___major_A_middle {
+        internal static System.IO.UnmanagedMemoryStream a {
             get {
-                return ResourceManager.GetStream("Grand_Piano___Fazioli___major_A_middle", resourceCulture);
+                return ResourceManager.GetStream("a", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Grand_Piano___Fazioli___major_C_middle {
+        internal static System.IO.UnmanagedMemoryStream c {
             get {
-                return ResourceManager.GetStream("Grand_Piano___Fazioli___major_C_middle", resourceCulture);
+                return ResourceManager.GetStream("c", resourceCulture);
             }
         }
     }

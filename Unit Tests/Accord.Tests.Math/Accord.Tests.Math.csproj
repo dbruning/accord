@@ -26,6 +26,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
+    <PlatformTarget>x86</PlatformTarget>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Sources\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -33,24 +34,20 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>$(SolutionDir)..\Unit Tests\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET35|AnyCPU' ">
-    <OutputPath>bin\Release\net35</OutputPath>
+    <OutputPath>$(SolutionDir)..\Unit Tests\bin\Release\net35\</OutputPath>
     <DefineConstants>TRACE;NET35</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET40|AnyCPU' ">
-    <OutputPath>bin\Release\net40</OutputPath>
+    <OutputPath>$(SolutionDir)..\Unit Tests\bin\Release\net40\</OutputPath>
     <DefineConstants>TRACE;NET40</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET45|AnyCPU' ">
-    <OutputPath>bin\Release\net45</OutputPath>
+    <OutputPath>$(SolutionDir)..\Unit Tests\bin\Release\net45\</OutputPath>
     <DefineConstants>TRACE;NET45</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
@@ -118,14 +115,8 @@
     <Compile Include="Optimization\CobylaTest.cs" />
     <Compile Include="Optimization\BoundedBroydenFletcherGoldfarbShannoTest.cs" />
     <Compile Include="Optimization\LinearConstraintTest.cs" />
-    <Compile Include="Optimization\Quadprog\UnsafeGoldfarbIdnani.cs" />
-    <Compile Include="Optimization\Quadprog\QuadprogComparisonTest.cs" />
     <Compile Include="Optimization\SubplexTest.cs" />
     <Compile Include="Optimization\NelderMeadTest.cs" />
-    <Compile Include="Optimization\Lbfgsb3\LbfgsbComparer.cs" />
-    <Compile Include="Optimization\Lbfgsb3\LbfgsbComparisonTest.cs" />
-    <Compile Include="Optimization\LibBFGS\LibBFGSComparisonTest.cs" />
-    <Compile Include="Optimization\LibBFGS\LBFGSComparer.cs" />
     <Compile Include="Optimization\NonlinearConstraintTest.cs" />
     <Compile Include="Environment\REnvironmentTest.cs" />
     <Compile Include="CosineTransformTest.cs" />
@@ -184,10 +175,6 @@
     <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
       <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
       <Name>Portable.Accord.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accord.Tests.Math.Cpp\Accord.Tests.Math.Cpp.vcxproj">
-      <Project>{161bd953-537d-4325-8a00-22475fc9088e}</Project>
-      <Name>Accord.Tests.Math.Cpp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -88,11 +88,8 @@
     <Reference Include="Accord.Audio">
       <HintPath>..\..\..\Release\net40\Accord.Audio.dll</HintPath>
     </Reference>
-    <Reference Include="Accord.Audio.Formats">
-      <HintPath>..\..\..\Release\net40\Accord.Audio.Formats.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.DirectSound">
-      <HintPath>..\..\..\Release\net40\Accord.DirectSound.dll</HintPath>
+    <Reference Include="Accord.Audio.DirectSound">
+      <HintPath>..\..\..\Release\net40\Accord.Audio.DirectSound.dll</HintPath>
     </Reference>
     <Reference Include="Accord.Math">
       <HintPath>..\..\..\Release\net40\Accord.Math.dll</HintPath>
@@ -115,11 +112,7 @@
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -191,13 +184,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
