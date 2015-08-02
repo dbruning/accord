@@ -113,13 +113,18 @@ namespace Accord.Math
         ///   Sorts the elements of an entire one-dimensional array using the given comparison.
         /// </summary>
         /// 
-        public static void Sort<T>(this T[] values, out int[] order, bool stable = false)
+        public static void Sort<T>(this T[] values, out int[] order, bool stable = false, ComparerDirection direction = ComparerDirection.Ascending)
             where T : IComparable<T>
         {
             if (!stable)
             {
                 order = Matrix.Indices(values.Length);
                 Array_.Sort(values, order);
+                if (direction == ComparerDirection.Ascending)
+                    Array.Sort(values, order);
+                else
+                    Array.Sort(values, order, new GeneralComparer<T>(direction));
+
                 return;
             }
 
@@ -127,6 +132,11 @@ namespace Accord.Math
             for (var i = 0; i < values.Length; i++)
                 keys[i] = new KeyValuePair<int, T>(i, values[i]);
             Array_.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
+
+            if (direction == ComparerDirection.Ascending)
+                Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
+            else
+                Array.Sort(keys, values, new StableComparer<T>((a, b) => -a.CompareTo(b)));
 
             order = new int[values.Length];
             for (int i = 0; i < keys.Length; i++)
