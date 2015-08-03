@@ -5,6 +5,7 @@
 // 
  
 using System.Reflection;
+using System.Resources;
 
 [assembly: AssemblyProduct("Accord.NET Framework")]
 [assembly: AssemblyCopyright("Copyright © Accord.NET authors, 2009-2015")]
@@ -15,3 +16,5 @@ using System.Reflection;
 [assembly: AssemblyVersion("3.0.2")]
 [assembly: AssemblyInformationalVersion("3.0.2")]
 [assembly: AssemblyFileVersion("3.0.2.5282")]
+
+[assembly: NeutralResourcesLanguage("en-US")]
