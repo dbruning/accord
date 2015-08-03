@@ -286,7 +286,7 @@ namespace Accord.Statistics.Distributions.Univariate
             times = (double[])times.Clone();
             hazards = (double[])hazards.Clone();
 
-            Array.Sort(times, hazards);
+            Array_.Sort(times, hazards);
 
             for (int i = 0; i < times.Length - 1; i++)
             {
@@ -742,7 +742,7 @@ namespace Accord.Statistics.Distributions.Univariate
                 for (int i = 0; i < hazards.Length; i++)
                     hazards[i] = -Math.Log(survivals[i]);
 
-                Array.Sort(observations, hazards);
+                Array_.Sort(observations, hazards);
 
                 this.init(observations, hazards, this.estimator);
                 return;

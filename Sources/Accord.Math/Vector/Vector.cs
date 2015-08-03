@@ -121,9 +121,9 @@ namespace Accord.Math
                 order = Matrix.Indices(values.Length);
                 Array_.Sort(values, order);
                 if (direction == ComparerDirection.Ascending)
-                    Array.Sort(values, order);
+                    Array_.Sort(values, order);
                 else
-                    Array.Sort(values, order, new GeneralComparer<T>(direction));
+                    Array_.Sort(values, order, new GeneralComparer<T>(direction));
 
                 return;
             }
@@ -134,9 +134,9 @@ namespace Accord.Math
             Array_.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
 
             if (direction == ComparerDirection.Ascending)
-                Array.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
+                Array_.Sort(keys, values, new StableComparer<T>((a, b) => a.CompareTo(b)));
             else
-                Array.Sort(keys, values, new StableComparer<T>((a, b) => -a.CompareTo(b)));
+                Array_.Sort(keys, values, new StableComparer<T>((a, b) => -a.CompareTo(b)));
 
             order = new int[values.Length];
             for (int i = 0; i < keys.Length; i++)
