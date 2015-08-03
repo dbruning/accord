@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>portable.accord.genetic</id>
+        <version>$version$</version>
+        <title>Portable Accord Genetic</title>
+        <authors>Andrew Kirillow, Anders Gustafsson, Cureos AB</authors>
+        <licenseUrl>https://www.gnu.org/licenses/lgpl.html#content</licenseUrl>
+        <projectUrl>https://github.com/cureos/accord</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/cureos/accord/portable/Setup/Portable/NuGet/portable-accord.png</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Portable Accord Genetic provides genetic programming functionality to the Accord.NET Framework on mobile and tablet devices.</description>
+        <summary>Genetic programming functionality for Portable Accord.NET Framework</summary>
+        <copyright>(c) 2006-2013 Andrew Kirillow, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+        <language>en-US</language>
+        <tags>accord.net aforge.net PCL .NET WPF WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
+        <dependencies>
+            <dependency id="portable.accord.math" version="$version$" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.Genetic.dll" target="lib\portable-net45+netcore45+wpa81" />
+        <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.Genetic.pdb" target="lib\portable-net45+netcore45+wpa81" />
+        <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.Genetic.xml" target="lib\portable-net45+netcore45+wpa81" />
+    </files>
+</package>

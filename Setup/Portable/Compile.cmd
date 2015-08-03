@@ -34,6 +34,8 @@ timeout /T 5
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Audio\bin\Release\Accord.Audio.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Audio.Formats\bin\Release\Accord.Audio.Formats.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Core\bin\Release\Accord.* "%PCLDIR%"
+@xcopy /k /r /v /y /exclude:exclude.txt Accord.Fuzzy\bin\Release\Accord.* "%PCLDIR%"
+@xcopy /k /r /v /y /exclude:exclude.txt Accord.Genetic\bin\Release\Accord.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.IO\bin\Release\Accord.IO.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Imaging\bin\Release\Accord.Imaging.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.MachineLearning\bin\Release\Accord.MachineLearning.* "%PCLDIR%"
