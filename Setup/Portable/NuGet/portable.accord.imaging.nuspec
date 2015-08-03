@@ -15,6 +15,7 @@
          <language>en-US</language>
         <tags>accord.net aforge.net PCL .NET WPF WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
         <dependencies>
+            <dependency id="shim.drawing" version="$aforgever$" />
             <dependency id="portable.accord.machinelearning" version="$version$" />
         </dependencies>
     </metadata>
