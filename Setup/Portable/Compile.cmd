@@ -16,11 +16,12 @@ timeout /T 5
 @cd "..\..\Sources"
 @msbuild "Portable.Accord.NET.sln" /t:Rebuild /p:Configuration=Release;Platform="Any CPU"
 
-@echo .pri > exclude.txt
 @echo .mdb >> exclude.txt
 
 @set PUBLISH=..\Setup\Portable\Publish\
 @set PCLDIR=%PUBLISH%lib\portable-net45+netcore45+wpa81\
+@set NETDIR=%PUBLISH%lib\net45\
+@set WIN81DIR=%PUBLISH%lib\netcore451\
 
 @if EXIST "%PUBLISH%" (rd /s /q "%PUBLISH%")
 
@@ -34,6 +35,8 @@ timeout /T 5
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Audio\bin\Release\Accord.Audio.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Audio.Formats\bin\Release\Accord.Audio.Formats.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Core\bin\Release\Accord.* "%PCLDIR%"
+@xcopy /k /r /v /y /exclude:exclude.txt Accord.Core\_Net\bin\Release\Accord.* "%NETDIR%"
+@xcopy /k /r /v /y /exclude:exclude.txt Accord.Core\_Win81\bin\Release\Accord.* "%WIN81DIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Fuzzy\bin\Release\Accord.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.Genetic\bin\Release\Accord.* "%PCLDIR%"
 @xcopy /k /r /v /y /exclude:exclude.txt Accord.IO\bin\Release\Accord.IO.* "%PCLDIR%"

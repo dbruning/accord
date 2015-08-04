@@ -22,5 +22,12 @@
         <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.dll" target="lib\portable-net45+netcore45+wpa81" />
         <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.pdb" target="lib\portable-net45+netcore45+wpa81" />
         <file src="..\Publish\lib\portable-net45+netcore45+wpa81\Accord.xml" target="lib\portable-net45+netcore45+wpa81" />
+        <file src="..\Publish\lib\netcore451\Accord.dll" target="lib\netcore451" />
+        <file src="..\Publish\lib\netcore451\Accord.pdb" target="lib\netcore451" />
+        <file src="..\Publish\lib\netcore451\Accord.pri" target="lib\netcore451" />
+        <file src="..\Publish\lib\netcore451\Accord.xml" target="lib\netcore451" />
+        <file src="..\Publish\lib\net45\Accord.dll" target="lib\net45" />
+        <file src="..\Publish\lib\net45\Accord.pdb" target="lib\net45" />
+        <file src="..\Publish\lib\net45\Accord.xml" target="lib\net45" />
     </files>
 </package>
