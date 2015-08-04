@@ -69,7 +69,6 @@
     <Compile Include="FSharpSvmTest.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <None Include="Accord.snk" />
-    <None Include="packages.config" />
     <None Include="validationsample.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -77,6 +76,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sources\Accord.Statistics\Portable.Accord.Statistics.csproj">
@@ -92,7 +92,7 @@
       <HintPath>..\..\Externals\NUnit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Shim">
-      <HintPath>..\..\Sources\packages\shim.1.0.1.50427\lib\net45\Shim.dll</HintPath>
+      <HintPath>..\..\Sources\packages\shim.1.0.1.50512\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

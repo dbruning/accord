@@ -51,6 +51,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AForge\SystemTools.Pcl.cs" />
     <Compile Include="Arrays.cs" />
     <Compile Include="AForge\Delegates.cs" />
     <Compile Include="AForge\DoublePoint.cs" />
@@ -62,7 +63,6 @@
     <Compile Include="AForge\Point.cs" />
     <Compile Include="AForge\PolishExpression.cs" />
     <Compile Include="AForge\Range.cs" />
-    <Compile Include="AForge\SystemTools.cs" />
     <Compile Include="AForge\ThreadSafeRandom.cs" />
     <Compile Include="Attributes\RealAttribute.cs" />
     <Compile Include="Attributes\IntegerAttribute.cs" />
@@ -90,8 +90,9 @@
     <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Shim">
-      <HintPath>..\packages\shim.1.0.1.50427\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
+    <Reference Include="Shim, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
+      <HintPath>..\packages\shim.1.0.1.50512\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

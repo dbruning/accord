@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6423F0C6-FAAE-4384-800C-770F42479847}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Accord</RootNamespace>
+    <AssemblyName>Accord</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\Accord.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Accord.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\AForge\Delegates.cs">
+      <Link>AForge\Delegates.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\DoublePoint.cs">
+      <Link>AForge\DoublePoint.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\DoubleRange.cs">
+      <Link>AForge\DoubleRange.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\EventArgs.cs">
+      <Link>AForge\EventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\Exceptions.cs">
+      <Link>AForge\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\IntPoint.cs">
+      <Link>AForge\IntPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\IntRange.cs">
+      <Link>AForge\IntRange.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\Point.cs">
+      <Link>AForge\Point.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\PolishExpression.cs">
+      <Link>AForge\PolishExpression.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\Range.cs">
+      <Link>AForge\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\SystemTools.cs">
+      <Link>AForge\SystemTools.cs</Link>
+    </Compile>
+    <Compile Include="..\AForge\ThreadSafeRandom.cs">
+      <Link>AForge\ThreadSafeRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\Arrays.cs">
+      <Link>Arrays.cs</Link>
+    </Compile>
+    <Compile Include="..\Attributes\IntegerAttribute.cs">
+      <Link>Attributes\IntegerAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Attributes\RealAttribute.cs">
+      <Link>Attributes\RealAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Cast.cs">
+      <Link>Cast.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\KeyValuePairComparer`2.cs">
+      <Link>Collections\KeyValuePairComparer`2.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\ReadOnlyDictionary.cs">
+      <Link>Collections\ReadOnlyDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\ReadOnlyOrderedDictionary.cs">
+      <Link>Collections\ReadOnlyOrderedDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTreeDictionary`2.cs">
+      <Link>Collections\RedBlackTreeDictionary`2.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTreeNode.cs">
+      <Link>Collections\RedBlackTreeNode.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTree`1.cs">
+      <Link>Collections\RedBlackTree`1.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTree`2.cs">
+      <Link>Collections\RedBlackTree`2.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\TwoWayDictionary.cs">
+      <Link>Collections\TwoWayDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\DataTableExtensions.cs">
+      <Link>DataTableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Exceptions\ConvergenceException.cs">
+      <Link>Exceptions\ConvergenceException.cs</Link>
+    </Compile>
+    <Compile Include="..\Exceptions\DimensionMismatchException.cs">
+      <Link>Exceptions\DimensionMismatchException.cs</Link>
+    </Compile>
+    <Compile Include="..\Exceptions\NonPositiveDefiniteMatrixException.cs">
+      <Link>Exceptions\NonPositiveDefiniteMatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\Exceptions\NonSymmetricMatrixException.cs">
+      <Link>Exceptions\NonSymmetricMatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\Exceptions\SingularMatrixException.cs">
+      <Link>Exceptions\SingularMatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\ExtensionMethods.cs">
+      <Link>ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\GlobalSuppressions.cs">
+      <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Properties\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\Properties\CustomDictionary.xml">
+      <Link>Properties\CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Shim, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\shim.1.0.1.50512\lib\netcore451\Shim.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
