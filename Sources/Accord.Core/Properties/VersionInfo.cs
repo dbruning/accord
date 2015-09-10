@@ -12,9 +12,9 @@ using System.Resources;
 [assembly: AssemblyCompany("Accord.NET")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: NeutralResourcesLanguage("en")]
 
 [assembly: AssemblyVersion("3.0.2")]
 [assembly: AssemblyInformationalVersion("3.0.2")]
-[assembly: AssemblyFileVersion("3.0.2.5282")]
+[assembly: AssemblyFileVersion("3.0.2.5339")]
 
-[assembly: NeutralResourcesLanguage("en-US")]
