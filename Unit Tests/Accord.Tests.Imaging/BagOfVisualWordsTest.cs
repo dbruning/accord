@@ -179,7 +179,7 @@ namespace Accord.Tests.Imaging
         [Test]
         public void SerializeTest()
         {
-            var images = BagOfVisualWordsTest.images.DeepClone();
+            var images = BagOfVisualWordsTest.images/*.DeepClone()*/;
 
             Accord.Math.Tools.SetupGenerator(0);
 
@@ -208,7 +208,7 @@ namespace Accord.Tests.Imaging
         [Test]
         public void SerializeTest2()
         {
-            var images = BagOfVisualWordsTest.images.DeepClone();
+            var images = (BagOfVisualWordsTest.images)/*.DeepClone()*/;
 
             Accord.Math.Tools.SetupGenerator(0);
 
