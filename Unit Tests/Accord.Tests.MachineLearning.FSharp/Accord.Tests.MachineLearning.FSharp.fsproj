@@ -92,7 +92,7 @@
       <HintPath>..\..\Externals\NUnit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Shim">
-      <HintPath>..\..\Sources\packages\shim.1.0.1.50804\lib\net45\Shim.dll</HintPath>
+      <HintPath>..\..\Sources\packages\shim.1.0.2.50909\lib\net45\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
