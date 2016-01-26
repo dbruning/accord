@@ -299,7 +299,7 @@ namespace Accord.Statistics.Distributions.Univariate
         /// </summary>
         /// 
         /// <value>
-        ///   A <see cref="AForge.DoubleRange" /> containing
+        ///   A <see cref="DoubleRange" /> containing
         ///   the support interval for this distribution.
         /// </value>
         /// 
@@ -439,6 +439,10 @@ namespace Accord.Statistics.Distributions.Univariate
             if (weights != null)
                 throw new ArgumentException("This distribution does not support weighted samples.");
 
+            // Method from Choi, S.C.; Wette, R. (1969) "Maximum Likelihood Estimation 
+            // of the Parameters of the Gamma Distribution and Their Bias", Technometrics,
+            // 11(4) 683–690
+
             double lnsum = 0;
             for (int i = 0; i < observations.Length; i++)
                 lnsum += Math.Log(observations[i]);
@@ -453,15 +457,17 @@ namespace Accord.Statistics.Distributions.Univariate
             // initial approximation
             double newK = (3 - s + Math.Sqrt((s - 3) * (s - 3) + 24 * s)) / (12 * s);
 
-            // Use Newton-Raphson approximation
+            // Use Newton-Raphson update
             double oldK;
 
             do
             {
                 oldK = newK;
-                newK = oldK - (Math.Log(newK) - Gamma.Digamma(newK) - s) / ((1 / newK) - Gamma.Trigamma(newK));
+                double num = Math.Log(newK) - Gamma.Digamma(newK) - s;
+                double den = (1 / newK) - Gamma.Trigamma(newK);
+                newK = oldK - num / den;
             }
-            while (Math.Abs(oldK - newK) / Math.Abs(oldK) < Double.Epsilon);
+            while (!oldK.IsRelativelyEqual(newK, 1e-10));
 
             double theta = mean / newK;
 
@@ -550,7 +556,7 @@ namespace Accord.Statistics.Distributions.Univariate
 
                 for (int i = 0; i < r.Length; i++)
                 {
-                    double U = Accord.Math.Tools.Random.Next();
+                    double U = Accord.Math.Random.Generator.Random.Next();
                     r[i] = scale * Gamma.Random(d, c) * Math.Pow(U, 1.0 / shape);
                 }
             }
@@ -583,7 +589,7 @@ namespace Accord.Statistics.Distributions.Univariate
                 double d = shape + 1.0 - 1.0 / 3.0;
                 double c = 1.0 / Math.Sqrt(9 * d);
 
-                double U = Accord.Math.Tools.Random.Next();
+                double U = Accord.Math.Random.Generator.Random.Next();
                 return scale * Gamma.Random(d, c) * Math.Pow(U, 1.0 / shape);
             }
             else

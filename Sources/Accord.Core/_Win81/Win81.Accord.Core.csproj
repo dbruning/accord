@@ -52,8 +52,14 @@
     <Compile Include="..\AForge\DoublePoint.cs">
       <Link>AForge\DoublePoint.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\DoubleRange.cs">
-      <Link>AForge\DoubleRange.cs</Link>
+    <Compile Include="..\Attributes\SourceTypeAttribute.cs">
+      <Link>Attributes\SourceTypeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Ranges\ByteRange.cs">
+      <Link>Ranges\ByteRange.cs</Link>
+    </Compile>
+    <Compile Include="..\Ranges\DoubleRange.cs">
+      <Link>Ranges\DoubleRange.cs</Link>
     </Compile>
     <Compile Include="..\AForge\EventArgs.cs">
       <Link>AForge\EventArgs.cs</Link>
@@ -64,8 +70,8 @@
     <Compile Include="..\AForge\IntPoint.cs">
       <Link>AForge\IntPoint.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\IntRange.cs">
-      <Link>AForge\IntRange.cs</Link>
+    <Compile Include="..\Ranges\IntRange.cs">
+      <Link>Ranges\IntRange.cs</Link>
     </Compile>
     <Compile Include="..\AForge\Point.cs">
       <Link>AForge\Point.cs</Link>
@@ -73,8 +79,8 @@
     <Compile Include="..\AForge\PolishExpression.cs">
       <Link>AForge\PolishExpression.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\Range.cs">
-      <Link>AForge\Range.cs</Link>
+    <Compile Include="..\Ranges\Range.cs">
+      <Link>Ranges\Range.cs</Link>
     </Compile>
     <Compile Include="..\AForge\SystemTools.cs">
       <Link>AForge\SystemTools.cs</Link>
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="..\Collections\RedBlackTree`2.cs">
       <Link>Collections\RedBlackTree`2.cs</Link>
+    </Compile>
+    <Compile Include="..\Ranges\IRange`1.cs">
+      <Link>Ranges\IRange`1.cs</Link>
     </Compile>
     <Compile Include="..\Collections\TwoWayDictionary.cs">
       <Link>Collections\TwoWayDictionary.cs</Link>

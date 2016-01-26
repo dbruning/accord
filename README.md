@@ -1,96 +1,65 @@
-﻿<img src="Setup/Portable/NuGet/portable-accord.png" alt="Portable Accord.NET logo" height="108" />
+ The Accord.NET Framework 
+ http://accord-framework.net
 
-Portable Accord.NET Framework
-=============================
 
-Copyright (c) 2009-2015 César Roberto de Souza; Portable Class Library adaptations (c) 2013-2015 Anders Gustafsson, Cureos AB. 
-Distributed under the Lesser GNU Public License, LGPL, version 2.1.
-
-This project is a fork of César Souzas's original [Accord.NET Framework](https://github.com/accord-net/framework) project. 
-For general information and tutorials, see [here](http://accord-net.github.io).
-
-The repository currently provides:
-
-* Portable Class Libraries for base and imaging functionality functionality (Core, Math, Math.Noncommercial, Statistics, IO, MachineLearning, MachineLearning.GPL, Genetic, Fuzzy, Neuro, Imaging, Vision, Audio) 
-
-The portable class libraries reference the portable *Shim* and/or *Shim.Drawing* assemblies. In applications however, the platform specific *Shim* and *Shim.Drawing* assemblies should be referenced, to ensure that the platform specific version of each type is used.
+  The Accord.NET Framework provides machine learning, mathematics, statistics,
+  computer vision, computer audition, and several scientific computing related
+  methods and techniques to .NET. The project extends the popular AForge.NET 
+  Framework providing a more complete scientific computing environment.
  
-`WriteableBitmap`:s provide input and output to the imaging functionality in the WPF, Windows Store and Windows Phone libraries. The target specific *Shim.Drawing* assemblies incorporates explicit cast operators between `WriteableBitmap` and `System.Drawing.Bitmap`.
+  The GitHub repository at https://github.com/accord-net/framework is the official 
+  home of the project after release 2.10 was finished. As such, new releases will 
+  only be made available on this repository.
 
-All image processing is performed on the mock `System.Drawing.Bitmap` class, `WriteableBitmap` objects should only be used as initial input to and final output from the image processing.
+ 
 
-When using the WPF *Shim.Drawing* assembly, the real *System.Drawing* assembly from .NET Framework cannot be referenced. If there is a need to reference 
-the real *System.Drawing* assembly, you are recommended to use the original *Accord.NET Framework* libraries and use WPF hosting controls to display image processing results instead.
+ Installing the framework
+ ------------------------
 
-Installation
-------------
-
-The preferred method for using *Portable Accord.NET* in your application is to download the required packages, including dependencies, from [NuGet](https://www.nuget.org/packages?q=portable.accord). Open the NuGet Package Manager
-in Visual Studio and search for **portable.accord** to obtain a list of the currently available packages on *NuGet*.
-
-Building the libraries
-----------------------
-
-You are strongly advised to obtain the *Portable Accord.NET Framework* libraries from *NuGet*. If you do prefer to build the libraries yourself, follow these instructions.
-
-The *Portable Accord* libraries make use of the following libraries from *NuGet*:
-
-* Shim
-* Shim.Drawing
-
-Open the *Portable.Accord.Net.sln* solution file located in the *Sources* folder and build the entire solution or selected projects. Visual Studio 2013 Community or higher is required.
+1) Download the framework through NuGet:
+   https://www.nuget.org/packages?q=accord.net
 
 
-Ported Status
--------------
+2) Follow the Getting Started Guide
+   http://accord-framework.net/get-started.html
+   
 
-The unit test status when replacing the .NET Framework based assemblies with their PCL analogues should give an indication of the current completeness of the porting of the non-imaging assemblies.
+3) Check the sample applications and find one that is related to what you need.
+   http://accord-framework.net/samples.html
+   
+   If you have installed the framework using the installer, the samples will be at
+   
+     C:\Program Files (x86)\Accord.NET\Framework\Samples
+   
+   You can open the Samples.sln solution on Visual Studio and check the sample 
+   applications for examples. Complete documentation is also available online at
+   
+     http://accord-framework.net/docs/Index.html
 
-Results, May 26, 2015 (synched with main repository commit [7b75468](https://github.com/accord-net/framework/commit/7b75468df41e0f02eeefda5d58eebf88962b08e3)):
 
-* Accord.Tests.Core, 73 unit tests, all passed
-* Accord.Tests.IO, 35 unit tests, all passed
-* Accord.Tests.MachineLearning, 165 tests, 3 failed
-* Accord.Tests.MachineLearning (GPL), 1 test, passed
-* Accord.Tests.MachineLearning.FSharp, 2 tests, all passed
-* Accord.Tests.Math, 798 unit tests, all passed
-* Accord.Tests.Math (Noncommercial), 3 unit tests, all passed
-* Accord.Tests.Neuro, 25 tests, all passed
-* Accord.Tests.Statistics, 1145 tests, all passed
 
-The failed tests in *Accord.Tests.MachineLearning* concern serialization, and these failures are due to missing *OnDeserialized* methods in the tested classes of the PCL *MachineLearning* library.
+ Building with Visual Studio
+ ---------------------------
 
-Notes on commercial use
------------------------
+1) Clone the repository (SmartGit is the best Git tool available for Windows)
+2) Open Sources/Accord.NET.sln in Visual Studio (works with Express versions)
 
-The *Shim.Drawing* assemblies that are required to build the Portable Class Library versions of *Accord.NET Framework* are published under the General Public License, version 3.
 
-There are *Shim* and *Shim.Drawing* assemblies available for *Xamarin.Android* and *Xamarin.iOS*, making it possible to 
-incorporate *Portable Accord* assemblies in *Android* and *iPhone* or *iPad* apps. See for example [this](http://cureos.blogspot.com/2014/10/smartphone-image-processing-development.html) blog post. 
 
-*Shim Drawing* is available for evaluation from *NuGet* for all supported platforms.
+ Building in Linux with Mono
+ ---------------------------
 
-To purchase a commercial license of *Shim.Drawing* for *Android*, *iOS* or *Universal*/*Windows 8.1*/*Windows Phone (non-Silverlight) 8.1* for unlimited distribution of *Portable Accord* based applications on app stores, simply click on one of these buttons:
+# Install Mono
+sudo apt-get install mono-complete monodevelop monodevelop-nunit
 
-<table>
-<tr>
-<th>Android, €50</th>
-<th>iOS, €50</th>
-<th>Windows, €50</th>
-<th>All platforms, €100</th>
-</tr>
-<tr>
-<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QF33BCWJXJU26"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td>
-<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KN9Q7U76ETCDS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td>
-<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UU5XKDER4JFQ4"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td><td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LLK2ZYW4JV8GY"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif"/></a></td>
-</tr>
-</table>
+# Clone the repository
+git clone https://github.com/accord-net/framework.git
 
-All prices include VAT. Upon purchase, you will receive a link from where you can download the corresponding versions of the *Shim.Drawing* assemblies that do not insert watermarks into the images.
+# Enter the directory
+cd framework
 
-Please also note that *AForge.NET Framework* (on which *Accord.NET Framework* is dependent) is licensed under LGPL version 3, and the copyright holder states the following on the *AForge.NET Framework* website:
+# Build the framework solution using Mono
+mdtool build -c:"NET40" Sources/Accord.NET.Mono.sln
 
-> Regarding collaboration, contribution, offers, partnering, custom work/consulting, none GPL/LGPL licensing, etc., please, contact using the next e-mail:
-aforge.net [at] gmail {dot} com
 
-The *Accord.NET Framework* is released under LGPL version 2.1, and further licensing details can be found [here](http://accord-framework.net/license.html).
+Join the chat at https://gitter.im/accord-net/framework

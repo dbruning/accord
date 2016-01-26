@@ -622,50 +622,68 @@ namespace Accord.Math
         }
 
         /// <summary>
-        ///   Converts the values of a vector using the given converter expression.
+        ///   Converts an object into another type, irrespective of whether
+        ///   the conversion can be done at compile time or not. This can be
+        ///   used to convert generic types to numeric types during runtime.
         /// </summary>
+        /// 
         /// <typeparam name="TOutput">The type of the output.</typeparam>
+        /// 
         /// <param name="array">The vector or array to be converted.</param>
         /// 
         public static TOutput To<TOutput>(this Array array)
             where TOutput : class, IList, ICollection, IEnumerable
 #if !NET35
-            , IStructuralComparable, IStructuralEquatable
+, IStructuralComparable, IStructuralEquatable
 #endif
         {
-            var typeInput = array.GetType();
-            var typeOutput = typeof(TOutput);
+            return To(array, typeof(TOutput)) as TOutput;
+        }
 
-            var inputElementType = typeInput.GetElementType();
-            var outputElementType = typeOutput.GetElementType();
+        /// <summary>
+        ///   Converts an object into another type, irrespective of whether
+        ///   the conversion can be done at compile time or not. This can be
+        ///   used to convert generic types to numeric types during runtime.
+        /// </summary>
+        /// 
+        /// <param name="array">The vector or array to be converted.</param>
+        /// <param name="outputType">The type of the output.</param>
+        /// 
+        public static object To(this Array array, Type outputType)
+        {
+            Type inputType = array.GetType();
 
-            if (inputElementType.IsSubclassOf(typeof(Array)))
-            {
-                // Jagged array
-                throw new NotImplementedException();
-            }
-            else
-            {
+            Type inputElementType = inputType.GetElementType();
+            Type outputElementType = outputType.GetElementType();
+
                 // Multidimensional array
-                var dimensions = array.GetDimensions();
-                var result = Array.CreateInstance(outputElementType, dimensions);
+            Array result = Array.CreateInstance(outputElementType, array.GetLength());
 
                 foreach (var idx in GetIndices(array))
                 {
                     object inputValue = array.GetValue(idx);
                     object outputValue = null;
 
+                    Array inputArray = inputValue as Array;
+
                     if (outputElementType.IsEnum())
-                        outputValue = Enum.ToObject(outputElementType, (int)System.Convert.ChangeType(inputValue, typeof(int)));
+                    {
+                            outputValue = Enum.ToObject(outputElementType, (int)System.Convert.ChangeType(inputValue, typeof(int)));
+                    }
+                    else if (inputArray != null)
+                    {
+                        outputValue = To(inputArray, outputElementType);
+                    }
                     else
-                        outputValue = System.Convert.ChangeType(inputValue, outputElementType);
+                    {
+                            outputValue = System.Convert.ChangeType(inputValue, outputElementType);
+                    }
 
                     result.SetValue(outputValue, idx);
                 }
 
-                return result as TOutput;
+            return result;
             }
-        }
 
         #endregion
 
@@ -697,9 +715,11 @@ namespace Accord.Math
         /// </code>
         /// </example>
         /// 
+        /// <seealso cref="Accord.Math.Vector.GetIndices{T}(T[])"/>
+        /// 
         public static IEnumerable<int[]> GetIndices(this Array array)
         {
-            return Accord.Math.Indices.From(array);
+            return Combinatorics.Sequences(array.GetLength(), inPlace: true);
         }
 
 
