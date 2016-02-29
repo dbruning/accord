@@ -289,7 +289,7 @@
     <Compile Include="Functions\Bessel.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-	<Compile Include="Matrix\Jagged.Construction.cs" />
+    <Compile Include="Matrix\Jagged.Construction.cs" />
     <Compile Include="Vector\Vector.Construction.cs" />
     <Compile Include="Vector\Vector.Interval.Generated.cs" />
     <Compile Include="Vector\Vector.Order.cs" />
@@ -311,8 +311,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Shim, Version=1.0.2.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
-      <HintPath>..\packages\shim.1.0.2.50909\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
+    <Reference Include="Shim, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
+      <HintPath>..\packages\shim.2.0.0-beta1\lib\portable-net45+netcore45+wpa81\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
