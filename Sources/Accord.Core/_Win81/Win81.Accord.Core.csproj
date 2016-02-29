@@ -91,9 +91,6 @@
     <Compile Include="..\AForge\ThreadSafeRandom.cs">
       <Link>AForge\ThreadSafeRandom.cs</Link>
     </Compile>
-    <Compile Include="..\Arrays.cs">
-      <Link>Arrays.cs</Link>
-    </Compile>
     <Compile Include="..\Attributes\IntegerAttribute.cs">
       <Link>Attributes\IntegerAttribute.cs</Link>
     </Compile>
