@@ -55,8 +55,9 @@
     <Compile Include="Arrays.cs" />
     <Compile Include="AForge\Delegates.cs" />
     <Compile Include="AForge\DoublePoint.cs" />
+    <Compile Include="Attributes\SerializationBinderAttribute.cs" />
     <Compile Include="Attributes\SourceTypeAttribute.cs" />
-<!--    <Compile Include="Attributes\SerializationBinderAttribute.cs" /> -->
+    <!--    <Compile Include="Attributes\SerializationBinderAttribute.cs" /> -->
     <Compile Include="Ranges\ByteRange.cs" />
     <Compile Include="Ranges\DoubleRange.cs" />
     <Compile Include="AForge\EventArgs.cs" />
@@ -89,7 +90,8 @@
     <Compile Include="Collections\RedBlackTreeNode.cs" />
     <Compile Include="Collections\RedBlackTree`1.cs" />
     <Compile Include="Ranges\IRange`1.cs" />
-<!--    <Compile Include="Serializer.cs" /> -->
+    <Compile Include="Serializer.cs" />
+    <!--    <Compile Include="Serializer.cs" /> -->
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />

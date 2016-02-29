@@ -22,6 +22,7 @@
 
 namespace Accord
 {
+    using Accord.IO;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -164,7 +165,6 @@ namespace Accord
         }
 
 
-#if NOTPORTABLE
         /// <summary>
         ///   Deserializes the specified stream into an object graph, but locates
         ///   types by searching all loaded assemblies and ignoring their versions.
@@ -179,7 +179,7 @@ namespace Accord
         public static T DeserializeAnyVersion<T>(this BinaryFormatter formatter, Stream stream)
         {
             return Serializer.Load<T>(stream);
-                }
+        }
 
         /// <summary>
         ///   Converts an object into another type, irrespective of whether
@@ -194,20 +194,17 @@ namespace Accord
         /// <returns>The result of the conversion.</returns>
         /// 
         public static T To<T>(this object value)
-                {
-            if (value is IConvertible)
-                return (T)System.Convert.ChangeType(value, typeof(T));
+        {
+            if (value is IConvertible) return (T)System.Convert.ChangeType(value, typeof(T));
 
             Type type = value.GetType();
             MethodInfo[] methods = type.GetMethods(BindingFlags.Public | BindingFlags.Static);
             foreach (var m in methods)
-        {
-                if ((m.Name == "op_Implicit" || m.Name == "op_Explicit") && m.ReturnType == typeof(T))
-                    return (T)m.Invoke(null, new[] { value });
+            {
+                if ((m.Name == "op_Implicit" || m.Name == "op_Explicit") && m.ReturnType == typeof(T)) return (T)m.Invoke(null, new[] { value });
             }
 
             return (T)System.Convert.ChangeType(value, typeof(T));
         }
-#endif
-        }
+    }
 }

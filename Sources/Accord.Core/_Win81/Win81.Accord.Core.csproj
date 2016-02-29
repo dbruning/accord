@@ -52,6 +52,9 @@
     <Compile Include="..\AForge\DoublePoint.cs">
       <Link>AForge\DoublePoint.cs</Link>
     </Compile>
+    <Compile Include="..\Attributes\SerializationBinderAttribute.cs">
+      <Link>Attributes\SerializationBinderAttribute.cs</Link>
+    </Compile>
     <Compile Include="..\Attributes\SourceTypeAttribute.cs">
       <Link>Attributes\SourceTypeAttribute.cs</Link>
     </Compile>
@@ -156,6 +159,9 @@
     </Compile>
     <Compile Include="..\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Serializer.cs">
+      <Link>Serializer.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
