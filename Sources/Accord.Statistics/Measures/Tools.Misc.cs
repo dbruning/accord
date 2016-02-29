@@ -65,7 +65,7 @@ namespace Accord.Statistics
             if (!alreadySorted)
             {
                 samples = (double[])samples.Clone();
-                Array.Sort(samples, idx);
+                Array_.Sort(samples, idx);
             }
 
             double[] ranks = new double[samples.Length];
@@ -108,7 +108,7 @@ namespace Accord.Statistics
             }
 
             if (!alreadySorted)
-                Array.Sort(idx, ranks);
+                Array_.Sort(idx, ranks);
 
             return ranks;
         }
