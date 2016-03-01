@@ -25,9 +25,8 @@ namespace Accord.Imaging
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
-	using System.Linq;
-	using AForge;
-    using AForge.Imaging;
+    using AForge;
+    using Accord.Imaging;
 
     /// <summary>
     ///   Feature detector based on corners.
@@ -78,7 +77,7 @@ namespace Accord.Imaging
         public List<CornerFeaturePoint> ProcessImage(Bitmap image)
         {
             List<IntPoint> corners = Detector.ProcessImage(image);
-            return corners.Select(convert).ToList();
+            return corners.ConvertAll(convert);
         }
 
         /// <summary>
@@ -92,7 +91,7 @@ namespace Accord.Imaging
         public List<CornerFeaturePoint> ProcessImage(BitmapData imageData)
         {
             List<IntPoint> corners = Detector.ProcessImage(imageData);
-			return corners.Select(convert).ToList();
+            return corners.ConvertAll(convert);
         }
 
         /// <summary>
@@ -106,7 +105,7 @@ namespace Accord.Imaging
         public List<CornerFeaturePoint> ProcessImage(UnmanagedImage image)
         {
             List<IntPoint> corners = Detector.ProcessImage(image);
-			return corners.Select(convert).ToList();
+            return corners.ConvertAll(convert);
         }
 
 

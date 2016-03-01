@@ -26,9 +26,8 @@ namespace Accord.Imaging
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
-	using System.Linq;
-	using AForge.Imaging;
-    using AForge.Imaging.Filters;
+    using Accord.Imaging;
+    using Accord.Imaging.Filters;
 
     /// <summary>
     ///   <see cref="Haralick"/>'s operation modes.
@@ -431,17 +430,17 @@ namespace Accord.Imaging
 
         List<FeatureDescriptor> IFeatureDetector<FeatureDescriptor, double[]>.ProcessImage(Bitmap image)
         {
-            return ProcessImage(image).Select(p => new FeatureDescriptor(p)).ToList();
+            return ProcessImage(image).ConvertAll(p => new FeatureDescriptor(p));
         }
 
         List<FeatureDescriptor> IFeatureDetector<FeatureDescriptor, double[]>.ProcessImage(BitmapData imageData)
         {
-            return ProcessImage(imageData).Select(p => new FeatureDescriptor(p)).ToList();
+            return ProcessImage(imageData).ConvertAll(p => new FeatureDescriptor(p));
         }
 
         List<FeatureDescriptor> IFeatureDetector<FeatureDescriptor, double[]>.ProcessImage(UnmanagedImage image)
         {
-            return ProcessImage(image).Select(p => new FeatureDescriptor(p)).ToList();
+            return ProcessImage(image).ConvertAll(p => new FeatureDescriptor(p));
         }
     }
 }

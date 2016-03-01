@@ -29,12 +29,10 @@ namespace Accord.Imaging
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
-    using System.Linq;
-
     using Accord.Math;
     using AForge;
-    using AForge.Imaging;
-    using AForge.Imaging.Filters;
+    using Accord.Imaging;
+    using Accord.Imaging.Filters;
 
     /// <summary>
     ///   SURF Feature descriptor types.
@@ -317,8 +315,7 @@ namespace Accord.Imaging
 
 
             // 3. Suppress non-maximum points
-            List<SpeededUpRobustFeaturePoint> featureList =
-                new List<SpeededUpRobustFeaturePoint>();
+            var featureList = new List<SpeededUpRobustFeaturePoint>();
 
             // for each image pyramid in the response map
             foreach (ResponseLayer[] layers in responses)
@@ -401,7 +398,8 @@ namespace Accord.Imaging
             else if (computeOrientation)
             {
                 descriptor = new SpeededUpRobustFeaturesDescriptor(integral);
-                foreach (var p in featureList) p.Orientation = descriptor.GetOrientation(p);
+                foreach (var p in featureList)
+                    p.Orientation = descriptor.GetOrientation(p);
             }
 
             return featureList;
@@ -527,7 +525,7 @@ namespace Accord.Imaging
             };
 
             // Compute interpolation offsets
-            return H.Inverse(true).Multiply(d);
+            return H.Inverse(inPlace: true).Dot(d);
         }
 
 
@@ -545,7 +543,7 @@ namespace Accord.Imaging
         /// </returns>
         List<IntPoint> ICornersDetector.ProcessImage(UnmanagedImage image)
         {
-            return ProcessImage(image).Select(p => new IntPoint((int)p.X, (int)p.Y)).ToList();
+            return ProcessImage(image).ConvertAll(p => new IntPoint((int)p.X, (int)p.Y));
         }
 
         /// <summary>
@@ -557,7 +555,7 @@ namespace Accord.Imaging
         /// </returns>
         List<IntPoint> ICornersDetector.ProcessImage(BitmapData imageData)
         {
-            return ProcessImage(imageData).Select(p => new IntPoint((int)p.X, (int)p.Y)).ToList();
+            return ProcessImage(imageData).ConvertAll(p => new IntPoint((int)p.X, (int)p.Y));
         }
 
         /// <summary>
@@ -569,7 +567,7 @@ namespace Accord.Imaging
         /// </returns>
         List<IntPoint> ICornersDetector.ProcessImage(Bitmap image)
         {
-            return ProcessImage(image).Select(p => new IntPoint((int)p.X, (int)p.Y)).ToList();
+            return ProcessImage(image).ConvertAll(p => new IntPoint((int)p.X, (int)p.Y));
         }
 
         #endregion

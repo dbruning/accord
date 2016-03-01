@@ -962,7 +962,7 @@ namespace Accord.Imaging
     /// <seealso cref="HaralickDescriptor"/>
     /// 
     [Serializable]
-    public partial class HaralickDescriptorDictionary : Dictionary<CooccurrenceDegree, HaralickDescriptor>
+    public class HaralickDescriptorDictionary : Dictionary<CooccurrenceDegree, HaralickDescriptor>
     {
         /// <summary>
         ///   Initializes a new instance of the <see cref="HaralickDescriptorDictionary"/> class.
@@ -971,7 +971,25 @@ namespace Accord.Imaging
         public HaralickDescriptorDictionary()
         {
         }
-
+#if NOTPORTABLE
+        /// <summary>
+        ///    Initializes a new instance of the <see cref="HaralickDescriptorDictionary"/>
+        ///    class with serialized data.
+        /// </summary>
+        /// 
+        /// <param name="info">A <see cref="System.Runtime.Serialization.SerializationInfo"/>
+        ///   object containing the information required to serialize this 
+        ///   <see cref="HaralickDescriptorDictionary"/>.</param>
+        /// <param name="context">A <see cref="System.Runtime.Serialization.StreamingContext"/>
+        ///    structure containing the source and destination of the serialized stream
+        ///    associated with this <see cref="HaralickDescriptorDictionary"/>.</param>
+        /// 
+        protected HaralickDescriptorDictionary(System.Runtime.Serialization.SerializationInfo info,
+            System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
         /// <summary>
         ///   Combines features generated from different <see cref="GrayLevelCooccurrenceMatrix">
         ///   GLCMs</see> computed using different <see cref="CooccurrenceDegree">angulations</see>
@@ -1090,7 +1108,7 @@ namespace Accord.Imaging
             for (int i = 0; i < vectors.Length; i++)
             {
                 haralick[j++] = vectors[i].Mean();
-                haralick[j++] = vectors[i].Range().Length;
+                haralick[j++] = vectors[i].GetRange().Length;
             }
 
             return haralick;
@@ -1137,10 +1155,10 @@ namespace Accord.Imaging
 
             for (int i = 0; i < vectors.Length; i++)
             {
-                DoubleRange range = vectors[i].Range();
+                DoubleRange range = vectors[i].GetRange();
                 double mean = vectors[i].Mean();
 
-                haralick[i] = Accord.Math.Tools.Scale(range.Min, range.Max, -1, 1, mean);
+                haralick[i] = Vector.Scale(mean, range.Min, range.Max, -1, 1);
             }
 
             return haralick;
