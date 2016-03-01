@@ -143,7 +143,7 @@ namespace Accord.IO
 
         private static SerializationBinder GetBinder(Type type)
         {
-            var attribute = Attribute.GetCustomAttribute(type,
+            var attribute = Attribute_.GetCustomAttribute(type,
                 typeof(SerializationBinderAttribute)) as SerializationBinderAttribute;
 
             if (attribute == null)
