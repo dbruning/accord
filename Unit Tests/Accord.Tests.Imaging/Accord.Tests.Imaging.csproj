@@ -84,7 +84,6 @@
   </ItemGroup>
  -->
   <ItemGroup>
-    <Compile Include="BagOfVisualWordsTest.cs" />
     <Compile Include="Converters\ArrayToImageTest.cs" />
     <Compile Include="BlendTest.cs" />
     <Compile Include="ConcatenateTest.cs" />
