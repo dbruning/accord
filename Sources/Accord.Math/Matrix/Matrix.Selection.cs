@@ -842,7 +842,7 @@ namespace Accord.Math
             for (int i = 0; i < keys.Length; i++)
                 indices[i] = i;
 
-            Array.Sort<TKey, int>(keys, indices, comparer);
+            Array_.Sort<TKey, int>(keys, indices, comparer);
 
             return values.Submatrix(0, values.GetLength(0) - 1, indices);
         }
@@ -861,7 +861,7 @@ namespace Accord.Math
             for (int i = 0; i < keys.Length; i++)
                 indices[i] = i;
 
-            Array.Sort<TKey, int>(keys, indices, comparer);
+            Array_.Sort<TKey, int>(keys, indices, comparer);
 
             return values.Submatrix(0, values.Length - 1, indices);
         }
