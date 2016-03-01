@@ -637,7 +637,7 @@ namespace Accord.MachineLearning
             // Order the labels by their proportion
             int[] counts = Vector.Histogram(labels, modes.Length);
             int[] idx = Vector.Range(0, modes.Length);
-            Array.Sort(counts, idx);
+            Array_.Sort(counts, idx);
 
             for (int i = 0; i < labels.Length; i++)
                 labels[i] = idx[labels[i]];

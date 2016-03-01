@@ -41,7 +41,9 @@ namespace Accord.MachineLearning
     /// 
     [Serializable]
     public class ClusterCollection<TData, TCluster> : ClusterCollection<TData, TData, TCluster>
+#if NOTPORTABLE
         where TData : ICloneable
+#endif
     {
 
         /// <summary>
