@@ -11,11 +11,11 @@
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>Portable Accord Imaging contains image matching and stitching of the Accord.NET Framework for mobile and tablet devices.</description>
         <summary>Image matching and stitching of Portable Accord.NET Framework</summary>
-        <copyright>(c) 2009-2015 César de Souza, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+        <copyright>(c) 2009-2015 César de Souza, 2013-2016 Anders Gustafsson, Cureos AB</copyright>
          <language>en-US</language>
-        <tags>accord.net aforge.net PCL .NET WPF WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
+        <tags>accord.net aforge.net PCL .NET WPF UWP WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
         <dependencies>
-            <dependency id="shim.drawing" version="$aforgever$" />
+            <dependency id="shim.drawing" version="$drawver$" />
             <dependency id="portable.accord.machinelearning" version="$version$" />
         </dependencies>
     </metadata>

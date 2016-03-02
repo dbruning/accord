@@ -11,9 +11,9 @@
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>Portable Accord Genetic provides genetic programming functionality to the Accord.NET Framework on mobile and tablet devices.</description>
         <summary>Genetic programming functionality for Portable Accord.NET Framework</summary>
-        <copyright>(c) 2006-2013 Andrew Kirillow, 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+        <copyright>(c) 2006-2013 Andrew Kirillow, 2013-2016 Anders Gustafsson, Cureos AB</copyright>
         <language>en-US</language>
-        <tags>accord.net aforge.net PCL .NET WPF WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
+        <tags>accord.net aforge.net PCL .NET WPF UWP WPA81 Windows8.1 Xamarin.iOS Xamarin.Android</tags>
         <dependencies>
             <dependency id="portable.accord.math" version="$version$" />
         </dependencies>
