@@ -254,13 +254,6 @@ namespace Accord.MachineLearning
             this.Track = true;
         }
 
-        [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
-        {
-            this.lastDecisionPath = new ThreadLocal<Decision[]>(() => new Decision[NumberOfOutputs - 1]);
-            this.ParallelOptions = new ParallelOptions();
-        }
-
         /// <summary>
         ///   Gets the number of inner binary classification models used by
         ///   this instance. It should correspond to <c>(c * (c - 1)) / 2</c>

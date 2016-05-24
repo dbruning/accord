@@ -493,20 +493,6 @@ namespace Accord.MachineLearning.VectorMachines
         }
 
 
-
-        [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
-        {
-            initialize();
-            parallelOptions = new ParallelOptions();
-        }
-
-
-
-
-
-
-
         /// <summary>
         ///   Performs application-defined tasks associated with
         ///   freeing, releasing, or resetting unmanaged resources.

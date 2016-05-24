@@ -616,18 +616,6 @@ namespace Accord.MachineLearning
             get { return clusters; }
         }
 
-        [OnDeserialized]
-        private void OnDeserializedMethod(StreamingContext context)
-        {
-            if (this.Iterations == 0 && MaxIterations == 0 && Tolerance == 0)
-            {
-                this.Tolerance = 1e-5;
-                this.ComputeCovariances = true;
-                this.UseSeeding = Seeding.KMeansPlusPlus;
-                this.ComputeError = true;
-            }
-        }
-
 
         /// <summary>
         ///   Divides the input data into K clusters. 

@@ -623,12 +623,6 @@ namespace Accord.MachineLearning.VectorMachines
 
 
 
-        [OnDeserialized]
-        private void onDeserialized(StreamingContext context)
-        {
-            initialize();
-        }
-
 
         #region IDisposable members
         /// <summary>
