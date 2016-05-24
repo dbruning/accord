@@ -146,7 +146,7 @@ namespace Accord.Tests.Imaging
             var images = GetImages();
 
             Accord.Math.Random.Generator.Seed = 0;
-            Bitmap image = new Bitmap(images[0]);
+            Bitmap image = images[0].Clone();
 
             // The Bag-of-Visual-Words model converts arbitrary-size images 
             // into fixed-length feature vectors. In this example, we will

@@ -188,6 +188,10 @@
       <Project>{61c2bc7a-0141-4185-bb49-66afbe5bfe23}</Project>
       <Name>Net.Accord.ExcelReader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Accord.Math\Portable.Accord.Math.csproj">
+      <Project>{a2e3375e-421d-4a53-9298-26180c915c97}</Project>
+      <Name>Portable.Accord.Math</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
