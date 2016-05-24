@@ -216,8 +216,8 @@ namespace Accord
         /// 
         public static bool HasDefaultConstructor(this Type t)
         {
-            return t.IsValueType || t.GetConstructor(Type.EmptyTypes) != null;
-    }
+            return t.IsValueType() || t.GetConstructor(Type_.EmptyTypes) != null;
+        }
         
         
         /// <summary>

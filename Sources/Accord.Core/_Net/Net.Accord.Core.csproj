@@ -41,8 +41,8 @@
     <AssemblyOriginatorKeyFile>..\Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Shim, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\shim.2.0.0\lib\net40\Shim.dll</HintPath>
+    <Reference Include="Shim, Version=2.1.0.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\shim.2.1.0-pre\lib\net40\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -166,6 +166,12 @@
     </Compile>
     <Compile Include="..\Serializer.cs">
       <Link>Serializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Sparse.cs">
+      <Link>Sparse.cs</Link>
+    </Compile>
+    <Compile Include="..\Sparse`1.cs">
+      <Link>Sparse`1.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

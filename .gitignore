@@ -30,3 +30,5 @@ obj
 
 /Sources/[Pp]ackages
 [Pp]ublish
+*.opendb
+*.db
