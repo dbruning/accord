@@ -26,7 +26,7 @@
 // also shared under the LGPL license.
 //
 
-namespace Accord.Tests.Math
+namespace Accord.Tests.Interop.Math
 {
     using Accord.Math.Optimization;
     using System;
@@ -166,7 +166,7 @@ namespace Accord.Tests.Math
             double[,] A = constraints.CreateMatrix(function.NumberOfVariables,
                 out constraintValues, out tolerances, out equalities);
 
-            System.Diagnostics.Debug.Assert(A.GetLength(1) == function.NumberOfVariables);
+            Accord.Diagnostics.Debug.Assert(A.GetLength(1) == function.NumberOfVariables);
 
             initialize(function.NumberOfVariables,
                 function.QuadraticTerms, function.LinearTerms,

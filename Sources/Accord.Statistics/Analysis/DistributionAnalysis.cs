@@ -36,6 +36,7 @@ namespace Accord.Statistics.Analysis
     using Accord.Statistics.Testing;
     using System.Threading.Tasks;
     using System.Diagnostics.CodeAnalysis;
+    using Accord.Statistics.Distributions.Fitting;
 
     /// <summary>
     ///   Distribution fitness analysis.
@@ -253,7 +254,7 @@ namespace Accord.Statistics.Analysis
 
         private int[] getRank(double[] ks)
         {
-            int[] idx = Matrix.Indices(0, Distributions.Length);
+            int[] idx = Vector.Range(0, Distributions.Length);
             Array_.Sort(ks, idx, new GeneralComparer(ComparerDirection.Descending));
 
             int[] rank = new int[idx.Length];

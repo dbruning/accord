@@ -44,6 +44,7 @@
 namespace Accord.Math
 {
     using System;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     ///   Set of special mathematic functions.
@@ -87,6 +88,7 @@ namespace Accord.Math
                 1.02755188689515710272E3,
                 5.57535335369399327526E2
 			};
+
             double[] Q =
             {
                 1.32281951154744992508E1,
@@ -697,5 +699,137 @@ namespace Accord.Math
         }
 
         #endregion
+
+        /// <summary>
+        ///   Computes the Softmax function (also known as normalized Exponencial
+        ///   function) that "squashes"a vector or arbitrary real values into a 
+        ///   vector of real values in the range (0, 1) that add up to 1.
+        /// </summary>
+        /// 
+        /// <param name="input">The real values to be converted into the unit interval.</param>
+        /// 
+        /// <returns>A vector with the same number of dimensions as <paramref name="input"/>
+        ///   but where values lie between 0 and 1.</returns>
+        ///   
+#if NET45
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
+        public static double[] Softmax(double[] input)
+        {
+            return Softmax(input, new double[input.Length]);
+        }
+
+        /// <summary>
+        ///   Computes the Softmax function (also known as normalized Exponencial
+        ///   function) that "squashes"a vector or arbitrary real values into a 
+        ///   vector of real values in the range (0, 1) that add up to 1.
+        /// </summary>
+        /// 
+        /// <param name="input">The real values to be converted into the unit interval.</param>
+        /// <param name="result">The location where to store the result of this operation.</param>
+        /// 
+        /// <returns>A vector with the same number of dimensions as <paramref name="input"/>
+        ///   but where values lie between 0 and 1.</returns>
+        ///   
+#if NET45
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
+        public static double[] Softmax(double[] input, double[] result)
+        {
+            double sum = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                double u = Math.Exp(input[i]);
+                result[i] = u;
+                sum += u;
+            }
+
+            for (int i = 0; i < result.Length; i++)
+                result[i] /= sum;
+
+            return result;
+        }
+
+        // TODO: Move to Classes, rename classes to Labels
+
+        /// <summary>
+        ///   Hyperplane decision function. Return true if distance
+        ///   is higher than zero, and false otherwise.
+        /// </summary>
+        /// 
+        public static bool Decide(double distance)
+        {
+            return distance > 0;
+        }
+
+        /// <summary>
+        ///   Hyperplane decision function. Return true if distance
+        ///   is higher than zero, and false otherwise.
+        /// </summary>
+        /// 
+        public static bool[] Decide(double[] values)
+        {
+            bool[] result = new bool[values.Length];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = Decide(values[i]);
+            return result;
+        }
+
+        /// <summary>
+        ///   Hyperplane decision function. Return true if distance
+        ///   is higher than zero, and false otherwise.
+        /// </summary>
+        /// 
+        public static bool[] Decide(int[] values)
+        {
+            bool[] result = new bool[values.Length];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = Decide(values[i]);
+            return result;
+        }
+
+        /// <summary>
+        ///   Hyperplane decision function. Return true if distance
+        ///   is higher than zero, and false otherwise.
+        /// </summary>
+        /// 
+        public static bool[][] Decide(double[][] values)
+        {
+            bool[][] result = new bool[values.Length][];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = Decide(values[i]);
+            return result;
+        }
+
+        /// <summary>
+        ///   Hyperplane decision function. Return true if distance
+        ///   is higher than zero, and false otherwise.
+        /// </summary>
+        /// 
+        public static bool[][] Decide(int[][] values)
+        {
+            bool[][] result = new bool[values.Length][];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = Decide(values[i]);
+            return result;
+        }
+
+        /// <summary>
+        ///   Computes log(1 + exp(x)) without losing precision.
+        /// </summary>
+        /// 
+        public static double Log1pexp(double x)
+        {
+            // Computes Math.Log(1.0 / (1.0 + Math.Exp(-sum)));
+            // https://cran.r-project.org/web/packages/Rmpfr/vignettes/log1mexp-note.pdf
+
+            if (x < -37)
+                return Math.Exp(x);
+            if (x <= 18)
+                return Special.Log1p(Math.Exp(x));
+            if (x <= 33)
+                return x + Math.Exp(-x);
+            return x;
+        }
     }
 }
