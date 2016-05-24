@@ -32,3 +32,4 @@ obj
 [Pp]ublish
 *.opendb
 *.db
+/Sources/UpgradeLog.htm

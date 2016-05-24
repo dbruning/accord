@@ -44,18 +44,32 @@
     <AssemblyOriginatorKeyFile>Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Accord.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AForge\SystemTools.Pcl.cs" />
     <Compile Include="AForge\Delegates.cs" />
     <Compile Include="AForge\DoublePoint.cs" />
-    <Compile Include="Attributes\SerializationBinderAttribute.cs" />
     <Compile Include="Attributes\SourceTypeAttribute.cs" />
+    <Compile Include="Attributes\SerializationBinderAttribute.cs" />
+    <Compile Include="Debug.cs" />
+    <Compile Include="InterlockedEx.cs" />
+    <Compile Include="MachineLearning\Classifiers\IClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multiclass\IMulticlassClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multiclass\IMulticlassDistanceClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multiclass\IMulticlassGenerativeClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multilabel\IMultilabelClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multilabel\IMultilabelDistanceClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multilabel\IMultilabelGenerativeClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multiclass\Binary\IBinaryClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multiclass\Binary\IBinaryDistanceClassifier.cs" />
+    <Compile Include="MachineLearning\Classifiers\Multiclass\Binary\IBinaryGenerativeClassifier.cs" />
+    <Compile Include="MachineLearning\ITransform.cs" />
+    <Compile Include="MachineLearning\Regression\IMultipleRegression.cs" />
+    <Compile Include="MachineLearning\Regression\IRegression.cs" />
+    <Compile Include="MachineLearning\TransformBase.cs" />
     <Compile Include="Ranges\ByteRange.cs" />
     <Compile Include="Ranges\DoubleRange.cs" />
     <Compile Include="AForge\EventArgs.cs" />
@@ -65,6 +79,7 @@
     <Compile Include="AForge\Point.cs" />
     <Compile Include="AForge\PolishExpression.cs" />
     <Compile Include="Ranges\Range.cs" />
+    <Compile Include="AForge\SystemTools.Pcl.cs" />
     <Compile Include="AForge\ThreadSafeRandom.cs" />
     <Compile Include="Attributes\RealAttribute.cs" />
     <Compile Include="Attributes\IntegerAttribute.cs" />
@@ -72,7 +87,6 @@
     <Compile Include="Collections\RedBlackTree`2.cs" />
     <Compile Include="Collections\KeyValuePairComparer`2.cs" />
     <Compile Include="Collections\TwoWayDictionary.cs" />
-    <Compile Include="DataTableExtensions.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Exceptions\ConvergenceException.cs" />
     <Compile Include="Exceptions\DimensionMismatchException.cs" />
@@ -91,6 +105,7 @@
     <Compile Include="Serializer.cs" />
     <Compile Include="Sparse.cs" />
     <Compile Include="Sparse`1.cs" />
+    <Compile Include="DataTableExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Properties\CustomDictionary.xml" />

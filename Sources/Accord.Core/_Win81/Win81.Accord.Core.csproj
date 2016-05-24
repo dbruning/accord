@@ -52,12 +52,60 @@
     <Compile Include="..\AForge\DoublePoint.cs">
       <Link>AForge\DoublePoint.cs</Link>
     </Compile>
-    <Compile Include="..\Attributes\SerializationBinderAttribute.cs">
-      <Link>Attributes\SerializationBinderAttribute.cs</Link>
-    </Compile>
     <Compile Include="..\Attributes\SourceTypeAttribute.cs">
       <Link>Attributes\SourceTypeAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\Attributes\SerializationBinderAttribute.cs">
+      <Link>Attributes\SerializationBinderAttribute.cs</Link>
+    </Compile>	
+    <Compile Include="..\Debug.cs">
+      <Link>Debug.cs</Link>
+    </Compile>
+    <Compile Include="..\InterlockedEx.cs">
+      <Link>InterlockedEx.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\IClassifier.cs">
+      <Link>MachineLearning\Classifiers\IClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multiclass\IMulticlassClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multiclass\IMulticlassClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multiclass\IMulticlassDistanceClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multiclass\IMulticlassDistanceClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multiclass\IMulticlassGenerativeClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multiclass\IMulticlassGenerativeClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multilabel\IMultilabelClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multilabel\IMultilabelClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multilabel\IMultilabelDistanceClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multilabel\IMultilabelDistanceClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multilabel\IMultilabelGenerativeClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multilabel\IMultilabelGenerativeClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multiclass\Binary\IBinaryClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multiclass\Binary\IBinaryClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multiclass\Binary\IBinaryDistanceClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multiclass\Binary\IBinaryDistanceClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Classifiers\Multiclass\Binary\IBinaryGenerativeClassifier.cs">
+      <Link>MachineLearning\Classifiers\Multiclass\Binary\IBinaryGenerativeClassifier.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\ITransform.cs">
+      <Link>MachineLearning\ITransform.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Regression\IMultipleRegression.cs">
+      <Link>MachineLearning\Regression\IMultipleRegression.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\Regression\IRegression.cs">
+      <Link>MachineLearning\Regression\IRegression.cs</Link>
+    </Compile>
+    <Compile Include="..\MachineLearning\TransformBase.cs">
+      <Link>MachineLearning\TransformBase.cs</Link>
+    </Compile>	
     <Compile Include="..\Ranges\ByteRange.cs">
       <Link>Ranges\ByteRange.cs</Link>
     </Compile>
@@ -91,44 +139,26 @@
     <Compile Include="..\AForge\ThreadSafeRandom.cs">
       <Link>AForge\ThreadSafeRandom.cs</Link>
     </Compile>
-    <Compile Include="..\Attributes\IntegerAttribute.cs">
-      <Link>Attributes\IntegerAttribute.cs</Link>
-    </Compile>
     <Compile Include="..\Attributes\RealAttribute.cs">
       <Link>Attributes\RealAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Attributes\IntegerAttribute.cs">
+      <Link>Attributes\IntegerAttribute.cs</Link>
     </Compile>
     <Compile Include="..\Cast.cs">
       <Link>Cast.cs</Link>
     </Compile>
-    <Compile Include="..\Collections\KeyValuePairComparer`2.cs">
-      <Link>Collections\KeyValuePairComparer`2.cs</Link>
-    </Compile>
-    <Compile Include="..\Collections\ReadOnlyDictionary.cs">
-      <Link>Collections\ReadOnlyDictionary.cs</Link>
-    </Compile>
-    <Compile Include="..\Collections\ReadOnlyOrderedDictionary.cs">
-      <Link>Collections\ReadOnlyOrderedDictionary.cs</Link>
-    </Compile>
-    <Compile Include="..\Collections\RedBlackTreeDictionary`2.cs">
-      <Link>Collections\RedBlackTreeDictionary`2.cs</Link>
-    </Compile>
-    <Compile Include="..\Collections\RedBlackTreeNode.cs">
-      <Link>Collections\RedBlackTreeNode.cs</Link>
-    </Compile>
-    <Compile Include="..\Collections\RedBlackTree`1.cs">
-      <Link>Collections\RedBlackTree`1.cs</Link>
-    </Compile>
     <Compile Include="..\Collections\RedBlackTree`2.cs">
       <Link>Collections\RedBlackTree`2.cs</Link>
     </Compile>
-    <Compile Include="..\Ranges\IRange`1.cs">
-      <Link>Ranges\IRange`1.cs</Link>
+    <Compile Include="..\Collections\KeyValuePairComparer`2.cs">
+      <Link>Collections\KeyValuePairComparer`2.cs</Link>
     </Compile>
     <Compile Include="..\Collections\TwoWayDictionary.cs">
       <Link>Collections\TwoWayDictionary.cs</Link>
     </Compile>
-    <Compile Include="..\DataTableExtensions.cs">
-      <Link>DataTableExtensions.cs</Link>
+    <Compile Include="..\ExtensionMethods.cs">
+      <Link>ExtensionMethods.cs</Link>
     </Compile>
     <Compile Include="..\Exceptions\ConvergenceException.cs">
       <Link>Exceptions\ConvergenceException.cs</Link>
@@ -145,9 +175,6 @@
     <Compile Include="..\Exceptions\SingularMatrixException.cs">
       <Link>Exceptions\SingularMatrixException.cs</Link>
     </Compile>
-    <Compile Include="..\ExtensionMethods.cs">
-      <Link>ExtensionMethods.cs</Link>
-    </Compile>
     <Compile Include="..\GlobalSuppressions.cs">
       <Link>GlobalSuppressions.cs</Link>
     </Compile>
@@ -157,6 +184,24 @@
     <Compile Include="..\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="..\Collections\ReadOnlyOrderedDictionary.cs">
+      <Link>Collections\ReadOnlyOrderedDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\ReadOnlyDictionary.cs">
+      <Link>Collections\ReadOnlyDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTreeDictionary`2.cs">
+      <Link>Collections\RedBlackTreeDictionary`2.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTreeNode.cs">
+      <Link>Collections\RedBlackTreeNode.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\RedBlackTree`1.cs">
+      <Link>Collections\RedBlackTree`1.cs</Link>
+    </Compile>
+    <Compile Include="..\Ranges\IRange`1.cs">
+      <Link>Ranges\IRange`1.cs</Link>
+    </Compile>
     <Compile Include="..\Serializer.cs">
       <Link>Serializer.cs</Link>
     </Compile>
@@ -165,6 +210,9 @@
     </Compile>
     <Compile Include="..\Sparse`1.cs">
       <Link>Sparse`1.cs</Link>
+    </Compile>
+    <Compile Include="..\DataTableExtensions.cs">
+      <Link>DataTableExtensions.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
