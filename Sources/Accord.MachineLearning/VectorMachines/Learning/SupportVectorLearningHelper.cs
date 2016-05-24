@@ -33,7 +33,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         public static TModel Create<TModel, TInput, TKernel>(int inputs, TKernel kernel)
             where TModel : class, ISupportVectorMachine<TInput>
             where TKernel : IKernel<TInput>
-            where TInput : ICloneable
         {
             TModel result = null;
             var type = typeof(TModel);

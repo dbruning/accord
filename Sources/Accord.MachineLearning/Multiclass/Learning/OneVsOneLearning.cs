@@ -187,7 +187,7 @@ namespace Accord.MachineLearning
 
                 if (idx.Length == 0)
                 {
-                    System.Diagnostics.Trace.TraceWarning("Class pair ({0}, {1}) does not have any examples.", i, j);
+                    System.Diagnostics.Trace.TraceWarning(string.Format("Class pair ({0}, {1}) does not have any examples.", i, j));
                 }
 
                 TInput[] subx = x.Submatrix(idx);

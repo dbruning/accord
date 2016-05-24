@@ -346,7 +346,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         where TBinary : SupportVectorMachine<TKernel, TInput>
         where TModel : OneVsRest<TBinary, TInput>
         where TKernel : IKernel<TInput>
-        where TInput : ICloneable
     {
         /// <summary>
         ///   Gets or sets the kernel function to be used to learn the

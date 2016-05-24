@@ -466,7 +466,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         BaseSupportVectorClassification<TModel, TKernel, TInput>,
         ISupportVectorMachineLearning<TInput>
         where TKernel : IKernel<TInput>
-        where TInput : ICloneable
         where TModel : ISupportVectorMachine<TInput>
     // TODO: after a few releases, the TModel constraint should be changed to:
     // where TModel : SupportVectorMachine<TKernel, TInput>, ISupportVectorMachine<TInput>

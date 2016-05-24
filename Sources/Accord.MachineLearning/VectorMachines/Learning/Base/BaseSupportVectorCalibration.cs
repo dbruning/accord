@@ -42,7 +42,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         ISupervisedBinaryLearning<TModel, TInput>
         where TKernel : IKernel<TInput>
         where TModel : SupportVectorMachine<TKernel, TInput>
-        where TInput : ICloneable
     {
 
         /// <summary>

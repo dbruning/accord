@@ -217,7 +217,6 @@ namespace Accord.MachineLearning.VectorMachines
         IDisposable
         where TKernel : IKernel<TInput>
         where TModel : SupportVectorMachine<TKernel, TInput>
-        where TInput : ICloneable
     {
 
         // Multi-label statistics

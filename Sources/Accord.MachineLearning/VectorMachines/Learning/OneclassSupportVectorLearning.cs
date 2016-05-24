@@ -77,7 +77,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         : IUnsupervisedLearning<TModel, TInput, bool>
         where TKernel : IKernel<TInput>
         where TModel : SupportVectorMachine<TKernel, TInput>
-        where TInput : ICloneable
     {
         private double[] alpha;
         private TInput[] inputs;

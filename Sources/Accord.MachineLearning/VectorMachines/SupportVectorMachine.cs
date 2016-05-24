@@ -32,7 +32,6 @@ namespace Accord.MachineLearning.VectorMachines
     using Accord.Statistics.Models.Regression;
     using System.Reflection;
     using System.Runtime.Serialization;
-    using System.Security.Permissions;
 
     /// <summary>
     ///   Common interface for support vector machines.
@@ -105,12 +104,10 @@ namespace Accord.MachineLearning.VectorMachines
             public ILinkFunction linkFunction;
 
 
-            [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
             void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
             {
             }
 
-            [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
             private SupportVectorMachine_2_13(SerializationInfo info, StreamingContext context)
             {
                 info.GetValue("inputCount", out inputCount);

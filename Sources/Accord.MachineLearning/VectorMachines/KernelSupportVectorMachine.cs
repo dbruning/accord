@@ -32,7 +32,6 @@ namespace Accord.MachineLearning.VectorMachines
     using Accord.Statistics.Models.Regression;
     using System.Reflection;
     using System.Runtime.Serialization;
-    using System.Security.Permissions;
 
     
     /// <summary>
@@ -108,12 +107,10 @@ namespace Accord.MachineLearning.VectorMachines
             public IKernel kernel;
 
 
-            [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
             void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
             {
             }
 
-            [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
             private KernelSupportVectorMachine_2_13(SerializationInfo info, StreamingContext context)
             {
                 info.GetValue("SupportVectorMachine+inputCount", out inputCount);

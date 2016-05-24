@@ -322,7 +322,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         BaseSupportVectorClassification<TModel, TKernel, TInput>
         where TModel : SupportVectorMachine<TKernel, TInput>
         where TKernel : struct, ILinear<TInput>
-        where TInput : ICloneable, IList
+        where TInput : IList
     {
 
         int max_iter = 1000;

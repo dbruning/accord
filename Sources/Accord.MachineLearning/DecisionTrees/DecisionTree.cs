@@ -26,6 +26,8 @@ namespace Accord.MachineLearning.DecisionTrees
     using System.Collections.Generic;
     using System.IO;
     using System.Linq.Expressions;
+    using System.Reflection;
+    using System.Runtime.Serialization;
     using System.Runtime.Serialization.Formatters.Binary;
     using Accord.MachineLearning.DecisionTrees.Rules;
     using Accord.Math;

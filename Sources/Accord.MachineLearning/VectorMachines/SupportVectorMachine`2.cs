@@ -111,7 +111,6 @@ namespace Accord.MachineLearning.VectorMachines
         BinaryGenerativeClassifierBase<TInput>,
         ISupportVectorMachine<TInput>, ICloneable
         where TKernel : IKernel<TInput>
-        where TInput : ICloneable
     {
 
         private TKernel kernel;

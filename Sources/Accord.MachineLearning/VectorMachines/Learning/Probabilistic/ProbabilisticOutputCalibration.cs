@@ -340,7 +340,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         ISupportVectorMachineLearning<TInput>
         where TKernel : IKernel<TInput>
         where TModel : SupportVectorMachine<TKernel, TInput>
-        where TInput : ICloneable
     {
 
         private double[] distances;

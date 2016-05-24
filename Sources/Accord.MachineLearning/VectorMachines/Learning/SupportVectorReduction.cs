@@ -55,7 +55,6 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         : BaseSupportVectorCalibration<TModel, TKernel, TInput>
         where TModel : SupportVectorMachine<TKernel, TInput>
         where TKernel : IKernel<TInput>
-        where TInput : ICloneable
     {
 
         /// <summary>

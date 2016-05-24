@@ -24,6 +24,7 @@ namespace Accord.MachineLearning.VectorMachines
 {
     using System;
     using System.IO;
+    using System.Runtime.Serialization;
     using System.Runtime.Serialization.Formatters.Binary;
     using System.Threading.Tasks;
     using Accord.Math;
