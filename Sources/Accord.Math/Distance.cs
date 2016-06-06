@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2015
+// Copyright © César Souza, 2009-2016
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -26,7 +26,6 @@ namespace Accord.Math
     using Accord.Math.Distances;
     using System;
     using System.Collections;
-    using System.Linq;
     using System.Reflection;
     using System.Runtime.CompilerServices;
 
@@ -139,10 +138,10 @@ namespace Accord.Math
         {
             
 
-            var methods = typeof(Distance).GetTypeInfo().DeclaredMethods.Where(mi => mi.IsPublic && mi.IsStatic);
+            var methods = typeof(Distance).GetMembers(BindingFlags.Public | BindingFlags.Static);
             foreach (var method in methods)
             {
-                if (func.GetMethodInfo().Equals(method))
+                if (func.Method == method)
                 {
                     var t = Type.GetType("Accord.Math.Distances." + method.Name);
 
@@ -150,7 +149,7 @@ namespace Accord.Math
                     {
                         // TODO: Remove the following special case, as it is needed only
                         // for preserving compatibility for a few next releases more.
-                        if (func.GetMethodInfo().Name == "BitwiseHamming")
+                        if (func.Method.Name == "BitwiseHamming")
                             return new Hamming() as IDistance<T>;
                     }
 
@@ -172,5 +171,23 @@ namespace Accord.Math
         {
             return Distance.Hamming(x, y);
         }
+
+        /// <summary>
+        ///   Gets the Levenshtein distance between two points.
+        /// </summary>
+        ///  
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// 
+        /// <returns>The Levenshtein distance between x and y.</returns>
+        /// 
+#if NET45
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#endif
+        public static double Levenshtein<T>(T[] x, T[] y)
+        {
+            return new Levenshtein<T>().Distance(x, y);
+        }
+
     }
 }

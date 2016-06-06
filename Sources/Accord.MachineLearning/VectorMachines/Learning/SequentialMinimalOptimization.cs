@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2015
+// Copyright © César Souza, 2009-2016
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -23,6 +23,7 @@
 namespace Accord.MachineLearning.VectorMachines.Learning
 {
     using Accord.Math;
+    using Accord.Statistics;
     using Accord.Statistics.Kernels;
     using System;
     using System.Collections;
@@ -202,7 +203,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         /// </returns>
         public new SupportVectorMachine Learn(double[][] x, double[] y, double[] weights = null)
         {
-            return Learn(x, Special.Decide(y), weights);
+            return Learn(x, Classes.Decide(y), weights);
         }
 
         /// <summary>
@@ -216,7 +217,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         /// </returns>
         public new SupportVectorMachine Learn(double[][] x, int[] y, double[] weights = null)
         {
-            return Learn(x, Special.Decide(y), weights);
+            return Learn(x, Classes.Decide(y), weights);
         }
 
         /// <summary>
@@ -230,7 +231,7 @@ namespace Accord.MachineLearning.VectorMachines.Learning
         /// </returns>
         public new SupportVectorMachine Learn(double[][] x, int[][] y, double[] weights = null)
         {
-            return Learn(x, Special.Decide(y.GetColumn(0)), weights);
+            return Learn(x, Classes.Decide(y.GetColumn(0)), weights);
         }
 
         /// <summary>

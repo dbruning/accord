@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2015
+// Copyright © César Souza, 2009-2016
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -24,6 +24,7 @@ namespace Accord.MachineLearning.VectorMachines
 {
     using Accord.MachineLearning;
     using Accord.Math;
+    using Accord.Statistics;
     using Accord.Statistics.Kernels;
     using System;
     using System.Collections.Generic;
@@ -68,6 +69,7 @@ namespace Accord.MachineLearning.VectorMachines
             SupportVectorMachine<TKernel, TInput>,
             TKernel, TInput>, ICloneable
         where TKernel : IKernel<TInput>
+        where TInput : ICloneable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MulticlassSupportVectorMachine{TKernel, TInput}"/> class.
@@ -407,11 +409,11 @@ namespace Accord.MachineLearning.VectorMachines
                     DistanceByElimination(input, result, cache);
             }
 
-#if DEBUG
-            double[] expected = base.Distances(input, new double[NumberOfOutputs]);
-            if (!result.IsEqual(expected, rtol: 1e-8))
-                throw new Exception();
-#endif
+//#if DEBUG
+//            double[] expected = base.Distances(input, new double[NumberOfOutputs]);
+//            if (!result.IsEqual(expected, rtol: 1e-8))
+//                throw new Exception();
+//#endif
             return result;
         }
 
@@ -430,7 +432,7 @@ namespace Accord.MachineLearning.VectorMachines
 
             while (i != j)
             {
-                if (Special.Decide(distance(i, j, input, cache)))
+                if (Classes.Decide(distance(i, j, input, cache)))
                     j++; // i won, so we advance j
                 else
                     i--; // j won, so we advance i
@@ -448,7 +450,7 @@ namespace Accord.MachineLearning.VectorMachines
 
             while (i != j)
             {
-                if (Special.Decide(distance(i, j, input, cache)))
+                if (Classes.Decide(distance(i, j, input, cache)))
                 {
                     path[k++] = new Decision(j, i, i);
                     j++; // i won, so we advance j
@@ -474,7 +476,7 @@ namespace Accord.MachineLearning.VectorMachines
             while (i != j)
             {
                 sum = distance(i, j, input, cache);
-                bool decision = Special.Decide(sum);
+                bool decision = Classes.Decide(sum);
 
                 if (decision)
                 {
@@ -509,7 +511,7 @@ namespace Accord.MachineLearning.VectorMachines
             while (i != j)
             {
                 sum = distance(i, j, input, cache);
-                bool decision = Special.Decide(sum);
+                bool decision = Classes.Decide(sum);
 
                 if (decision)
                 {
@@ -529,8 +531,6 @@ namespace Accord.MachineLearning.VectorMachines
                     if (-sum > max)
                         max = -sum;
                 }
-
-
             }
 
             result[i] = max;
@@ -544,7 +544,7 @@ namespace Accord.MachineLearning.VectorMachines
                 int i = Indices[k].Class1;
                 int j = Indices[k].Class2;
 
-                if (Special.Decide(distance(i, j, input, cache)))
+                if (Classes.Decide(distance(i, j, input, cache)))
                     InterlockedEx.Increment(ref result[i]);
                 else InterlockedEx.Increment(ref result[j]);
             });
@@ -620,7 +620,6 @@ namespace Accord.MachineLearning.VectorMachines
         {
             return vectorCache.Value.Hits;
         }
-
 
 
 

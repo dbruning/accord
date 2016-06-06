@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2015
+// Copyright © César Souza, 2009-2016
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -197,7 +197,7 @@ namespace Accord.MachineLearning.VectorMachines
             double sum = threshold;
             for (int j = 0; j < supportVectors.Length; j++)
                 sum += weights[j] * kernel.Function(supportVectors[j], input);
-            return Special.Decide(sum);
+            return Classes.Decide(sum);
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Accord.MachineLearning.VectorMachines
             double sum = threshold;
             for (int j = 0; j < supportVectors.Length; j++)
                 sum += weights[j] * kernel.Function(supportVectors[j], input);
-            decision = Special.Decide(sum);
+            decision = Classes.Decide(sum);
             return -Special.Log1pexp(-sum);
         }
 

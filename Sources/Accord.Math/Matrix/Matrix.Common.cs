@@ -619,6 +619,19 @@ namespace Accord.Math
             return matrix.GetLength(1);
         }
 
+        /// <summary>
+        ///   Returns true if a vector of real-valued observations
+        ///   is ordered in ascending or descending order.
+        /// </summary>
+        /// 
+        /// <param name="values">An array of values.</param>
+        /// 
+        public static bool IsSorted<T>(this T[] values) 
+            where T : IComparable<T>
+        {
+            return IsSorted(values, ComparerDirection.Ascending)
+                || IsSorted(values, ComparerDirection.Descending);
+        }
 
         /// <summary>
         ///   Returns true if a vector of real-valued observations
@@ -628,7 +641,8 @@ namespace Accord.Math
         /// <param name="values">An array of values.</param>
         /// <param name="direction">The sort order direction.</param>
         /// 
-        public static bool IsSorted<T>(this T[] values, ComparerDirection direction) where T : IComparable<T>
+        public static bool IsSorted<T>(this T[] values, ComparerDirection direction) 
+            where T : IComparable<T>
         {
             if (direction == ComparerDirection.Ascending)
             {
@@ -1005,221 +1019,7 @@ namespace Accord.Math
         #endregion
 
 
-        #region Summation
-        /// <summary>Calculates the matrix Sum vector.</summary>
-        /// 
-        /// <param name="matrix">A matrix whose sums will be calculated.</param>
-        /// 
-        /// <returns>Returns a vector containing the sums of each variable in the given matrix.</returns>
-        /// 
-        public static float[] Sum(this float[,] matrix)
-        {
-            return Sum(matrix, 0);
-        }
-
-        /// <summary>Calculates the matrix Sum vector.</summary>
-        /// <param name="matrix">A matrix whose sums will be calculated.</param>
-        /// <returns>Returns a vector containing the sums of each variable in the given matrix.</returns>
-        public static double[] Sum(this double[,] matrix)
-        {
-            return Sum(matrix, 0);
-        }
-
-        /// <summary>Calculates the matrix Sum vector.</summary>
-        /// <param name="matrix">A matrix whose sums will be calculated.</param>
-        /// <param name="dimension">The dimension in which the sum will be calculated.</param>
-        /// <returns>Returns a vector containing the sums of each variable in the given matrix.</returns>
-        public static double[] Sum(this double[,] matrix, int dimension)
-        {
-            if (matrix == null) throw new ArgumentNullException("matrix");
-
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            double[] sum;
-
-            if (dimension == -1)
-            {
-                sum = new double[1];
-                foreach (double a in matrix)
-                    sum[0] += a;
-            }
-            else if (dimension == 0)
-            {
-                sum = new double[cols];
-
-                for (int j = 0; j < cols; j++)
-                {
-                    double s = 0.0;
-                    for (int i = 0; i < rows; i++)
-                        s += matrix[i, j];
-                    sum[j] = s;
-                }
-            }
-            else if (dimension == 1)
-            {
-                sum = new double[rows];
-
-                for (int j = 0; j < rows; j++)
-                {
-                    double s = 0.0;
-                    for (int i = 0; i < cols; i++)
-                        s += matrix[j, i];
-                    sum[j] = s;
-                }
-            }
-            else
-            {
-                throw new ArgumentException("Invalid dimension", "dimension");
-            }
-
-            return sum;
-        }
-
-        /// <summary>Calculates the matrix Sum vector.</summary>
-        /// <param name="matrix">A matrix whose sums will be calculated.</param>
-        /// <param name="dimension">The dimension in which the sum will be calculated.</param>
-        /// <returns>Returns a vector containing the sums of each variable in the given matrix.</returns>
-        public static float[] Sum(this float[,] matrix, int dimension)
-        {
-            if (matrix == null) throw new ArgumentNullException("matrix");
-
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            float[] sum;
-
-            if (dimension == -1)
-            {
-                sum = new float[1];
-                foreach (float a in matrix)
-                    sum[0] += a;
-            }
-            else if (dimension == 0)
-            {
-                sum = new float[cols];
-
-                for (int j = 0; j < cols; j++)
-                {
-                    float s = 0.0f;
-                    for (int i = 0; i < rows; i++)
-                        s += matrix[i, j];
-                    sum[j] = s;
-                }
-            }
-            else if (dimension == 1)
-            {
-                sum = new float[rows];
-
-                for (int j = 0; j < rows; j++)
-                {
-                    float s = 0.0f;
-                    for (int i = 0; i < cols; i++)
-                        s += matrix[j, i];
-                    sum[j] = s;
-                }
-            }
-            else
-            {
-                throw new ArgumentException("Invalid dimension", "dimension");
-            }
-
-            return sum;
-        }
-
-
-        /// <summary>Calculates the matrix Sum vector.</summary>
-        /// <param name="matrix">A matrix whose sums will be calculated.</param>
-        /// <returns>Returns a vector containing the sums of each variable in the given matrix.</returns>
-        public static int[] Sum(this int[,] matrix)
-        {
-            return Sum(matrix, 0);
-        }
-
-        /// <summary>Calculates the matrix Sum vector.</summary>
-        /// <param name="matrix">A matrix whose sums will be calculated.</param>
-        /// <param name="dimension">The dimension in which the sum will be calculated. Default is 0.</param>
-        /// <returns>Returns a vector containing the sums of each variable in the given matrix.</returns>
-        public static int[] Sum(this int[,] matrix, int dimension)
-        {
-            if (matrix == null) throw new ArgumentNullException("matrix");
-
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            int[] sum;
-
-            if (dimension == 0)
-            {
-                sum = new int[cols];
-                for (int j = 0; j < cols; j++)
-                {
-                    int s = 0;
-                    for (int i = 0; i < rows; i++)
-                        s += matrix[i, j];
-                    sum[j] = s;
-                }
-            }
-            else if (dimension == 1)
-            {
-                sum = new int[rows];
-                for (int j = 0; j < rows; j++)
-                {
-                    int s = 0;
-                    for (int i = 0; i < cols; i++)
-                        s += matrix[j, i];
-                    sum[j] = s;
-                }
-            }
-            else
-            {
-                throw new ArgumentException("Invalid dimension", "dimension");
-            }
-
-            return sum;
-        }
-
-        /// <summary>
-        ///   Gets the sum of all elements in a vector.
-        /// </summary>
-        /// 
-        public static double Sum(this double[] vector)
-        {
-            if (vector == null)
-                throw new ArgumentNullException("vector");
-
-            double sum = 0.0;
-            for (int i = 0; i < vector.Length; i++)
-                sum += vector[i];
-            return sum;
-        }
-
-        /// <summary>
-        ///   Gets the sum of all elements in a vector.
-        /// </summary>
-        /// 
-        public static float Sum(this float[] vector)
-        {
-            if (vector == null) throw new ArgumentNullException("vector");
-
-            float sum = 0.0f;
-            for (int i = 0; i < vector.Length; i++)
-                sum += vector[i];
-            return sum;
-        }
-
-        /// <summary>
-        ///   Gets the sum of all elements in a vector.
-        /// </summary>
-        public static int Sum(this int[] vector)
-        {
-            if (vector == null) throw new ArgumentNullException("vector");
-
-            int sum = 0;
-            for (int i = 0; i < vector.Length; i++)
-                sum += vector[i];
-            return sum;
-        }
+        
 
         /// <summary>Calculates a vector cumulative sum.</summary>
         public static double[] CumulativeSum(this double[] vector)
@@ -1284,42 +1084,10 @@ namespace Accord.Math
 
             return sum;
         }
-        #endregion
 
-        #region Product
-        /// <summary>
-        ///   Gets the product of all elements in a vector.
-        /// </summary>
-        public static double Product(this double[] vector)
-        {
-            if (vector == null) throw new ArgumentNullException("vector");
-
-            double product = 1.0;
-            for (int i = 0; i < vector.Length; i++)
-                product *= vector[i];
-            return product;
-        }
-
-        /// <summary>
-        ///   Gets the product of all elements in a vector.
-        /// </summary>
-        public static int Product(this int[] vector)
-        {
-            if (vector == null) throw new ArgumentNullException("vector");
-
-            int product = 1;
-            for (int i = 0; i < vector.Length; i++)
-                product *= vector[i];
-            return product;
-        }
-        #endregion
-
+        
 
         #region Operation Mapping (Apply)
-
-
-
-
 
         /// <summary>
         ///   Applies a function to every element of the array.
@@ -1415,10 +1183,7 @@ namespace Accord.Math
         [Obsolete("Please use Apply passing a result parameter instead.")]
         public static void ApplyInPlace<T>(this T[] vector, Func<T, T> func)
         {
-            if (vector == null) throw new ArgumentNullException("vector");
-
-            for (int i = 0; i < vector.Length; i++)
-                vector[i] = func(vector[i]);
+            Apply(vector, func, result: vector);
         }
 
         /// <summary>
@@ -1428,14 +1193,7 @@ namespace Accord.Math
         [Obsolete("Please use Apply passing a result parameter instead.")]
         public static void ApplyInPlace<T>(this T[,] matrix, Func<T, T> func)
         {
-            if (matrix == null) throw new ArgumentNullException("matrix");
-
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
-                for (int j = 0; j < cols; j++)
-                    matrix[i, j] = func(matrix[i, j]);
+            Apply(matrix, func, result: matrix);
         }
 
         /// <summary>
@@ -1444,18 +1202,18 @@ namespace Accord.Math
         [Obsolete("Please use Apply passing a result parameter instead.")]
         public static void ApplyInPlace<T>(this T[,] matrix, Func<T, int, int, T> func)
         {
-            if (matrix == null)
-                throw new ArgumentNullException("matrix");
-
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
-                for (int j = 0; j < cols; j++)
-                    matrix[i, j] = func(matrix[i, j], i, j);
+            Apply(matrix, func, result: matrix);
         }
 
-
+        /// <summary>
+        ///   Applies a function to every element of the array.
+        /// </summary>
+        /// 
+        [Obsolete("Please use Apply passing a result parameter instead.")]
+        public static T[] ApplyInPlace<T>(this T[] vector, Func<T, int, T> func)
+        {
+            return Apply(vector, func, result: vector);
+        }
 
         /// <summary>
         ///   Applies a function to every element of the array.
@@ -1464,15 +1222,7 @@ namespace Accord.Math
         [Obsolete("Please use Apply passing a result parameter instead.")]
         public static TResult[] ApplyWithIndex<TData, TResult>(this TData[] vector, Func<TData, int, TResult> func)
         {
-            if (vector == null)
-                throw new ArgumentNullException("vector");
-
-            TResult[] result = new TResult[vector.Length];
-
-            for (int i = 0; i < vector.Length; i++)
-                result[i] = func(vector[i], i);
-
-            return result;
+            return Apply(vector, func);
         }
 
         /// <summary>
@@ -1482,18 +1232,7 @@ namespace Accord.Math
         [Obsolete("Please use Apply passing a result parameter instead.")]
         public static TResult[,] ApplyWithIndex<TData, TResult>(this TData[,] matrix, Func<TData, int, int, TResult> func)
         {
-            if (matrix == null) throw new ArgumentNullException("matrix");
-
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            TResult[,] result = new TResult[rows, cols];
-
-            for (int i = 0; i < rows; i++)
-                for (int j = 0; j < cols; j++)
-                    result[i, j] = func(matrix[i, j], i, j);
-
-            return result;
+            return Apply(matrix, func);
         }
 
         /// <summary>

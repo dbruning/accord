@@ -2,7 +2,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2015
+// Copyright © César Souza, 2009-2016
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -24,7 +24,7 @@
 // The Accord.NET Framework
 // http://accord-framework.net
 //
-// Copyright © César Souza, 2009-2015
+// Copyright © César Souza, 2009-2016
 // cesarsouza at gmail.com
 //
 //    This library is free software; you can redistribute it and/or
@@ -142,7 +142,7 @@ namespace Accord.IO
         ///   Default is <c>null</c> (don't include anything).
         /// </summary>
         /// 
-        public bool Intercept { get; set; }
+        public double? Intercept { get; set; }
 
         /// <summary>
         ///   Gets the description associated with the last read values.
@@ -163,7 +163,7 @@ namespace Accord.IO
                 if (sampleSize <= 0)
                     sampleSize = guessSampleSize();
 
-                return Intercept ? sampleSize + 1 : sampleSize;
+                return Intercept.HasValue ? sampleSize + 1 : sampleSize;
             }
         }
 
@@ -316,7 +316,7 @@ namespace Accord.IO
         /// <returns>A tuple containing the array of values in the format 
         ///  "index:value" as the first item and their corresponding label
         ///  as the second item.</returns>
-        /// 
+        ///  
         public Tuple<string[], string> ReadLine()
         {
             string description = String.Empty;
@@ -343,7 +343,7 @@ namespace Accord.IO
         /// 
         /// <returns>A tuple containing the sparse vector as the first item
         ///   and its associated output value as the second item.</returns>
-        /// 
+        ///   
         public Tuple<Sparse<double>, double> ReadSparse()
         {
             var values = ReadLine();
@@ -369,13 +369,13 @@ namespace Accord.IO
             var outputs = new List<double>();
 
             while (!reader.EndOfStream)
-        {
+            {
                 var sample = ReadSparse();
                 samples.Add(sample.Item1);
                 outputs.Add(sample.Item2);
                 if (count > 0 && samples.Count >= count)
                     break;
-        }
+            }
 
             return Tuple.Create(samples.ToArray(), outputs.ToArray());
         }
@@ -402,7 +402,7 @@ namespace Accord.IO
         /// 
         /// <returns>A tuple containing the dense vector as the first item
         ///   and its associated output value as the second item.</returns>
-        /// 
+        ///   
         public Tuple<double[], double> ReadDense()
         {
             var sparse = ReadSparse();
@@ -427,7 +427,7 @@ namespace Accord.IO
             for (int i = 0; i < dense.Length; i++)
                 dense[i] = sparse.Item1[i].ToDense(Dimensions);
             return Tuple.Create(dense, sparse.Item2);
-            }
+        }
 
         /// <summary>
         ///   Reads all samples from the file and returns them as a
@@ -440,7 +440,7 @@ namespace Accord.IO
         public Tuple<double[][], double[]> ReadDenseToEnd()
         {
             return ReadDense(-1);
-            }
+        }
 
 
 

@@ -74,45 +74,45 @@
     <Compile Include="..\Accord.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="AForge\ContinuousHistogram.cs" />
-    <Compile Include="AForge\FourierTransform.cs" />
-    <Compile Include="AForge\Gaussian.cs" />
-    <Compile Include="AForge\Geometry\ClosePointsMergingOptimizer.cs" />
-    <Compile Include="AForge\Geometry\CoplanarPosit.cs" />
-    <Compile Include="AForge\Geometry\FlatAnglesOptimizer.cs" />
-    <Compile Include="AForge\Geometry\GeometryTools.cs" />
-    <Compile Include="AForge\Geometry\GrahamConvexHull.cs" />
-    <Compile Include="AForge\Geometry\IConvexHullAlgorithm.cs" />
-    <Compile Include="AForge\Geometry\IShapeOptimizer.cs" />
-    <Compile Include="AForge\Geometry\Line.cs" />
-    <Compile Include="AForge\Geometry\LineSegment.cs" />
-    <Compile Include="AForge\Geometry\LineStraighteningOptimizer.cs" />
-    <Compile Include="AForge\Geometry\PointsCloud.cs" />
-    <Compile Include="AForge\Geometry\POSIT.cs" />
-    <Compile Include="AForge\Geometry\ShapeType.cs" />
-    <Compile Include="AForge\Geometry\SimpleShapeChecker.cs" />
-    <Compile Include="AForge\Matrix3x3.cs" />
-    <Compile Include="AForge\Matrix4x4.cs" />
-    <Compile Include="AForge\Metrics\CosineDistance.cs" />
-    <Compile Include="AForge\Metrics\CosineSimilarity.cs" />
-    <Compile Include="AForge\Metrics\EuclideanDistance.cs" />
-    <Compile Include="AForge\Metrics\EuclideanSimilarity.cs" />
-    <Compile Include="AForge\Metrics\HammingDistance.cs" />
-    <Compile Include="AForge\Metrics\IDistance.cs" />
-    <Compile Include="AForge\Metrics\ISimilarity.cs" />
-    <Compile Include="AForge\Metrics\JaccardDistance.cs" />
-    <Compile Include="AForge\Metrics\ManhattanDistance.cs" />
-    <Compile Include="AForge\Metrics\PearsonCorrelation.cs" />
-    <Compile Include="AForge\PerlinNoise.cs" />
-    <Compile Include="AForge\Random\ExponentialGenerator.cs" />
-    <Compile Include="AForge\Random\GaussianGenerator.cs" />
-    <Compile Include="AForge\Random\IRandomNumberGenerator.cs" />
-    <Compile Include="AForge\Random\StandardGenerator.cs" />
-    <Compile Include="AForge\Random\UniformGenerator.cs" />
-    <Compile Include="AForge\Random\UniformOneGenerator.cs" />
-    <Compile Include="AForge\SVD.cs" />
-    <Compile Include="AForge\Vector3.cs" />
-    <Compile Include="AForge\Vector4.cs" />
+    <Compile Include="AForge.Math\ContinuousHistogram.cs" />
+    <Compile Include="AForge.Math\FourierTransform.cs" />
+    <Compile Include="AForge.Math\Gaussian.cs" />
+    <Compile Include="AForge.Math\Geometry\ClosePointsMergingOptimizer.cs" />
+    <Compile Include="AForge.Math\Geometry\CoplanarPosit.cs" />
+    <Compile Include="AForge.Math\Geometry\FlatAnglesOptimizer.cs" />
+    <Compile Include="AForge.Math\Geometry\GeometryTools.cs" />
+    <Compile Include="AForge.Math\Geometry\GrahamConvexHull.cs" />
+    <Compile Include="AForge.Math\Geometry\IConvexHullAlgorithm.cs" />
+    <Compile Include="AForge.Math\Geometry\IShapeOptimizer.cs" />
+    <Compile Include="AForge.Math\Geometry\Line.cs" />
+    <Compile Include="AForge.Math\Geometry\LineSegment.cs" />
+    <Compile Include="AForge.Math\Geometry\LineStraighteningOptimizer.cs" />
+    <Compile Include="AForge.Math\Geometry\PointsCloud.cs" />
+    <Compile Include="AForge.Math\Geometry\POSIT.cs" />
+    <Compile Include="AForge.Math\Geometry\ShapeType.cs" />
+    <Compile Include="AForge.Math\Geometry\SimpleShapeChecker.cs" />
+    <Compile Include="AForge.Math\Matrix3x3.cs" />
+    <Compile Include="AForge.Math\Matrix4x4.cs" />
+    <Compile Include="AForge.Math\Metrics\CosineDistance.cs" />
+    <Compile Include="AForge.Math\Metrics\CosineSimilarity.cs" />
+    <Compile Include="AForge.Math\Metrics\EuclideanDistance.cs" />
+    <Compile Include="AForge.Math\Metrics\EuclideanSimilarity.cs" />
+    <Compile Include="AForge.Math\Metrics\HammingDistance.cs" />
+    <Compile Include="AForge.Math\Metrics\IDistance.cs" />
+    <Compile Include="AForge.Math\Metrics\ISimilarity.cs" />
+    <Compile Include="AForge.Math\Metrics\JaccardDistance.cs" />
+    <Compile Include="AForge.Math\Metrics\ManhattanDistance.cs" />
+    <Compile Include="AForge.Math\Metrics\PearsonCorrelation.cs" />
+    <Compile Include="AForge.Math\PerlinNoise.cs" />
+    <Compile Include="AForge.Math\Random\ExponentialGenerator.cs" />
+    <Compile Include="AForge.Math\Random\GaussianGenerator.cs" />
+    <Compile Include="AForge.Math\Random\IRandomNumberGenerator.cs" />
+    <Compile Include="AForge.Math\Random\StandardGenerator.cs" />
+    <Compile Include="AForge.Math\Random\UniformGenerator.cs" />
+    <Compile Include="AForge.Math\Random\UniformOneGenerator.cs" />
+    <Compile Include="AForge.Math\SVD.cs" />
+    <Compile Include="AForge.Math\Vector3.cs" />
+    <Compile Include="AForge.Math\Vector4.cs" />
     <Compile Include="Distance.Generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,14 +143,12 @@
     <Compile Include="Distances\Minkowski.cs" />
     <Compile Include="Distances\Hamming`1.cs" />
     <Compile Include="Distances\Levenshtein`1.cs" />
-    <Compile Include="Distances\Chessboard.cs" />
     <Compile Include="Distances\Manhattan.cs" />
     <Compile Include="Distances\BrayCurtis.cs" />
     <Compile Include="Distances\SquaredMahalanobis.cs" />
     <Compile Include="Distances\SquareEuclidean.cs" />
     <Compile Include="Distances\Euclidean.cs" />
     <Compile Include="Distances\Base\IDistance.cs" />
-    <Compile Include="MachineLearning\Classifiers\ClassifierBase.cs" />
     <Compile Include="Matrix\Matrix.Add.Generated.cs">
       <DependentUpon>Matrix.Elementwise2.tt</DependentUpon>
     </Compile>
@@ -165,6 +163,11 @@
     </Compile>
     <Compile Include="Matrix\Matrix.Conversions.Generated.cs">
       <DependentUpon>Matrix.Conversions.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Matrix\Matrix.Reduction.Generated.cs">
+      <DependentUpon>Matrix.Reduction.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -197,8 +200,6 @@
     <Compile Include="Optimization\Losses\CategoryCrossEntropyLoss.cs" />
     <Compile Include="Optimization\Losses\LossBase.cs" />
     <Compile Include="Optimization\Losses\AbsoluteLoss.cs" />
-    <Compile Include="Optimization\Losses\HammingLoss.cs" />
-    <Compile Include="Optimization\Losses\ZeroOneLoss.cs" />
     <Compile Include="Optimization\Losses\BinaryCrossEntropyLoss.cs" />
     <Compile Include="Optimization\Losses\HingeLoss.cs" />
     <Compile Include="Optimization\Losses\ILoss.cs" />
@@ -555,6 +556,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Matrix.Conversions.Generated.cs</LastGenOutput>
       <LastOutputs>.\Matrix.Conversions.Generated.cs</LastOutputs>
+    </None>
+    <None Include="Matrix\Matrix.Reduction.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Matrix.Reduction.Generated.cs</LastGenOutput>
+      <LastOutputs>.\Matrix.Reduction.Generated.cs</LastOutputs>
     </None>
     <None Include="Matrix\Matrix.Elementwise.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

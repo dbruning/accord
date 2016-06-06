@@ -276,6 +276,31 @@ namespace Accord.Tests.Math
         }
 
         [Test]
+        public void LevenshteinTest1()
+        {
+            Assert.AreEqual(0, Distance.Levenshtein("", ""));
+            Assert.AreEqual(1, Distance.Levenshtein("", "a"));
+            Assert.AreEqual(1, Distance.Levenshtein("a", ""));
+            Assert.AreEqual(0, Distance.Levenshtein("a", "a"));
+            Assert.AreEqual(0, Distance.Levenshtein(null, null));
+            Assert.AreEqual(1, Distance.Levenshtein(null, "a"));
+            Assert.AreEqual(1, Distance.Levenshtein("a", null));
+            Assert.AreEqual(0, Distance.Levenshtein(null, ""));
+            Assert.AreEqual(5, Distance.Levenshtein("apple", "banana"));
+
+            Assert.AreEqual(0, Distance.Levenshtein(new int [] { }, new int[] { }));
+            Assert.AreEqual(1, Distance.Levenshtein(new int[] { }, new int[] { 1 }));
+            Assert.AreEqual(1, Distance.Levenshtein(new int[] { 1 }, new int[] { }));
+            Assert.AreEqual(0, Distance.Levenshtein(new int[] { 1 }, new int[] { 1 }));
+            Assert.AreEqual(0, Distance.Levenshtein(null, null));
+            Assert.AreEqual(1, Distance.Levenshtein(null, new int[] { 1 }));
+            Assert.AreEqual(1, Distance.Levenshtein(new int[] { 1 }, null));
+            Assert.AreEqual(0, Distance.Levenshtein(new int[] { }, null));
+            Assert.AreEqual(0, Distance.Levenshtein(null, new int[] { }));
+            Assert.AreEqual(5, Distance.Levenshtein(new int[] { 1, 2, 2, 3, 4 }, new int[] { 5, 1, 6, 1, 6, 1 }));
+        }
+
+        [Test]
         public void IsMetricTest()
         {
             Assert.IsTrue(Distance.IsMetric(Distance.Euclidean));
@@ -285,7 +310,6 @@ namespace Accord.Tests.Math
             Assert.IsTrue(Distance.IsMetric((double[] a, double[] b) => new Minkowski(1).Distance(a, b)));
             Assert.IsTrue(Distance.IsMetric((double[] a, double[] b) => new Levenshtein<double>().Distance(a, b)));
             Assert.IsTrue(Distance.IsMetric(Distance.Chebyshev));
-            Assert.IsTrue(Distance.IsMetric((double[] a, double[] b) => Distance.Chessboard(a, b)));
             Assert.IsTrue(Distance.IsMetric(Distance.Hellinger));
 
             Assert.IsFalse(Distance.IsMetric(Distance.Cosine));
@@ -311,7 +335,6 @@ namespace Accord.Tests.Math
             Assert.IsTrue(Distance.IsMetric<double[]>(new Minkowski(1)));
             Assert.IsTrue(Distance.IsMetric(new Levenshtein()));
             Assert.IsTrue(Distance.IsMetric(new Chebyshev()));
-            Assert.IsTrue(Distance.IsMetric<double[]>(new Chessboard()));
             Assert.IsFalse(Distance.IsMetric(new Cosine()));
             Assert.IsTrue(Distance.IsMetric(new Hellinger()));
             Assert.IsFalse(Distance.IsMetric(new SquareEuclidean()));
