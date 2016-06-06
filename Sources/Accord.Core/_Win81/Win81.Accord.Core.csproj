@@ -46,11 +46,11 @@
     <AssemblyOriginatorKeyFile>..\Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\AForge\Delegates.cs">
-      <Link>AForge\Delegates.cs</Link>
+    <Compile Include="..\AForge.Core\Delegates.cs">
+      <Link>AForge.Core\Delegates.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\DoublePoint.cs">
-      <Link>AForge\DoublePoint.cs</Link>
+    <Compile Include="..\AForge.Core\DoublePoint.cs">
+      <Link>AForge.Core\DoublePoint.cs</Link>
     </Compile>
     <Compile Include="..\Attributes\SourceTypeAttribute.cs">
       <Link>Attributes\SourceTypeAttribute.cs</Link>
@@ -112,32 +112,32 @@
     <Compile Include="..\Ranges\DoubleRange.cs">
       <Link>Ranges\DoubleRange.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\EventArgs.cs">
-      <Link>AForge\EventArgs.cs</Link>
+    <Compile Include="..\AForge.Core\EventArgs.cs">
+      <Link>AForge.Core\EventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\Exceptions.cs">
-      <Link>AForge\Exceptions.cs</Link>
+    <Compile Include="..\AForge.Core\Exceptions.cs">
+      <Link>AForge.Core\Exceptions.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\IntPoint.cs">
-      <Link>AForge\IntPoint.cs</Link>
+    <Compile Include="..\AForge.Core\IntPoint.cs">
+      <Link>AForge.Core\IntPoint.cs</Link>
     </Compile>
     <Compile Include="..\Ranges\IntRange.cs">
       <Link>Ranges\IntRange.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\Point.cs">
-      <Link>AForge\Point.cs</Link>
+    <Compile Include="..\AForge.Core\Point.cs">
+      <Link>AForge.Core\Point.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\PolishExpression.cs">
-      <Link>AForge\PolishExpression.cs</Link>
+    <Compile Include="..\AForge.Core\PolishExpression.cs">
+      <Link>AForge.Core\PolishExpression.cs</Link>
     </Compile>
     <Compile Include="..\Ranges\Range.cs">
       <Link>Ranges\Range.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\SystemTools.cs">
-      <Link>AForge\SystemTools.cs</Link>
+    <Compile Include="..\AForge.Core\SystemTools.cs">
+      <Link>AForge.Core\SystemTools.cs</Link>
     </Compile>
-    <Compile Include="..\AForge\ThreadSafeRandom.cs">
-      <Link>AForge\ThreadSafeRandom.cs</Link>
+    <Compile Include="..\AForge.Core\ThreadSafeRandom.cs">
+      <Link>AForge.Core\ThreadSafeRandom.cs</Link>
     </Compile>
     <Compile Include="..\Attributes\RealAttribute.cs">
       <Link>Attributes\RealAttribute.cs</Link>

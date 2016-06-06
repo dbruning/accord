@@ -138,10 +138,10 @@ namespace Accord.Math
         {
             
 
-            var methods = typeof(Distance).GetMembers(BindingFlags.Public | BindingFlags.Static);
+            var methods = typeof(Distance).GetMethods(BindingFlags.Public | BindingFlags.Static);
             foreach (var method in methods)
             {
-                if (func.Method == method)
+                if (func.GetMethodInfo().Name == method.Name)
                 {
                     var t = Type.GetType("Accord.Math.Distances." + method.Name);
 
@@ -149,7 +149,7 @@ namespace Accord.Math
                     {
                         // TODO: Remove the following special case, as it is needed only
                         // for preserving compatibility for a few next releases more.
-                        if (func.Method.Name == "BitwiseHamming")
+                        if (func.GetMethodInfo().Name == "BitwiseHamming")
                             return new Hamming() as IDistance<T>;
                     }
 

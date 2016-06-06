@@ -69,7 +69,6 @@ namespace Accord.MachineLearning.VectorMachines
             SupportVectorMachine<TKernel, TInput>,
             TKernel, TInput>, ICloneable
         where TKernel : IKernel<TInput>
-        where TInput : ICloneable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MulticlassSupportVectorMachine{TKernel, TInput}"/> class.

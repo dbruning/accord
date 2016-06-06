@@ -180,7 +180,7 @@ namespace Accord.Math
         /// 
         public static TOutput[] Convert<TInput, TOutput>(this TInput[] vector, Converter<TInput, TOutput> converter)
         {
-            return Array.ConvertAll(vector, converter);
+            return Array_.ConvertAll(vector, converter);
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Accord.Math
         /// <param name="array">The vector or array to be converted.</param>
         /// 
         public static TOutput To<TOutput>(this Array array)
-            where TOutput : class, ICloneable, IList, ICollection, IEnumerable
+            where TOutput : class, IList, ICollection, IEnumerable
 #if !NET35
 , IStructuralComparable, IStructuralEquatable
 #endif
@@ -378,7 +378,7 @@ namespace Accord.Math
 
             Array inputArray = inputValue as Array;
 
-            if (outputElementType.IsEnum)
+            if (outputElementType.IsEnum())
             {
                 outputValue = Enum.ToObject(outputElementType, (int)System.Convert.ChangeType(inputValue, typeof(int)));
             }

@@ -553,7 +553,7 @@ namespace Accord.Math
         /// <returns>The transpose of the given tensor.</returns>
         /// 
         public static T Transpose<T>(this T array, int[] order)
-            where T : class, ICloneable, IList
+            where T : class, IList
         {
             Array arr = array as Array;
 
