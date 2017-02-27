@@ -35,3 +35,6 @@ obj
 /config.log
 *.m4
 /accord.pc
+
+/Sources/packages/
+/Setup/Portable/
