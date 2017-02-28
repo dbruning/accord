@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
@@ -42,7 +45,7 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Accord.Math\**\*.cs" Exclude="..\..\Accord.Math\**\obj\**\*.cs" />
+    <Compile Include="..\..\Accord.Math\**\*.cs" Exclude="..\..\Accord.Math\**\obj\**\*.cs;..\..\Accord.Math\Matrix\Jagged.Measures.Generated.cs" />
     <Compile Include="..\..\Accord.Core\Properties\VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
