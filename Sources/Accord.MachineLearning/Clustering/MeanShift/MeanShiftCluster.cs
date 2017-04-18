@@ -126,21 +126,36 @@ namespace Accord.MachineLearning
                 sum += response[j];
             }
 
+//	        var temp = response;
+//            var temp = new double[algorithm.Clusters.Count];
             Elementwise.Divide(response, counts, result: response);
+//	        Divide(response, counts, response);
 
             return response.ArgMax();
         }
 
-        /// <summary>
-        ///   Returns the closest cluster to an input point.
-        /// </summary>
-        /// 
-        /// <param name="point">The input vector.</param>
-        /// <returns>
-        ///   The index of the nearest cluster
-        ///   to the given data point. </returns>
-        /// 
-        public override int[] Nearest(double[][] point)
+
+//	    public double[] Divide(double[] a, int[] b, double[] result)
+//	    {
+//#if DEBUG
+//            if (!a.GetLength().IsEqual(result.GetLength()) || !b.GetLength().IsEqual(result.GetLength()))
+//                throw new DimensionMismatchException();
+//#endif
+//		    for (int i = 0; i < a.Length; i++)
+//			    result[i] = (double)((double)a[i] / (double)b[i]);
+//		    return result;
+//	    }
+
+		/// <summary>
+		///   Returns the closest cluster to an input point.
+		/// </summary>
+		/// 
+		/// <param name="point">The input vector.</param>
+		/// <returns>
+		///   The index of the nearest cluster
+		///   to the given data point. </returns>
+		/// 
+		public override int[] Nearest(double[][] point)
         {
             int[] labels = new int[point.Length];
             Parallel.For(0, labels.Length, i =>
