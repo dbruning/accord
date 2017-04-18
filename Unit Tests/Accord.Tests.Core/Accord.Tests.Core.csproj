@@ -50,6 +50,17 @@
     <DefineConstants>TRACE;NET45</DefineConstants>
     <NoWarn>0612, 0618</NoWarn>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UWP|AnyCPU'">
+    <OutputPath>bin\UWP\</OutputPath>
+    <DefineConstants>TRACE;NET35</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <NoWarn>0612, 0618</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
       <HintPath>..\..\Externals\NUnit\nunit.framework.dll</HintPath>

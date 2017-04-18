@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Portable.Accord.MachineLearning.UwpApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Portable.Accord.MachineLearning.UwpApp"
+    RequestedTheme="Light">
+
+</Application>

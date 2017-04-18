@@ -40,6 +40,17 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\Accord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UWP|AnyCPU'">
+    <OutputPath>bin\UWP\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\Accord.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Shim, Version=2.1.0.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
       <HintPath>..\..\packages\shim.2.1.0-pre\lib\net40\Shim.dll</HintPath>
@@ -64,7 +75,7 @@
     </Compile>
     <Compile Include="..\Attributes\SerializationBinderAttribute.cs">
       <Link>Attributes\SerializationBinderAttribute.cs</Link>
-    </Compile>	
+    </Compile>
     <Compile Include="..\Debug.cs">
       <Link>Debug.cs</Link>
     </Compile>
@@ -112,7 +123,7 @@
     </Compile>
     <Compile Include="..\MachineLearning\TransformBase.cs">
       <Link>MachineLearning\TransformBase.cs</Link>
-    </Compile>	
+    </Compile>
     <Compile Include="..\Ranges\ByteRange.cs">
       <Link>Ranges\ByteRange.cs</Link>
     </Compile>
